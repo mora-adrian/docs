@@ -1,37 +1,39 @@
 ---
 title: "Roles & permissions"
-description: "Who can do what in Kinetic — owners, admins, members, and extra verification for sensitive actions."
+description: "Who can do what in Kinetic — owners, admins, members, and the extra verification required for sensitive actions."
 ---
 
-Access in Kinetic is based on **membership**: an explicit, audited link between your account and a specific shop (or the parent company). There is no sharing links, no "temporary access," and no way to see another shop's data — a repair order in a different shop is indistinguishable from one that doesn't exist.
+Access in Kinetic is based on **membership**: an explicit, audited link between your account and a specific shop (or the parent company). Membership decides what you can see and do. There are no share links, no temporary access, and no way to view another shop's data — a record in a different shop is indistinguishable from one that does not exist.
 
 ## Membership roles
 
-| Role | What they can do |
+| Role | What you can do |
 | --- | --- |
-| **Owner** | Full control of the shop: everything admins can do, plus ownership-sensitive actions like transferring or deleting the shop's configuration. There must always be at least one owner — the app won't let you remove or demote the last one. |
-| **Admin** | Day-to-day administration: manage members, shop settings, messaging, integrations, workflow statuses, and archive/delete records. Cannot transfer ownership or act across other shops. |
-| **Member** | Normal operational work: create and update repair orders, customers, vehicles, messages, tasks, notes, files, and statuses. Cannot manage members, change integrations or security settings, or delete/archive. |
-| **Company owner** | (Multi-shop organizations) Audited administration across the shops under the parent company, entered deliberately from the company hub — never silently. |
+| **Owner** | Everything an admin can do, plus ownership-sensitive actions such as transferring or deleting shop configuration. Every shop must keep at least one owner — Kinetic blocks removing or demoting the last one. |
+| **Admin** | Day-to-day administration: manage members, shop settings, messaging, integrations, and workflow statuses, and archive or delete records. Cannot transfer ownership or act in other shops. |
+| **Member** | Normal operational work: create and update repair orders, customers, vehicles, messages, tasks, notes, files, and statuses. Cannot manage members, change integrations or security settings, or archive and delete. |
+| **Company owner** | For multi-shop organizations. Audited administration across the company's shops, entered deliberately from the company hub. |
 
 <Info>
-Your job title in the employee directory (e.g., "technician," "estimator") is informational — permissions come from your membership role, not your job role.
+Your job title in the employee directory — technician, estimator, and so on — is informational. Permissions come from your membership role, not your job title.
 </Info>
 
-## The extra verification layer
+## Verification for sensitive actions
 
-Some actions are marked **sensitive**: managing members and roles, changing credentials or integrations, and destructive operations. When you attempt one, you'll be asked for a fresh authenticator app code — even though you're already signed in. This "step-up" lasts 240 minutes, so you won't be re-asked constantly during an admin session.
+Some actions are marked **sensitive**: managing members and roles, changing credentials or integrations, and destructive operations. When you start one, Kinetic asks for a fresh code from your authenticator app, even though you are already signed in. This verification lasts 240 minutes, so you will not be asked repeatedly during an admin session.
 
-## Picking the right role
+## Choosing the right role
 
-- **Front office / estimators / CSRs / technicians / parts:** usually **Member**.
-- **Shop manager / office manager:** usually **Admin** — they need members and settings.
-- **Shop owner / GM:** **Owner**. Keep it to one or two people.
+| Person | Recommended role |
+| --- | --- |
+| Front office, estimators, CSRs (customer service representatives), technicians, parts staff | Member |
+| Shop manager, office manager | Admin |
+| Shop owner, general manager | Owner — keep it to one or two people |
 
 <Tip>
-Least privilege wins. It's much easier to promote someone later than to undo a deleted record. If someone only needs to read dashboards, Member is still the right role — read access isn't restricted by role, write access is.
+Use the least privilege that lets someone do their job. It is easier to promote a person later than to undo a deleted record. Read access is not restricted by role — a Member can still view dashboards and reports.
 </Tip>
 
-## Removing or changing access
+## Changing or removing access
 
-Admins change roles or remove members in **Settings → Members**. Removal ends that person's access to your shop but doesn't touch their memberships in other shops or delete their work — notes, messages, and history they created stay attributed to them.
+Admins change roles and remove members in **Settings → Members**. Removing a member ends that person's access to your shop. It does not affect their memberships in other shops, and it does not delete their work — the notes, messages, and history they created stay attributed to them.

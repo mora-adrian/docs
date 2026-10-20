@@ -3,27 +3,29 @@ title: "Settings overview"
 description: "Every Settings section, who can change it, and what it controls."
 ---
 
-Settings are organized by what they affect. Everything shown is real and persisted — there's no "coming soon" toggle that silently does nothing.
+Settings are organized by what they affect. Every setting shown is real and persists — there are no placeholder toggles that do nothing.
 
-| Section | Who | What it controls |
+## The sections
+
+| Section | Who can change it | What it controls |
 | --- | --- | --- |
-| **Profile** | Everyone | Your name, photo, email signature, and personal details. |
-| **Preferences** | Everyone | Notification choices, display and personal defaults. |
-| **Security** | Everyone (own) / Admins (shop) | Your password and authenticator app enrollment, recovery codes; admins see shop security posture. |
-| **Members** | Admin+ | Invite people, assign roles, deactivate access. See [Roles & permissions](/getting-started/roles). |
-| **Shop** | Admin+ | Shop identity: name, address, contact details shown to customers. |
-| **Repair orders** | Admin+ | Statuses, numbering, workflow configuration — the columns on your boards and how CCC statuses map to them. |
-| **Production** | Admin+ | Capacities, technician skills, and scheduling constraints the Production view uses. |
-| **Messaging** | Admin+ | Text/email channels, sender identity, templates, and communication defaults. |
-| **Reports** | Admin+ | Reporting configuration and scheduled outputs. |
-| **AI usage** | Admin+ | Visibility into AI feature usage (agent, Rivet reviews, drafts). |
+| **Profile** | You | Your name, photo, email signature, and personal details. |
+| **Preferences** | You | Notification choices, display, and personal defaults. |
+| **Security** | You (your account); Admins (shop) | Your password, authenticator app enrollment, and recovery codes; admins see the shop's security posture. |
+| **Members** | Admins | Invitations, roles, and deactivated access. See [Roles & permissions](/getting-started/roles). |
+| **Shop** | Admins | Shop identity: name, address, and the contact details customers see. |
+| **Repair orders** | Admins | Statuses, numbering, and workflow configuration — the columns on your boards and how CCC statuses map to them. |
+| **Production** | Admins | Capacities, technician skills, and the scheduling constraints the Production view uses. |
+| **Messaging** | Admins | Text and email channels, sender identity, templates, and communication defaults. |
+| **Reports** | Admins | Report configuration and scheduled outputs. |
+| **AI usage** | Admins | Visibility into AI feature usage: the Agent, Rivet reviews, and drafts. |
 
 <Warning>
-Most admin settings require a fresh authenticator app code (sensitive verification). Have your phone nearby before an admin session.
+Most admin settings require a fresh authenticator app code before you can change them. Keep your phone nearby during an admin session.
 </Warning>
 
-## Changing a setting safely
+## Change settings safely
 
-1. Change one thing at a time and check the result — especially statuses and messaging.
-2. Status/workflow changes affect boards, reports, and CCC mapping at once; coordinate with production before reordering.
-3. Destructive actions name the shop and the consequence — read those dialogs; they mean what they say.
+1. Change one thing at a time, and check the result — especially statuses and messaging.
+2. Treat status and workflow changes as production changes: they affect boards, reports, and CCC status mapping at once. Coordinate with your production team before reordering.
+3. Read destructive-action dialogs fully. They name the shop and the consequence, and they mean what they say.

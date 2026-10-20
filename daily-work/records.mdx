@@ -3,29 +3,31 @@ title: "Records: people, companies & vehicles"
 description: "The shared address book and garage — one record per real-world person, company, and car."
 ---
 
-Kinetic keeps three core record types, all searchable from the nav and the command palette:
+Kinetic keeps three core record types. All three are searchable from the navigation and the command palette.
 
 | Record | What it holds |
 | --- | --- |
-| **People** | Customers, claimants, contacts at other businesses. Phone, email, preferred contact method, and every repair order and message they're connected to. |
-| **Companies** | Insurers, tow companies, dealers, vendors, fleets, referral sources. Companies have their own contacts (people linked to them). |
-| **Vehicles** | Year/make/model/trim, VIN, color, plate, and the full repair history for that car — including market value information when available. |
+| **People** | Customers, claimants, and contacts at other businesses: phone, email, preferred contact method, and every repair order and message they are connected to. |
+| **Companies** | Insurers, tow companies, dealers, vendors, fleets, and referral sources. A company can have its own contacts — people linked to it. |
+| **Vehicles** | Year, make, model, trim, VIN (vehicle identification number), color, plate, and the full repair history for that vehicle, including market value when available. |
 
 <Info>
-"Customer" isn't a separate entity — it's a person with a repair order. The same person record can also be a vendor contact or a claimant on another job. One person, one record.
+"Customer" is not a separate entity — a customer is a person with a repair order. The same person record can also be a vendor contact or a claimant on another job. One person, one record.
 </Info>
 
 ## Why records matter
 
-Everything links back to records. When you text a customer, the conversation lands on their person record and their repair order. When the same car comes back a year later, its vehicle record shows the prior repair. Good records are what let the AI agent, reports, and automations be accurate.
+Everything links back to records. When you text a customer, the conversation lands on their person record and their repair order. When a vehicle returns a year later, its record shows the earlier repair. Clean records are what make the Agent's answers, reports, and automations accurate.
 
 ## Working with records
 
-- **Search first.** Before creating a person or vehicle, search by name, phone, or VIN. Creating a duplicate splits message history and repair history.
-- **Duplicate suggestions.** The system surfaces likely duplicates with evidence. Merges are deliberate — review the evidence before confirming; merges are never automatic.
-- **Relationship counts.** Lists show how many repair orders, vehicles, or messages each record has, so you can tell a real customer record from a stub at a glance.
-- **Vehicle value.** Where configured, a vehicle's record can show a market-value range used to estimate expected insurance payout — refresh it from the repair order when the situation changes (e.g., a possible total).
+Follow these practices every time:
+
+1. **Search before you create.** Look up the person by name or phone, or the vehicle by VIN. A duplicate splits message history and repair history.
+2. **Check duplicate suggestions.** Kinetic surfaces likely duplicates with evidence. Review the evidence before you confirm a merge — merges are deliberate, never automatic.
+3. **Read relationship counts.** Record lists show how many repair orders, vehicles, or messages each record has. Counts tell you at a glance whether a record is real or a stub.
+4. **Refresh vehicle value when it matters.** Where configured, a vehicle record shows a market-value range that feeds the expected insurance payout on the repair order. Refresh it when the situation changes — for example, when a job might become a total loss.
 
 ## Contact details and consent
 
-A person's record is where preferred channel (text vs. email) and communication restrictions live. Honor what's recorded — if a customer asked not to be texted, that preference is stored on the record and applies to every repair order they appear on.
+A person's record stores their preferred channel — text or email — and any communication restrictions. Honor what is recorded. If a customer asked not to be texted, that preference lives on the record and applies to every repair order they appear on.

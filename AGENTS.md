@@ -14,8 +14,11 @@
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- The tenant is a **shop** — never "workspace," "organization," "store," or "location."
+- A repair order is a **repair order** — never "RO."
+- The workflow column is a **status** — never "stage" or "pipeline."
+- The second factor is an **authenticator app code** — never "TOTP."
+- The product is **Kinetic**, Collision Partners' collision repair management OS.
 
 ## Style preferences
 

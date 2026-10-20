@@ -3,33 +3,33 @@ title: "Integrations"
 description: "The external systems Kinetic connects to — what each one does and who manages it."
 ---
 
-Kinetic integrates with the tools a collision center already uses. Admins manage connections in Settings; each integration reports real connection health — you'll see failures, not fake "connected" badges.
+Kinetic connects to the systems a collision center already uses. Admins manage connections in Settings. Every integration reports real connection health, so you see failures — not a fake "connected" badge.
 
 ## Estimating
 
-- **CCC ONE** — the estimating system of record. CCC events update repair order fields automatically (CCC is authoritative for everything it supplies) and CCC statuses map to your shop's statuses through admin configuration. Estimates flow from CCC into Rivet for AI review.
+- **CCC ONE** — the estimating system of record. CCC events update repair order fields automatically, because CCC is authoritative for every field it supplies. CCC statuses map to your shop's statuses through admin configuration. Estimates flow from CCC into Rivet for AI review.
 
 ## Communications
 
 - **Text messaging** — the shop's shared texting line for customer conversations.
-- **Email** — outbound email and delivery tracking; the mailbox monitor watches the inbound mailbox for claim-related mail.
+- **Email** — outbound email with delivery tracking, plus a mailbox monitor that watches inbound mail for claim-related messages.
 - **Voice calls** — recorded calls with transcription.
-- **Phone screen pops** — incoming calls on your phone system open the matching customer record automatically.
+- **Phone screen pops** — an incoming call on your phone system can open the matching customer record automatically.
 - **Dictation** — speech-to-text for composing notes and messages hands-free from the floor.
 
-## Documents & signatures
+## Documents and signatures
 
-- **E-signatures** — send authorizations and documents for electronic signature; status tracks back to the repair order.
+- **E-signatures** — send authorizations and documents for electronic signature. Signature status tracks back to the repair order.
 
 ## Data services
 
-- **Vehicle market value** — market-value ranges that power expected insurance payout on repair orders.
-- **Contact enrichment** — optional, admin-gated; fills only *empty* contact fields, never overwrites what a human entered.
+- **Vehicle market value** — market-value ranges that power the expected insurance payout shown on repair orders.
+- **Contact enrichment** — optional and admin-gated. It fills only *empty* contact fields and never overwrites something a person entered.
 
 ## AI providers
 
-Estimate review, photo analysis, and agent/drafting features run on configured AI providers. AI usage is visible in **Settings → AI usage**.
+Estimate review, photo analysis, and the Agent's drafting features run on configured AI providers. Track usage in **Settings → AI usage**.
 
-## If an integration fails
+## When an integration fails
 
-Failures surface visibly — a broken connection shows in Settings and operations dependent on it degrade honestly rather than pretending to work. Reconnect the provider in Settings, and the system converges: queued work and retries resume where they left off. Report persistent failures to your admin or platform operator.
+Failures surface visibly. A broken connection appears in Settings, and the features that depend on it degrade honestly instead of pretending to work. Reconnect the provider in Settings; queued work and retries resume where they left off. If a failure persists, contact your admin or platform operator.

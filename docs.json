@@ -4,9 +4,23 @@
   "name": "Kinetic User Guide",
   "description": "User manual for Kinetic, Collision Partners' collision repair management OS — repair orders, records, messaging, scheduling, AI estimate review, and shop administration.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#005AD2",
+    "light": "#5E9DFF",
+    "dark": "#005AD2"
+  },
+  "fonts": {
+    "body": {
+      "family": "Inter",
+      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    },
+    "heading": {
+      "family": "Inter",
+      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    },
+    "code": {
+      "family": "Geist Mono",
+      "source": "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap"
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
