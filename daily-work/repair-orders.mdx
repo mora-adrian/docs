@@ -1,0 +1,62 @@
+---
+title: "Repair orders"
+description: "The heart of CPBMS — lifecycle boards, views, the record drawer, and the full repair order screen."
+---
+
+A **repair order** is one repair job on one vehicle. It gets a permanent ID at creation and keeps it forever — the same record follows the car from first contact through delivery, payment, and follow-up. Every message, photo, task, estimate, and event attaches to it.
+
+## The lifecycle boards
+
+Navigation is organized around four boards that mirror a vehicle's journey:
+
+| Board | What's on it |
+| --- | --- |
+| **Opportunity** | Leads and estimates — jobs quoted but not yet authorized or dropped off. |
+| **Repair** | Vehicles actively in the shop: authorized, in repair, waiting on parts, in QC. |
+| **Close** | Ready for pickup, delivered, awaiting payment or final paperwork. |
+| **Enrichment** | Post-repair follow-up: surveys, reviews, and record completion. |
+
+Each board offers **Table**, **Board** (status columns), and **Timeline** views on desktop, with equivalent row/card views on mobile. Summary counts and metrics always come from the server — they reflect the real data, not a filtered subset.
+
+## Filtering and finding
+
+- Filter by status, search by customer/vehicle/claim/number, sort by target date or age.
+- Use the command palette (`Cmd/Ctrl + K`) to jump straight to a repair order by number or customer name.
+
+## The record drawer (quick peek)
+
+Click a card once and the drawer answers *"what state is this vehicle in?"* without leaving the board: status, target date, parts received %, outcome likelihood, expected insurance payout, assigned seats, and the five most recent activity items. It's read-only — its one action opens the full record.
+
+## The full repair order screen
+
+Everything about one job, organized in tabs:
+
+- **Overview** — status, target/out date, repairability, parties, key facts.
+- **Parts** — ordered, received, and backordered parts with readiness percentage.
+- **Insurance** — insurer, claim number, payer context, supplement status.
+- **Files** — photos, documents, estimates; upload from desktop or the floor.
+- **Messages** — the full text/email thread with the customer.
+- **Calls** — call history and recordings.
+- **Activity** — the complete audit trail: every change, who made it, when.
+- **Projects & Tasks** — work items attached to this job.
+
+The header always shows the repair order number, status, and a *past target* indicator so urgency is visible at a glance.
+
+## Creating a repair order
+
+1. Click **New repair order** (or use the command palette).
+2. Link or create the **customer** and **vehicle** — always search first to avoid duplicates.
+3. Add **claim/insurer** details if it's a claim job, the target date, starting status, communication preference, and lead source.
+4. Save. The repair order number is assigned by the shop's sequence and shown immediately — it's real, not a placeholder.
+
+The system flags likely **duplicates** and lets you confirm or continue — pay attention to those suggestions; merging later is harder.
+
+## Status changes and CCC ONE
+
+Statuses are configured per shop (a typical flow: Opportunity → Estimate → Authorized → In repair → QC → Ready → Delivered). Move a repair order by dragging on the board or changing status in the record.
+
+If your shop is connected to **CCC ONE**, status updates from CCC flow in automatically and are mapped to your shop's statuses — CCC is authoritative for the fields it supplies, so a CCC event can update the record for you. CCC's own status label is shown as provenance, never as an invented column.
+
+<Warning>
+Never "park" a repair order in the wrong status to hide it from a board. Status is workflow truth — every report, target calculation, and automated follow-up depends on it being accurate.
+</Warning>

@@ -1,0 +1,29 @@
+---
+title: "Security & sign-in"
+description: "Accounts, authenticator app enrollment, sessions, and what to do when something looks wrong."
+---
+
+## Your account
+
+- One account per person, invited by your shop admin. Never share credentials — activity is audited per user.
+- An authenticator app code is required at sign-in and again for sensitive actions.
+- Keep recovery codes offline and private; they're the fallback if you lose your authenticator device.
+
+## Sessions
+
+- Sessions stay alive up to **4 hours idle** and end no later than **12 hours** after sign-in. You'll sign in roughly once per workday.
+- Using a shared/floor computer? Sign out when you're done — closing the tab doesn't end the session.
+
+## Sensitive-action checks
+
+Admin and destructive actions (members, integrations, credentials, deletes) ask for a fresh authenticator code, then trust you for a 240-minute window. If you get asked often, do your admin work in one sitting.
+
+## Lost access
+
+- **Lost phone / authenticator:** use a recovery code to sign in, then re-enroll in Settings → Security. No recovery codes? Your shop admin can reset you.
+- **Locked out entirely:** contact your admin — they manage members from inside CPBMS. There's no self-service "unlock" email for security reasons.
+
+## If something looks wrong
+
+- Unexpected sign-in emails, authenticator prompts you didn't trigger, or records changed that nobody touched: tell an admin **immediately** and change your password.
+- Never forward customer link URLs (survey, signature, facts of loss) to anyone but the intended customer.

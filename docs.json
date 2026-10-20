@@ -1,7 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "CPBMS User Guide",
+  "description": "User manual for the Collision Partners Body Management System — repair orders, records, messaging, scheduling, AI estimate review, and shop administration.",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -14,24 +15,43 @@
         "group": "Getting Started",
         "pages": [
           "index",
-          "quickstart"
+          "quickstart",
+          "getting-started/roles"
+        ]
+      },
+      {
+        "group": "Daily Work",
+        "pages": [
+          "daily-work/today",
+          "daily-work/repair-orders",
+          "daily-work/records",
+          "daily-work/messages",
+          "daily-work/calendar",
+          "daily-work/csi"
+        ]
+      },
+      {
+        "group": "AI & Estimate Review",
+        "pages": [
+          "ai-review/rivet",
+          "ai-review/agent"
+        ]
+      },
+      {
+        "group": "Administration",
+        "pages": [
+          "admin/settings",
+          "admin/integrations",
+          "admin/security"
+        ]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "best-practices"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -41,14 +61,9 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@collisionpartners.com"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
@@ -63,10 +78,6 @@
     ]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

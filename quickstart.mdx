@@ -1,47 +1,56 @@
 ---
 title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+description: "Sign in, set up your authenticator app, and complete your first day in CPBMS."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+## 1. Get invited
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+Access is by invitation only. A shop owner or admin adds you in **Settings → Members**. You'll receive an email to set your password.
 
-## Prerequisites
+<Note>
+If your invite doesn't arrive, check spam, then ask your admin to resend it. Invites are how your account is linked to the right shop — never share sign-up links.
+</Note>
 
-Before you begin, you must have:
+## 2. Sign in
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+Go to your shop's address — it looks like `your-shop.collisionpartners.app` — or start at `center.collisionpartners.app` and pick your shop.
 
-## Get started
+1. Enter your work email and password.
+2. On first sign-in you'll be asked to enroll an **authenticator app** (1Password, Authy, Google Authenticator, etc.). Scan the QR code, then enter the code it shows.
+3. Save your recovery codes somewhere safe — they're your way back in if you lose your phone.
+
+<Warning>
+CPBMS requires an authenticator app code on every account. Sessions expire after 4 hours of inactivity and always end 12 hours after sign-in, so expect to sign in again each morning.
+</Warning>
+
+## 3. Find your way around
+
+- **Navigation rail (desktop):** collapsible sidebar with all sections. The shop name and your name/role show at the bottom.
+- **Mobile:** app bar with a navigation drawer — everything except heavy admin work is supported on the floor.
+- **Command palette:** press `Cmd/Ctrl + K` to search records, jump to any screen, or create things without touching the mouse.
+
+## 4. Your first day checklist
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Open Today">
+    Start on the **Today** screen. It shows repair orders assigned to you, tasks due, and items that need attention.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
+  <Step title="Walk the boards">
+    Open **Repair** and scan every vehicle in the shop. Click a card for the quick-peek drawer; open the full record for detail.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
+  <Step title="Check Messages">
+    The **Messages** inbox holds inbound texts and emails, including items that need triage. Reply from here — everything is saved to the customer and repair order.
+  </Step>
+  <Step title="Update one repair order">
+    Change a status, add a note, and upload a photo on any active repair order. If you can do those three things, you can do 90% of daily work.
+  </Step>
+  <Step title="Set up notifications">
+    In **Settings → Preferences**, choose what you want to be notified about and how.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## If you get stuck
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+- **"You do not have permission"** — the action needs a higher role or a recent authenticator check. See [Roles & permissions](/getting-started/roles).
+- **Asked for an authenticator app code mid-task** — sensitive actions (changing members, integrations, deleting) require a fresh code. That's normal.
+- **Nothing loads** — check your internet, then ask your admin; a membership problem looks different from an outage.

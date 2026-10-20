@@ -1,0 +1,35 @@
+---
+title: "Integrations"
+description: "The external systems CPBMS connects to — what each one does and who manages it."
+---
+
+CPBMS integrates with the tools a collision center already uses. Admins manage connections in Settings; each integration reports real connection health — you'll see failures, not fake "connected" badges.
+
+## Estimating
+
+- **CCC ONE** — the estimating system of record. CCC events update repair order fields automatically (CCC is authoritative for everything it supplies) and CCC statuses map to your shop's statuses through admin configuration. Estimates flow from CCC into Rivet for AI review.
+
+## Communications
+
+- **Text messaging** — the shop's shared texting line for customer conversations.
+- **Email** — outbound email and delivery tracking; the mailbox monitor watches the inbound mailbox for claim-related mail.
+- **Voice calls** — recorded calls with transcription.
+- **Phone screen pops** — incoming calls on your phone system open the matching customer record automatically.
+- **Dictation** — speech-to-text for composing notes and messages hands-free from the floor.
+
+## Documents & signatures
+
+- **E-signatures** — send authorizations and documents for electronic signature; status tracks back to the repair order.
+
+## Data services
+
+- **Vehicle market value** — market-value ranges that power expected insurance payout on repair orders.
+- **Contact enrichment** — optional, admin-gated; fills only *empty* contact fields, never overwrites what a human entered.
+
+## AI providers
+
+Estimate review, photo analysis, and agent/drafting features run on configured AI providers. AI usage is visible in **Settings → AI usage**.
+
+## If an integration fails
+
+Failures surface visibly — a broken connection shows in Settings and operations dependent on it degrade honestly rather than pretending to work. Reconnect the provider in Settings, and the system converges: queued work and retries resume where they left off. Report persistent failures to your admin or platform operator.

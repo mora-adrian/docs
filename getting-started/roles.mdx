@@ -1,0 +1,37 @@
+---
+title: "Roles & permissions"
+description: "Who can do what in CPBMS — owners, admins, members, and extra verification for sensitive actions."
+---
+
+Access in CPBMS is based on **membership**: an explicit, audited link between your account and a specific shop (or the parent company). There is no sharing links, no "temporary access," and no way to see another shop's data — a repair order in a different shop is indistinguishable from one that doesn't exist.
+
+## Membership roles
+
+| Role | What they can do |
+| --- | --- |
+| **Owner** | Full control of the shop: everything admins can do, plus ownership-sensitive actions like transferring or deleting the shop's configuration. There must always be at least one owner — the app won't let you remove or demote the last one. |
+| **Admin** | Day-to-day administration: manage members, shop settings, messaging, integrations, workflow statuses, and archive/delete records. Cannot transfer ownership or act across other shops. |
+| **Member** | Normal operational work: create and update repair orders, customers, vehicles, messages, tasks, notes, files, and statuses. Cannot manage members, change integrations or security settings, or delete/archive. |
+| **Company owner** | (Multi-shop organizations) Audited administration across the shops under the parent company, entered deliberately from the company hub — never silently. |
+
+<Info>
+Your job title in the employee directory (e.g., "technician," "estimator") is informational — permissions come from your membership role, not your job role.
+</Info>
+
+## The extra verification layer
+
+Some actions are marked **sensitive**: managing members and roles, changing credentials or integrations, and destructive operations. When you attempt one, you'll be asked for a fresh authenticator app code — even though you're already signed in. This "step-up" lasts 240 minutes, so you won't be re-asked constantly during an admin session.
+
+## Picking the right role
+
+- **Front office / estimators / CSRs / technicians / parts:** usually **Member**.
+- **Shop manager / office manager:** usually **Admin** — they need members and settings.
+- **Shop owner / GM:** **Owner**. Keep it to one or two people.
+
+<Tip>
+Least privilege wins. It's much easier to promote someone later than to undo a deleted record. If someone only needs to read dashboards, Member is still the right role — read access isn't restricted by role, write access is.
+</Tip>
+
+## Removing or changing access
+
+Admins change roles or remove members in **Settings → Members**. Removal ends that person's access to your shop but doesn't touch their memberships in other shops or delete their work — notes, messages, and history they created stay attributed to them.

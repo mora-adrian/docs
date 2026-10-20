@@ -1,0 +1,31 @@
+---
+title: "Records: people, companies & vehicles"
+description: "The shared address book and garage — one record per real-world person, company, and car."
+---
+
+CPBMS keeps three core record types, all searchable from the nav and the command palette:
+
+| Record | What it holds |
+| --- | --- |
+| **People** | Customers, claimants, contacts at other businesses. Phone, email, preferred contact method, and every repair order and message they're connected to. |
+| **Companies** | Insurers, tow companies, dealers, vendors, fleets, referral sources. Companies have their own contacts (people linked to them). |
+| **Vehicles** | Year/make/model/trim, VIN, color, plate, and the full repair history for that car — including market value information when available. |
+
+<Info>
+"Customer" isn't a separate entity — it's a person with a repair order. The same person record can also be a vendor contact or a claimant on another job. One person, one record.
+</Info>
+
+## Why records matter
+
+Everything links back to records. When you text a customer, the conversation lands on their person record and their repair order. When the same car comes back a year later, its vehicle record shows the prior repair. Good records are what let the AI agent, reports, and automations be accurate.
+
+## Working with records
+
+- **Search first.** Before creating a person or vehicle, search by name, phone, or VIN. Creating a duplicate splits message history and repair history.
+- **Duplicate suggestions.** The system surfaces likely duplicates with evidence. Merges are deliberate — review the evidence before confirming; merges are never automatic.
+- **Relationship counts.** Lists show how many repair orders, vehicles, or messages each record has, so you can tell a real customer record from a stub at a glance.
+- **Vehicle value.** Where configured, a vehicle's record can show a market-value range used to estimate expected insurance payout — refresh it from the repair order when the situation changes (e.g., a possible total).
+
+## Contact details and consent
+
+A person's record is where preferred channel (text vs. email) and communication restrictions live. Honor what's recorded — if a customer asked not to be texted, that preference is stored on the record and applies to every repair order they appear on.
