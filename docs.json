@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "CPBMS User Guide",
-  "description": "User manual for the Collision Partners Body Management System — repair orders, records, messaging, scheduling, AI estimate review, and shop administration.",
+  "name": "Kinetic User Guide",
+  "description": "User manual for Kinetic, Collision Partners' collision repair management OS — repair orders, records, messaging, scheduling, AI estimate review, and shop administration.",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
