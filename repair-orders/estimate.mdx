@@ -5,13 +5,13 @@ description: "The Estimate tab: read the line items, filter them, understand the
 
 import { Key } from "/snippets/ui.jsx";
 
-The **Estimate** tab shows the current estimate for the repair order: every repair, part, and charge, and what they add up to. The estimate is written in **CCC ONE** and arrives here automatically. Kinetic displays it, explains it, and can review it. It does not edit it.
+The **Estimate** tab shows the current estimate for the repair order: every repair, part, and charge, and what they add up to. The estimate is written in **CCC ONE** and arrives here automatically. Lever displays it, explains it, and can review it. It does not edit it.
 
 <Info>
 **No estimate yet?** The tab says *Estimates sync from CCC ONE on repair-order update.* If you just wrote one, give it a moment. Estimates for jobs still on the Opportunities board are visible here but cannot be reviewed with Rivet until the car becomes a repair order in progress.
 </Info>
 
-## The top bar
+## The Top Bar
 
 At the top of the tab:
 
@@ -19,7 +19,7 @@ At the top of the tab:
 - **Explain estimate**: a plain-language walkthrough for the customer. See [below](#explain-the-estimate-to-the-customer).
 - **Audit with Rivet**, or **See audit results** once a review exists. See [below](#audit-with-rivet).
 
-## The line table
+## The Line Table
 
 | Column | What it shows |
 | --- | --- |
@@ -35,7 +35,7 @@ At the top of the tab:
 | **Category** | The kind of labor: Mechanical, Body, Structural, Paint, and so on. |
 | **Paint** | The refinish (paint) hours. |
 
-### Filter the lines
+### Filter the Lines
 
 Above the table, a row of switches narrows the view. It is a **filter**, not an edit: rows disappear from the table but the estimate itself never changes.
 
@@ -50,7 +50,7 @@ Within one group you can choose several options (any of them matches). Across gr
 
 When any filter is on, the bar says **Showing 12 of 48 lines**, and **Clear filters** resets everything. If nothing matches you see **No lines match these filters**.
 
-## The totals bar
+## The Totals Bar
 
 The bar pinned at the bottom of the tab shows three figures:
 
@@ -62,7 +62,7 @@ The bar pinned at the bottom of the tab shows three figures:
 
 If a line-priced total is larger than the CCC ONE subtotal, the labor figure is not shown, with an explanation: *Line prices exceed the CCC ONE subtotal, so labor is not shown.*
 
-## Explain the estimate to the customer
+## Explain the Estimate to the Customer
 
 An estimate is full of abbreviations. **Explain estimate** writes a version a customer can follow.
 
@@ -81,7 +81,7 @@ An estimate is full of abbreviations. **Explain estimate** writes a version a cu
   </Step>
 </Steps>
 
-### What the explanation will and will not say
+### What the Explanation Will and Will Not Say
 
 The AI that writes it is held to firm rules:
 
@@ -90,7 +90,7 @@ The AI that writes it is held to firm rules:
 - It says **nothing about insurance coverage, deductibles, fault, approval, timelines, or safety guarantees**, and does not name the insurer.
 - It is under about 700 words, in plain short sentences, with at most three analogies.
 
-### A warning you may see
+### A Warning You May See
 
 If the estimate changed after the explanation was written, the sheet says **The estimate changed since this was written.** Choose **Regenerate** before you send, or the customer may get an explanation of an older version. If the customer has no email address, the send button is disabled with **The primary customer has no email address.**
 
@@ -104,7 +104,7 @@ Choose **Audit with Rivet** to ask [Rivet](/ai/rivet) to look for billable opera
 
 Rivet reviews only certain estimates: the repair order must be past the opportunity stage, not archived, not a total loss, and the estimate total must be more than $300.
 
-## Good to know
+## Good to Know
 
 - The tab shows the estimate CCC ONE most recently sent.
 - Lines come in the order CCC ONE wrote them.

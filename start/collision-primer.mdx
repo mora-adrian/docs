@@ -1,79 +1,79 @@
 ---
-title: "Collision repair in plain English"
-description: "A walk through a collision repair from the customer's first call to the day they drive away, so every screen in Kinetic makes sense even if you have never worked in a body shop."
+title: "Collision Repair in Plain English"
+description: "A walk through a collision repair from the customer's first call to the day they drive away, so every screen in Lever makes sense even if you have never worked in a body shop."
 ---
 
 import { Pill } from "/snippets/ui.jsx";
 
-You do not need to know anything about cars to use Kinetic. You do need to know *why* the job moves the way it does, because almost every screen is a view of one of these steps. This page tells the story once, in order.
+You do not need to know anything about cars to use Lever. You do need to know *why* the job moves the way it does, because almost every screen is a view of one of these steps. This page tells the story once, in order.
 
-## The short version
+## The Short Version
 
-A customer's car is damaged. Someone has to decide **what is wrong**, **who pays**, **what parts are needed**, and **how long it will take**. Often the answer changes halfway through, because damage hides behind panels. The shop repairs the car, checks it, and hands it back. Kinetic tracks each of those steps.
+A customer's car is damaged. Someone has to decide **what is wrong**, **who pays**, **what parts are needed**, and **how long it will take**. Often the answer changes halfway through, because damage hides behind panels. The shop repairs the car, checks it, and hands it back. Lever tracks each of those steps.
 
-## The story, step by step
+## The Story, Step by Step
 
 <Steps>
   <Step title="The customer calls, or the shop is called">
     The driver's car was hit, or hit something. They may be the **insured** (they hold the insurance policy), or a **claimant** (they are making a claim against someone else's policy). Either way, a **claim** is opened with an insurance company, the **insurer**. The shop's first job is to learn who the customer is, what car it is, and how to reach them.
 
-    *In Kinetic:* the job begins as a lead on the **Opportunities** board. See [Statuses](/pipeline/statuses#opportunities).
+    *In Lever:* the job begins as a lead on the **Opportunities** board. See [Statuses](/pipeline/statuses#opportunities).
   </Step>
   <Step title="Someone writes the estimate">
     An **estimator** inspects the damage and writes an **estimate**: an itemized list of every repair, every part, and every hour of labor, with prices. Shops write estimates in software; yours uses **CCC ONE**. The insurer's own **adjuster** may write a separate estimate, and the two often disagree.
 
-    *In Kinetic:* the estimate arrives from CCC ONE and appears on the **Estimate** tab of the repair order.
+    *In Lever:* the estimate arrives from CCC ONE and appears on the **Estimate** tab of the repair order.
   </Step>
   <Step title="The customer drops off the car">
-    The customer drives in, or the shop sends a **tow truck** to bring the car. Kinetic calls these **Experience in** (the customer brings it) and **Concierge in** (the shop's truck picks it up). The car is now "in the shop" and the clock starts.
+    The customer drives in, or the shop sends a **tow truck** to bring the car. Lever calls these **Experience in** (the customer brings it) and **Concierge in** (the shop's truck picks it up). The car is now "in the shop" and the clock starts.
 
-    *In Kinetic:* the job moves to the **Repairs** board and shows <Pill tone="needs">Arrival & Triage</Pill>.
+    *In Lever:* the job moves to the **Repairs** board and shows <Pill tone="needs">Arrival & Triage</Pill>.
   </Step>
   <Step title="A first scan, then teardown">
     Modern cars are full of computers. Before anyone repairs anything, a technician plugs in a diagnostic tool and **scans** the car to read its fault codes. This is the **first scan** or **pre-repair scan**, and insurers and manufacturers expect it. Then the technician takes the damaged area apart (**teardown**, also called **blueprinting**) to see what is really broken.
 
-    *In Kinetic:* a small scan icon on the card shows whether the first scan is done. See [Repair order facts](/repair-orders/facts#first-scan).
+    *In Lever:* a small scan icon on the card shows whether the first scan is done. See [Repair order facts](/repair-orders/facts#first-scan).
   </Step>
   <Step title="Hidden damage means a supplement">
     Once the car is apart, the shop often finds more damage than the original estimate listed. The shop writes a **supplement**: an add-on to the estimate. The insurer must **approve** it before the shop is paid for the extra work, and approval can take days. While the shop waits, the car often sits.
 
-    *In Kinetic:* the job is in <Pill tone="waiting">Supplement Hold</Pill>. Kinetic can follow up with the adjuster for you. See [Email](/communicate/email#supplement-emails-and-automatic-follow-up).
+    *In Lever:* the job is in <Pill tone="waiting">Supplement Hold</Pill>. Lever can follow up with the adjuster for you. See [Email](/communicate/email#supplement-emails-and-automatic-follow-up).
   </Step>
   <Step title="Waiting for parts">
     The shop orders the parts the estimate calls for: **OEM** parts (made by the car's manufacturer), **aftermarket** parts (made by someone else), or **LKQ** parts (recycled from other cars, short for "like, kind, and quality"). Parts arrive on different days, and a single missing part can stall a repair.
 
-    *In Kinetic:* <Pill tone="waiting">Parts Hold</Pill>, and the **Parts** tab shows what has arrived.
+    *In Lever:* <Pill tone="waiting">Parts Hold</Pill>, and the **Parts** tab shows what has arrived.
   </Step>
   <Step title="The repair itself">
     The work moves through departments: **body** (straightening and replacing panels), **structural** (the frame and the parts that protect passengers), **mechanical**, and **paint** (painting new panels and **blending** the color into neighboring panels so it matches). Some work is **sublet**, meaning sent to an outside specialist such as a glass shop.
 
-    *In Kinetic:* the job moves through Body, Structural, Mechanical, Paint, and Sublets statuses.
+    *In Lever:* the job moves through Body, Structural, Mechanical, Paint, and Sublets statuses.
   </Step>
   <Step title="Reassembly, calibration, quality check">
     The car is put back together. Cameras and radar sensors that help the driver brake and steer, called **ADAS** (advanced driver assistance systems), must be **calibrated**, and the car is scanned again. A final quality check follows, then a detail.
 
-    *In Kinetic:* <Pill tone="ontrack">Reassembly</Pill>, <Pill tone="ontrack">Calibrations & Diagnostics</Pill>, and <Pill tone="ontrack">Detail</Pill>.
+    *In Lever:* <Pill tone="ontrack">Reassembly</Pill>, <Pill tone="ontrack">Calibrations & Diagnostics</Pill>, and <Pill tone="ontrack">Detail</Pill>.
   </Step>
   <Step title="Pickup, payment, and follow-up">
     The customer picks up the car and pays whatever the insurer did not: the **deductible** (the customer's share under their policy) and anything else owed. A few days later, the shop asks how it went. Satisfaction scores, usually called **CSI**, matter a great deal, because insurers and customers both read them.
 
-    *In Kinetic:* **Close & Deliver**, then **Enrichment**. See [CSI](/csi/overview).
+    *In Lever:* **Close & Deliver**, then **Enrichment**. See [CSI](/csi/overview).
   </Step>
 </Steps>
 
-## Two special cases
+## Two Special Cases
 
-### The car is a total loss
+### The Car Is a Total Loss
 
 If repairing the car would cost close to, or more than, what the car is worth, the insurer may declare it a **total loss**. They pay the customer the car's value instead of paying for repairs. The shop's work stops and the customer signs a release.
 
-Kinetic tracks this with a **Repairability** setting, and shows possible total losses in their own lane on the Repairs board. See [Total loss](/playbooks/total-loss).
+Lever tracks this with a **Repairability** setting, and shows possible total losses in their own lane on the Repairs board. See [Total loss](/playbooks/total-loss).
 
-### The customer disputes the insurer's number
+### The Customer Disputes the Insurer's Number
 
-A customer can invoke the **appraisal clause** in their policy, which lets them hire an independent **appraiser** to challenge the insurer's amount. Kinetic includes a ready-made document for this. See [Signatures](/repair-orders/signatures).
+A customer can invoke the **appraisal clause** in their policy, which lets them hire an independent **appraiser** to challenge the insurer's amount. Lever includes a ready-made document for this. See [Signatures](/repair-orders/signatures).
 
-## Who is who
+## Who Is Who
 
 | Person | What they do |
 | --- | --- |
@@ -81,14 +81,14 @@ A customer can invoke the **appraisal clause** in their policy, which lets them 
 | **Insurer** | The insurance company that pays all or part of the repair. |
 | **Adjuster** | The insurer's employee who reviews the damage and approves the money. |
 | **Appraiser** | An independent person who inspects damage and estimates its cost. |
-| **Estimator** | Writes the shop's estimate. In Kinetic's language: part of the **repair planner** role. |
-| **Client advocate** | The shop employee who looks after the customer from first call to delivery. Kinetic's term for what many shops call a service advisor or customer service representative. |
+| **Estimator** | Writes the shop's estimate. In Lever's language: part of the **repair planner** role. |
+| **Client advocate** | The shop employee who looks after the customer from first call to delivery. Lever's term for what many shops call a service advisor or customer service representative. |
 | **Repair planner** | The shop employee who plans the work and keeps it moving. Often an estimator or production manager. |
 | **Technician** | The person who repairs the car. |
 | **Referrer** | The person or business who sent the customer to the shop. |
 | **Tow driver** | Moves cars between the customer, the shop, and vendors. |
 
-## Money in one minute
+## Money in One Minute
 
 - The **estimate** is the total price of the repair.
 - The **insurer** pays most of it, minus the customer's **deductible**.
@@ -96,12 +96,12 @@ A customer can invoke the **appraisal clause** in their policy, which lets them 
 - A **supplement** adds to the total after the first estimate.
 - The shop collects the rest from the customer at pickup.
 
-The **ARW** (accounts receivable worksheet) tab is where Kinetic tracks all of this. See [ARW](/repair-orders/arw).
+The **ARW** (accounts receivable worksheet) tab is where Lever tracks all of this. See [ARW](/repair-orders/arw).
 
-## Time in one minute
+## Time in One Minute
 
-- **Target date** (also called the **out date**) is when the shop expects to hand the car back. Kinetic shows how much it trusts that date. See [Facts](/repair-orders/facts#target-date).
+- **Target date** (also called the **out date**) is when the shop expects to hand the car back. Lever shows how much it trusts that date. See [Facts](/repair-orders/facts#target-date).
 - **Cycle time**, sometimes called **key-to-key**, is the number of days between the customer handing over the key and getting it back.
 - A car **past its target date** shows as late, whatever its status.
 
-Next, learn the words Kinetic uses in the [glossary](/start/glossary), or go straight to [signing in](/start/sign-in).
+Next, learn the words Lever uses in the [glossary](/start/glossary), or go straight to [signing in](/start/sign-in).

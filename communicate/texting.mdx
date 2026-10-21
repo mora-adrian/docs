@@ -1,21 +1,21 @@
 ---
-title: "Texting customers"
+title: "Texting Customers"
 description: "How to send and read texts from a repair order: the composer's buttons, templates, AI rewrite, dictation, voice memos, attachments, reactions, and the readings that warn you before a text can cause harm."
 ---
 
 import { Key, Tag } from "/snippets/ui.jsx";
 
-Most customers prefer to be texted. In Kinetic, every text to and from a customer is part of the repair order, so the next person to pick up the job sees the whole conversation. You text from the **Texts** tab of a repair order, or from [Messages](/communicate/messages) once a conversation belongs to a job. Both show the same composer.
+Most customers prefer to be texted. In Lever, every text to and from a customer is part of the repair order, so the next person to pick up the job sees the whole conversation. You text from the **Texts** tab of a repair order, or from [Messages](/communicate/messages) once a conversation belongs to a job. Both show the same composer.
 
 <Info>
 Texts go out on the **shop's own texting line**, as **iMessage** where the customer's phone supports it and as regular **text (SMS)** otherwise. Customers see one consistent shop number, never your personal one. Admins can see the number in **Settings → Messaging**.
 </Info>
 
 <Warning>
-**A customer must text your shop first, or already have an open thread, before you can reply.** If you try to start a conversation and Kinetic says **Message could not be sent. The contact may need to text your shop number first.**, that is why. Ask the customer to text the shop, or call or email them.
+**A customer must text your shop first, or already have an open thread, before you can reply.** If you try to start a conversation and Lever says **Message could not be sent. The contact may need to text your shop number first.**, that is why. Ask the customer to text the shop, or call or email them.
 </Warning>
 
-## Reading the thread
+## Reading the Thread
 
 - Messages are drawn like iMessage: **yours on the right in blue**, **the customer's on the left in gray**. AI-assistant output appears as plain text.
 - Date markers (**Today**, **Yesterday**, a weekday, then a date) divide the days.
@@ -24,14 +24,14 @@ Texts go out on the **shop's own texting line**, as **iMessage** where the custo
 - Pictures, videos, audio, and files show inline. Click one to open it. Audio plays in place.
 - **No messages yet** appears on a new thread, with **Send the first text to start this conversation.**
 
-### Delivery status
+### Delivery Status
 
 Right-click a message and choose **Info** to see **Message info**: when it was **Received**, who **Sent by**, the **Service** (iMessage or SMS), and its **Status**:
 
 | Status | Meaning |
 | --- | --- |
 | **Sending** | On its way out. A new message reads **Awaiting confirmation** until the carrier answers. |
-| **Sent** | Left Kinetic. |
+| **Sent** | Left Lever. |
 | **Delivered** | Reached the customer's phone. |
 | **Read** | The customer opened it (iMessage only). |
 | **Received** | An incoming message. |
@@ -43,7 +43,7 @@ Hover over a message (or tap, on a phone) for the reaction button. It opens a ro
 
 Right-click a message to **Copy** its text.
 
-## The composer
+## The Composer
 
 The composer is one bordered card. The text box sits on top, and a row of buttons runs along the bottom.
 
@@ -59,7 +59,7 @@ The composer is one bordered card. The text box sits on top, and a row of button
 
 You can attach **up to 10** items to one message. Sending several attachments over SMS is less reliable than over iMessage, and a line under the box warns you: **Attachment delivery over SMS/MMS isn't guaranteed.** or **Some carriers may not deliver multiple attachments over SMS/MMS.**
 
-You cannot mix a voice memo with other attachments. Kinetic tells you: **Remove the voice memo before attaching files.**
+You cannot mix a voice memo with other attachments. Lever tells you: **Remove the voice memo before attaching files.**
 
 ### Templates
 
@@ -97,32 +97,32 @@ If it fails, you see **Could not improve this message. Try again.** and your dra
 You are still the author. Read the result before you send it. Improve with AI can make wording better; it cannot make a wrong statement right.
 </Note>
 
-### Talk to text and voice memos
+### Talk to Text and Voice Memos
 
 - **Talk to text** (the person-with-sound-waves button) lets you speak. The button turns into **Stop and insert text** while it listens, and **Transcribing** while it works. The words appear in the box at your cursor. One take is capped at **two minutes**.
 - **Record voice memo** (the waveform button) swaps the composer for a live waveform. **Stop voice memo** finishes it, and it is sent as an audio message.
 
 Your browser asks for microphone permission the first time. If you refuse, you will see **Microphone access was denied. Allow it in the browser to record a voice memo.**
 
-### Drafts are saved
+### Drafts Are Saved
 
-What you type is saved automatically (**Draft saved** appears below the box), and it stays on the repair order's thread. If someone else edits the same draft, Kinetic shows both versions and lets you choose **Keep my version** or **Use the other version**.
+What you type is saved automatically (**Draft saved** appears below the box), and it stays on the repair order's thread. If someone else edits the same draft, Lever shows both versions and lets you choose **Keep my version** or **Use the other version**.
 
-### Saving a customer's photos
+### Saving a Customer's Photos
 
 Right-click an incoming picture or video and choose **Save to repair order files**, or use the link under the attachment. It files onto the repair order's **Files** tab, and you see **Saved to repair order files**.
 
-## Chat health and line reputation
+## Chat Health and Line Reputation
 
 Texting a person who does not want to hear from you is a bad idea for them and for your texting line. The header of every thread carries up to three live readings, so you know before you press **Send**.
 
-### Conversation sentiment
+### Conversation Sentiment
 
 An AI reading of how the customer feels: **Concerned**, **Negative**, **Neutral**, **Positive**, or **Delighted**. It shows a **score from 0 to 100**, a **trend** (improving, steady, declining), a one-line summary, and the **signals** behind it, such as *Customer waiting 3 h for a reply* or *4 texts in a row without a reply*.
 
 It appears after the next analysis run. Until then you see **No sentiment reading yet — it appears after the next analysis run.**
 
-### Chat health
+### Chat Health
 
 How this conversation is doing, according to the texting network:
 
@@ -134,7 +134,7 @@ How this conversation is doing, according to the texting network:
 | **Opted out** | The customer texted **STOP**. | **Sending is blocked** until they text back. |
 | **Unknown** | No reading yet. | Nothing special. |
 
-### Line reputation
+### Line Reputation
 
 How the shop's texting line stands with the phone carriers:
 
@@ -147,11 +147,11 @@ How the shop's texting line stands with the phone carriers:
 
 A small badge near the top shows the line's connection and reputation together.
 
-### Warnings in the composer
+### Warnings in the Composer
 
 When readings get worse, the composer warns you with specifics, for example *You've sent 4 texts without a reply* or *Line reputation is slipping. Send less and wait for replies.* An **opted-out** customer is a hard stop: sending is blocked, not just discouraged.
 
-## When you cannot send
+## When You Cannot Send
 
 | You see | Why |
 | --- | --- |
@@ -160,7 +160,7 @@ When readings get worse, the composer warns you with specifics, for example *You
 | **Messaging is no longer configured for this shop** | The shop's text line is down. Tell your admin. |
 | The **Send** button is disabled | The box is empty, an attachment is still uploading, or the customer has no mobile number. |
 
-## Good habits
+## Good Habits
 
 <Columns cols={2}>
   <Card title="Do" icon="check">

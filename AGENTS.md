@@ -18,7 +18,7 @@
 - A repair order is a **repair order** — never "RO."
 - The workflow column is a **status** — never "stage" or "pipeline."
 - The second factor is an **authenticator app code** — never "TOTP."
-- The product is **Kinetic**, Collision Partners' collision repair management OS.
+- The product is **Lever**, Collision Partners' collision repair management OS.
 
 ## Style preferences
 
@@ -32,7 +32,7 @@
 
 ## Content boundaries
 
-- Document only what the app actually does — verify against `src/features` in the Kinetic codebase before writing. Never invent features, metrics, or controls.
+- Document only what the app actually does — verify against `src/features` in the Lever codebase before writing. Never invent features, metrics, or controls.
 - "CCC ONE" is the only permitted user-facing provider name. Do not name Linq, Resend, Documenso, ElevenLabs, Gemini, Anthropic, or other providers in docs copy.
 - Keep AI descriptions honest: the Agent and Rivet retrieve, summarize, classify, draft, and recommend — they never decide coverage, liability, or delivery commitments.
 - Cover every screen, tab, view, filter, and control. This is a reference manual, not a marketing overview.

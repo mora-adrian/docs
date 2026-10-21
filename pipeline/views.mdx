@@ -1,5 +1,5 @@
 ---
-title: "Views, search, and filters"
+title: "Views, Search, and Filters"
 description: "The Table, Board, and Timeline views: how to read a card, move a repair order, search, filter, choose columns, and understand the production load line."
 ---
 
@@ -13,11 +13,11 @@ Each of the four boards can be shown three ways. Switch between them with the **
 | **Board** | Seeing how many jobs are in each status, and moving jobs along. |
 | **Timeline** | Seeing how long each job is planned to take, and which ones are running late. |
 
-## Board view
+## Board View
 
 The Board shows one **lane** (a vertical column) for each status, from left to right, with a **card** for each repair order.
 
-### Reading a lane
+### Reading a Lane
 
 - A **colored dot** and the **status name** at the top, then a gray count of cards.
 - At the bottom, **how many repair orders** the lane holds and their **total estimate value**.
@@ -27,7 +27,7 @@ The Board shows one **lane** (a vertical column) for each status, from left to r
 
 Scroll sideways with your mouse or trackpad, or press <Key>←</Key> and <Key>→</Key> to step one lane at a time. <Key>↑</Key> and <Key>↓</Key> scroll the page.
 
-### Reading a card
+### Reading a Card
 
 <BoardCardExample />
 
@@ -47,7 +47,7 @@ On the other boards the bottom-right corner shows a date instead of the warning:
 
 A **Won** or **Lost** tag appears at the top right of a card on Opportunities and Close & Deliver when the job's outcome is decided.
 
-### Moving a repair order
+### Moving a Repair Order
 
 You can move a card to another status **on the same board** in two ways:
 
@@ -66,7 +66,7 @@ What you cannot do:
 
 If CCC ONE later reports a different production stage, it can move the card again. The latest word from CCC ONE wins.
 
-### The production load line
+### The Production Load Line
 
 On the Repairs board, a small group of lanes (from the first production status onward) carries a line of text at the top:
 
@@ -75,11 +75,11 @@ On the Repairs board, a small group of lanes (from the first production status o
 
 These figures are *estimate hours the shop can process*, not hours anyone has worked. See [Production capacity](/admin/production).
 
-### Loading and errors
+### Loading and Errors
 
 While the board loads it shows a pale outline of lanes and cards. If loading fails it shows an error with a retry button, and a message about your connection if you are offline. It never shows an empty board in place of an error.
 
-## Table view
+## Table View
 
 The Table is a dense grid with one row per repair order.
 
@@ -141,13 +141,13 @@ Two more switches under **Avatars** hide or show the **Customer avatar** and **V
 
 **Your column choices and widths are saved in this browser, on this device.** Drag a column edge to resize it. If you use a different computer, you will set them again.
 
-### Sorting and paging
+### Sorting and Paging
 
 Click a column heading to sort ascending, again for descending. Sorting happens across the whole board, not just the visible rows. Use **Previous** and **Next** at the bottom to move between pages. The table shows the total count, which comes from the server so it stays honest when you filter.
 
 If nothing matches, the table says **No matching repair orders** and suggests **Try another search or clear the filters.** If the board is truly empty it says **No repair orders yet**, with the reminder that **Repair orders arrive from CCC ONE.**
 
-## Timeline view
+## Timeline View
 
 The Timeline lays every repair order out on a calendar.
 
@@ -163,11 +163,11 @@ Controls at the top: **Zoom out** and **Zoom in** (three levels), and **Today** 
 
 A repair order appears on the Timeline only once it has a start or arrival date. Otherwise you will see **No scheduled repair orders**.
 
-## Refresh data
+## Refresh Data
 
 The circular-arrow **Refresh data** button reloads everything on the screen. Use it if a teammate told you they changed something and you do not see it yet.
 
-## Do and don't
+## Do and Don't
 
 <Columns cols={2}>
   <Card title="Do" icon="check">

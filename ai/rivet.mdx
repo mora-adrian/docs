@@ -5,7 +5,7 @@ description: "Rivet reviews an estimate and its photos for operations that may b
 
 import { Tag } from "/snippets/ui.jsx";
 
-**Rivet** is Kinetic's estimate reviewer. An estimate is the itemized list of repairs, parts, and labor prepared for a damaged car. Estimates sometimes leave things out: a sensor that must be recalibrated after a bumper is replaced, a seam sealer, a scan. Left out, those become problems later, or unpaid work.
+**Rivet** is Lever's estimate reviewer. An estimate is the itemized list of repairs, parts, and labor prepared for a damaged car. Estimates sometimes leave things out: a sensor that must be recalibrated after a bumper is replaced, a seam sealer, a scan. Left out, those become problems later, or unpaid work.
 
 Rivet reads the estimate and the damage photos, compares them with repair knowledge, and lists **operations the estimate may be missing**. It suggests. A person decides.
 
@@ -13,7 +13,7 @@ Rivet reads the estimate and the damage photos, compares them with repair knowle
 Rivet never edits the estimate and never talks to the insurer. It produces a list of things to **consider**, each with its reasoning.
 </Note>
 
-## Which repair orders it can review
+## Which Repair Orders It Can Review
 
 All of these must be true:
 
@@ -24,7 +24,7 @@ All of these must be true:
 
 If a repair order does not qualify, the **Audit with Rivet** button is unavailable.
 
-## Run a review
+## Run a Review
 
 <Steps>
   <Step title="Open the Estimate tab">
@@ -44,7 +44,7 @@ An email goes to the repair planner, with the person who requested the review on
 Run Rivet **after the estimate and photos are final** and **again after a supplement**. If the estimate has a newer revision than the one reviewed, the results show **Needs re-review**.
 </Tip>
 
-## Reading the results
+## Reading the Results
 
 Findings are grouped by **operation group** or **section** of the estimate, such as front bumper, glass, or electrical. Inside a group they are ordered by how likely they are to be needed:
 
@@ -56,11 +56,11 @@ Findings are grouped by **operation group** or **section** of the estimate, such
 
 Each finding has a **title**, the **reasoning**, and a **confidence** tag showing how sure Rivet is. Click a title or the reasoning to **copy** it, for example into a supplement request.
 
-### Move around
+### Move Around
 
 A **Sections** rail lists the groups. Click one to jump. Press <kbd>Shift</kbd>+<kbd>O</kbd> to collapse or expand all sections at once.
 
-### Record a verdict
+### Record a Verdict
 
 Every finding should get a verdict. That is how the shop and Rivet learn, and how the team knows what has been handled.
 
@@ -73,11 +73,11 @@ Every finding should get a verdict. That is how the shop and Rivet learn, and ho
 
 Reviewed findings move into a **Reviewed** group so the open ones stay on top.
 
-### Ask AI about a finding
+### Ask AI About a Finding
 
 **Ask AI** opens the [Agent](/ai/agent) with a question about that finding already typed. Use it when you want more explanation, or want it checked against the repair order's notes.
 
-## The Estimates list
+## The Estimates List
 
 Open **Rivet** from the sidebar (**Operations → Rivet**) to see every estimate and its review state. Filter by status:
 
@@ -90,7 +90,7 @@ Open **Rivet** from the sidebar (**Operations → Rivet**) to see every estimate
 | **Audited** | Reviewed and handled. |
 | **Review failed** | The review could not finish. Run it again. |
 
-## Do and don't
+## Do and Don't
 
 <Columns cols={2}>
   <Card title="Do" icon="check">
@@ -105,4 +105,4 @@ Open **Rivet** from the sidebar (**Operations → Rivet**) to see every estimate
 
 - [Estimate tab](/repair-orders/estimate)
 - [Supplements and parts](/repair-orders/parts)
-- [AI in Kinetic](/ai/overview)
+- [AI in Lever](/ai/overview)

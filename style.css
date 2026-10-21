@@ -1,5 +1,5 @@
 /*
- * Kinetic documentation theme.
+ * Lever documentation theme.
  *
  * Mirrors the app's design language: neutral ink and canvas, hairline borders
  * instead of shadows, Inter for text and a monospaced face for IDs, small
@@ -93,6 +93,47 @@ body {
   border-radius: var(--kx-radius-md);
 }
 
+/* Compact chrome: shorter top bar and tighter sidebar rows. */
+#navbar {
+  min-height: 3.25rem;
+}
+
+#navbar > div {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+#sidebar-content li {
+  margin-bottom: 0;
+}
+
+#sidebar-content li > a,
+#sidebar-content li > div {
+  font-size: 0.8125rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+/* Compact search trigger in the top bar. */
+#search-bar,
+#search-bar > button,
+#search-bar-entry {
+  height: 2rem;
+  min-height: 2rem;
+}
+
+#search-bar,
+#search-bar > button {
+  font-size: 0.8125rem;
+  max-width: 15rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+#search-bar-entry {
+  width: 2rem;
+}
+
 /* ---------- 3. Content ---------- */
 
 .prose {
@@ -143,6 +184,7 @@ h1#page-title {
 .prose tbody td,
 .prose thead th {
   border-bottom: 1px solid var(--kx-border);
+  padding: 0.375rem 0.75rem;
 }
 
 .prose tbody tr:last-child td {
@@ -188,7 +230,7 @@ h1#page-title {
   border-radius: var(--kx-radius-lg);
 }
 
-/* ---------- 4. Kinetic components (/snippets/ui.jsx) ---------- */
+/* ---------- 4. Lever components (/snippets/ui.jsx) ---------- */
 
 .kx-muted {
   color: var(--kx-muted-fg);

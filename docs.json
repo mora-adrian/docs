@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Kinetic Help Center",
-  "description": "The Kinetic user manual and knowledge base: every screen, feature, routine, and setting, explained in plain language for collision repair teams.",
+  "name": "Lever Help Center",
+  "description": "The Lever user manual and knowledge base: every screen, feature, routine, and setting, explained in plain language for collision repair teams.",
   "colors": {
     "primary": "#005AD2",
     "light": "#5E9DFF",
@@ -50,8 +50,8 @@
             "group": "Welcome",
             "pages": [
               "index",
-              "start/what-is-kinetic",
-              "start/how-kinetic-thinks",
+              "start/what-is-lever",
+              "start/how-lever-thinks",
               "start/collision-primer",
               "start/glossary"
             ]
@@ -143,13 +143,13 @@
         "icon": "sparkles",
         "groups": [
           {
-            "group": "AI in Kinetic",
+            "group": "AI in Lever",
             "pages": [
               "ai/overview",
               "ai/rivet",
               "ai/agent",
               "ai/writing-tools",
-              "ai/text-kinetic"
+              "ai/text-lever"
             ]
           }
         ]

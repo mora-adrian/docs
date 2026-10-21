@@ -1,5 +1,5 @@
 ---
-title: "All the statuses"
+title: "All the Statuses"
 description: "Every status on every board: what it means, what moves a car into it, and what usually needs to happen next."
 ---
 
@@ -8,10 +8,10 @@ import { Pill, ToneLegend } from "/snippets/ui.jsx";
 A **status** is the one-line answer to "where is this job?" Every repair order has exactly one. This page lists them all, board by board, in the order they appear.
 
 <Info>
-**Your shop's labels may differ slightly.** The statuses below are the standard set. Their names can be adjusted for a shop, and your administrator cannot rename them from Settings. If a name on your screen reads a little differently, the meaning is the same. To change names or order, contact Kinetic support.
+**Your shop's labels may differ slightly.** The statuses below are the standard set. Their names can be adjusted for a shop, and your administrator cannot rename them from Settings. If a name on your screen reads a little differently, the meaning is the same. To change names or order, contact Lever support.
 </Info>
 
-## Reading a status
+## Reading a Status
 
 Each status shows as a pill with a colored dot. The dot has four meanings.
 
@@ -23,17 +23,17 @@ On a card, a number in parentheses beside the status, such as **Paint (3)**, is 
 **A vehicle past its target date shows a red dot, whatever its status.** A late car looks late even if it is sitting in a green status.
 </Warning>
 
-## How statuses change
+## How Statuses Change
 
 | Who or what | What it can do |
 | --- | --- |
 | **CCC ONE** | Moves a repair order between boards and, on the Repairs board, usually sets the status from CCC ONE's own production stage. It is the authority for everything it sends. |
 | **You** | Move a card to another status **on the same board** by dragging it, or with the card's **Move to** menu. |
-| **Kinetic itself** | Cancels a lead whose appointment passed without the car arriving. |
+| **Lever itself** | Cancels a lead whose appointment passed without the car arriving. |
 
-If CCC ONE sends a status Kinetic has no rule for, Kinetic keeps the job where it was and records an event on the repair order's **Activity** tab, titled **CCC status unmapped** followed by the status. It does not guess.
+If CCC ONE sends a status Lever has no rule for, Lever keeps the job where it was and records an event on the repair order's **Activity** tab, titled **CCC status unmapped** followed by the status. It does not guess.
 
-A car can also move *backward*: if someone unchecks "vehicle arrived" in CCC ONE for a car that is in production, Kinetic moves the card back to **Scheduled (Won)** on Opportunities.
+A car can also move *backward*: if someone unchecks "vehicle arrived" in CCC ONE for a car that is in production, Lever moves the card back to **Scheduled (Won)** on Opportunities.
 
 <Note>
 Because CCC ONE is the authority, a status you set by hand on the Repairs board can be changed again the next time CCC ONE reports a different production stage. If you disagree with what CCC ONE says, fix it in CCC ONE.
@@ -41,7 +41,7 @@ Because CCC ONE is the authority, a status you set by hand on the Repairs board 
 
 ## Opportunities
 
-These are jobs that have not arrived yet. Kinetic reads the information CCC ONE has, and puts the lead in the status that shows what is missing.
+These are jobs that have not arrived yet. Lever reads the information CCC ONE has, and puts the lead in the status that shows what is missing.
 
 To count as **complete**, the record needs: customer name (or company name), email, phone, and address, **and** the vehicle's VIN, year, make, model, and exterior color.
 
@@ -52,9 +52,9 @@ To count as **complete**, the record needs: customer name (or company name), ema
 | **Evaluation** | <Pill tone="needs">needs us</Pill> | The lead is being evaluated. | Moved here by your team. |
 | **Incomplete Appointment** | <Pill tone="needs">needs us</Pill> | An appointment exists, but details are still missing. | Missing details **and** an appointment or future arrival date. |
 | **Scheduled (Won)** | <Pill tone="needs">needs us</Pill> | The details are complete **and** the customer is booked. The job is marked **Won**. | Complete details and an appointment or future arrival date. |
-| **Cancel (Lost)** | <Pill tone="needs">needs us</Pill> | The customer did not come. The job is marked **Lost**. | Every appointment or arrival date has passed and the car never arrived. Kinetic moves it automatically. |
+| **Cancel (Lost)** | <Pill tone="needs">needs us</Pill> | The customer did not come. The job is marked **Lost**. | Every appointment or arrival date has passed and the car never arrived. Lever moves it automatically. |
 
-Every new CCC ONE update re-checks the rules, so adding a missing email in CCC ONE moves a lead forward without you touching Kinetic.
+Every new CCC ONE update re-checks the rules, so adding a missing email in CCC ONE moves a lead forward without you touching Lever.
 
 <Tip>
 **A lead stuck in Incomplete Lead or Incomplete Appointment?** Open its drawer, look at the customer and vehicle, and see what is blank. Fix it in CCC ONE and the status updates itself. See [Playbook: lead to scheduled](/playbooks/lead-to-scheduled).
@@ -83,9 +83,9 @@ The default status when a car arrives is **Arrival & Triage**. After that, the l
 | **Detail** | <Pill tone="ontrack">on track</Pill> | Final cleaning. | Detail, Warranty Detail |
 | **Repairs Complete** | <Pill tone="ontrack">on track</Pill> | Work is finished. The vehicle is flagged **ready for customer pickup**. | Repair Completed |
 
-CCC ONE also has **Quality Control** stages (Quality Control, Waiting Final Insurance Review, Final PPW, Warranty QC). Kinetic has no status of its own for them. When one arrives and nothing else maps, the car **stays in the status it is in**.
+CCC ONE also has **Quality Control** stages (Quality Control, Waiting Final Insurance Review, Final PPW, Warranty QC). Lever has no status of its own for them. When one arrives and nothing else maps, the car **stays in the status it is in**.
 
-### The Possible Total Loss lane
+### The Possible Total Loss Lane
 
 **Supplement Hold** is drawn as two lanes on the Repairs board:
 
@@ -94,9 +94,9 @@ CCC ONE also has **Quality Control** stages (Quality Control, Waiting Final Insu
 
 The second lane is not a status you can drop a card into. A vehicle appears there automatically when any of these is true: you marked it **Total loss** under **Repairability**, CCC ONE classified it as a total loss, or its CCC ONE stage mentions a total loss. Hover over the lane title and it reminds you: **Possible total losses follow the record's Repairability and CCC ONE.** See [Total loss](/playbooks/total-loss).
 
-### Why the order matters
+### Why the Order Matters
 
-Kinetic treats **Body and everything after it** as *production*. Statuses before that (arrival, planning, supplement, and parts holds) are the *pre-production* part of the repair. This split drives the **Active Repairs**, **Incoming Revenue**, and **In-Process Revenue** numbers, and the production capacity warnings. See [The four boards](/pipeline/overview#repairs).
+Lever treats **Body and everything after it** as *production*. Statuses before that (arrival, planning, supplement, and parts holds) are the *pre-production* part of the repair. This split drives the **Active Repairs**, **Incoming Revenue**, and **In-Process Revenue** numbers, and the production capacity warnings. See [The four boards](/pipeline/overview#repairs).
 
 ## Close & Deliver
 
@@ -132,9 +132,9 @@ Some cards carry a **Won** or **Lost** tag. It is a separate fact from the statu
 
 A **Lost** job's progress bar turns red entirely.
 
-## When a job has no status
+## When a Job Has No Status
 
-Occasionally a repair order arrives that Kinetic cannot place. It appears in a lane called **No status** at the end of the board. Open it, check what CCC ONE has sent, and ask your admin if it stays there.
+Occasionally a repair order arrives that Lever cannot place. It appears in a lane called **No status** at the end of the board. Open it, check what CCC ONE has sent, and ask your admin if it stays there.
 
 ## Next
 

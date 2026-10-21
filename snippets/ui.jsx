@@ -1,5 +1,5 @@
 /*
- * Kinetic documentation components.
+ * Lever documentation components.
  *
  * These draw small, static illustrations that mirror the real app — status
  * pills, keyboard keys, a board card, the KPI strip — so a reader can match

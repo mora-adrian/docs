@@ -1,5 +1,5 @@
 ---
-title: "The Calendar tab"
+title: "The Calendar Tab"
 description: "One repair order's own calendar: the planned window, the actual repair window, every milestone, the agenda, and how to move the target date by dragging."
 ---
 
@@ -7,7 +7,7 @@ import { Key } from "/snippets/ui.jsx";
 
 The **Calendar** tab on a repair order is a planning view for **that one job**. It is not the shop-wide [Calendar](/schedule/calendar), which schedules drop-offs, pickups, and tow trucks for every job. This tab shows when *this* car is planned to be in and out, when things actually happened, and what is coming.
 
-## The month view
+## The Month View
 
 A month grid shows the job's dates. Use **Previous month** and **Next month** to move around. Two colored bars run across the days:
 
@@ -24,16 +24,16 @@ Little chips mark the **milestones** on their days. A legend underneath explains
 | --- | --- |
 | **Appointment** | CCC ONE |
 | **Arrival / in-date** | CCC ONE |
-| **Repair start** | Kinetic |
+| **Repair start** | Lever |
 | **Repairs complete** | CCC ONE |
-| **Target / out** | You, CCC ONE, or Kinetic's projection (see [Facts](/repair-orders/facts#target-date)) |
+| **Target / out** | You, CCC ONE, or Lever's projection (see [Facts](/repair-orders/facts#target-date)) |
 | **Delivered** | CCC ONE |
-| **Archived** | Kinetic |
+| **Archived** | Lever |
 | **Rental expires** (dashed amber chip) | Worked out automatically: **30 days after arrival**. A reminder to check any rental car the customer has. |
 
 Appointments scheduled on the shop [Calendar](/schedule/calendar) for this vehicle also appear here as chips.
 
-## The only thing you can change here
+## The Only Thing You Can Change Here
 
 You can change **one** thing on this tab: the **Target / out** date. Everything else is read-only (the CCC ONE dates are changed in CCC ONE).
 
@@ -48,15 +48,15 @@ You can change **one** thing on this tab: the **Target / out** date. Everything 
 
 The change is saved immediately and recorded in the activity history. It becomes a **date you set by hand**, which wins over automatic projections until you choose **Use automatic date** in the repair order facts.
 
-## The agenda
+## The Agenda
 
 Beside the month (or below it on a phone) a list called **Agenda** shows the same events in date order, grouped by day, with friendly labels such as **Today**, **Tomorrow**, or **in 3 days**. A milestone with no date reads **Date not set**.
 
-## When there is nothing to show
+## When There Is Nothing to Show
 
 **No dates on this repair order**: *Set a milestone, appointment, or target date and it will appear here.*
 
-## On a phone
+## On a Phone
 
 The month grid is hidden on small screens. You still get the **Agenda** and the **Milestones** list.
 

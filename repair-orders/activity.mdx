@@ -1,5 +1,5 @@
 ---
-title: "Activity and notes"
+title: "Activity and Notes"
 description: "The Activity tab: the running history of a repair order, how to write a good note, dictate one, filter the feed, and how your drafts are protected."
 ---
 
@@ -7,7 +7,7 @@ import { StatusRail, Key } from "/snippets/ui.jsx";
 
 The **Activity** tab is the story of a repair order, newest first. Every text, email, call, note, and status change lands here, with who did it and when. It is the first place to look when you pick up someone else's job, and the best place to leave a trail for the next person.
 
-## The note box
+## The Note Box
 
 At the top of the tab is a box that says **Write a note…**.
 
@@ -17,19 +17,19 @@ At the top of the tab is a box that says **Write a note…**.
 
 A note is visible to everyone in your shop who can see the repair order. It is **never** sent to the customer.
 
-### Your draft is saved for you
+### Your Draft Is Saved for You
 
 Below the box, a small line shows the draft's state:
 
 | You see | It means |
 | --- | --- |
-| **Saving draft…** | Kinetic is saving what you typed. |
+| **Saving draft…** | Lever is saving what you typed. |
 | **Draft saved** | It is safe. You can leave, close the tab, or come back later. |
 | **Draft could not be saved. Your text is still here.** with **Retry** | A network hiccup. Your text is intact. Choose **Retry**. |
 | A yellow box: **This draft changed on another device or tab. Autosave is paused so nothing is overwritten.** | The same note was being edited elsewhere. Choose **Keep my version** or **Use the other version**. |
 | A yellow box: **This draft was deleted on another device or tab. Your text is still here.** | Choose **Keep my text** or **Clear it**. |
 
-### What makes a good note
+### What Makes a Good Note
 
 A good note lets a teammate act without calling you. Say **what happened**, **what you decided**, **who is waiting on whom**, and **what the next step is**.
 
@@ -42,17 +42,17 @@ A good note lets a teammate act without calling you. Say **what happened**, **wh
   </Tab>
 </Tabs>
 
-## Repair progress
+## Repair Progress
 
 Below the note box, a card titled **Repair progress** shows the current status, the status rail, the **Created** date, and the **Target** date.
 
 <StatusRail current={4} total={8} />
 
-## The feed
+## The Feed
 
 The feed lists each event with an icon on a vertical rail, a bold title, a time on the right, and any detail below it.
 
-### Filter it
+### Filter It
 
 A row of chips narrows the feed to one kind, each showing a count:
 
@@ -67,34 +67,34 @@ A row of chips narrows the feed to one kind, each showing a count:
 
 Choose **Load older activity** at the bottom to go further back in time.
 
-### What the entries say
+### What the Entries Say
 
 | Entry | Example title |
 | --- | --- |
 | A note | **Alex Lee added a note** |
 | A note from CCC ONE | **Leslie Chavez entered a note in CCC ONE**, or **Note entered in CCC ONE** when CCC ONE did not say who. |
-| A filed email | **Email filed** or **Alex Lee filed an email**, followed by a percentage such as **· 92%** when Kinetic matched it automatically. The percentage is how sure Kinetic was that the email belongs here. |
+| A filed email | **Email filed** or **Alex Lee filed an email**, followed by a percentage such as **· 92%** when Lever matched it automatically. The percentage is how sure Lever was that the email belongs here. |
 | An email | **Inbound · Re: Supplement 2 · Mark at Example Insurance** (**Inbound**, **Outbound**, or **Draft** first). |
 | A call | **Phone call from Jordan Rivera · 3:42**, with **Recording available** when it was recorded. |
 | A text | The text, with who sent it and its delivery state. |
 | An event | **Repair order created in Arrival & Triage**, a status change, a target-date change, a scan, and so on. |
-| A CCC ONE status Kinetic could not place | **CCC status unmapped: …**. See [Statuses](/pipeline/statuses#how-statuses-change). |
+| A CCC ONE status Lever could not place | **CCC status unmapped: …**. See [Statuses](/pipeline/statuses#how-statuses-change). |
 
 <Note>
-Entries are written by Kinetic as things happen. You cannot type an event or edit one after the fact, which is what makes the history trustworthy for disputes with insurers.
+Entries are written by Lever as things happen. You cannot type an event or edit one after the fact, which is what makes the history trustworthy for disputes with insurers.
 </Note>
 
-## When to write a note, and when to do something else
+## When to Write a Note, and When to Do Something Else
 
 | You want to… | Use |
 | --- | --- |
 | Record a decision or a phone conversation | A **note** on Activity. |
 | Tell the customer something | A **text** or **email**. |
 | Promise something with a deadline | A [**task**](/work/tasks). |
-| Tell a coworker something right now | A [task assigned to them](/work/tasks), or a message in a [team chat](/ai/text-kinetic). |
+| Tell a coworker something right now | A [task assigned to them](/work/tasks), or a message in a [team chat](/ai/text-lever). |
 | Record a document | A file on the [Files](/repair-orders/files) tab. |
 
-## Do and don't
+## Do and Don't
 
 <Columns cols={2}>
   <Card title="Do" icon="check">

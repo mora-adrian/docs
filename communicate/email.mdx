@@ -1,17 +1,17 @@
 ---
-title: "Email on a repair order"
+title: "Email on a Repair Order"
 description: "Read and send email from the Emails tab, reply to adjusters, send a supplement package, and use automatic follow-up so a supplement never goes quiet."
 ---
 
 import { Tag } from "/snippets/ui.jsx";
 
-Email is how a shop talks to insurers, adjusters, and anyone who needs documents. In Kinetic, every email about a job lives on that repair order's **Emails** tab, in one thread, in order, with its attachments. Replies to emails you send come back into Kinetic and are filed on the repair order by themselves.
+Email is how a shop talks to insurers, adjusters, and anyone who needs documents. In Lever, every email about a job lives on that repair order's **Emails** tab, in one thread, in order, with its attachments. Replies to emails you send come back into Lever and are filed on the repair order by themselves.
 
 <Info>
-Email from Kinetic goes out from your shop's address with **your name** and your **email signature** (set in **Settings → Preferences**). Customer texts live on the [Texts](/communicate/texting) tab, and calls on [Calls](/communicate/calls).
+Email from Lever goes out from your shop's address with **your name** and your **email signature** (set in **Settings → Preferences**). Customer texts live on the [Texts](/communicate/texting) tab, and calls on [Calls](/communicate/calls).
 </Info>
 
-## The Emails tab
+## The Emails Tab
 
 Each message is a card:
 
@@ -23,7 +23,7 @@ Each message is a card:
 
 An empty tab says **No emails yet**, with **Compose a message to start the thread.**
 
-## Write an email
+## Write an Email
 
 Choose the compose button at the top of the tab. A form titled **New email** opens (or **Reply to {subject}** when you are replying).
 
@@ -41,11 +41,11 @@ Send with the **Send** button or <kbd>⌘</kbd>+<kbd>Enter</kbd> (<kbd>Ctrl</kbd
 
 If sending fails, you see **The email could not be sent. It's safe to try again.** and your text is still there.
 
-## Supplement emails and automatic follow-up
+## Supplement Emails and Automatic Follow-up
 
-A **supplement** is a request for more money after hidden damage is found. It is the email most likely to go quiet: the adjuster is busy, nothing happens, and the car sits in [Supplement Hold](/pipeline/statuses#repairs). Kinetic can nudge the adjuster for you.
+A **supplement** is a request for more money after hidden damage is found. It is the email most likely to go quiet: the adjuster is busy, nothing happens, and the car sits in [Supplement Hold](/pipeline/statuses#repairs). Lever can nudge the adjuster for you.
 
-### How to start it
+### How to Start It
 
 1. On the **Files** tab, select the photos and documents the adjuster needs.
 2. Choose **Send to adjuster**. See [Files](/repair-orders/files#send-to-the-adjuster).
@@ -55,9 +55,9 @@ A **supplement** is a request for more money after hidden damage is found. It is
 
 The switch appears only on supplement drafts made with **Send to adjuster**. It does not appear on ordinary email.
 
-### What it does
+### What It Does
 
-After you send, the supplement email card shows a small switch labeled **Auto follow-up**. While it is on, Kinetic:
+After you send, the supplement email card shows a small switch labeled **Auto follow-up**. While it is on, Lever:
 
 - Sends a short **follow-up email to the adjuster every two business days**. It counts only your shop's open days and always sends at the **start of the business day**, so adjusters get a morning nudge, never a weekend or holiday message. Set your hours in [Shop settings](/admin/shop-settings).
 - **Writes each one fresh**. An AI drafts 40 to 120 words that mention the claim number, the repair order number, and the vehicle, ask one clear question, and vary the wording from the one before. It never states anything about coverage, liability, payment, or amounts, never includes links, and never invents facts.
@@ -65,7 +65,7 @@ After you send, the supplement email card shows a small switch labeled **Auto fo
 
 Hover the switch to see the plan, for example **Next follow-up Tue, 9:00 AM · 2 sent**. Open **Follow-up log** under the card to see every step: **Scheduled**, **Queued**, **Sent**, **Skipped**, **Stopped**, **Failed**, or **Completed with no response**, each with a time.
 
-### When it stops by itself
+### When It Stops by Itself
 
 | Reason | What you will see on Activity |
 | --- | --- |
@@ -86,19 +86,19 @@ You can **turn it back on** after a reply, an uploaded document, a manual turn-o
 **Follow-ups go out without anyone pressing Send each time.** The shop approves the sequence when it sends the supplement. If you are unhappy with it, turn the switch off. If you have called the adjuster and they have promised to reply, turn it off so the follow-ups do not look impatient.
 </Warning>
 
-### Watching all follow-ups at once
+### Watching All Follow-ups at Once
 
 Admins can see what follow-ups did across every repair order, and which sequences have stalled, under **Settings → Messaging → Follow-up activity**. See [Messaging settings](/admin/messaging-settings#follow-up-activity).
 
-## Estimate explanations
+## Estimate Explanations
 
 You can email a customer a plain-language walkthrough of their estimate from the **Estimate** tab. It is sent as an email and appears here. See [Estimate](/repair-orders/estimate#explain-the-estimate-to-the-customer).
 
-## Email that arrives by itself
+## Email That Arrives by Itself
 
-Mail sent to your shop's claim mailbox is watched and filed to the right repair order when Kinetic is confident. Everything it is unsure about waits for a person in [Email review](/communicate/email-review).
+Mail sent to your shop's claim mailbox is watched and filed to the right repair order when Lever is confident. Everything it is unsure about waits for a person in [Email review](/communicate/email-review).
 
-## Do and don't
+## Do and Don't
 
 <Columns cols={2}>
   <Card title="Do" icon="check">
