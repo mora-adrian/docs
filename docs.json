@@ -30,6 +30,7 @@
         "pages": [
           "index",
           "quickstart",
+          "getting-started/navigation",
           "getting-started/roles"
         ]
       },
@@ -37,11 +38,13 @@
         "group": "Daily Work",
         "pages": [
           "daily-work/today",
+          "daily-work/boards",
           "daily-work/repair-orders",
           "daily-work/records",
           "daily-work/messages",
           "daily-work/calendar",
-          "daily-work/csi"
+          "daily-work/csi",
+          "daily-work/email-review"
         ]
       },
       {

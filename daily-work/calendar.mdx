@@ -1,25 +1,42 @@
 ---
 title: "Calendar & scheduling"
-description: "Appointments, drop-offs, pickups, and route planning tied to repair orders."
+description: "Every appointment type, the day panel, route planning, feeds, and deduplication."
 ---
 
-The **Calendar** screen schedules the shop's real-world commitments: drop-offs, pickups, estimate appointments, deliveries, and errands. Appointments link to the customer and the repair order, so the schedule always carries context.
+The **Calendar** screen schedules the shop's real-world commitments. Appointments link to a customer and repair order, so the schedule always carries context.
 
-## What you can do
+## Appointment types
 
-- **Create appointments** with a type (drop-off, pickup, delivery, estimate), a time, an assignee, and a location.
-- **Autofill addresses** from the customer record with address suggestions.
-- **Estimate drive time** to plan pickups and deliveries realistically.
-- **Plan routes** for a day's stops, and reorder stops when plans change.
-- **Subscribe to calendar feeds** so technicians see their day in the calendar app they already use.
-- **Catch double-bookings** — deduplication flags appointments that conflict.
+New appointments are grouped into three services:
 
-<Tip>
-Schedule against the repair order, not from memory. An appointment created on a repair order inherits the customer, vehicle, and address, and it appears on the job's timeline.
-</Tip>
+| Group | Types | Use for |
+| --- | --- | --- |
+| **Concierge** | Concierge in (tow in), Concierge out (tow out), Rental in, Rental out | Vehicle transport and rental coordination. |
+| **Sublets** | Sublet out, Sublet return | Sending a vehicle to a sublet vendor and getting it back. |
+| **In-Person** | Experience in (customer drop-off), Experience out (customer pickup) | The customer physically coming to the shop. |
+
+Other types — Mechanical out/return, Coatings out/return, Suggested estimate — remain on existing appointments but are not offered for new scheduling.
+
+## Create an appointment
+
+1. Choose the type, date, and time.
+2. Link the repair order — search by number, customer, or vehicle. Linking inherits customer and vehicle context and puts the appointment on the job's timeline.
+3. Add the place: the field label adapts to the job — *Pickup address* for tow/rental in, *Drop-off address* for tow/rental out, *Address* for in-person visits, *Vendor or address* for sublets. Address suggestions autofill from the customer record.
+4. Assign a driver or coordinator where the type calls for one.
+
+## The day panel and map
+
+Selecting a day opens its panel: every appointment in order, with links to the records. The **map** renders the day's stops geographically, with **drive-time estimates** between them.
+
+- **Route planning** orders the day's pickups and deliveries sensibly; drag to reorder when plans change.
+- **Deduplication** flags appointments that are identical for planning purposes — same job, same type — so double-bookings surface before a truck rolls.
+
+## Calendar feeds
+
+Each person can subscribe a personal calendar to the shop's schedule feed, so today's stops appear in the calendar app they already use.
 
 ## Production planning
 
-The **Production** view shows capacity, technician assignments, parts readiness, holds, and aging per status — the inputs a production meeting needs. Your admin configures capacities and constraints in **Settings → Production**.
+The **Production** view shows capacity, technician assignments, parts readiness, holds, and aging per status — the inputs a production meeting needs. Admins configure capacities and the production columns in **Settings → Production**.
 
-Scheduling and load-leveling recommendations explain their constraints, so you can see *why* Kinetic suggests a plan before you accept it. Safety- and quality-critical steps are never auto-completed: QC sign-off stays bound to human evidence and checklist state.
+Scheduling and load-leveling recommendations explain their constraints, so you can see *why* Kinetic suggests a plan before accepting it. Safety- and quality-critical steps are never auto-completed: QC sign-off stays bound to human evidence and checklist state.

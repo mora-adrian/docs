@@ -1,33 +1,33 @@
 ---
 title: "Records: people, companies & vehicles"
-description: "The shared address book and garage — one record per real-world person, company, and car."
+description: "The shared address book and garage — every record type, detail screen, and merge rule."
 ---
 
-Kinetic keeps three core record types. All three are searchable from the navigation and the command palette.
+Kinetic keeps three core record types under **Records** in the sidebar: **People**, **Companies**, and **Vehicles**. Each is a searchable list with server-derived relationship counts, and each opens into a full detail screen.
 
-| Record | What it holds |
-| --- | --- |
-| **People** | Customers, claimants, and contacts at other businesses: phone, email, preferred contact method, and every repair order and message they are connected to. |
-| **Companies** | Insurers, tow companies, dealers, vendors, fleets, and referral sources. A company can have its own contacts — people linked to it. |
-| **Vehicles** | Year, make, model, trim, VIN (vehicle identification number), color, plate, and the full repair history for that vehicle, including market value when available. |
+## The three record types
+
+| Record | What it holds | Its detail screen shows |
+| --- | --- | --- |
+| **People** | Customers, claimants, and contacts at other businesses: name, phone, email, preferred contact method, restrictions, and enrichment fields where enabled. | Contact details, communication preferences, linked companies, every repair order and message they appear on, and activity history. |
+| **Companies** | Insurers, tow companies, dealers, vendors, fleets, and referral sources. | Company details, linked contacts (the people who work there), related repair orders, and activity. |
+| **Vehicles** | Year/make/model/trim, VIN (vehicle identification number), color, plate, and market value when available. | Vehicle identity, valuation, the full repair history for that car, and linked owners. |
 
 <Info>
-"Customer" is not a separate entity — a customer is a person with a repair order. The same person record can also be a vendor contact or a claimant on another job. One person, one record.
+"Customer" is not a separate entity — a customer is a person with a repair order. The same person record can be a vendor contact or a claimant on another job. One person, one record.
 </Info>
 
 ## Why records matter
 
-Everything links back to records. When you text a customer, the conversation lands on their person record and their repair order. When a vehicle returns a year later, its record shows the earlier repair. Clean records are what make the Agent's answers, reports, and automations accurate.
+Everything links back to records. Texting a customer files the conversation on their person record and their repair order. When a vehicle returns a year later, its record shows the earlier repair. Clean records are what make the Agent's answers, the reports, and the automations accurate.
 
 ## Working with records
 
-Follow these practices every time:
+1. **Search before you create.** Look up a person by name or phone; look up a vehicle by VIN. A duplicate splits message history and repair history.
+2. **Check duplicate suggestions.** Kinetic surfaces likely duplicates with evidence. Review before confirming a merge — merges are deliberate and never automatic, and never cross shops.
+3. **Read relationship counts.** List rows show how many repair orders, vehicles, or messages each record has — a quick tell between a real record and a stub.
+4. **Refresh vehicle value when it matters.** Where configured, a vehicle's record carries a market-value range that feeds expected insurance payout. Refresh it when the situation changes — for example, when a job might total.
 
-1. **Search before you create.** Look up the person by name or phone, or the vehicle by VIN. A duplicate splits message history and repair history.
-2. **Check duplicate suggestions.** Kinetic surfaces likely duplicates with evidence. Review the evidence before you confirm a merge — merges are deliberate, never automatic.
-3. **Read relationship counts.** Record lists show how many repair orders, vehicles, or messages each record has. Counts tell you at a glance whether a record is real or a stub.
-4. **Refresh vehicle value when it matters.** Where configured, a vehicle record shows a market-value range that feeds the expected insurance payout on the repair order. Refresh it when the situation changes — for example, when a job might become a total loss.
+## Contact details, preferences, and consent
 
-## Contact details and consent
-
-A person's record stores their preferred channel — text or email — and any communication restrictions. Honor what is recorded. If a customer asked not to be texted, that preference lives on the record and applies to every repair order they appear on.
+A person's record is where preferred channel (text or email) and communication restrictions live. Honor what is recorded — if a customer asked not to be texted, that restriction applies everywhere they appear. Where contact enrichment is enabled, it fills only *empty* fields and never overwrites something a person entered.

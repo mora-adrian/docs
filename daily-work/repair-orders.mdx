@@ -1,64 +1,56 @@
 ---
-title: "Repair orders"
-description: "The heart of Kinetic — lifecycle boards, views, the record drawer, and the full repair order screen."
+title: "The repair order record"
+description: "Every tab and field on a repair order — Activity, Emails, Texts, Calls, Tasks, Estimate, Parts, ARW, Files, Signatures, and Calendar — plus creation and CCC ONE sync."
 ---
 
-A **repair order** is one repair job on one vehicle. Kinetic assigns it a permanent ID at creation and keeps it forever — the same record follows the vehicle from first contact through delivery, payment, and follow-up. Every message, photo, task, estimate, and event attaches to it.
+A **repair order** is one repair job on one vehicle. Kinetic assigns it a permanent ID at creation and keeps it forever — the same record follows the vehicle from first contact through delivery, payment, and follow-up. Its address, `/repair-orders/<id>`, is stable and shareable inside your shop.
 
-## The lifecycle boards
+## The header and sidebar
 
-Navigation is organized around four boards that mirror a vehicle's journey through the shop.
+The header always shows the repair order number, the status pill, and a *past target* indicator when the job is behind. The sidebar holds the record's facts:
 
-| Board | What it holds |
+- Customer and vehicle card (name, phone, email; year/make/model/trim, VIN, color, odometer)
+- Insurer and claim number
+- Status, days in status, and the pipeline rail
+- Target and out dates with a confidence badge
+- Expected insurance payout (from the vehicle's market value — **Refresh value** pulls a current figure)
+- Outcome likelihood with repairability — editable, with **Use calculated** to release a manual value back to the computed one
+- Assigned seats: advocate, planner, technician
+- Parties on the job
+
+Fields supplied by **CCC ONE** carry a CCC mark and cannot be edited — change them in CCC and the update flows back automatically. Fields Kinetic owns show a pencil that opens a single-field edit dialog.
+
+## The tabs
+
+Eleven tabs organize everything about the job. Empty tabs show honest empty states.
+
+| Tab | What it holds |
 | --- | --- |
-| **Opportunity** | Leads and estimates — jobs quoted but not yet authorized or dropped off. |
-| **Repair** | Vehicles actively in the shop: authorized, in repair, waiting on parts, or in QC (quality control). |
-| **Close** | Ready for pickup, delivered, or awaiting payment and final paperwork. |
-| **Enrichment** | Post-repair follow-up: surveys, reviews, and record completion. |
-
-Each board offers three desktop views — **Table**, **Board** (status columns), and **Timeline** — and equivalent row and card views on mobile. Summary counts and metrics come from the server, so they always reflect real data, not a filtered subset.
-
-## Find a repair order
-
-- Filter by status; search by customer, vehicle, claim, or repair order number; sort by target date or age.
-- Press `Cmd + K` or `Ctrl + K` and type a repair order number or customer name to jump straight to the record.
-
-## Peek at a record: the drawer
-
-Click a card once and the record drawer answers *"what state is this vehicle in?"* without leaving the board: status, target date, parts received percentage, outcome likelihood, expected insurance payout, assigned staff, and the five most recent activity items. The drawer is read-only. Its one action opens the full record.
-
-## The full repair order screen
-
-Everything about one job, organized in tabs:
-
-| Tab | Contents |
-| --- | --- |
-| **Overview** | Status, target and out dates, repairability, parties, and key facts. |
-| **Parts** | Ordered, received, and backordered parts, with readiness percentage. |
-| **Insurance** | Insurer, claim number, payer context, and supplement status. |
-| **Files** | Photos, documents, and estimates. Upload from the desk or the floor. |
-| **Messages** | The full text and email thread with the customer. |
-| **Calls** | Call history and recordings. |
-| **Activity** | The complete audit trail: every change, who made it, and when. |
-| **Projects & Tasks** | Work items attached to this job. |
-
-The header always shows the repair order number, the status, and a *past target* indicator, so urgency is visible at a glance.
+| **Activity** | The complete audit trail — every status change, edit, message, and event, with who did it and when. Staff notes live here too. |
+| **Emails** | The email thread for this job, with a full composer (To/CC, subject, body, attachments, drafts). |
+| **Texts** | The text-message thread, iMessage-style: sent bubbles on the right, received on the left. The composer supports attachments, emoji tapbacks, AI improve, and dictation (talk to text). |
+| **Calls** | Call history for this job — direction, duration, status, recordings, and transcriptions where enabled. |
+| **Tasks** | Work items attached to this repair order, with assignees, due dates, and status. |
+| **Estimate** | The estimate lines for the job. Filter by category — Body, Structural, Mechanical, Paint, Labor, Parts, R&I (remove and install), Repair, Replace, and "Parts + materials + other" — or switch to Simple view. **Explain this estimate** summarizes it in plain language. |
+| **Parts** | Every part line: Line, Part, Part #, Qty, Status, Unit price, Total. Filter parts by text and status; Outstanding and Paint views isolate what is open. A receipt percentage tracks parts received. |
+| **ARW** | The accounts receivable worksheet — one line per receivable: deductible, estimate, supplements 1–9, appearance allowance, betterment, bottom-line discount, prior damage (related and unrelated), and other. CCC-controlled totals (like estimate and supplement amounts) lock to the CCC value; you fill in due and paid amounts for the rest. Received totals roll up to the boards' **Received** column. |
+| **Files** | Photos, documents, and uploads for the job — organized, previewable, and downloadable. Drop files to upload from desk or floor. |
+| **Signatures** | Signature requests sent for this job: document, recipient, and signing status. |
+| **Calendar** | The job's appointments and a planner view of milestones and events on a timeline. |
 
 ## Create a repair order
 
 1. Select **New repair order**, or use the command palette.
-2. Link or create the **customer** and the **vehicle**. Always search first to avoid duplicates.
-3. Add the **claim and insurer** details if the job is a claim, plus the target date, starting status, communication preference, and lead source.
-4. Save. Kinetic assigns the repair order number from your shop's sequence and shows it immediately.
+2. Link or create the **customer** and the **vehicle** — always search first to avoid duplicates.
+3. Add **claim and insurer** details if the job is a claim, plus target date, starting status, communication preference, and lead source.
+4. Save. Kinetic assigns the repair order number from your shop's sequence immediately.
 
-Kinetic flags likely **duplicates** during creation and lets you confirm or continue. Check those suggestions carefully — merging records later is harder than preventing a duplicate now.
+Kinetic flags likely **duplicates** during creation so you can confirm or continue — check them; merging later is harder.
 
 ## Status changes and CCC ONE
 
-Your admin configures the statuses for your shop. A typical flow is Opportunity → Estimate → Authorized → In repair → QC → Ready → Delivered. Change a status by dragging the card on the board or editing status in the record.
-
-If your shop is connected to **CCC ONE**, status updates from CCC arrive automatically and are mapped to your shop's statuses. CCC is authoritative for every field it supplies, so a CCC event can update the record for you. The CCC status label is shown as the source of truth — Kinetic never invents a separate status.
+Change status by dragging on the board or editing the record. If your shop connects to **CCC ONE**, CCC events update the record automatically and CCC statuses map to your shop's configured statuses. The CCC label shows as the provenance of the value.
 
 <Warning>
-Do not park a repair order in the wrong status to hide it from a board. Status is workflow truth: reports, target calculations, and automated follow-ups all depend on it being accurate.
+Do not park a repair order in the wrong status to hide it. Status is workflow truth — reports, targets, and follow-ups all depend on it.
 </Warning>

@@ -1,31 +1,82 @@
 ---
-title: "Settings overview"
-description: "Every Settings section, who can change it, and what it controls."
+title: "Settings reference"
+description: "Every Settings section — what it controls, who can change it, and what each part does."
 ---
 
-Settings are organized by what they affect. Every setting shown is real and persists — there are no placeholder toggles that do nothing.
+Settings split into two groups: **personal** settings every member manages for themselves, and **shop** settings restricted to admins (with an authenticator check for sensitive changes). Every setting shown is real and persists.
 
-## The sections
+## Personal
 
-| Section | Who can change it | What it controls |
-| --- | --- | --- |
-| **Profile** | You | Your name, photo, email signature, and personal details. |
-| **Preferences** | You | Notification choices, display, and personal defaults. |
-| **Security** | You (your account); Admins (shop) | Your password, authenticator app enrollment, and recovery codes; admins see the shop's security posture. |
-| **Members** | Admins | Invitations, roles, and deactivated access. See [Roles & permissions](/getting-started/roles). |
-| **Shop** | Admins | Shop identity: name, address, and the contact details customers see. |
-| **Repair orders** | Admins | Statuses, numbering, and workflow configuration — the columns on your boards and how CCC statuses map to them. |
-| **Production** | Admins | Capacities, technician skills, and the scheduling constraints the Production view uses. |
-| **Messaging** | Admins | Text and email channels, sender identity, templates, and communication defaults. |
-| **Reports** | Admins | Report configuration and scheduled outputs. |
-| **AI usage** | Admins | Visibility into AI feature usage: the Agent, Rivet reviews, and drafts. |
+### Preferences
+
+| Control | What it does |
+| --- | --- |
+| Notifications | What Kinetic alerts you about, and how. |
+| Display | Appearance choices, including the UI typeface (Inter by default; Geist and IBM Plex Sans are the alternatives). |
+| Mailbox | Connect the email account Kinetic monitors for claim mail — required before the Email review nav item appears. |
+| Email signature | The signature appended to email you send from Kinetic. |
+| Today / schedule | Personal scheduling and Today-screen preferences. |
+
+### Security
+
+- **Password** — change your password.
+- **Authenticator app** — enroll or re-enroll your authenticator app; required on every account.
+- **Recovery codes** — generate and store backup codes for lost-device recovery.
+
+### Profile
+
+Your name, photo, and public account details.
+
+## Shop (admin)
+
+### Shop
+
+The shop's identity — name, address, and contact details customers see — plus **business hours**, **reference documents** shared across the team, the optional **contact enrichment** toggle, and the **phone system** connection for call logging and screen pops.
+
+### Members
+
+Invite people, search the member list, assign roles, and deactivate access. See [Roles & permissions](/getting-started/roles) for what each role allows. The last owner cannot be removed or demoted.
+
+### Repair orders
+
+| Section | What it configures |
+| --- | --- |
+| Numbering | The repair order number sequence. |
+| Workflow statuses | The status columns on your boards and their order. |
+| CCC mappings | How each CCC ONE status maps to one of your statuses. |
+| Estimating defaults | Estimate-related defaults for new work. |
+| Advocate rules | Assignment rules for the client-advocate seat. |
+| KPI targets | The targets that drive board metrics and reports. |
 
 <Warning>
-Most admin settings require a fresh authenticator app code before you can change them. Keep your phone nearby during an admin session.
+Status and CCC mapping changes alter boards, reports, and automation at once. Coordinate with production before changing them, and change one thing at a time.
 </Warning>
+
+### Production
+
+The **Capacity** table: billable estimate hours each department can process per period (per day, week, or month) — capacity to *process* work, not hours worked. The production columns view and load-leveling recommendations read from these values. Only admins can edit; if another session changed capacities since you loaded, Kinetic asks you to reload before saving.
+
+### Messaging
+
+| Section | What it configures |
+| --- | --- |
+| Text messaging | The shop's SMS/iMessage line for customer conversations. |
+| AI auto-reply | Whether and when the AI replies automatically. |
+| Message templates | Reusable message bodies, created and edited per template. |
+| Team chats | Staff group-chat channels used for internal coordination. |
+| CSI | Survey send rules and scheduling. |
+| Follow-up activity | Rules for automated customer follow-ups. |
+
+### Reports
+
+Report configuration and scheduled outputs.
+
+### AI usage
+
+Usage visibility for AI features — breakdowns by **provider**, **model**, and **feature**, month to date and per period. Use it to watch spend and adoption.
 
 ## Change settings safely
 
-1. Change one thing at a time, and check the result — especially statuses and messaging.
-2. Treat status and workflow changes as production changes: they affect boards, reports, and CCC status mapping at once. Coordinate with your production team before reordering.
-3. Read destructive-action dialogs fully. They name the shop and the consequence, and they mean what they say.
+1. Change one thing at a time and check the result.
+2. Read destructive-action dialogs fully — they name the shop and the consequence.
+3. Keep your authenticator app handy; most admin saves ask for a fresh code.

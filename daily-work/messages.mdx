@@ -1,41 +1,53 @@
 ---
 title: "Messages & communications"
-description: "One inbox for texts and email, plus call history — every conversation saved to the right customer and repair order."
+description: "The shared inbox for texts and email — conversation list, thread, triage, blocking, and the composer."
 ---
 
-The **Messages** screen is a shared, shop-wide inbox. Texts and emails with customers, adjusters, and vendors live here — not on anyone's personal phone — so conversations continue when someone is out.
+The **Messages** screen is a shared, shop-wide inbox: two panes with a conversation list on the left and the open thread on the right. Texts and emails with customers, adjusters, and vendors live here — not on anyone's personal phone — so coverage continues when someone is out.
 
-## Work the inbox
+## The conversation list
 
-- Inbound messages that match a known customer or repair order attach to that record automatically.
-- Messages Kinetic cannot match land in the inbox for **triage**. Assign them to a person or repair order; future messages then route correctly.
-- Each thread shows the channel (text or email), the direction, the participants, the delivery status, and the provider.
+- Search conversations by customer, vehicle, claim, or content.
+- Conversations attach to the customer and repair order automatically when Kinetic can match them.
+- Items it cannot match stay in the inbox for **triage**: assign them to a person or repair order, and future messages from that sender route correctly.
+- Each row shows channel (text or email), direction, delivery status, and a preview.
+
+## The thread
+
+Threads read like a phone: your messages on one side, theirs on the other, with delivery status and provider identity. The full history is kept with the repair order, so the thread you see here is the same one on the record's Texts tab.
+
+From a conversation you can:
+
+- **Assign** it to a teammate so ownership is clear.
+- **Block or restrict** a sender when a customer opts out — restrictions live on the person's record and apply everywhere.
+- Open the linked repair order or person record directly.
 
 ## Send a message
 
+The composer is one card: text on top, a toolbar underneath with attach, **Improve with AI**, and **talk to text** dictation, plus the send button.
+
 1. Reply inside a thread, or start a conversation from a person, a repair order, or the Messages screen.
-2. Write and send. The customer sees the shop's configured number or address — one consistent identity.
-3. Watch the delivery status. If the provider reports a failure or an unclear result, the message is flagged for **reconciliation** instead of silently retrying. You always see the real state.
+2. The customer sees the shop's configured number or address — one consistent identity.
+3. Watch delivery status. A failed or ambiguous provider result is flagged for **reconciliation** rather than silently retried — you always see the real state.
 
 <Warning>
-Every outbound message is final and auditable — the full thread stays on the repair order. Write every message as if it were on the record, because it is.
+Every outbound message is final and auditable. Write every message as if it were on the record, because it is.
 </Warning>
 
 ## Calls
 
-Call history appears on repair orders and in the Calls tab, including recordings and transcriptions where your phone integration is enabled. When a known customer calls, a **screen pop** can open the matching record automatically, so you answer with the job in front of you.
+Call history appears in the thread and on the repair order's Calls tab, including recordings and transcriptions where your phone integration is enabled. When a known customer calls, a **screen pop** opens the matching record so you answer with context.
 
 ## AI drafts
 
-Where AI drafting is enabled, suggested replies show the facts they are based on, plus an escalation reason when the system is not confident. AI can draft; a person sends. It never invents a promise, a coverage claim, a price, or a delivery date.
+Where AI drafting is enabled, suggested replies show the facts they are grounded in, plus an escalation reason when the system is not confident. AI drafts; a person sends. It never invents a promise, coverage claim, price, or delivery date.
 
 ## Customer-facing links
 
 Kinetic sends customers secure links for:
 
-- **Facts of loss** — a guided form where the customer describes what happened. Responses file onto the repair order.
-- **CSI surveys** — satisfaction surveys sent after delivery. See [CSI surveys](/daily-work/csi).
-- **Email review** — a review page for an outbound communication before it sends.
-- **Signatures** — documents sent for electronic signature and tracked back to the repair order.
+- **Facts of loss** — a guided form where the customer describes what happened; responses file onto the repair order.
+- **CSI surveys** — satisfaction surveys after delivery (see [CSI surveys](/daily-work/csi)).
+- **Signatures** — documents sent for electronic signature and tracked on the repair order.
 
 Links are tokenized and expire. If a customer says a link does not work, send a fresh one from the repair order instead of forwarding your copy.
