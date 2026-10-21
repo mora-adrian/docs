@@ -11,15 +11,13 @@
   "fonts": {
     "body": {
       "family": "Inter",
+      "format": "woff2",
       "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     },
     "heading": {
       "family": "Inter",
+      "format": "woff2",
       "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    },
-    "code": {
-      "family": "Geist Mono",
-      "source": "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap"
     }
   },
   "favicon": "/favicon.svg",
