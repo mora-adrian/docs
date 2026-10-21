@@ -36,6 +36,7 @@
         "group": "Daily Work",
         "pages": [
           "daily-work/today",
+          "daily-work/tasks",
           "daily-work/boards",
           "daily-work/repair-orders",
           "daily-work/records",

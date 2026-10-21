@@ -32,5 +32,7 @@
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Document only what the app actually does — verify against `src/features` in the Kinetic codebase before writing. Never invent features, metrics, or controls.
+- "CCC ONE" is the only permitted user-facing provider name. Do not name Linq, Resend, Documenso, ElevenLabs, Gemini, Anthropic, or other providers in docs copy.
+- Keep AI descriptions honest: the Agent and Rivet retrieve, summarize, classify, draft, and recommend — they never decide coverage, liability, or delivery commitments.
+- Cover every screen, tab, view, filter, and control. This is a reference manual, not a marketing overview.

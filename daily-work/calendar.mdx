@@ -1,42 +1,95 @@
 ---
 title: "Calendar & scheduling"
-description: "Every appointment type, the day panel, route planning, feeds, and deduplication."
+description: "Every appointment type, scheduling rules, the day panel, tow-route planning, the map, calendar feeds, and deduplication."
 ---
 
-The **Calendar** screen schedules the shop's real-world commitments. Appointments link to a customer and repair order, so the schedule always carries context.
+The calendar (`/calendar`) runs the shop's logistics: customer pickups and drop-offs, rental and courtesy moves, vendor runs, and the truck routes that tie them together.
+
+## Views and layout
+
+- **Week / Month tabs** — the toolbar switches between a 7-day week grid and a month grid. The month view additionally shows repair-order milestone chips (arrival and delivery dates).
+- **Today button** — jumps back to the current day.
+- **Day panel** — selecting a day opens a panel listing that day's appointments, the **Arrivals** and **Deliveries** groups (one deduplicated milestone chip per repair order per direction), and the **Tow plan**.
+- **Map** — a map of the day's routes and appointments sits beside the calendar on wide screens and stacks below it on smaller ones.
+
+Each day cell shows appointment chips. When more appointments exist than fit, a "+N more" chip appears; clicking the day shows the full list.
 
 ## Appointment types
 
-New appointments are grouped into three services:
+**New appointment** opens a dialog with the type picker grouped as:
 
-| Group | Types | Use for |
+| Group | Types | What it means |
 | --- | --- | --- |
-| **Concierge** | Concierge in (tow in), Concierge out (tow out), Rental in, Rental out | Vehicle transport and rental coordination. |
-| **Sublets** | Sublet out, Sublet return | Sending a vehicle to a sublet vendor and getting it back. |
-| **In-Person** | Experience in (customer drop-off), Experience out (customer pickup) | The customer physically coming to the shop. |
+| Concierge | **Concierge in**, **Concierge out**, **Rental in**, **Rental out** | Your truck moves the vehicle to or from the customer. |
+| Sublets | **Sublet out**, **Sublet return** | Vendor legs — the truck moves the vehicle to or from a sublet. |
+| In-Person | **Experience in**, **Experience out** | The customer drives in or picks up. |
 
-Other types — Mechanical out/return, Coatings out/return, Suggested estimate — remain on existing appointments but are not offered for new scheduling.
+Other types exist on existing appointments and appear under **Current type** when editing: **Suggested** (estimate visit), **Mechanical out/return**, **Coatings out/return**.
 
-## Create an appointment
+## Scheduling an appointment
 
-1. Choose the type, date, and time.
-2. Link the repair order — search by number, customer, or vehicle. Linking inherits customer and vehicle context and puts the appointment on the job's timeline.
-3. Add the place: the field label adapts to the job — *Pickup address* for tow/rental in, *Drop-off address* for tow/rental out, *Address* for in-person visits, *Vendor or address* for sublets. Address suggestions autofill from the customer record.
-4. Assign a driver or coordinator where the type calls for one.
+1. Click **New appointment**.
+2. **Repair order** — search by repair order number or customer. Selecting one pre-fills the address from the customer's address.
+3. **Type** — pick from the grouped picker.
+4. **When** — date and a half-hour time slot.
+5. **Transport** — **In person** or **Tow truck**. Towed types lock this to **Tow truck** automatically.
+6. **Place** — one field whose label changes by type: **Pickup address**, **Drop-off address**, **Address**, or **Vendor or address**. It autocompletes addresses and shows a drive-time hint ("≈ 1:20 · 12 mi from the depot").
+7. **Gate code** / **Garage code** — only for truck moves.
+8. **Notes** — free text.
+9. Click **Schedule**.
 
-## The day panel and map
+Scheduling rules: weekdays only, between 7:00 AM and 7:00 PM. Kinetic refuses weekend bookings, out-of-window times, and times that don't exist due to daylight saving.
 
-Selecting a day opens its panel: every appointment in order, with links to the records. The **map** renders the day's stops geographically, with **drive-time estimates** between them.
+## Editing, canceling, and moving
 
-- **Route planning** orders the day's pickups and deliveries sensibly; drag to reorder when plans change.
-- **Deduplication** flags appointments that are identical for planning purposes — same job, same type — so double-bookings surface before a truck rolls.
+- Click an appointment row, or use its **Edit appointment** button, to change details.
+- **Mark complete** and **Cancel appointment** sit on scheduled rows; completed and cancelled rows show a badge instead.
+- **Drag and drop** — drag a chip to another day to move the date (time of day is kept), or drag one row onto another in the day panel to swap their times. Drag is desktop/mouse-oriented; on touch, use the edit dialog instead.
+- **Remove duplicates** — the day panel offers **Remove N duplicate(s)** when it detects the same repair order, type, transport, and address booked more than once.
 
-## Calendar feeds
+## The tow plan
 
-Each person can subscribe a personal calendar to the shop's schedule feed, so today's stops appear in the calendar app they already use.
+Kinetic builds the day's truck routes automatically. The first time you view a day that has towed appointments, it plans after a moment; after that, click **Optimize** or **Reoptimize** to rebuild.
 
-## Production planning
+- Each route card is a **Truck** (Truck 1, Truck 2). The shop plans for two trucks.
+- A truck's day is a chain of **legs** anchored at the shop: the truck leaves the depot, optionally makes a delivery then a pickup, and returns — including a 60-minute lunch return around midday. Legs show stop-by-stop times and per-leg drive times.
+- Reorder stops by dragging a leg earlier or later with its grip handle. A truck can only chain a delivery into a pickup; two pickups or a second delivery require returning to base first. Only a draft route can be reordered.
 
-The **Production** view shows capacity, technician assignments, parts readiness, holds, and aging per status — the inputs a production meeting needs. Admins configure capacities and the production columns in **Settings → Production**.
+**Route badges and what they mean:**
 
-Scheduling and load-leveling recommendations explain their constraints, so you can see *why* Kinetic suggests a plan before accepting it. Safety- and quality-critical steps are never auto-completed: QC sign-off stays bound to human evidence and checklist state.
+| Badge | Meaning |
+| --- | --- |
+| **Stale** | Appointments changed since the plan was built — reoptimize. |
+| **Outside window** | The route can't fit the scheduling window — re-plan or move appointments. |
+| **Estimated drive times** | Map routing was unavailable for some legs; those times are straight-line estimates. Reoptimize to recompute. |
+| **Past 6:00 PM** | The route finishes after the end of the tow day. |
+
+Stop rows show **Pick up** or **Deliver** badges, the appointment label with the repair order number, the address, and drive time ("+0:45", or "≈+0:45" for a straight-line estimate). Depot rows show "Leave {shop}", "Return to {shop}", and the lunch return.
+
+If the tow plan can't build, Kinetic shows **Could not build the tow plan** — the most common cause is the shop having no address on file, because the shop address anchors every route.
+
+<Note>
+There is no driver-assignment field — routes are identified only as Truck 1 and Truck 2. Coordinate which person drives which truck outside the app.
+</Note>
+
+## The map
+
+The map draws each truck's route as a colored line with numbered stop pins, a depot pin, and small pins for un-routed appointments. Controls: **Zoom in**, **Zoom out**, **Fit all stops**. If mapping isn't configured for the shop, the map shows "Mapping isn't configured for this shop" — everything else still works.
+
+## The driver feed ("Copy calendar link")
+
+Drivers don't need the app. Click **Copy calendar link** in the day panel to mint a shared calendar feed ("Tow calendar") with a `webcal:` URL. iPhone instructions are provided in place: Settings → Apps → Calendar → Accounts → Add Account → Add Other Account → Subscribed Calendar → paste the link.
+
+Subscribed drivers see each tow as a calendar event — "P/U in {City, ST ZIP} | {vehicle}" — with the address, gate and garage codes, customer phone, and the planned arrival time when routed.
+
+## The repair-order Calendar tab
+
+A repair order's own **Calendar** tab is different from the global calendar — it's a read-mostly planner for that job:
+
+- **Month grid** with two range bars: **Plan** (start → target) and **Repairs** (actual, in progress until done). A dashed edge means still running.
+- **The only editable thing** is the **Target / out** date — drag the bar's end edge, or focus it and use arrow keys (±1 day; Up/Down ±7), Enter to apply, Escape to cancel. Other milestone fields owned by CCC ONE are read-only with a CCC mark.
+- **Agenda** — a chronological list of the order's appointments and milestones, grouped by day with relative labels (Today, in 3 days).
+- **Milestones** — Appointment, Arrival / in-date, Repairs complete, Repair start, Target / out, Delivered, Archived.
+- **Rental expires** — appears automatically 30 days after arrival.
+
+On phones, the month grid hides and only Agenda and Milestones show.

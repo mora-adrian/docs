@@ -1,33 +1,45 @@
 ---
 title: "Records: people, companies & vehicles"
-description: "The shared address book and garage — every record type, detail screen, and merge rule."
+description: "Every record type — table columns, detail fields, forms, contact enrichment, and how records relate."
 ---
 
-Kinetic keeps three core record types under **Records** in the sidebar: **People**, **Companies**, and **Vehicles**. Each is a searchable list with server-derived relationship counts, and each opens into a full detail screen.
+Records are the shop's shared address book and garage: people, companies, and vehicles that link to repair orders, communications, and each other.
 
-## The three record types
+## Lists
 
-| Record | What it holds | Its detail screen shows |
-| --- | --- | --- |
-| **People** | Customers, claimants, and contacts at other businesses: name, phone, email, preferred contact method, restrictions, and enrichment fields where enabled. | Contact details, communication preferences, linked companies, every repair order and message they appear on, and activity history. |
-| **Companies** | Insurers, tow companies, dealers, vendors, fleets, and referral sources. | Company details, linked contacts (the people who work there), related repair orders, and activity. |
-| **Vehicles** | Year/make/model/trim, VIN (vehicle identification number), color, plate, and market value when available. | Vehicle identity, valuation, the full repair history for that car, and linked owners. |
+- **People** — Name, Phone, Email, Address, Referral source, Vehicles, Open repair orders.
+- **Companies** — Company, Type, Address, Contacts, Linked repair orders.
+- **Vehicles** — Vehicle, VIN, Owner, Odometer, Condition, Repair orders.
 
-<Info>
-"Customer" is not a separate entity — a customer is a person with a repair order. The same person record can be a vendor contact or a claimant on another job. One person, one record.
-</Info>
+Search and open a record to see its detail panel with **Edit** and **Archive** (with a confirm step).
 
-## Why records matter
+## Person record
 
-Everything links back to records. Texting a customer files the conversation on their person record and their repair order. When a vehicle returns a year later, its record shows the earlier repair. Clean records are what make the Agent's answers, the reports, and the automations accurate.
+**Fields:** Name (first/middle/last/suffix/nickname), up to three phones, email, address, company, referral source, default category, social usernames, and **Do not text** — a switch plus a reason that blocks outgoing texts while leaving email and calls working.
 
-## Working with records
+**Detail view:** contact info, company, referral, linked **Vehicles** and **Repair orders**.
 
-1. **Search before you create.** Look up a person by name or phone; look up a vehicle by VIN. A duplicate splits message history and repair history.
-2. **Check duplicate suggestions.** Kinetic surfaces likely duplicates with evidence. Review before confirming a merge — merges are deliberate and never automatic, and never cross shops.
-3. **Read relationship counts.** List rows show how many repair orders, vehicles, or messages each record has — a quick tell between a real record and a stub.
-4. **Refresh vehicle value when it matters.** Where configured, a vehicle's record carries a market-value range that feeds expected insurance payout. Refresh it when the situation changes — for example, when a job might total.
+**Contact enrichment** — when enabled in Settings, an **Enrich** button looks up public profile data (address, age, birth year, company, job title, socials, additional phone/email). Matches are labeled **High** or **Uncertain match**; enrichment only fills empty fields — it never overwrites what a person entered. If it isn't configured or there isn't enough detail to look up, Kinetic says so on the button.
 
-## Contact details, preferences, and consent
+## Company record
 
-A person's record is where preferred channel (text or email) and communication restrictions live. Honor what is recorded — if a customer asked not to be texted, that restriction applies everywhere they appear. Where contact enrichment is enabled, it fills only *empty* fields and never overwrites something a person entered.
+**Fields:** Legal name, DBA (doing business as), category, phone, fax, email, website, address and mailing address, social usernames.
+
+**Detail view:** linked **Contacts** and **Repair orders**. **Enrich** pulls public company data — description, industry, employee count, estimated revenue, socials.
+
+## Vehicle record
+
+**Fields:** VIN, year, make, model, trim, exterior and interior color, odometer and odometer-out (which fills automatically at delivery), condition, license plate and state.
+
+**Detail view:** owner and full **Repair history** across repair orders.
+
+## How records relate
+
+- A person owns vehicles and links to repair orders as customer, driver, or referrer.
+- A company links contacts (its people) and repair orders.
+- A vehicle carries its repair history no matter which order it appeared on.
+- Repair orders reference all three — changing a person or vehicle updates every order that uses it.
+
+<Note>
+There is no merge/duplicate-resolution screen. To fix a duplicate, edit the record you want to keep and archive the other.
+</Note>

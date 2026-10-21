@@ -1,53 +1,92 @@
 ---
 title: "Messages & communications"
-description: "The shared inbox for texts and email — conversation list, thread, triage, blocking, and the composer."
+description: "The shared inbox, the full composer — templates, AI rewrite, dictation, voice memos — message actions, sentiment and line health, and triage."
 ---
 
-The **Messages** screen is a shared, shop-wide inbox: two panes with a conversation list on the left and the open thread on the right. Texts and emails with customers, adjusters, and vendors live here — not on anyone's personal phone — so coverage continues when someone is out.
+Messages (`/messages`) is the shop's shared inbox for customer texts and email, plus everything that doesn't yet belong to a repair order.
 
-## The conversation list
+## The inbox
 
-- Search conversations by customer, vehicle, claim, or content.
-- Conversations attach to the customer and repair order automatically when Kinetic can match them.
-- Items it cannot match stay in the inbox for **triage**: assign them to a person or repair order, and future messages from that sender route correctly.
-- Each row shows channel (text or email), direction, delivery status, and a preview.
+- **Search conversations** — filter the list by name or content.
+- Each row shows the sender, channel (SMS, iMessage, or Email), the linked repair order number or an **Unassigned** badge, and the last-activity time.
+- **Load more** pages older conversations in.
+- **Hidden** — a collapsed section holds conversations you've hidden; nothing is deleted.
+
+Open a conversation to read the thread. On phones, **Back to conversations** returns to the list.
+
+### Assigning an unassigned thread
+
+An unassigned thread is read-only until it belongs to a repair order:
+
+1. Open the conversation.
+2. Under **Assign to a repair order**, search repair orders.
+3. Pick the order and click **Assign**.
+
+### Conversation actions
+
+The ⋮ menu on a thread:
+
+| Action | Effect |
+| --- | --- |
+| **Hide for me** / **Restore for me** | Removes the thread from your list only. |
+| **Hide for shop** / **Restore for shop** | Hides it from everyone in the shop. Does not block the number or delete messages. |
+| **Block on all lines** | Stops inbound messages and direct sends on every text line in the account. Group messages may still pass; history is kept. Requires typing `BLOCK ALL LINES` to confirm. |
+
+Use **Check block status** if the menu reports the block state is unknown.
 
 ## The thread
 
-Threads read like a phone: your messages on one side, theirs on the other, with delivery status and provider identity. The full history is kept with the repair order, so the thread you see here is the same one on the record's Texts tab.
+A thread shows bubbles with date markers (Today, Yesterday, weekday names, then ages). Controls:
 
-From a conversation you can:
+- **Load older** — pulls earlier history.
+- **Message info** — right-click a message → **Info** for Sent/Delivered/Error times, sender, service, and delivery status (Sent, Delivered, Read, Received, Failed, Bounced, Sending).
+- **Copy** — right-click a message to copy its text.
+- **Tapback reactions** — hover a message to react with Love, Like, Dislike, Laugh, Emphasize, or Question (iMessage service).
+- **Save to repair order files** — right-click inbound media, or use the link under an attachment, to file it on the repair order. Click an attachment to preview it; audio plays inline.
+- A **typing…** bubble appears when the other party is typing.
 
-- **Assign** it to a teammate so ownership is clear.
-- **Block or restrict** a sender when a customer opts out — restrictions live on the person's record and apply everywhere.
-- Open the linked repair order or person record directly.
+Watch the thread header for the **Do not text** alert — outbound texts are blocked for flagged people, and blocked messages can't be sent.
 
-## Send a message
+## Sentiment and line health
 
-The composer is one card: text on top, a toolbar underneath with attach, **Improve with AI**, and **talk to text** dictation, plus the send button.
+The thread header carries three live readings — the only place sentiment appears in Kinetic:
 
-1. Reply inside a thread, or start a conversation from a person, a repair order, or the Messages screen.
-2. The customer sees the shop's configured number or address — one consistent identity.
-3. Watch delivery status. A failed or ambiguous provider result is flagged for **reconciliation** rather than silently retried — you always see the real state.
+- **Conversation sentiment** — an AI reading of the customer: Concerned, Negative, Neutral, Positive, or Delighted, with a 0–100 score, a trend (improving, steady, declining), a summary, and the signals driving it — like "Customer waiting 3 h for a reply" or "4 texts in a row without a reply." If no reading exists yet, you'll see "Signals" — it appears after the next analysis run.
+- **Chat health** — the texting network's read on this conversation: Healthy, At risk, Critical, Opted out, or Unknown. At risk means the customer may be cooling off — send messages that invite a reply. Critical means pause routine texts and have a person reach out directly. Opted out means the customer texted STOP — sending is blocked until they text back.
+- **Line reputation** — the shop's texting line standing with carriers: Healthy, At risk, Critical, or Unknown. At risk or critical means carriers may filter the line — cut volume and wait for replies.
 
-<Warning>
-Every outbound message is final and auditable. Write every message as if it were on the record, because it is.
-</Warning>
+When these readings deteriorate, the composer itself warns you — for example "You've sent 4 texts without a reply" or "This line's reputation is critical." An opted-out customer is a hard block, not a warning.
 
-## Calls
+## The text composer
 
-Call history appears in the thread and on the repair order's Calls tab, including recordings and transcriptions where your phone integration is enabled. When a known customer calls, a **screen pop** opens the matching record so you answer with context.
+The composer has a toolbar of actions, in this order:
+
+| Button | What it does |
+| --- | --- |
+| **Add attachment** | Attach images, video, audio, PDFs, or contact cards — up to 10 per message. A notice warns that carrier delivery of attachments isn't guaranteed. |
+| **Attach from repair order files** | Opens a picker of files already on the repair order; attach up to the same limit. |
+| **Emoji keyboard** | Searchable emoji picker. |
+| **Improve with AI** | Rewrites your draft for clarity, grammar, and professionalism — same meaning, same length class, no new facts or emojis. Template variables are preserved. Text messages only. |
+| **Talk to text** | Dictate instead of typing — becomes **Stop and insert text** while recording, then **Transcribing**. Dictated words insert at the cursor. Two-minute cap per take. |
+| **Record voice memo** | Swap the composer for a live waveform recorder; **Stop voice memo** sends it as an audio attachment. |
+| **Send** | Sends the message — or press ⌘+Enter (Ctrl+Enter on Windows). |
+
+### Message templates
+
+Type `@` in the text composer to open the template menu — each choice shows the name and a two-line preview. Arrow keys move, Enter or Tab inserts, Escape dismisses. Variables like `$CUSTOMER_NAME`, `$VEHICLE_DESCRIPTION`, `$APPOINTMENT_DATE`, `$RO_NUMBER`, `$TARGET_DATE`, `$ADVOCATE_NAME`, `$BRAND_NAME`, and `$TIME_OF_DAY_GREETING` fill in from the repair order when you insert. Templates are managed in **Settings → Messaging → Message templates**.
+
+### Draft autosave
+
+Drafts save automatically — look for "Draft saved" under the field. If the same draft changed on another device or tab, autosave pauses and Kinetic shows the other version with **Keep my version** / **Use the other version** choices.
+
+## Email
+
+Email lives on the repair order's **Emails** tab and in shared conversations. The composer has **To**, **Cc**, and **Subject** fields, attachments from repair order files (up to 10), dictation, and ⌘+Enter send.
+
+**Auto follow-up** — on supplement emails to an adjuster, a switch enables "Auto follow-up every 2 business days until the adjuster replies." The card shows a follow-up log, and follow-ups stop automatically when the adjuster replies, the document arrives, the email bounces, the repair order closes, or a newer supplement goes out. You can also turn it off by hand.
+
+**Send to adjuster** — in the **Files** tab, select documents and click **Send to adjuster** to package them into a supplement email with a prefilled subject and cover note.
 
 ## AI drafts
 
-Where AI drafting is enabled, suggested replies show the facts they are grounded in, plus an escalation reason when the system is not confident. AI drafts; a person sends. It never invents a promise, coverage claim, price, or delivery date.
-
-## Customer-facing links
-
-Kinetic sends customers secure links for:
-
-- **Facts of loss** — a guided form where the customer describes what happened; responses file onto the repair order.
-- **CSI surveys** — satisfaction surveys after delivery (see [CSI surveys](/daily-work/csi)).
-- **Signatures** — documents sent for electronic signature and tracked on the repair order.
-
-Links are tokenized and expire. If a customer says a link does not work, send a fresh one from the repair order instead of forwarding your copy.
+AI-generated replies appear as draft cards in conversations and in the Agent — each shows the recipient, channel, linked repair order, and content, with **Discard** and **Send**. A card reports its state: Queued to send, Sent, Discarded, Couldn't send, or Superseded by a newer draft. A draft is never sent without a person pressing **Send**.

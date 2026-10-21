@@ -1,0 +1,34 @@
+---
+title: "Tasks & notifications"
+description: "The tasks screen — filters, the task sheet, linked work — and how notifications keep you current."
+---
+
+## Tasks (`/tasks`)
+
+Tasks are the shop's to-do list — work items linked to repair orders, people, companies, or projects.
+
+### Filters
+
+| Filter | Options |
+| --- | --- |
+| Projects | A chip per project, plus **All projects** |
+| Scope | **All**, **Mine**, **Unassigned** |
+| Status | **Open**, **Done** |
+
+The list sorts by due date; each row shows a complete checkbox, the title (struck through when done), due date with **Overdue** / **Due today** / **Due tomorrow** styling, the assignee, and linked records.
+
+### The task sheet
+
+**Add task** (or clicking a task) opens the sheet:
+
+- **Task** — the title, required.
+- **Due** — optional date.
+- **Assigned to** — who owns it.
+- **Linked repair order / person / company / project** — attach it to the record it belongs to.
+- **Notes** — details and what "done" means; supports dictation.
+
+On a repair order's **Tasks** tab, the same sheet appears already linked to that order. A task that can't proceed can be marked **stuck** with a reason so it surfaces as blocked rather than silently aging.
+
+## Notifications (`/notifications`)
+
+The bell opens a popover of recent items — calls, texts, emails, tasks, and events, each with a type icon, timestamp, and an unread dot. Clicking an item opens the linked record and marks it read; **Mark all read** clears the count. The full `/notifications` screen shows the same list with endless history.
