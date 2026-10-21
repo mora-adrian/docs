@@ -1,14 +1,14 @@
 ---
 title: "Tow Planning and the Map"
-description: "How Lever builds a day's truck routes, what each badge and time means, how to reorder legs, and why the route sometimes needs to be rebuilt."
+description: "How Kinetic builds a day's truck routes, what each badge and time means, how to reorder legs, and why the route sometimes needs to be rebuilt."
 ---
 
 import { Key, Tag } from "/snippets/ui.jsx";
 
-When a day has appointments that need a **tow truck**, Lever plans the trucks' day for you: who goes where, in what order, how long each drive takes, and when each truck is back home. You read it in the **Tow plan** section of the [day panel](/schedule/calendar#the-day-panel) and see it drawn on the **map**.
+When a day has appointments that need a **tow truck**, Kinetic plans the trucks' day for you: who goes where, in what order, how long each drive takes, and when each truck is back home. You read it in the **Tow plan** section of the [day panel](/schedule/calendar#the-day-panel) and see it drawn on the **map**.
 
 <Note>
-The plan is a **proposal**, not a dispatch. Lever plans for **two trucks**, named **Truck 1** and **Truck 2**. There is no field for which driver takes which truck; decide that outside the app.
+The plan is a **proposal**, not a dispatch. Kinetic plans for **two trucks**, named **Truck 1** and **Truck 2**. There is no field for which driver takes which truck; decide that outside the app.
 </Note>
 
 ## The Rules the Planner Follows
@@ -27,7 +27,7 @@ Knowing the rules helps you understand why a route looks the way it does.
 
 ## Building the Plan
 
-The first time you open a day that has tow appointments, Lever plans it after a short moment while it says **Optimizing…**. After that:
+The first time you open a day that has tow appointments, Kinetic plans it after a short moment while it says **Optimizing…**. After that:
 
 - **Optimize** (when no routes exist yet) or **Reoptimize** (when they do) rebuilds the whole day.
 - Use it after you **add, move, or cancel** a tow.
@@ -67,7 +67,7 @@ You can reshape a truck's day by changing the **order** of its legs. It is avail
 - **Drag.** Grab the grip (six dots) at the left of a leg (**Drag to reorder this leg**) and drop it above or below another leg.
 - **Buttons.** Each leg has **Move leg 2 earlier** and **Move leg 2 later** arrows. Use these on touch screens or with a keyboard.
 
-Lever recalculates the times and redraws the map. An announcement says, for example, **Leg 2 moved to position 1 of 3**. If it cannot reorder, you see **Could not reorder the route.**
+Kinetic recalculates the times and redraws the map. An announcement says, for example, **Leg 2 moved to position 1 of 3**. If it cannot reorder, you see **Could not reorder the route.**
 
 <Info>
 You can reorder legs, but you cannot split a leg or move a stop onto another truck by hand. To change which truck does what, move the appointment's date or time and choose **Reoptimize**.
@@ -92,7 +92,7 @@ The map shows the day's routes:
 
 ## Giving Drivers the Plan
 
-Drivers can follow the day in their calendar app, with no Lever login. Choose **Copy calendar link** in the day panel. See [Calendar and appointments](/schedule/calendar#the-calendar-feed-for-drivers).
+Drivers can follow the day in their calendar app, with no Kinetic login. Choose **Copy calendar link** in the day panel. See [Calendar and appointments](/schedule/calendar#the-calendar-feed-for-drivers).
 
 ## Do and Don't
 

@@ -1,17 +1,17 @@
 ---
 title: "Email Review"
-description: "Connect your work mailbox so claim email files itself to the right repair order, and clear the queue of messages Lever could not match with confidence."
+description: "Connect your work mailbox so claim email files itself to the right repair order, and clear the queue of messages Kinetic could not match with confidence."
 ---
 
 import { Tag } from "/snippets/ui.jsx";
 
-A lot of claim work happens in email that does not start in Lever: an adjuster writes to your inbox about a vehicle, a parts vendor sends a confirmation, an insurer attaches an approval. **Email review** brings those emails to the right repair order so they are not trapped in one person's mailbox.
+A lot of claim work happens in email that does not start in Kinetic: an adjuster writes to your inbox about a vehicle, a parts vendor sends a confirmation, an insurer attaches an approval. **Email review** brings those emails to the right repair order so they are not trapped in one person's mailbox.
 
 ## How It Works
 
-1. You **connect your work mailbox** once (Google or Microsoft). Lever reads it, **read-only**. It never sends from it, never deletes, and never changes anything in it.
-2. Lever looks for claim-related email and tries to match each one to a repair order using the claim number, the repair order number, the vehicle, and the people involved.
-3. When it is **confident**, it files the email onto that repair order. It shows on the Activity tab as **Email filed**, with a percentage showing how sure Lever was.
+1. You **connect your work mailbox** once (Google or Microsoft). Kinetic reads it, **read-only**. It never sends from it, never deletes, and never changes anything in it.
+2. Kinetic looks for claim-related email and tries to match each one to a repair order using the claim number, the repair order number, the vehicle, and the people involved.
+3. When it is **confident**, it files the email onto that repair order. It shows on the Activity tab as **Email filed**, with a percentage showing how sure Kinetic was.
 4. When it is **not sure**, it puts the email in your **Email review** queue and asks you.
 
 <Info>
@@ -34,14 +34,14 @@ It is **your own** mailbox only. Each person who wants this connects their own. 
 
 Once you are connected, **Email review** appears in the sidebar under **Communications**, with a red number when emails are waiting. Until you connect, the item does not appear at all.
 
-If your mailbox is disconnected, **Settings → Preferences** says **Your mailbox is disconnected.** and offers the connect buttons again. To disconnect on purpose, choose **Disconnect** and confirm: *Lever stops watching this mailbox and emails are no longer filed. Emails already filed to repair orders stay in place.* Disconnecting is a protected action and asks for a fresh authenticator code.
+If your mailbox is disconnected, **Settings → Preferences** says **Your mailbox is disconnected.** and offers the connect buttons again. To disconnect on purpose, choose **Disconnect** and confirm: *Kinetic stops watching this mailbox and emails are no longer filed. Emails already filed to repair orders stay in place.* Disconnecting is a protected action and asks for a fresh authenticator code.
 
 ## The Queue
 
 Open **Email review**. Each waiting email is a row:
 
 - The **subject** (or *(no subject)*).
-- The **sender** (or **Unknown sender**), when it arrived, and a **confidence** percentage if Lever made a guess.
+- The **sender** (or **Unknown sender**), when it arrived, and a **confidence** percentage if Kinetic made a guess.
 - A three-line **excerpt**.
 - The **reasons** it was not filed automatically.
 - A badge: **Suggested** with a link to a repair order, or **No suggestion**.

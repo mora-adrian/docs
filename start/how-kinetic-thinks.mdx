@@ -1,11 +1,11 @@
 ---
-title: "How Lever Thinks"
-description: "The handful of rules behind the whole app: where repair orders come from, who owns each fact, how statuses work, and why Lever is cautious with AI."
+title: "How Kinetic Thinks"
+description: "The handful of rules behind the whole app: where repair orders come from, who owns each fact, how statuses work, and why Kinetic is cautious with AI."
 ---
 
 import { Pill, ToneLegend, Tag } from "/snippets/ui.jsx";
 
-Learn these eight ideas and almost everything else in Lever will make sense before you read it.
+Learn these eight ideas and almost everything else in Kinetic will make sense before you read it.
 
 ## 1. Your Shop Is the Whole World
 
@@ -15,7 +15,7 @@ If you work for more than one shop, the shop menu at the top of the left sidebar
 
 ## 2. Repair Orders Come From CCC ONE
 
-A **repair order** is one job on one vehicle. Lever does not create repair orders by hand. **CCC ONE**, your estimating system, sends them over, along with the estimate, the dates, and the people involved, and keeps sending updates.
+A **repair order** is one job on one vehicle. Kinetic does not create repair orders by hand. **CCC ONE**, your estimating system, sends them over, along with the estimate, the dates, and the people involved, and keeps sending updates.
 
 What that means in practice:
 
@@ -26,13 +26,13 @@ What that means in practice:
 
 ## 3. Every Fact Has an Owner
 
-Some facts come from CCC ONE. Others are yours. Lever marks which is which, because the owner decides where you change it.
+Some facts come from CCC ONE. Others are yours. Kinetic marks which is which, because the owner decides where you change it.
 
 | Mark | Meaning | Where to change it |
 | --- | --- | --- |
-| **CCC ONE** badge, or a "From CCC ONE" tooltip | CCC ONE supplies this value. | In CCC ONE. If you could change it here, the next update from CCC ONE would overwrite your change, so Lever does not let you. |
+| **CCC ONE** badge, or a "From CCC ONE" tooltip | CCC ONE supplies this value. | In CCC ONE. If you could change it here, the next update from CCC ONE would overwrite your change, so Kinetic does not let you. |
 | Pencil icon | The shop owns this value. | Right here: click the pencil. |
-| **Calculated** label | Lever worked this out from other facts. | You can override it by hand, and release the override later. |
+| **Calculated** label | Kinetic worked this out from other facts. | You can override it by hand, and release the override later. |
 
 Empty values tell you who should fill them:
 
@@ -42,7 +42,7 @@ Empty values tell you who should fill them:
 - A dash (**—**) in a dense list or table just means "nothing recorded".
 
 <Note>
-CCC ONE is the authority for every field it sends. If someone edits a CCC ONE field in Lever through some other route and CCC ONE later sends its own value, **CCC ONE wins**. This is by design and it keeps the two systems from drifting apart.
+CCC ONE is the authority for every field it sends. If someone edits a CCC ONE field in Kinetic through some other route and CCC ONE later sends its own value, **CCC ONE wins**. This is by design and it keeps the two systems from drifting apart.
 </Note>
 
 ## 4. a Status Says Where the Job Is
@@ -81,14 +81,14 @@ When you need to do something, click **Open full screen**. That page has tabs fo
 
 ## 7. Your Work Is Safe
 
-- **Drafts save themselves.** Notes, texts, and emails you are writing are saved as you type. If you open the same draft on another device, Lever shows both versions and lets you choose **Keep my version** or **Use the other version**.
-- **Two people editing at once is handled.** If a teammate saved a worksheet while you were editing, Lever asks you to reload instead of silently overwriting their work.
+- **Drafts save themselves.** Notes, texts, and emails you are writing are saved as you type. If you open the same draft on another device, Kinetic shows both versions and lets you choose **Keep my version** or **Use the other version**.
+- **Two people editing at once is handled.** If a teammate saved a worksheet while you were editing, Kinetic asks you to reload instead of silently overwriting their work.
 - **Errors never pretend to be empty.** If a list fails to load, you see an error and a retry button, never a blank list that looks like "nothing here".
 - **Files upload with retries.** A flaky connection pauses an upload and retries it rather than losing it.
 
 ## 8. AI Helps, People Decide
 
-Lever uses AI to read, summarize, classify, and draft. It does not decide.
+Kinetic uses AI to read, summarize, classify, and draft. It does not decide.
 
 - It sends nothing to a customer on its own, apart from the automatic replies your shop switches on in Settings (see [AI overview](/ai/overview) for exactly what those are).
 - It **never** decides coverage, liability, or what an insurer will pay.
@@ -113,4 +113,4 @@ Lever uses AI to read, summarize, classify, and draft. It does not decide.
   </Card>
 </CardGroup>
 
-<Tag>Tip</Tag> When you are unsure what a word means, the [glossary](/start/glossary) defines every term used in Lever, collision repair, and software.
+<Tag>Tip</Tag> When you are unsure what a word means, the [glossary](/start/glossary) defines every term used in Kinetic, collision repair, and software.

@@ -5,7 +5,7 @@ description: "The quick, read-only panel that opens when you click a repair orde
 
 import { Key, StatusRail } from "/snippets/ui.jsx";
 
-The **drawer** is Lever's quick look. Click a card on a board, a row in a table, a line in Messages, a day on the Calendar, or a notification, and a panel slides in from the right with the essentials of that repair order. It is designed to answer "what state is this car in?" in about five seconds.
+The **drawer** is Kinetic's quick look. Click a card on a board, a row in a table, a line in Messages, a day on the Calendar, or a notification, and a panel slides in from the right with the essentials of that repair order. It is designed to answer "what state is this car in?" in about five seconds.
 
 ## How It Behaves
 
@@ -46,7 +46,7 @@ The **drawer** is Lever's quick look. Click a card on a board, a row in a table,
     | **Target out** | The date the car is expected to leave, with a confidence badge when there is one. See [Facts](/repair-orders/facts#target-date). |
     | **Parts received** | `4 of 6 received · 67%`. Shows **No numbered parts** if the estimate has none and **Not reported** if CCC ONE has not sent receipt yet. |
     | **First scan** | Repairs only. **Not done**, or **Done** with how it was recorded and the date. |
-    | **Outcome likelihood** | A 1 to 4 meter. Says **Calculated** when Lever worked it out. |
+    | **Outcome likelihood** | A 1 to 4 meter. Says **Calculated** when Kinetic worked it out. |
     | **Repairability** | **Repairable**, **Total loss**, or blank while nobody has said. |
     | **Expected insurance payout** | A market-value range for the vehicle. |
     | **Client Advocate**, **Repair Planner**, **Technician** | Who is on the job, with **Unassigned** where nobody is. |
@@ -77,7 +77,7 @@ If you need to *do* anything, choose **Open full screen**.
 
 | Mark | Meaning |
 | --- | --- |
-| **Calculated** (gray, beside Outcome likelihood) | Lever computed the level from the estimate and the vehicle's market value. |
+| **Calculated** (gray, beside Outcome likelihood) | Kinetic computed the level from the estimate and the vehicle's market value. |
 | A confidence badge beside the target date | How much to trust the date. See [Facts](/repair-orders/facts#how-sure-is-the-target-date). |
 | **Past target** | Shown on lists; in the drawer the status rail turns red instead. |
 | A spinner in a row | That value is still loading. |

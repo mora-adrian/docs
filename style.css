@@ -1,5 +1,5 @@
 /*
- * Lever documentation theme.
+ * Kinetic documentation theme.
  *
  * Mirrors the app's design language: neutral ink and canvas, hairline borders
  * instead of shadows, Inter for text and a monospaced face for IDs, small
@@ -230,7 +230,7 @@ h1#page-title {
   border-radius: var(--kx-radius-lg);
 }
 
-/* ---------- 4. Lever components (/snippets/ui.jsx) ---------- */
+/* ---------- 4. Kinetic components (/snippets/ui.jsx) ---------- */
 
 .kx-muted {
   color: var(--kx-muted-fg);

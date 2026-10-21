@@ -5,7 +5,7 @@ description: "Every row in the left-hand panel of a repair order: what it means,
 
 import { LikelihoodMeter, Pill, Tag } from "/snippets/ui.jsx";
 
-The panel on the left of a full repair order lists its **facts**. Read this page once and you will know what every row means, which ones you can change, and which ones Lever works out for you.
+The panel on the left of a full repair order lists its **facts**. Read this page once and you will know what every row means, which ones you can change, and which ones Kinetic works out for you.
 
 ## Who Owns Each Fact
 
@@ -15,7 +15,7 @@ Each row is marked so you know where to change it.
 | --- | --- | --- |
 | A small **CCC ONE** mark (hover: *From CCC ONE. Change it there and it updates here automatically.*) | CCC ONE supplies it. | In CCC ONE. There is no pencil. |
 | A **pencil** | The shop owns it. | Click the pencil, change it in the small window, then choose **Save**. |
-| **Calculated** in gray | Lever worked it out. | You can override it, and release the override later. |
+| **Calculated** in gray | Kinetic worked it out. | You can override it, and release the override later. |
 | **Please enter in CCC ONE** | A CCC ONE field that is still blank. | Fill it in CCC ONE. |
 | **Please fill** | A shop-owned field that is still blank. | Click the pencil. |
 | **Unassigned** | Nobody is in that role. | Roles come from CCC ONE and your shop's advocate rules. |
@@ -30,7 +30,7 @@ Each row is marked so you know where to change it.
 | **Outcome likelihood** | You or calculated | A 1 to 4 meter. See [below](#outcome-likelihood). |
 | **Estimate** | CCC ONE | The estimate total. |
 | **Expected insurance payout** | Calculated | A market-value range for the vehicle. See [below](#expected-insurance-payout). |
-| **Start** | Lever | The date the repair order started. |
+| **Start** | Kinetic | The date the repair order started. |
 | **Target** | You or automatic | When the car is expected out. See [below](#target-date). |
 | **Appointment**, **Arrival**, **Completed**, **Delivered** | CCC ONE | Key dates. |
 | **Client Advocate** | CCC ONE and shop rules | The person who owns the customer relationship. Hover for *Client advocate · CSR / Service advisor*. |
@@ -43,7 +43,7 @@ The **Client Advocate** and **Repair Planner** rows decide whose **Today** list 
 
 ## First Scan
 
-The **first scan** (also called the **pre-repair scan**) is the diagnostic read of the vehicle's computers before any repair begins. Insurers and manufacturers expect it, and a missing one is a risk. Lever watches for it on vehicles being repaired.
+The **first scan** (also called the **pre-repair scan**) is the diagnostic read of the vehicle's computers before any repair begins. Insurers and manufacturers expect it, and a missing one is a risk. Kinetic watches for it on vehicles being repaired.
 
 You will see its icon on board cards, in the drawer header, and in the full-screen header:
 
@@ -61,7 +61,7 @@ The **first** of these to arrive wins the stamp. Later ones are still logged as 
 
 1. **A file tagged "Pre-repair Scan"** on the [Files](/repair-orders/files) tab.
 2. **CCC ONE**, when its data shows the scan happened.
-3. **A text from a technician** to the shop's assistant, in a [team chat](/ai/text-lever), saying the first scan is done.
+3. **A text from a technician** to the shop's assistant, in a [team chat](/ai/text-kinetic), saying the first scan is done.
 
 <Tip>
 The fastest way to turn the icon green is to upload the scan report and tag it **Pre-repair Scan**. It also gives you the document for the supplement.
@@ -69,13 +69,13 @@ The fastest way to turn the icon green is to upload the scan report and tag it *
 
 ## Target Date
 
-The **target** (also called the **out date**) is when the shop expects to hand the car back. It is one of the most scrutinized numbers on a job, so Lever is careful about where it comes from. It picks, in this order:
+The **target** (also called the **out date**) is when the shop expects to hand the car back. It is one of the most scrutinized numbers on a job, so Kinetic is careful about where it comes from. It picks, in this order:
 
 1. **A date you set by hand.** It wins over everything, until you switch back.
 2. **A date CCC ONE supplied.**
-3. **Lever's own projection.**
+3. **Kinetic's own projection.**
 
-### Lever's Projection
+### Kinetic's Projection
 
 The projection starts from the **arrival date**. With no arrival date there is no projection and the target is blank.
 
@@ -85,7 +85,7 @@ The projection starts from the **arrival date**. With no arrival date there is n
 | At **Supplement Hold** or later, and the estimate has labor hours | Arrival plus the estimate's **total labor hours ÷ labor hours per calendar day**, rounded up. |
 | A **total loss** | Arrival plus the shop's **total-loss cycle days**. |
 
-Lever recalculates automatically when a status changes, when the arrival date changes, and when estimate lines change. It never overwrites a date you set or one CCC ONE supplied.
+Kinetic recalculates automatically when a status changes, when the arrival date changes, and when estimate lines change. It never overwrites a date you set or one CCC ONE supplied.
 
 ### Changing It
 
@@ -109,7 +109,7 @@ The **spread** is the number of days between the earliest and latest of the thre
 
 Hover the badge to see all three dates, with the one that sits farthest from the other two marked **outlier**, and the spread in days.
 
-The badge appears only when it can be trusted: the vehicle is **past Parts Hold**, the target is a human or CCC ONE judgment (not Lever's own projection), and the estimate has labor hours.
+The badge appears only when it can be trusted: the vehicle is **past Parts Hold**, the target is a human or CCC ONE judgment (not Kinetic's own projection), and the estimate has labor hours.
 
 <Note>
 A **Low confidence** badge is a prompt, not a verdict. It means the date and the estimate disagree. Check whether the labor hours changed, or whether the date was set before a supplement.
@@ -132,9 +132,9 @@ Your admin can change the 25/50/75 boundaries in [Estimating and cycle time](/ad
 
 ### Calculated or Set by Hand
 
-- Lever **calculates** the level once it knows the vehicle's market value. A gray **Calculated** label says so. It recalculates when the estimate changes.
+- Kinetic **calculates** the level once it knows the vehicle's market value. A gray **Calculated** label says so. It recalculates when the estimate changes.
 - You can **set it yourself** with the pencil: pick a level, or **Not set**. A level you set by hand is never overwritten.
-- Choose **Use calculated value** in the same window to hand control back to Lever.
+- Choose **Use calculated value** in the same window to hand control back to Kinetic.
 
 <Info>
 Outcome likelihood describes the **money**. It never decides whether a car is repairable. That is **Repairability**, below, and it is only ever set by a person or by CCC ONE.
@@ -182,7 +182,7 @@ Removing a party is a protected action and may ask for a fresh authenticator cod
 
 ## The Pinned Photo
 
-The photo at the top of the drawer is the repair order's **preview image**. By default Lever chooses one automatically. You can pin a specific one in the [Files](/repair-orders/files#preview-photo) tab.
+The photo at the top of the drawer is the repair order's **preview image**. By default Kinetic chooses one automatically. You can pin a specific one in the [Files](/repair-orders/files#preview-photo) tab.
 
 ## Do and Don't
 

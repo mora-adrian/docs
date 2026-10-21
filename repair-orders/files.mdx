@@ -5,7 +5,7 @@ description: "Photos and documents on a repair order: how to upload, organize in
 
 import { Key, Tag } from "/snippets/ui.jsx";
 
-The **Files** tab is the repair order's filing cabinet. Every photo of the damage, every scan report, every signed authorization, and every insurer document goes here, so that anyone can find it, and so that Lever can tell whether the paperwork is in order.
+The **Files** tab is the repair order's filing cabinet. Every photo of the damage, every scan report, every signed authorization, and every insurer document goes here, so that anyone can find it, and so that Kinetic can tell whether the paperwork is in order.
 
 ## Upload
 
@@ -33,7 +33,7 @@ A small **Upload queue** panel appears in the corner while files are going up. E
 | --- | --- |
 | **Queued** | Waiting its turn. |
 | **Uploading** | In progress, with a progress bar. |
-| **Waiting to retry** | The connection hiccuped. Lever will try again by itself. |
+| **Waiting to retry** | The connection hiccuped. Kinetic will try again by itself. |
 | **Uploaded** | Done. |
 | **Failed** | It did not go through. Try that file again. |
 
@@ -73,7 +73,7 @@ A **tag** names a document that matters to the workflow. There are exactly seven
 To tag a file, open the tag picker on its row (it reads **No tag** until you choose one). A file has at most one tag. **Photos carry no tag**; their grouping is the status folder.
 
 <Warning>
-**Tag your documents.** Lever checks the tags to see whether a repair order has a **signed work authorization** and an **initial estimate**. If either is missing, a red warning icon appears on the job's card and the job shows up in the **Missing documents** list on [Today](/work/today). The Agent also uses the tags to answer "are we cleared to repair?".
+**Tag your documents.** Kinetic checks the tags to see whether a repair order has a **signed work authorization** and an **initial estimate**. If either is missing, a red warning icon appears on the job's card and the job shows up in the **Missing documents** list on [Today](/work/today). The Agent also uses the tags to answer "are we cleared to repair?".
 </Warning>
 
 Documents created from the **Signatures** tab are tagged automatically when they are signed.
@@ -110,7 +110,7 @@ If you select several files first, the menu acts on all of them and shows the co
 
 ### Preview Photo
 
-The picture at the top of a repair order's [drawer](/repair-orders/drawer) is its **preview photo**. By default Lever picks one. To choose it yourself, right-click a photo and choose **Set as drawer preview**. To go back to Lever's choice, choose **Use automatic preview**.
+The picture at the top of a repair order's [drawer](/repair-orders/drawer) is its **preview photo**. By default Kinetic picks one. To choose it yourself, right-click a photo and choose **Set as drawer preview**. To go back to Kinetic's choice, choose **Use automatic preview**.
 
 ### The Viewer
 
@@ -125,7 +125,7 @@ A supplement needs photos and documents sent to the insurer's adjuster. **Send t
     Tick the photos and documents the adjuster needs. Pick the best photos; too many slow the insurer's review.
   </Step>
   <Step title="Choose Send to adjuster">
-    Lever builds the package. Documents go as they are. Photos are turned into **PDF packets** sized to fit insurer portals (each packet under 9 MB), named like **24-1087 Supplement Photos.pdf**, or **(1 of 2)**, **(2 of 2)** if there are several. The packets are saved on the repair order as files.
+    Kinetic builds the package. Documents go as they are. Photos are turned into **PDF packets** sized to fit insurer portals (each packet under 9 MB), named like **24-1087 Supplement Photos.pdf**, or **(1 of 2)**, **(2 of 2)** if there are several. The packets are saved on the repair order as files.
   </Step>
   <Step title="Review and send">
     The **Emails** tab opens with a new message already addressed to the adjuster, with a subject, a cover note, and the files attached. Read it, adjust it, and send. It carries the **Auto follow-up** switch. See [Email](/communicate/email#supplement-emails-and-automatic-follow-up).
