@@ -1,0 +1,100 @@
+---
+title: "The drawer"
+description: "The quick, read-only panel that opens when you click a repair order: every section, what it tells you, and how to get from it to the full record."
+---
+
+import { Key, StatusRail } from "/snippets/ui.jsx";
+
+The **drawer** is Kinetic's quick look. Click a card on a board, a row in a table, a line in Messages, a day on the Calendar, or a notification, and a panel slides in from the right with the essentials of that repair order. It is designed to answer "what state is this car in?" in about five seconds.
+
+## How it behaves
+
+- It is **read-only**. You cannot change anything by accident.
+- It is **non-modal**: the screen behind stays live. Click another row and the drawer swaps to that job. The row you are looking at stays highlighted.
+- Dismiss it with <Key>Esc</Key> or the **Close drawer** button (the X).
+- It has **one action**: **Open full screen**, the button at the very top, which takes you to the [full repair order](/repair-orders/overview).
+- It opens the same way from every screen that shows a repair order: the boards, Messages, Calendar, Notifications, CSI, Today, and the records screens.
+
+## What is in it, top to bottom
+
+<Steps>
+  <Step title="Header">
+    The **repair order number** in monospaced type, the **status pill**, and for vehicles being repaired the **first-scan icon**. Underneath, the name of the board it is on. The X closes the drawer.
+  </Step>
+  <Step title="Open full screen">
+    A full-width button. This is the only way forward from the drawer.
+  </Step>
+  <Step title="Photo and identity">
+    If someone has pinned a photo, it sits at the top in a wide frame. Below it:
+
+    - The **customer's name** (with a nickname in quotes, if there is one), their **phone** and **email**.
+    - The **vehicle**: year, make, model, and trim, with its **VIN**.
+    - The **insurer and claim number** on one line, when there is one.
+
+    No fact disappears because a photo exists. See [Files](/repair-orders/files#preview-photo) for how to pin the photo.
+  </Step>
+  <Step title="Status">
+    The status name with **days in this status** in brackets, a row of progress segments, and a percentage. A car past its target date turns its current segment red.
+
+    <StatusRail current={5} total={8} />
+  </Step>
+  <Step title="At a glance">
+    The facts that matter most, always visible:
+
+    | Row | What it tells you |
+    | --- | --- |
+    | **Target out** | The date the car is expected to leave, with a confidence badge when there is one. See [Facts](/repair-orders/facts#target-date). |
+    | **Parts received** | `4 of 6 received · 67%`. Shows **No numbered parts** if the estimate has none and **Not reported** if CCC ONE has not sent receipt yet. |
+    | **First scan** | Repairs only. **Not done**, or **Done** with how it was recorded and the date. |
+    | **Outcome likelihood** | A 1 to 4 meter. Says **Calculated** when Kinetic worked it out. |
+    | **Repairability** | **Repairable**, **Total loss**, or blank while nobody has said. |
+    | **Expected insurance payout** | A market-value range for the vehicle. |
+    | **Client Advocate**, **Repair Planner**, **Technician** | Who is on the job, with **Unassigned** where nobody is. |
+    | **Customer survey** | The current step of the satisfaction survey, when one exists. |
+  </Step>
+  <Step title="Recent activity">
+    The **five newest** things that happened: notes, texts, emails, calls, and status changes, newest first. **See all activity** opens the full Activity tab.
+  </Step>
+  <Step title="More info (collapsed)">
+    Choose **More info** to reveal the customer's **Address**, the vehicle's **Odometer** and **Color**, and the rest of the facts that are not already shown above: the repair order number, claim number, estimate, start, appointment, arrival, completed, and delivered dates.
+  </Step>
+  <Step title="Parties (collapsed)">
+    Choose **Parties** to see everyone else attached to the job: referrer, driver, attorney, insurer, adjuster, appraiser, and so on.
+  </Step>
+</Steps>
+
+### Example: reading a drawer in five seconds
+
+1. Look at the **status pill**. Is it blue (yours), amber (waiting), green (on track), or red (late)?
+2. Look at **Target out** and its badge. Is the date believable?
+3. Look at **Parts received**. Is that why the car is waiting?
+4. Look at **First scan**. Is a scan missing?
+5. Look at **Recent activity**. What was the last thing that happened, and when?
+
+If you need to *do* anything, choose **Open full screen**.
+
+## Marks you will see
+
+| Mark | Meaning |
+| --- | --- |
+| **Calculated** (gray, beside Outcome likelihood) | Kinetic computed the level from the estimate and the vehicle's market value. |
+| A confidence badge beside the target date | How much to trust the date. See [Facts](/repair-orders/facts#how-sure-is-the-target-date). |
+| **Past target** | Shown on lists; in the drawer the status rail turns red instead. |
+| A spinner in a row | That value is still loading. |
+
+## Things the drawer will not do
+
+- It will not edit anything. Pencils and forms are in the full screen.
+- It will not send messages. Use the **Texts** and **Emails** tabs.
+- It will not navigate you away. It closes cleanly and leaves you where you were.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Facts and parties" icon="clipboard-list" href="/repair-orders/facts">
+    Every row explained in depth.
+  </Card>
+  <Card title="Views" icon="table-2" href="/pipeline/views">
+    Where the drawer opens from.
+  </Card>
+</CardGroup>

@@ -1,0 +1,132 @@
+---
+title: "Calendar and appointments"
+description: "Schedule drop-offs, pickups, rentals, and vendor trips; read the week and month views and the day panel; move, complete, or cancel appointments; and keep duplicates out."
+---
+
+import { Key, Tag } from "/snippets/ui.jsx";
+
+The **Calendar** is the shop's logistics board. It answers: *what cars are coming in, going out, or travelling to a vendor, on which day, and who is moving them?* Open it from **Communications → Calendar**.
+
+It is separate from a repair order's own [Calendar tab](/repair-orders/calendar), which plans one job. This one is for the whole shop.
+
+## Layout
+
+At the top, the toolbar has:
+
+- **Week | Month**, a switch for the **Calendar view**. Week shows seven days; Month shows the whole month and also adds milestone chips for repair-order arrival and delivery dates.
+- **Previous week/month** and **Next week/month** arrows, and a **Today** button.
+- **New appointment**, which opens the scheduling form.
+
+Each day is a cell with small **chips**, one per appointment, showing the time and a short title. If more appointments exist than fit, a chip reads **+3 more**; click the day to see them all.
+
+Click a day and the **day panel** opens beside (or below) the calendar. On a wide screen a **map** of the day's routes sits next to it.
+
+## The day panel
+
+The panel is headed by the date, and lists:
+
+| Section | What it holds |
+| --- | --- |
+| **Arrivals** | One chip for each repair order whose arrival date falls on this day, with its repair order number and a label such as **Vehicle in**. |
+| **Deliveries** | One chip for each repair order delivered this day, labeled **Vehicle out**. |
+| **The appointments** | Every appointment on this day, in time order, each a row you can edit, complete, cancel, or drag. |
+| **Tow plan** | Truck routes for the day. See [Tow planning](/schedule/tow-planning). |
+
+With nothing scheduled it says **Nothing scheduled**: *No tows or appointments on this day.*
+
+### Duplicates
+
+If the same repair order, type, transport, and address has been booked more than once on a day, a button appears: **Remove 2 duplicates**. Click it and Kinetic keeps one and removes the extras. If there is nothing to remove it says **No duplicates found.**
+
+## Appointment types
+
+When you choose **New appointment**, the **Type** list is grouped by who moves the car.
+
+| Group | Type | What it means |
+| --- | --- | --- |
+| **Concierge** (the shop's truck moves it) | **Concierge in** | A truck collects the car from the customer and brings it to the shop. |
+| | **Concierge out** | A truck delivers the finished car to the customer. |
+| | **Rental in** | A truck collects a rental car from the customer. |
+| | **Rental out** | A truck delivers a rental car to the customer. |
+| **Sublets** (outside vendors) | **Sublet out** | A truck takes the car to a vendor (glass, alignment, and so on). |
+| | **Sublet return** | A truck brings it back. |
+| **In-Person** (the customer moves it) | **Experience in** | The customer drives the car in. |
+| | **Experience out** | The customer picks the car up themselves. |
+
+Older appointments may also show **Suggested** (an estimate visit), **Mechanical out** and **Mechanical return**, or **Coatings out** and **Coatings return**. They appear under **Current type** when you edit one.
+
+## Schedule an appointment
+
+<Steps>
+  <Step title="Choose New appointment">
+    The window is titled **New appointment** and says **Schedule tows, estimates, and vendor trips.**
+  </Step>
+  <Step title="Repair order">
+    Search **Search repair order number or customer…** and pick the job. Kinetic fills in the customer's address for you. If you forget, it says **Pick a repair order.**
+  </Step>
+  <Step title="Type">
+    Choose from the grouped list above.
+  </Step>
+  <Step title="When">
+    Pick the **date** and a **time** in half-hour steps. If you opened the form from a day, that day is selected; **Selected date** shows it with a prompt to choose a different one if needed.
+  </Step>
+  <Step title="Transport">
+    **In person** or **Tow truck**. Types that need a truck set it to **Tow truck** for you and lock it.
+  </Step>
+  <Step title="Place">
+    One field, whose label changes with the type: **Pickup address**, **Drop-off address**, **Address**, or **Vendor or address**. Start typing a business name or street address and choose from the suggestions. A hint such as **≈ 1:20 · 12 mi from the depot** tells you the drive from the shop.
+  </Step>
+  <Step title="Gate code and garage code">
+    Shown only for truck moves. The driver sees them on the calendar feed.
+  </Step>
+  <Step title="Notes">
+    Anything the driver or the next person should know.
+  </Step>
+  <Step title="Schedule">
+    Choose **Schedule**.
+  </Step>
+</Steps>
+
+### Scheduling rules
+
+- **Weekdays only.** **Appointments can't be scheduled on weekends.**
+- **Between 7:00 AM and 7:00 PM.** The time picker only offers those hours.
+- **No missing times.** On the day clocks spring forward, 2:30 AM does not exist. Kinetic says **That time doesn't exist on the target day. The clock skips it for daylight saving.**
+
+## Change an appointment
+
+- **Edit.** Click the appointment's row, or its **Edit appointment** button, and change anything.
+- **Mark complete.** On a scheduled row. The row then shows a **Completed** badge.
+- **Cancel appointment.** On a scheduled row. The row then shows **Cancelled**.
+- **Move by dragging (mouse).** Drag a chip from one day to another to change the date; the time of day is kept. In the day panel, drag one appointment onto another to swap their times. A grip on the row (**Drag to rearrange this appointment**) shows it can be dragged. On a touch screen, use **Edit appointment** instead.
+
+A row with no vehicle recorded reads **Vehicle not identified**. Click the repair order's number to open its [drawer](/repair-orders/drawer).
+
+## The calendar feed for drivers
+
+Your drivers do not need Kinetic. In the day panel choose **Copy calendar link**. Kinetic creates a shared **Tow calendar** link. Anyone with it can subscribe from their phone's calendar app and see every tow as an event that updates by itself.
+
+**On an iPhone:** Settings → Apps → Calendar → Accounts → Add Account → Add Other Account → Add Subscribed Calendar, then paste the link.
+
+Each tow appears as an event with a title like **P/U in Denver, NC 28037 | 2025 Porsche 911 Blue** (**P/U** is a pickup) or **D/O in …** (**D/O** is a delivery or drop-off), and in its details the address, **gate and garage codes**, the customer's phone number, and the planned arrival time once the day is routed.
+
+<Warning>
+**Treat the link like a key.** Anyone who has it can see addresses and gate codes. Share it only with your drivers, and if it ever gets out, contact Support so it can be replaced.
+</Warning>
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Book the appointment the moment the customer agrees. Put gate codes in the form, not in a text. Click **Reoptimize** after you add or move a tow. Record what actually happened by choosing **Mark complete**.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't schedule on a weekend or after 7 PM. Don't create a second appointment to "move" one; edit the first. Don't leave a no-show scheduled; cancel it.
+  </Card>
+</Columns>
+
+## Related
+
+- [Tow planning and the map](/schedule/tow-planning)
+- [Repair order Calendar tab](/repair-orders/calendar)
+- [Statuses: Tow Scheduled and Experience Scheduled](/pipeline/statuses)

@@ -1,36 +1,43 @@
 ---
-title: "Security & sign-in"
-description: "Accounts, authenticator app enrollment, sessions, and what to do when something looks wrong."
+title: "Security and access"
+description: "How sign-in, sessions, roles, and extra checks protect your shop's data, and what to do when someone joins, leaves, or loses a device."
 ---
 
-## Your account
+## How Kinetic protects access
 
-- One account per person, invited by your shop admin. Never share credentials — activity is audited per user.
-- An authenticator app code is required at sign-in and again for sensitive actions.
-- Keep your recovery codes offline and private. They are the fallback if you lose your authenticator device.
+| Protection | Detail |
+| --- | --- |
+| **Password plus authenticator app code** | Everyone signs in with a password. Two-factor sign-in is set up under [Security](/admin/personal-security). |
+| **Sessions end** | After **4 hours** without activity, or **12 hours** in total. |
+| **Extra checks for sensitive actions** | Actions such as sending a signature request or changing security ask for a fresh code. After you confirm, you aren't asked again for **240 minutes**. |
+| **Roles** | **Member**, **Admin**, and **Owner** limit what each person can change. See [Roles and access](/start/roles). |
+| **Per-shop separation** | People only see the shops they belong to. |
 
-## Sessions
+## When someone joins
 
-- A session stays alive up to **4 hours** while idle and always ends **12 hours** after sign-in. Expect to sign in about once per workday.
-- On a shared or floor computer, sign out when you finish. Closing the tab does not end the session.
+1. [Add them](/admin/members) with the lowest role that works.
+2. Share the password securely, never in a text to a group.
+3. Ask them to set up two-factor sign-in on day one.
 
-## Sensitive-action checks
+## When someone leaves
 
-Admin and destructive actions — members, integrations, credentials, deletes — ask for a fresh authenticator app code. After you verify once, Kinetic trusts you for a 240-minute window. If prompts interrupt you often, batch your admin work into one sitting.
+1. **Suspend** them the same day. Access ends immediately.
+2. Reassign their open [tasks](/work/tasks) and any customers they own.
+3. Remove their phone extension and review team chats.
 
-## If you lose access
+## When someone loses their device or phone
 
-- **Lost phone or authenticator app:** sign in with a recovery code, then re-enroll your authenticator app in **Settings → Security**.
-- **No recovery codes:** your shop admin can reset your access.
-- **Fully locked out:** contact your admin. Member administration happens inside Kinetic — there is no self-service unlock email, by design.
+- They can sign in with a **backup code** at the extra-check step.
+- Backup codes work **only** in the **Confirm it's you** step, not at the normal sign-in screen.
+- If they have no backup codes and no authenticator, contact Kinetic support. **No admin button resets two-factor sign-in.**
 
-## If something looks wrong
+## Habits that protect you
 
-Treat these as urgent:
-
-- A sign-in email or authenticator prompt you did not trigger.
-- A record changed that nobody touched.
-
-Tell an admin immediately and change your password.
-
-And one rule that prevents most incidents: never forward a customer link — survey, signature, or facts-of-loss — to anyone other than the intended customer.
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Keep at least two admins. Review the member list quarterly. Sign out on shared computers. Report anything suspicious from the shop menu.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't share logins. Don't give everyone the Admin role. Don't send customer links to anyone but the customer.
+  </Card>
+</Columns>

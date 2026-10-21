@@ -1,0 +1,98 @@
+---
+title: "Parts"
+description: "The Parts tab: every part on the estimate, whether CCC ONE says it has arrived, how to find what is still outstanding, and why the totals here can differ from the Estimate tab."
+---
+
+A repair stops when a part is missing. The **Parts** tab answers the question every customer eventually asks: *"Is my part here yet?"*
+
+It lists every part on the estimate and shows whether it has arrived, so you can see at a glance what is holding a car up.
+
+<Info>
+Kinetic **reads** parts information from CCC ONE. It does not order parts or mark them received. Receipt is whatever CCC ONE reports. If a part has arrived but the tab still says **Outstanding**, update the receipt in CCC ONE.
+</Info>
+
+## The summary card
+
+At the top of the tab a card summarizes receipt:
+
+- A large percentage, such as **67%**, and **4 of 6 parts received**.
+- A green progress bar that fills as parts arrive.
+- **Not reported** instead of a percentage when CCC ONE has not sent any receipt information yet.
+
+The same figure shows as **Parts received** in the [drawer](/repair-orders/drawer).
+
+## The parts list
+
+Below the card, a table lists **every estimate line that has a part number**.
+
+| Column | What it shows |
+| --- | --- |
+| **Line** | The estimate line number. |
+| **Part** | What the part is. |
+| **Part #** | The part number. |
+| **Qty** | How many are needed. |
+| **Unit price** | The price of one. |
+| **Total** | Unit price times quantity. |
+| **Paint** | **Yes** when the part needs to be painted by the paint department (hover the heading for the explanation); **No** otherwise. |
+| **Status** | **Received**, **Outstanding**, or **Not reported**. |
+
+### What the statuses mean
+
+| Status | Meaning |
+| --- | --- |
+| **Received** | CCC ONE says the part has arrived. |
+| **Outstanding** | CCC ONE says the part has **not** arrived. This is the one to chase. |
+| **Not reported** | CCC ONE has not sent any receipt information for this part. Treat it as unknown, not as "late". |
+
+### Filter and sort
+
+A row of buttons under the card, labeled **Filter parts**, narrows the list:
+
+| Filter | Shows |
+| --- | --- |
+| **All** | Every part. |
+| **Outstanding** | Only parts still to come. |
+| **Received** | Only parts that have arrived. |
+| **Needs paint** | Only parts that need refinishing. Use it when the paint department asks what is coming. |
+
+Click any column heading to sort. Sorting by **Status** puts the **parts you still need to chase first**, rather than sorting alphabetically.
+
+### The totals bar
+
+At the bottom:
+
+- **Outstanding**: the combined value of the parts still not received. It appears only when something is outstanding.
+- **Numbered parts total**: the combined value of every part in the list.
+
+<Note>
+The **Numbered parts total** here can be lower than the **Parts** figure on the [Estimate](/repair-orders/estimate) tab. This list includes only lines **with a part number**. The Estimate tab also counts part prices on lines without a number, such as fees that CCC ONE prices like a part. Hover the label for the same explanation.
+</Note>
+
+## Empty states
+
+| You see | It means |
+| --- | --- |
+| **No estimate yet** | There is no estimate on the repair order, so there are no parts. |
+| **No numbered parts** | There is an estimate, but none of its lines has a part number. |
+
+Both come with the reminder: *Parts come from the CCC ONE estimate: every line with a part number shows here.*
+
+## How to use it
+
+<Steps>
+  <Step title="Before you call a customer about timing">
+    Open **Parts** and choose **Outstanding**. If nothing is outstanding, the car is not waiting on parts. If something is, you have the part and line number to quote.
+  </Step>
+  <Step title="When a car sits in Parts Hold">
+    Check **Outstanding**. Compare with your supplier order. Add a [note](/repair-orders/activity) with the ETA, and create a [task](/work/tasks) to check again on that day.
+  </Step>
+  <Step title="When paint asks what is coming">
+    Choose **Needs paint** to see which refinish parts are still outstanding.
+  </Step>
+</Steps>
+
+## Related
+
+- [Playbook: parts delays](/playbooks/parts-delays)
+- [Statuses: Parts Hold](/pipeline/statuses#repairs)
+- [Estimate](/repair-orders/estimate)

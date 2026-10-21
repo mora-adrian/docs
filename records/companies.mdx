@@ -1,0 +1,63 @@
+---
+title: "Companies"
+description: "Insurers, dealerships, fleets, vendors, and other organizations: what a company record holds, its contacts, how to edit it, and company enrichment."
+---
+
+import { Key } from "/snippets/ui.jsx";
+
+A **company** record is any organization you deal with: an insurance company, a dealership, a fleet or rental customer, a parts vendor, a tow company. A company can be the **customer** on a repair order, and a company is always who the **Insurer** party points to.
+
+Open **Companies** in the sidebar, or press <Key>⌘</Key> <Key>K</Key> and type the name. See the [Records overview](/records/overview) for finding, editing, and archiving.
+
+## What the sheet shows
+
+| Row | Meaning |
+| --- | --- |
+| A **logo** | Shown if one was found. |
+| **Address** | The street address. |
+| **Type** | The company's category, such as Insurance or Dealer, from your shop's list. |
+| **Website** | The company's site. |
+| Social links | **LinkedIn**, **Facebook**, and **Instagram**, when known. |
+| **Contacts · 4** | The people at this company (adjusters, agents, managers) who exist in Kinetic. Click one to open that person. |
+| **Linked repair orders · 12** | Every repair order the company is on. Click one to open its drawer. |
+
+## The edit form
+
+Choose **Edit** to open **Edit company**.
+
+| Section | Fields |
+| --- | --- |
+| **Company Information** | **Company name** (required, shown as **Legal name**), **Doing business as**, **Default category**. |
+| **Contact Information** | **Work number**, **Fax number**, **Email address**. |
+| **Street Address** | **Street address**, **Street address line 2**, **City**, **State**, **Zip/Postal code**. |
+| **Mailing Address** | A separate mailing address, if it differs from the street address. Same five fields. |
+| **Social Media** | **LinkedIn username**, **Facebook username**, **Instagram username**. |
+
+Save with **Save** or <Key>⌘</Key>+<Key>Enter</Key>.
+
+## Company enrichment
+
+On a company's sheet, **Fetch this company's public brand profile** pulls in public details: a description, industry, employee count, estimated revenue, and social links. Like person enrichment, it only fills blanks and never overwrites what you entered.
+
+- It needs a **website** or a **work email domain** on the record. Without one the sheet says **Add a website or a work email domain to this company to enable enrichment.**
+- It may say **Not configured** if your shop has not turned enrichment on. See [Shop settings](/admin/shop-settings#contact-enrichment).
+- If it fails you see **Enrichment failed. Try again.**
+
+## Companies and insurers
+
+The **Insurer** on a repair order is a company record. Keeping the insurer's company record tidy (one record per insurer, its adjusters listed under **Contacts**) makes the **Insurer** column on the boards, the **Send to adjuster** email, and the Agent's answers correct.
+
+<Tip>
+Add each adjuster you deal with as a **person** and link them to their insurer's company. The next time that adjuster appears on a repair order, Kinetic already knows who they are.
+</Tip>
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Use one record per company, with one consistent spelling. Fill in **Type** so reports and filters are meaningful. Add a website to unlock enrichment.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't make a new company for each branch office unless they genuinely behave as separate customers. Don't leave an insurer's contacts unlinked.
+  </Card>
+</Columns>

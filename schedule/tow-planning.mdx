@@ -1,0 +1,106 @@
+---
+title: "Tow planning and the map"
+description: "How Kinetic builds a day's truck routes, what each badge and time means, how to reorder legs, and why the route sometimes needs to be rebuilt."
+---
+
+import { Key, Tag } from "/snippets/ui.jsx";
+
+When a day has appointments that need a **tow truck**, Kinetic plans the trucks' day for you: who goes where, in what order, how long each drive takes, and when each truck is back home. You read it in the **Tow plan** section of the [day panel](/schedule/calendar#the-day-panel) and see it drawn on the **map**.
+
+<Note>
+The plan is a **proposal**, not a dispatch. Kinetic plans for **two trucks**, named **Truck 1** and **Truck 2**. There is no field for which driver takes which truck; decide that outside the app.
+</Note>
+
+## The rules the planner follows
+
+Knowing the rules helps you understand why a route looks the way it does.
+
+- Each truck has **one bed**: it carries a single vehicle at a time.
+- Every trip is anchored at the **shop** (the depot). A **pickup** always ends at the shop. A **delivery** always starts at the shop.
+- On one outing a truck may **drop off a car and then pick one up** before returning. A drop-off followed by a pick-up saves a trip back to the shop.
+- A truck may **not** pick up a car and then deliver another; the first car has to come home first. It also cannot pick up two cars in a row.
+- So every truck's day is a series of **legs**: leave the shop, optionally deliver, optionally pick up, return.
+- The planner pairs deliveries with the pickups that save the most empty driving, then **splits the legs between the two trucks** to balance drive time.
+- The day starts at **7:00 AM**. A **60-minute lunch** is taken at the shop on the return nearest midday.
+- A truck that arrives early **waits** until the appointment's time window opens.
+- A route that would finish after **6:00 PM** is flagged.
+
+## Building the plan
+
+The first time you open a day that has tow appointments, Kinetic plans it after a short moment while it says **Optimizing…**. After that:
+
+- **Optimize** (when no routes exist yet) or **Reoptimize** (when they do) rebuilds the whole day.
+- Use it after you **add, move, or cancel** a tow.
+
+If it fails, you see **Could not build the tow plan.** The most common cause is that **the shop has no address on file**, because the shop's address is where every route begins and ends. Ask your admin to add it in [Shop settings](/admin/shop-settings).
+
+## Reading a route
+
+Each truck is a card:
+
+- **Truck 1**, and at the right, the total **drive time** and **distance** in miles.
+- One or more **legs**. A leg that is not the only one is labeled **Leg 2 of 3**.
+- Inside a leg, rows in order:
+
+| Row | What it means |
+| --- | --- |
+| A depot row: **Leave Example Collision** | The truck departs the shop at that time. |
+| <Tag>Deliver</Tag> and a **vehicle and repair order number** | The truck is taking a car from the shop to the customer or vendor at this address. |
+| <Tag>Pick up</Tag> and a vehicle and repair order number | The truck is collecting a car from this address. |
+| **+0:45** at the right | The drive time from the previous stop. **≈+0:45** means it was a straight-line estimate, because the map service could not give road time for that leg. |
+| A depot row: **Return to Example Collision** | The truck is back at the shop. |
+| A depot row with a fork and knife: **Return to … (lunch)** · **until 12:30** | The lunch break. |
+
+### Badges on a truck
+
+| Badge | Meaning | What to do |
+| --- | --- | --- |
+| **Stale** | Appointments changed since the plan was built. | Choose **Reoptimize**. |
+| **Outside window** | The route cannot fit inside the scheduling window. | Re-plan, or move some appointments. |
+| **Estimated drive times** | Map routing was unavailable for some legs, so those times are straight-line estimates. | Choose **Reoptimize** to recompute. |
+| **Past 6:00 PM** | The truck gets home after the end of the tow day. | Move a stop to another day or truck. |
+
+## Reorder the legs
+
+You can reshape a truck's day by changing the **order** of its legs. It is available when a truck has **more than one leg**.
+
+- **Drag.** Grab the grip (six dots) at the left of a leg (**Drag to reorder this leg**) and drop it above or below another leg.
+- **Buttons.** Each leg has **Move leg 2 earlier** and **Move leg 2 later** arrows. Use these on touch screens or with a keyboard.
+
+Kinetic recalculates the times and redraws the map. An announcement says, for example, **Leg 2 moved to position 1 of 3**. If it cannot reorder, you see **Could not reorder the route.**
+
+<Info>
+You can reorder legs, but you cannot split a leg or move a stop onto another truck by hand. To change which truck does what, move the appointment's date or time and choose **Reoptimize**.
+</Info>
+
+## The map
+
+The map shows the day's routes:
+
+- Each truck's route is a **colored line**.
+- **Numbered pins** mark the stops in order.
+- A **depot pin** marks the shop.
+- Small pins mark appointments that have not been routed yet.
+- Controls: **Zoom in**, **Zoom out**, and **Fit all stops**.
+- The title bar describes it as **Map of the day**.
+
+| You see | Meaning |
+| --- | --- |
+| **Mapping isn't configured for this shop.** | The map service has not been set up. Everything else still works. |
+| **This browser can't render WebGL maps.** | Your browser or device cannot draw the map. Try another browser. |
+| **Map unavailable** | The map could not load. Reload the page. |
+
+## Giving drivers the plan
+
+Drivers can follow the day in their calendar app, with no Kinetic login. Choose **Copy calendar link** in the day panel. See [Calendar and appointments](/schedule/calendar#the-calendar-feed-for-drivers).
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Click **Reoptimize** whenever a tow changes. Check the **Past 6:00 PM** and **Outside window** badges before you promise a time. Put the gate and garage codes on the appointment.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't treat times shown with **≈** as exact. Don't tell a customer an arrival time before you have routed the day.
+  </Card>
+</Columns>

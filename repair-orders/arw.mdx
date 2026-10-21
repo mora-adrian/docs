@@ -1,0 +1,128 @@
+---
+title: "ARW: tracking who owes what"
+description: "The accounts receivable worksheet: record deductibles, insurer payments, supplements, and other balances, attach proof of payment, and check the sheet against CCC ONE."
+---
+
+import { Tag } from "/snippets/ui.jsx";
+
+The **ARW** (accounts receivable worksheet) is where a repair order's money is tracked. When a customer hands over a check for the deductible, or an insurer says a payment is on its way, the ARW is where that fact goes. It answers: *who owes what at pickup, what has already been paid, and what is still in the mail?*
+
+<Info>
+The ARW is a **tracking worksheet**. It does not charge cards, send invoices, or post to your accounting system. It records what your team knows.
+</Info>
+
+Getting it right matters beyond this tab:
+
+- The **payments applied** figure on every board card, and the **Received** column in the table, are the **Prepaid** total from this worksheet.
+- The **Past the money gate** list on [Today](/work/today) flags jobs that are far along with **$0 prepaid**.
+- Your team reads it before pickup to know what to collect.
+
+## The three amounts
+
+Each row of the worksheet has three money columns.
+
+| Column | Meaning | Example |
+| --- | --- | --- |
+| **Prepaid** | Money already received. | The customer paid the $500 deductible. |
+| **In transit** | Money sent or promised but not yet landed. | The insurer says the check was mailed Tuesday. |
+| **Due** | What is still owed. | $4,200 still expected from the insurer. |
+
+There is **no "confirm payment" button**. When money arrives, move the amount from **In transit** to **Prepaid** and choose **Save worksheet**.
+
+## The rows
+
+A row is one receivable: *who* owes *what for*.
+
+| Column | What to enter |
+| --- | --- |
+| **Payer** | **Customer** or **Insurer**. The name beside it is shown for context only, so renaming a customer later never rewrites a saved row. |
+| **Payment for** | The purpose. Pick from the list below. |
+| **Prepaid** | Amount received. |
+| **In transit** | Amount on its way, with an optional **proof** (see below). |
+| **Due** | Amount still owed. |
+| **Notes** | Anything useful, such as a check number. |
+
+### The purposes
+
+| Purpose | When to use it |
+| --- | --- |
+| **Deductible** <Tag>CCC ONE</Tag> | The customer's share under their policy. |
+| **Appearance allowance** <Tag>CCC ONE</Tag> | A payment made instead of repairing minor cosmetic damage. |
+| **Betterment** <Tag>CCC ONE</Tag> | An amount deducted because a new part improves the car. |
+| **Bottom line discount** <Tag>CCC ONE</Tag> | A flat reduction taken from the total. |
+| **Unrelated prior damage** | Old damage that is not part of this claim. |
+| **Related prior damage** | Old damage in the area being repaired. |
+| **Estimate** | The main body of the estimate. |
+| **Supplement 1** through **Supplement 9** | Each supplement the insurer pays separately. |
+| **Other** | Anything else. |
+
+The four purposes marked **CCC ONE** are special. Their amounts come from CCC ONE:
+
+- **Due is locked and calculated:** it equals the CCC ONE amount, **minus what you enter as Prepaid, minus what you enter as In transit** (never below zero). You cannot type over it.
+- A purpose can be used on **only one row**. In the purpose list it reads **Deductible (CCC ONE)**, and once taken, **Deductible (CCC ONE, already used)**.
+
+So paying the deductible is simple: add a **Deductible** row with the customer as payer, type the amount in **Prepaid**, and the **Due** drops to zero by itself.
+
+## Add, edit, save
+
+<Steps>
+  <Step title="Add a row">
+    Choose **Add row**. If the worksheet is empty it says **No receivables yet** and explains: *Add a row for each party that owes money at pickup or delivery: the customer, an insurer, or a third party.*
+  </Step>
+  <Step title="Fill it in">
+    Choose the **Payer** and **Payment for**, then type the amounts. Amounts can be written as `1234.56`, `-100`, or `(100.00)`. A red message, **Enter a valid amount to save**, appears if one cannot be read.
+  </Step>
+  <Step title="Save">
+    Choose **Save worksheet**. While there are unsaved changes, **Unsaved changes** shows in amber; after saving it says **Saved**. Choose **Discard** to throw away your edits.
+  </Step>
+</Steps>
+
+To delete a row, use its remove button. Nothing is final until you save.
+
+### If a teammate edits at the same time
+
+If someone saved the worksheet while you were editing, Kinetic will not overwrite their work. A red message says **Someone else saved this worksheet. Reload to see their changes.** Choose **Reload**, then redo your change on the latest version.
+
+## Payment proof
+
+Each **In transit** amount can carry a **proof**: a photo of the check, a screenshot of the insurer's notice, a PDF remittance. Beside the amount is a paperclip-style button. Choose it to:
+
+- **Upload from device** (or **Replace from device**),
+- **Choose from Files** (or **Replace from Files**) to pick a file already on the repair order,
+- **View payment proof** or **Remove proof**.
+
+If an upload fails, the row says **Upload failed**; try again.
+
+## The reconciliation footer
+
+At the bottom of the worksheet, several lines let you check it against CCC ONE:
+
+| Line | What it shows |
+| --- | --- |
+| **Totals** | The sum of every row's **Prepaid**, **In transit**, and **Due**. |
+| **CCC ONE** | What CCC ONE reports: the **customer receipts (deposit)** under **Prepaid** and the **estimate grand total** under **Due**. Shows **Not reported** when CCC ONE has not sent a figure. |
+| **Due at pickup** | The estimate grand total from CCC ONE, minus everything your sheet shows as prepaid or in transit. It is what still has to be collected for the total to be covered. |
+| **Difference** | Two comparisons, as signed amounts. Under **Prepaid**: your prepaid total minus CCC ONE's deposit total. Under **Due**: your sheet's total due minus **Due at pickup**. |
+
+**Difference** reads `$0.00` in gray when the worksheet agrees with CCC ONE. When it does not, it shows a signed amount in red, such as **+$50.00** or **-$150.00**. A positive amount means your worksheet is higher than the figure it is compared with; a negative amount means it is lower.
+
+<Tip>
+**A red Difference before pickup means something is missing.** Check for an unlogged supplement, a forgotten deductible, or a payment you never recorded.
+</Tip>
+
+## Good habits
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Record a payment the day it is promised, in **In transit**, then move it to **Prepaid** the day it lands. Attach proof. Review the **Difference** line before every delivery.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't enter an insurer payment under **Customer**. Don't leave a supplement without its own row. Don't type over a **CCC ONE** purpose's Due; change it by recording the payment.
+  </Card>
+</Columns>
+
+## Related
+
+- [Playbook: payments at pickup](/playbooks/payments-at-pickup)
+- [Today: past the money gate](/work/today)
+- [Files](/repair-orders/files)

@@ -1,0 +1,66 @@
+---
+title: "The Calendar tab"
+description: "One repair order's own calendar: the planned window, the actual repair window, every milestone, the agenda, and how to move the target date by dragging."
+---
+
+import { Key } from "/snippets/ui.jsx";
+
+The **Calendar** tab on a repair order is a planning view for **that one job**. It is not the shop-wide [Calendar](/schedule/calendar), which schedules drop-offs, pickups, and tow trucks for every job. This tab shows when *this* car is planned to be in and out, when things actually happened, and what is coming.
+
+## The month view
+
+A month grid shows the job's dates. Use **Previous month** and **Next month** to move around. Two colored bars run across the days:
+
+| Bar | Meaning |
+| --- | --- |
+| **Planned window (start → target)** (blue) | From the repair order's start to its target date: the plan. |
+| **Repairs (actual)** (amber) | From the day repairs really began to the day they finished. A dashed edge means repairs are still running. |
+
+Little chips mark the **milestones** on their days. A legend underneath explains the bars.
+
+## Milestones
+
+| Milestone | Where the date comes from |
+| --- | --- |
+| **Appointment** | CCC ONE |
+| **Arrival / in-date** | CCC ONE |
+| **Repair start** | Kinetic |
+| **Repairs complete** | CCC ONE |
+| **Target / out** | You, CCC ONE, or Kinetic's projection (see [Facts](/repair-orders/facts#target-date)) |
+| **Delivered** | CCC ONE |
+| **Archived** | Kinetic |
+| **Rental expires** (dashed amber chip) | Worked out automatically: **30 days after arrival**. A reminder to check any rental car the customer has. |
+
+Appointments scheduled on the shop [Calendar](/schedule/calendar) for this vehicle also appear here as chips.
+
+## The only thing you can change here
+
+You can change **one** thing on this tab: the **Target / out** date. Everything else is read-only (the CCC ONE dates are changed in CCC ONE).
+
+**To move the target with the mouse:** drag the right-hand edge of the blue bar to a new day.
+
+**To move it with the keyboard:**
+
+1. Press <Key>Tab</Key> until the bar's edge is focused. Its label reads **Adjust target / out date**.
+2. Press <Key>←</Key> or <Key>→</Key> to move one day. Press <Key>↑</Key> or <Key>↓</Key> to move a week.
+3. A note appears: **Target: Fri, Oct 24, 2026. Press Enter to apply or Escape to cancel.**
+4. Press <Key>Enter</Key> to apply, or <Key>Esc</Key> to cancel.
+
+The change is saved immediately and recorded in the activity history. It becomes a **date you set by hand**, which wins over automatic projections until you choose **Use automatic date** in the repair order facts.
+
+## The agenda
+
+Beside the month (or below it on a phone) a list called **Agenda** shows the same events in date order, grouped by day, with friendly labels such as **Today**, **Tomorrow**, or **in 3 days**. A milestone with no date reads **Date not set**.
+
+## When there is nothing to show
+
+**No dates on this repair order**: *Set a milestone, appointment, or target date and it will appear here.*
+
+## On a phone
+
+The month grid is hidden on small screens. You still get the **Agenda** and the **Milestones** list.
+
+## Related
+
+- [Facts: target date](/repair-orders/facts#target-date)
+- [Shop calendar](/schedule/calendar)

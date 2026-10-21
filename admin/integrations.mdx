@@ -1,35 +1,38 @@
 ---
 title: "Integrations"
-description: "The external systems Kinetic connects to — what each one does and who manages it."
+description: "What Kinetic connects to (CCC ONE, texting, phones, and mailboxes), where each is set up, and how to tell when one has stopped working."
 ---
 
-Kinetic connects to the systems a collision center already uses. Admins manage connections in Settings. Every integration reports real connection health, so you see failures — not a fake "connected" badge.
+## CCC ONE
 
-## Estimating
+CCC ONE is the shop's estimating and production system, and the **source of truth** for repair orders. Kinetic receives repair orders, estimates, parts, and production stages from it.
 
-- **CCC ONE** — the estimating system of record. CCC events update repair order fields automatically, because CCC is authoritative for every field it supplies. CCC statuses map to your shop's statuses through admin configuration. Estimates flow from CCC into Rivet for AI review.
+- Kinetic cannot create a repair order. If one is missing, check CCC ONE.
+- Customer details, VIN, and dates are corrected in CCC ONE.
+- Setup and reconnection are handled by Kinetic support; contact them if repair orders stop updating.
+- If CCC ONE sends a production stage Kinetic has no rule for, the Activity tab shows **CCC status unmapped**.
 
-## Communications
+## Texting line
 
-- **Text messaging** — the shop's shared texting line for customer conversations.
-- **Email** — outbound email with delivery tracking, plus a mailbox monitor that watches inbound mail for claim-related messages.
-- **Voice calls** — recorded calls with transcription.
-- **Phone screen pops** — an incoming call on your phone system can open the matching customer record automatically.
-- **Dictation** — speech-to-text for composing notes and messages hands-free from the floor.
+The shop's texting number. Status shows in [Messaging settings](/admin/messaging-settings): **Configured**, **Not configured**, or **Unable to check**.
 
-## Documents and signatures
+## Phone system
 
-- **E-signatures** — send authorizations and documents for electronic signature. Signature status tracks back to the repair order.
+Connect it in [Shop settings](/admin/shop-settings#phone-system) so calls appear on repair orders. **Needs reconnect** means the link has lapsed.
 
-## Data services
+## Mailboxes
 
-- **Vehicle market value** — market-value ranges that power the expected insurance payout shown on repair orders.
-- **Contact enrichment** — optional and admin-gated. It fills only *empty* contact fields and never overwrites something a person entered.
+Each person connects their own mail account (Google or Microsoft) in [Preferences](/admin/personal-preferences#mailbox). Kinetic reads it; it does not send from it or delete from it. Connecting a mailbox is also what turns on [Email review](/communicate/email-review).
 
-## AI providers
+## Map
 
-Estimate review, photo analysis, and the Agent's drafting features run on configured AI providers. Track usage in **Settings → AI usage**.
+The [tow map](/schedule/tow-planning#the-map) uses a mapping service. If it is not set up, the page says **Mapping isn't configured for this shop.** Everything else keeps working.
 
-## When an integration fails
+## Checking health
 
-Failures surface visibly. A broken connection appears in Settings, and the features that depend on it degrade honestly instead of pretending to work. Reconnect the provider in Settings; queued work and retries resume where they left off. If a failure persists, contact your admin or platform operator.
+| Sign | Likely cause | Fix |
+| --- | --- | --- |
+| Repair orders stop updating | CCC ONE connection | Contact support |
+| **Needs reconnect** on the phone system | Connection lapsed | Reconnect in Shop settings |
+| Texting **Unable to check** | Temporary | Wait a minute and reload; contact support if it persists |
+| No Email review item at all | No mailbox connected | Connect in Preferences |

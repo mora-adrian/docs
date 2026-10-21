@@ -1,0 +1,117 @@
+---
+title: "People"
+description: "Every field on a person record, the Do not text switch, how contact enrichment works, and how a person connects to vehicles and repair orders."
+---
+
+import { Key, Tag } from "/snippets/ui.jsx";
+
+A **person** record is anyone you deal with: customers, drivers, adjusters, appraisers, referrers, attorneys. A person can play several roles over time. The same person can be a customer on one job and the referrer on another, and it stays one record.
+
+Open **People** in the sidebar to browse, or press <Key>⌘</Key> <Key>K</Key> and type a name. See [Records overview](/records/overview) for how to find, edit, and archive.
+
+## What the sheet shows
+
+Click a person and a sheet opens with:
+
+| Row | Meaning |
+| --- | --- |
+| **Phone** | Their main phone number. |
+| **Email** | Their email address. |
+| **Address** | Their mailing address. |
+| **Referred by** | Where they heard about the shop. |
+| **Company** | The company they belong to, if any. |
+| **Vehicles · 2** | Every vehicle they own, with its VIN. |
+| **Repair orders · 3** | Every repair order they appear on. Click one to open its drawer. |
+| **Public profile data** | Anything enrichment found. See below. |
+
+## The edit form
+
+Choose **Edit** to open **Edit person**. The form is split into sections.
+
+### Preferences
+
+| Field | Notes |
+| --- | --- |
+| **Do not text** | A switch. When on, **outgoing texts to this person are blocked.** Email and calls still work. See [below](#contact-preferences). |
+| **Reason** | Appears when the switch is on. *e.g. Customer requested no outreach.* |
+
+### Name
+
+| Field | Notes |
+| --- | --- |
+| **Prefix/Salutation** | None, Mr., Ms., Dr., Prof., Rev., Sir, Dame, or Hon. |
+| **First name** | Required. |
+| **Last name** | Required. |
+| **Preferred name** | A nickname. It appears in quotes next to their name, such as Jordan "JR" Rivera. |
+| **Suffix** | None, Jr, Sr, II, III, IV, or V. |
+
+### Contact numbers and email
+
+| Field | Notes |
+| --- | --- |
+| **Mobile number** | The number Kinetic texts. At least one number is recommended. |
+| **Work number** | |
+| **Home number** | |
+| **Email address** | Used for notifications and statements. |
+
+Phone numbers are cleaned up and stored in one standard form, so `704-555-0100`, `(704) 555 0100`, and `7045550100` are all the same number.
+
+### Mailing address
+
+**Mailing address**, **Mailing address line 2**, **City**, **State**, and **Zip/Postal code**. Used for statements and correspondence, and as the pickup address that [appointment scheduling](/schedule/calendar) offers by default.
+
+### Social media
+
+**LinkedIn username**, **Facebook username**, and **Instagram username**. If enrichment filled one in, a gray line beneath reads **Added automatically · {date}**.
+
+### Classification
+
+**Referral source** and **Default category**. Both are picked from lists your shop maintains.
+
+Save the form with **Save** or <Key>⌘</Key>+<Key>Enter</Key>.
+
+## Contact preferences
+
+### Do not text
+
+Turn this on when a customer asks you to stop texting them, or when your team agrees texting would not be appropriate.
+
+- Outgoing texts to that person are **blocked**. The thread on their repair order shows **{Name} is flagged do not text**, with your reason if you wrote one, and the composer is disabled.
+- **Email and calls are not affected.**
+- It also stops **survey texts** from going to them. A survey scheduled for a Do-not-text customer is skipped, and the CSI screen shows **Recipient blocked**.
+- It does **not** stop *them* texting you. For a number that should never reach you, use **Block on all lines** in [Messages](/communicate/messages#blocking-a-number).
+
+<Tip>
+Always write a **Reason**. A teammate who finds a disabled composer deserves to know why.
+</Tip>
+
+## Contact enrichment
+
+**Enrichment** looks up *public* profile details about a person and fills in what is missing: social profiles, job title, birth year or age, an additional phone or address.
+
+- It is **optional**, and off unless your admin turns it on in [Shop settings](/admin/shop-settings#contact-enrichment).
+- It only fills **empty** fields. It **never overwrites** something a person typed.
+- Each detail is labeled **High** (a confident match) or **Uncertain match**. Treat an uncertain match as a hint, not a fact, and check before relying on it.
+- A footer shows **Public profile data · {date}** so you know how fresh it is.
+
+At the bottom of a person's sheet, the **Enriched** section has an **Enrich** button. If it is disabled, a line explains why:
+
+| You see | Why |
+| --- | --- |
+| **Contact enrichment is off in Settings** | Your shop has not turned it on. |
+| **Contact enrichment isn't set up for this shop** | The lookup service is not connected. |
+| **Not enough contact details to look up** | The record needs more: a name plus a phone, email, or address. |
+| **Already looked up recently** | It was run recently. Try again later. |
+
+If nothing is found, you see **No public profile data on file.**
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Capture a mobile number and an email. Use **Preferred name** for how the customer likes to be addressed. Write a reason whenever you switch on **Do not text**.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't trust an **Uncertain match** without checking. Don't make a second record for a customer who got a new phone number; edit the first one.
+  </Card>
+</Columns>

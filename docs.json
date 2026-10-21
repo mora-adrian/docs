@@ -1,77 +1,234 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Kinetic User Guide",
-  "description": "User manual for Kinetic, Collision Partners' collision repair management OS — repair orders, records, messaging, scheduling, AI estimate review, and shop administration.",
+  "name": "Kinetic Help Center",
+  "description": "The Kinetic user manual and knowledge base: every screen, feature, routine, and setting, explained in plain language for collision repair teams.",
   "colors": {
     "primary": "#005AD2",
     "light": "#5E9DFF",
-    "dark": "#005AD2"
+    "dark": "#18181B"
   },
-  "fonts": {
-    "body": {
-      "family": "Inter",
-      "format": "woff2",
-      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    },
-    "heading": {
-      "family": "Inter",
-      "format": "woff2",
-      "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#0D0D0F"
     }
   },
-  "favicon": "/favicon.svg",
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": "system"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Inter",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "favicon": "/favicon.png",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "/"
+  },
+  "appearance": {
+    "default": "system"
+  },
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart",
-          "getting-started/navigation",
-          "getting-started/roles"
+        "tab": "Start here",
+        "icon": "rocket",
+        "groups": [
+          {
+            "group": "Welcome",
+            "pages": [
+              "index",
+              "start/what-is-kinetic",
+              "start/how-kinetic-thinks",
+              "start/collision-primer",
+              "start/glossary"
+            ]
+          },
+          {
+            "group": "Get going",
+            "pages": [
+              "start/sign-in",
+              "start/tour",
+              "start/roles",
+              "start/first-day",
+              "start/by-job"
+            ]
+          }
         ]
       },
       {
-        "group": "Daily Work",
-        "pages": [
-          "daily-work/today",
-          "daily-work/tasks",
-          "daily-work/boards",
-          "daily-work/repair-orders",
-          "daily-work/records",
-          "daily-work/messages",
-          "daily-work/calendar",
-          "daily-work/csi",
-          "daily-work/email-review"
+        "tab": "Daily work",
+        "icon": "layout-dashboard",
+        "groups": [
+          {
+            "group": "Your day",
+            "pages": [
+              "work/today",
+              "work/tasks",
+              "work/notifications"
+            ]
+          },
+          {
+            "group": "Pipeline",
+            "pages": [
+              "pipeline/overview",
+              "pipeline/statuses",
+              "pipeline/views"
+            ]
+          },
+          {
+            "group": "Repair orders",
+            "pages": [
+              "repair-orders/overview",
+              "repair-orders/drawer",
+              "repair-orders/facts",
+              "repair-orders/activity",
+              "repair-orders/estimate",
+              "repair-orders/parts",
+              "repair-orders/arw",
+              "repair-orders/files",
+              "repair-orders/signatures",
+              "repair-orders/calendar"
+            ]
+          },
+          {
+            "group": "Communicate",
+            "pages": [
+              "communicate/messages",
+              "communicate/texting",
+              "communicate/email",
+              "communicate/calls",
+              "communicate/email-review"
+            ]
+          },
+          {
+            "group": "Records",
+            "pages": [
+              "records/overview",
+              "records/people",
+              "records/companies",
+              "records/vehicles"
+            ]
+          },
+          {
+            "group": "Schedule",
+            "pages": [
+              "schedule/calendar",
+              "schedule/tow-planning"
+            ]
+          },
+          {
+            "group": "Customer satisfaction",
+            "pages": [
+              "csi/overview",
+              "csi/customer-pages"
+            ]
+          }
         ]
       },
       {
-        "group": "AI & Estimate Review",
-        "pages": [
-          "ai-review/rivet",
-          "ai-review/agent"
+        "tab": "AI",
+        "icon": "sparkles",
+        "groups": [
+          {
+            "group": "AI in Kinetic",
+            "pages": [
+              "ai/overview",
+              "ai/rivet",
+              "ai/agent",
+              "ai/writing-tools",
+              "ai/text-kinetic"
+            ]
+          }
         ]
       },
       {
-        "group": "Administration",
-        "pages": [
-          "admin/settings",
-          "admin/integrations",
-          "admin/security"
+        "tab": "Playbooks",
+        "icon": "list-checks",
+        "groups": [
+          {
+            "group": "Routines",
+            "pages": [
+              "playbooks/overview",
+              "playbooks/daily-sweep",
+              "playbooks/lead-to-scheduled",
+              "playbooks/supplements",
+              "playbooks/parts-delays",
+              "playbooks/payments-at-pickup",
+              "playbooks/delivery",
+              "playbooks/total-loss"
+            ]
+          }
         ]
       },
       {
-        "group": "Guides",
-        "pages": [
-          "best-practices"
+        "tab": "Administration",
+        "icon": "settings",
+        "groups": [
+          {
+            "group": "Set up your shop",
+            "pages": [
+              "admin/overview",
+              "admin/shop-settings",
+              "admin/repair-order-settings",
+              "admin/production",
+              "admin/messaging-settings",
+              "admin/members",
+              "admin/reports",
+              "admin/ai-usage"
+            ]
+          },
+          {
+            "group": "Connections and safety",
+            "pages": [
+              "admin/integrations",
+              "admin/security"
+            ]
+          },
+          {
+            "group": "Your account",
+            "pages": [
+              "admin/personal-preferences",
+              "admin/personal-security"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help",
+        "icon": "life-buoy",
+        "groups": [
+          {
+            "group": "Get unstuck",
+            "pages": [
+              "help/troubleshooting",
+              "help/faq"
+            ]
+          },
+          {
+            "group": "Work like a pro",
+            "pages": [
+              "help/best-practices",
+              "help/dos-and-donts",
+              "help/shortcuts",
+              "help/limits"
+            ]
+          }
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
@@ -81,16 +238,7 @@
       }
     ]
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+  "footer": {
+    "socials": {}
   }
 }

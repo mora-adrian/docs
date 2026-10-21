@@ -1,0 +1,146 @@
+---
+title: "What customers see"
+description: "The pages your customers open on their phones: the satisfaction survey, the facts-of-loss form, and signature links. What each looks like, what it asks, and what to tell customers who get stuck."
+---
+
+Customers never sign in to Kinetic. Everything they do happens on a **private link** you send by text. This page shows what is on the other end of those links, so you can walk a customer through them over the phone.
+
+<Note>
+Every customer link is **personal and unguessable**. It works for that one customer and that one purpose. It carries no login and no other customers' data.
+</Note>
+
+## At a glance
+
+| Link | Who sends it | How it is sent | How long it works |
+| --- | --- | --- | --- |
+| **Satisfaction survey** | Kinetic, automatically | Text, about two business days after the pulse check | 30 days |
+| **Facts of loss** | You | **Send link via text**, or **Copy link** | Until used or expired |
+| **Signature request** | You | **Send via text** | Until signed, declined, or expired |
+
+## The satisfaction survey
+
+This is the full survey described in [CSI](/csi/overview). It opens as a single, mobile-friendly page with the shop's name on it.
+
+### What the customer sees
+
+<Steps>
+  <Step title="A loading moment">
+    The page says **Loading your survey…** for a second.
+  </Step>
+  <Step title="A short greeting">
+    It names the customer by first name, the shop, and the vehicle, so they know which repair it is about.
+  </Step>
+  <Step title="Five questions rated 1 to 5">
+    Each is a row of numbered buttons. The left end reads **Very dissatisfied** and the right end reads **Very satisfied**.
+
+    | Question |
+    | --- |
+    | Overall, how satisfied are you with your repair experience? |
+    | How satisfied are you with the quality of the repair? |
+    | How well did we keep you informed? |
+    | How satisfied are you with how long the repair took? |
+    | How was your vehicle's condition and cleanliness when you picked it up? |
+  </Step>
+  <Step title="One recommendation question rated 0 to 10">
+    **How likely are you to recommend us to a friend or family member?** The ends read **Not at all likely** and **Extremely likely**.
+  </Step>
+  <Step title="An optional comment">
+    **Anything else you'd like us to know?** Up to 2,000 characters. This is the only question the customer can skip.
+  </Step>
+  <Step title="Submit">
+    **Submit my answers** stays unavailable until all six rated questions have an answer. The page says **Please answer every question, then submit.** if the customer tries too early.
+  </Step>
+</Steps>
+
+### What happens next
+
+The customer sees **Thank you** and **We got your answers and shared them with the team.** Their answers appear on the repair order's **Customer survey** checklist and on the [CSI screen](/csi/overview#responded).
+
+### Messages a customer may see
+
+| Message | What it means | What to tell them |
+| --- | --- | --- |
+| **This survey link is no longer active** with *It may have expired or already been used.* | The 30-day window passed, or the link was already used. | Thank them. If they still want to give feedback, take it by phone and add a note on the repair order. |
+| **We already received your answers — nothing more to do.** | They submitted twice. | Nothing. Their first submission was kept. |
+| **Couldn't load your survey** | The page could not reach the server. | Ask them to reload, or try again in a minute. |
+| **Couldn't reach the server. Your answers are safe; try again.** | A temporary connection problem during submission. | Their answers are still on the screen. Ask them to tap **Submit my answers** again. |
+| **We could not save your answers.** or **Submission failed.** | The submission was rejected. | Ask them to try again; if it keeps failing, take their feedback by phone. |
+| **This link is no longer valid.** | The link was mistyped or cut off in the text. | Ask them to tap the link in the original text rather than copying it. |
+
+<Tip>
+A survey link cannot be re-sent from the CSI screen once it expires. If a customer asks for a new one, record their feedback by phone and add it as a **note** on the repair order so it is not lost.
+</Tip>
+
+## The facts-of-loss form
+
+You send this from the repair order's **Signatures** tab. The customer gets a text with a link and fills in the form on their phone.
+
+### Layout
+
+One page with four sections, in this order:
+
+1. **About you**: preferred contact method and how they heard about the shop.
+2. **The accident**: what happened, and whether the vehicle was moving.
+3. **Who was in the vehicle**: a seat diagram, with seatbelts.
+4. **Since the accident**: warning lights, noises, add-on equipment, and protective coatings.
+
+Every question is required. Questions that depend on an earlier answer appear only when they apply: the speed, impact, and skid questions show only if the vehicle was **moving**, and **Tell us more** boxes open when an answer is **Yes**.
+
+The full list of questions is in [Signatures and facts of loss](/repair-orders/signatures#what-the-customer-is-asked).
+
+### After they submit
+
+- The customer sees **Thank you. We got your answers and added them to your repair order.**
+- Kinetic builds a **PDF** of the answers and files it on the repair order's **Files** tab tagged **Facts of Loss**.
+- An entry appears on the **Activity** tab.
+
+### If the link fails
+
+The customer sees **This link is not working. It may have expired or already been used.** and is told to call or text the shop. Send a fresh link from the **Signatures** tab.
+
+## Signature requests
+
+When you choose **Send via text** on a contract, the customer receives a text from the shop's number with a link.
+
+<Steps>
+  <Step title="They open the link">
+    The document opens on their phone with their name, vehicle, and claim details already filled in. Your Signatures list changes to **Viewed**.
+  </Step>
+  <Step title="They read and sign">
+    They review the document and sign with a finger on the screen. No account or app is needed.
+  </Step>
+  <Step title="They finish">
+    Your list changes to **Signed**, and the signed copy is filed on the repair order's **Files** tab.
+  </Step>
+</Steps>
+
+If they refuse, the request shows **Declined**. If they wait too long, it shows **Expired**, and you send a new request.
+
+### Helping a customer who is stuck
+
+- **They did not get the text.** Check that the mobile number on the customer record is correct and the customer is not marked **Do not text**. Ask them to look for a message from an unfamiliar number.
+- **The link does nothing on a computer.** Links are designed for phones, but any modern browser works. Ask them to open it on the phone that received it.
+- **They want to read it first.** Use **Preview** on your side and read the document to them, or tell them they can take their time. Nothing is binding until they sign.
+- **They cannot find the text later.** Send a new request. Do not send the same link by email unless the customer asked for that.
+
+## Privacy rules for all customer links
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Send links only to the customer's own phone number. Tell the customer to expect a text from the shop. Re-send when a link has expired.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't paste links into group chats or public places. Don't forward a link to another person. Don't ask a customer to read their answers back to you in place of using the form.
+  </Card>
+</Columns>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="CSI: customer satisfaction" icon="star" href="/csi/overview">
+    Pulse check, survey schedule, and the CSI screen.
+  </Card>
+  <Card title="Signatures and facts of loss" icon="pen-line" href="/repair-orders/signatures">
+    Sending and tracking documents from the repair order.
+  </Card>
+</CardGroup>

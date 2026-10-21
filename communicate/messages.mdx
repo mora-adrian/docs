@@ -1,0 +1,106 @@
+---
+title: "Messages"
+description: "The shared inbox: how conversations are listed, how to assign an unassigned text to a repair order, and how to hide a conversation or block a number."
+---
+
+import { Tag } from "/snippets/ui.jsx";
+
+**Messages** is the shop's shared inbox. Every customer conversation is here in one list, whether it came in as an iMessage, a regular text (SMS), or an email, so a customer's message never sits on one person's phone.
+
+Open it from **Communications → Messages** in the sidebar. A number beside the name counts conversations.
+
+<Note>
+Messages is for **reading and sorting**. The full composer, with templates, AI rewrite, and attachments, is the same one that lives on a repair order's **Texts** tab, and it appears right here as soon as a conversation belongs to a repair order. See [Texting customers](/communicate/texting).
+</Note>
+
+## The layout
+
+On a computer, the screen has two panes: the **conversation list** on the left and the **open conversation** on the right. On a phone, the two take turns: tap a conversation to open it, and tap **Back to conversations** (the arrow at the top left) to return.
+
+### The conversation list
+
+- A search box, **Search conversations**, filters by name or content.
+- Each row shows the **sender** with their initials, a preview of the last message (or the subject, for email), a **time**, and a small icon for the channel: a speech bubble for iMessage, a phone for SMS, an envelope for email.
+- Beside the sender is the **repair order number**, or an <Tag>Unassigned</Tag> badge when the conversation does not belong to a repair order yet.
+- Older conversations load when you choose **Load more**.
+- At the bottom a collapsed section called **Hidden** holds conversations you or your shop have hidden. Nothing in it is deleted.
+
+If nothing is here you see **No conversations** with the note *Inbound texts and iMessages appear here.* If the list could not load you see **Something went wrong while loading conversations.** with a retry button.
+
+### The open conversation
+
+The top bar shows a channel badge and the sender's name. On the right:
+
+- **Open repair order** and its number, or an **Unassigned** badge.
+- A **⋮ menu** (**Conversation actions**).
+- **Blocked on all lines**, a badge, when the number is blocked.
+
+When a conversation belongs to a repair order, the rest of the pane is the full **Texts** experience: message bubbles, the sentiment and line-health readings, and the composer. See [Texting](/communicate/texting).
+
+## An unassigned conversation
+
+When a text arrives from a number Kinetic cannot tie to a repair order, it lands as **Unassigned**. You can read it, but you cannot reply until it belongs to a job.
+
+<Steps>
+  <Step title="Open it">
+    Select the conversation. The messages show read-only.
+  </Step>
+  <Step title="Find the repair order">
+    At the bottom, under **Assign to a repair order**, type in **Search repair orders…**. You can search by repair order number, customer, or vehicle. Choose the match in the **Assign to…** list.
+  </Step>
+  <Step title="Assign">
+    Choose **Assign**. The conversation moves onto the repair order, joins its history, and the composer appears.
+  </Step>
+</Steps>
+
+<Tip>
+Assign unmatched texts the moment you see them. An unassigned text is invisible to everyone working that job, and a customer waiting for an answer cannot tell why they are being ignored.
+</Tip>
+
+## Conversation actions
+
+Open the **⋮ menu** (**Conversation actions**) at the top right of a conversation.
+
+| Action | What it does |
+| --- | --- |
+| **Hide for me** | Takes the conversation out of **your** list. Teammates still see it. **Restore for me** brings it back. |
+| **Hide for shop** | Hides it from **everyone** in the shop. It does not block the number and does not delete anything. Asks you to confirm: **Hide conversation for shop?** **Restore for shop** reverses it. Available to people allowed to manage shop-wide visibility. |
+| **Block on all lines** | Stops inbound messages and direct sends from that number on every text line your account owns. See below. |
+
+### Blocking a number
+
+Blocking is for spam and abuse. It is deliberate and hard to do by accident.
+
+1. Open **Block on all lines**. A window titled **Block number on all lines** says: *Blocking this number stops inbound messages and direct sends on every text line in this account. Group messages may still pass. Existing history is not deleted.*
+2. It shows the number. Type **BLOCK ALL LINES** exactly to enable the button.
+3. Choose **Block number on all lines**. You may be asked for a fresh authenticator code.
+
+Afterward the conversation shows **Blocked on all lines**.
+
+If the menu says **Block status unknown** or **unavailable**, a bar appears with **Check block status**. Use it to ask the texting service for the current state before trying again.
+
+<Warning>
+Do not block a real customer to stop one conversation. Use **Hide for me** for that. A blocked customer cannot text the shop at all.
+</Warning>
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Check Messages at the start of the day, after lunch, and before you leave. Assign every unassigned text. Reply from here instead of from a personal phone, so the history stays on the job.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't hide a conversation for the shop because it is awkward. Don't leave unassigned texts overnight. Don't reply to a customer from a personal phone.
+  </Card>
+</Columns>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Texting customers" icon="message-square" href="/communicate/texting">
+    The composer, templates, and the health readings.
+  </Card>
+  <Card title="Email" icon="mail" href="/communicate/email">
+    Email on a repair order, with automatic follow-up.
+  </Card>
+</CardGroup>

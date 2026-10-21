@@ -1,0 +1,108 @@
+---
+title: "Rivet"
+description: "Rivet reviews an estimate and its photos for operations that may be missing. How to run it, read the findings, record a verdict on each, and use the Estimates list."
+---
+
+import { Tag } from "/snippets/ui.jsx";
+
+**Rivet** is Kinetic's estimate reviewer. An estimate is the itemized list of repairs, parts, and labor prepared for a damaged car. Estimates sometimes leave things out: a sensor that must be recalibrated after a bumper is replaced, a seam sealer, a scan. Left out, those become problems later, or unpaid work.
+
+Rivet reads the estimate and the damage photos, compares them with repair knowledge, and lists **operations the estimate may be missing**. It suggests. A person decides.
+
+<Note>
+Rivet never edits the estimate and never talks to the insurer. It produces a list of things to **consider**, each with its reasoning.
+</Note>
+
+## Which repair orders it can review
+
+All of these must be true:
+
+- The repair order is **not an opportunity** (it has moved past the first status).
+- It is **not archived**.
+- It is **not a total loss**.
+- The estimate total is **over $300**.
+
+If a repair order does not qualify, the **Audit with Rivet** button is unavailable.
+
+## Run a review
+
+<Steps>
+  <Step title="Open the Estimate tab">
+    On the repair order, open **Estimate**.
+  </Step>
+  <Step title="Choose Audit with Rivet">
+    The review is queued, then runs. The status reads **Review queued**, then **Review running**. It takes **several minutes**. You can leave the page; the results wait for you.
+  </Step>
+  <Step title="Open the results">
+    When it finishes the button changes to **See audit results**. Rivet analyzes up to **24 photos** from the repair order's files, so upload the damage photos first.
+  </Step>
+</Steps>
+
+An email goes to the repair planner, with the person who requested the review on copy.
+
+<Tip>
+Run Rivet **after the estimate and photos are final** and **again after a supplement**. If the estimate has a newer revision than the one reviewed, the results show **Needs re-review**.
+</Tip>
+
+## Reading the results
+
+Findings are grouped by **operation group** or **section** of the estimate, such as front bumper, glass, or electrical. Inside a group they are ordered by how likely they are to be needed:
+
+| Tier | Meaning |
+| --- | --- |
+| **Almost always** | Nearly every repair like this needs it. Check first. |
+| **Usually** | Needed in most cases. |
+| **Consider** | Worth a look; depends on the car or the damage. |
+
+Each finding has a **title**, the **reasoning**, and a **confidence** tag showing how sure Rivet is. Click a title or the reasoning to **copy** it, for example into a supplement request.
+
+### Move around
+
+A **Sections** rail lists the groups. Click one to jump. Press <kbd>Shift</kbd>+<kbd>O</kbd> to collapse or expand all sections at once.
+
+### Record a verdict
+
+Every finding should get a verdict. That is how the shop and Rivet learn, and how the team knows what has been handled.
+
+| Control | Verdict | When to use it |
+| --- | --- | --- |
+| Thumbs up | **Added** | You added the operation to the estimate (or will, in a supplement). |
+| Thumbs down, then **Not applicable** | Not applicable | It does not apply to this car or damage. A **note** is required. |
+| Thumbs down, then **Already on estimate** | Already on the estimate | It is there under another description. A **note** is required. |
+| Thumbs down, then **Duplicate** | Duplicate | Rivet listed the same thing twice. |
+
+Reviewed findings move into a **Reviewed** group so the open ones stay on top.
+
+### Ask AI about a finding
+
+**Ask AI** opens the [Agent](/ai/agent) with a question about that finding already typed. Use it when you want more explanation, or want it checked against the repair order's notes.
+
+## The Estimates list
+
+Open **Rivet** from the sidebar (**Operations → Rivet**) to see every estimate and its review state. Filter by status:
+
+| Filter | Meaning |
+| --- | --- |
+| **Action needed** | Reviewed, with findings still waiting for a verdict. |
+| **Not audited** | No review yet. |
+| **Review queued** | Waiting to start. |
+| **Review running** | In progress. |
+| **Audited** | Reviewed and handled. |
+| **Review failed** | The review could not finish. Run it again. |
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Upload clear damage photos first. Record a verdict on every finding. Run Rivet again after a supplement. Write a useful note when you reject a finding.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't add an operation just because Rivet listed it. Don't forward a finding to an insurer without checking it. Don't ignore **Needs re-review**.
+  </Card>
+</Columns>
+
+## Related
+
+- [Estimate tab](/repair-orders/estimate)
+- [Supplements and parts](/repair-orders/parts)
+- [AI in Kinetic](/ai/overview)

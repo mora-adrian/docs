@@ -1,0 +1,84 @@
+---
+title: "Email review"
+description: "Connect your work mailbox so claim email files itself to the right repair order, and clear the queue of messages Kinetic could not match with confidence."
+---
+
+import { Tag } from "/snippets/ui.jsx";
+
+A lot of claim work happens in email that does not start in Kinetic: an adjuster writes to your inbox about a vehicle, a parts vendor sends a confirmation, an insurer attaches an approval. **Email review** brings those emails to the right repair order so they are not trapped in one person's mailbox.
+
+## How it works
+
+1. You **connect your work mailbox** once (Google or Microsoft). Kinetic reads it, **read-only**. It never sends from it, never deletes, and never changes anything in it.
+2. Kinetic looks for claim-related email and tries to match each one to a repair order using the claim number, the repair order number, the vehicle, and the people involved.
+3. When it is **confident**, it files the email onto that repair order. It shows on the Activity tab as **Email filed**, with a percentage showing how sure Kinetic was.
+4. When it is **not sure**, it puts the email in your **Email review** queue and asks you.
+
+<Info>
+It is **your own** mailbox only. Each person who wants this connects their own. Nobody else's mail is read.
+</Info>
+
+## Connect your mailbox
+
+<Steps>
+  <Step title="Open Preferences">
+    Go to **Settings → Preferences** and find **Connected mailbox**: *Incoming email matched to repair orders — your mailbox only*.
+  </Step>
+  <Step title="Choose your provider">
+    Choose **Connect Google** or **Connect Microsoft**. You are taken to the provider to sign in and allow read-only access.
+  </Step>
+  <Step title="Come back">
+    A green check says **Mailbox connected.** If it says **Mailbox connection did not finish — try again**, repeat the steps.
+  </Step>
+</Steps>
+
+Once you are connected, **Email review** appears in the sidebar under **Communications**, with a red number when emails are waiting. Until you connect, the item does not appear at all.
+
+If your mailbox is disconnected, **Settings → Preferences** says **Your mailbox is disconnected.** and offers the connect buttons again. To disconnect on purpose, choose **Disconnect** and confirm: *Kinetic stops watching this mailbox and emails are no longer filed. Emails already filed to repair orders stay in place.* Disconnecting is a protected action and asks for a fresh authenticator code.
+
+## The queue
+
+Open **Email review**. Each waiting email is a row:
+
+- The **subject** (or *(no subject)*).
+- The **sender** (or **Unknown sender**), when it arrived, and a **confidence** percentage if Kinetic made a guess.
+- A three-line **excerpt**.
+- The **reasons** it was not filed automatically.
+- A badge: **Suggested** with a link to a repair order, or **No suggestion**.
+
+### Your three choices
+
+| Button | What it does |
+| --- | --- |
+| **File to 24-1087** (appears when there is a suggestion) | Files the email onto the suggested repair order. |
+| **Choose…** | Opens a picker. Search for the right repair order, select it, and choose **File email**. |
+| **Dismiss** | Removes it from your queue without filing. Use it for anything that is not claim work: newsletters, spam, personal mail. |
+
+When you file an email, it joins that repair order's history, along with its attachments, and a note on Activity says it was filed by you.
+
+<Note>
+Emails are filed to **repair orders only**. If an email is about a customer you have no repair order for, dismiss it and handle it elsewhere.
+</Note>
+
+### An empty queue
+
+**Nothing to review**: *Emails that can't be matched with confidence wait here. You're all caught up.* That is the goal state.
+
+If you have no mailbox connected you see **No mailbox connected**: *Connect a mailbox in Settings and incoming claim emails show up here*, with **Open mailbox settings**.
+
+## Make it a habit
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Clear the queue every day. File a suggestion if it is right; fix it with **Choose…** if it is wrong. Dismiss junk so it does not pile up.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't ignore the red number. An unfiled email from an adjuster is an unanswered adjuster. Don't dismiss something you are unsure about; file it to the closest repair order and add a note.
+  </Card>
+</Columns>
+
+## Related
+
+- [Email on a repair order](/communicate/email)
+- [Your preferences](/admin/personal-preferences#mailbox)
+- [Activity](/repair-orders/activity)

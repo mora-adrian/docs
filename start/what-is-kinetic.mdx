@@ -1,0 +1,80 @@
+---
+title: "What Kinetic is, and what it isn't"
+description: "What Kinetic does for your shop, what it deliberately leaves to other systems, and what to expect from it day to day."
+---
+
+import { Pill } from "/snippets/ui.jsx";
+
+## In one paragraph
+
+Kinetic is the shared system for everyone in your shop. It shows every vehicle that is in the building or on its way, what state each one is in, who is responsible, what the customer has been told, what the insurer owes, and what is about to go wrong. It keeps the conversation history, the photos, and the paperwork on the same page as the vehicle, so anyone who picks up a job can see the whole story.
+
+## What Kinetic does
+
+- **Follows each repair from first contact to archive.** Four boards show where every job is, and a vehicle moves between them as the work progresses.
+- **Keeps one record for each person, company, and vehicle.** A customer who returns a year later is the same record, with the same history.
+- **Keeps every text, email, and call with the job.** Nothing lives only on one person's phone.
+- **Tells you what needs you.** The **Today** screen, task list, and notifications surface the jobs that are slipping so you do not have to hunt for them.
+- **Plans logistics.** A calendar for drop-offs and pickups, and a route planner for your tow trucks.
+- **Measures customer satisfaction.** Surveys go out automatically after delivery and unhappy answers reach your team right away.
+- **Assists with AI.** It reviews estimates for missing billable work, answers questions about your data, drafts messages, and cleans up your wording. See [AI overview](/ai/overview).
+
+## What Kinetic does not do
+
+Knowing the edges saves you from looking for a button that does not exist.
+
+<AccordionGroup>
+  <Accordion title="It does not write estimates or create repair orders" icon="file-pen-line">
+    Estimates are written in **CCC ONE**, your estimating system. CCC ONE sends the repair order and its estimate to Kinetic automatically, and Kinetic keeps them up to date. There is no **New repair order** button. If a repair order is missing, it has not been created or updated in CCC ONE yet. See [How Kinetic thinks](/start/how-kinetic-thinks).
+  </Accordion>
+  <Accordion title="It does not take payments or send invoices" icon="credit-card">
+    The **ARW** tab is a worksheet for tracking who owes what and what has arrived. It does not charge cards, issue invoices, or post to your accounting software.
+  </Accordion>
+  <Accordion title="It does not order parts" icon="package">
+    The **Parts** tab shows the parts on the CCC ONE estimate and whether CCC ONE says each one has been received. You still order and receive parts the way your shop already does.
+  </Accordion>
+  <Accordion title="It does not make decisions for you" icon="scale">
+    Kinetic's AI never decides coverage or liability, never invents a status, and never commits to a delivery date. A person approves every customer-facing message it drafts.
+  </Accordion>
+  <Accordion title="It does not let one shop see another's data" icon="shield">
+    Everything you see belongs to your shop. A repair order that belongs to another shop does not appear, and cannot be reached by any link.
+  </Accordion>
+</AccordionGroup>
+
+## What to expect from Kinetic
+
+| Expectation | What that means for you |
+| --- | --- |
+| **It is live.** | When a teammate changes something, you will see it after the screen refreshes. Use the **Refresh data** button on the boards to force it. |
+| **It remembers.** | Notes, messages, status changes, and file uploads are recorded with who did them and when. History entries are written by the system as things happen, so the record can be trusted. |
+| **It saves drafts.** | Notes, texts, and emails you start but do not send are saved as you type, and you will see **Draft saved**. |
+| **CCC ONE wins.** | Some fields (marked **CCC ONE**) come from your estimating system. If you change one in Kinetic, the next update from CCC ONE will put it back. Change it in CCC ONE instead. |
+| **It tells you when something is wrong.** | If a connection fails, Kinetic says so. It does not show an empty list and let you believe nothing is there. |
+| **It signs you out.** | You will sign in about once a workday. See [Signing in](/start/sign-in). |
+| **It works on a phone.** | Lookups, messages, photos, notes, and status changes all work on the shop floor. Some dense screens, such as the table view, are easier on a computer. |
+
+## Who uses Kinetic
+
+Everyone who touches a job. A few typical examples:
+
+- **Client advocates** (customer service) talk to customers, keep them informed, and own the relationship.
+- **Repair planners** (estimators and production managers) plan the work, track supplements, and keep the schedule honest.
+- **Technicians** look up the job, upload photos, and report when a scan is done.
+- **Parts staff** check what has arrived and what is late.
+- **Managers** watch the boards, the capacity warnings, and the weekly reports.
+- **Owners and admins** manage who has access and how the shop is configured.
+
+Not sure where you fit? [Find your job](/start/by-job).
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="How Kinetic thinks" icon="brain-circuit" href="/start/how-kinetic-thinks">
+    The handful of rules that explain the whole app.
+  </Card>
+  <Card title="Collision repair in plain English" icon="book-open" href="/start/collision-primer">
+    The vocabulary you need if you are new to the industry.
+  </Card>
+</CardGroup>
+
+A vehicle that is waiting on parts looks like this on a board: <Pill tone="waiting">Parts Hold</Pill>. Everything else in this guide builds from there.

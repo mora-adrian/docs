@@ -1,0 +1,53 @@
+---
+title: "Total loss"
+description: "What a total loss is, how Kinetic flags one, the Possible Total Loss lane, and how to guide a customer through it."
+---
+
+import { Pill } from "/snippets/ui.jsx";
+
+A **total loss** means the car would cost more to repair than it is worth, so the insurer pays the car's value instead of repairing it. It is the hardest conversation a customer has with a shop, so handle it carefully.
+
+## How Kinetic flags one
+
+A car appears in the **Possible Total Loss** lane beside <Pill tone="waiting">Supplement Hold</Pill> when any of these is true:
+
+- You set **Repairability** to **Total loss** in the repair order's facts.
+- CCC ONE classified it as a total loss.
+- Its CCC ONE stage mentions a total loss.
+
+The lane is automatic. You cannot drop a card into it.
+
+## Steps
+
+<Steps>
+  <Step title="Confirm with the insurer">
+    Only the insurer decides. Do not tell the customer it is a total loss until the adjuster confirms in writing.
+  </Step>
+  <Step title="Set Repairability">
+    Set **Repairability** to **Total loss** on the repair order so the board reflects it. It stays blank until someone rules on it, and Kinetic never assumes a car is repairable.
+  </Step>
+  <Step title="Tell the customer with care">
+    Call personally. Explain what a total loss means, what happens to the car, and what they should expect from the insurer. Follow up in writing.
+  </Step>
+  <Step title="Prepare the release">
+    On the [Signatures](/repair-orders/signatures) tab send the **Vehicle Release, Waiver, & Hold Harmless**. It is used for total losses.
+  </Step>
+  <Step title="Collect what is owed">
+    Record storage, teardown, or other charges on the [ARW](/repair-orders/arw).
+  </Step>
+  <Step title="Release and close">
+    Arrange pickup by the insurer's salvage vendor or the customer. Record who took the car, and when.
+  </Step>
+</Steps>
+
+## What changes in Kinetic
+
+- Total-loss jobs are **not** reviewed by Rivet.
+- They are **not** sent satisfaction surveys.
+- Their target-date cycle is shorter (the shop's total-loss cycle days).
+
+## Common mistakes
+
+- Telling the customer before the insurer has decided.
+- Skipping the release form.
+- Forgetting to bill storage and teardown.

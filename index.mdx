@@ -1,60 +1,96 @@
 ---
-title: "Welcome to Kinetic"
-description: "Kinetic — Collision Partners' collision repair management OS. One workspace for every repair order, customer, message, and decision in your shop."
+title: "Kinetic help center"
+description: "The complete guide to Kinetic, the operating system for your collision repair shop: every screen, every control, and the habits that make it work."
+mode: "wide"
 ---
 
-Kinetic is Collision Partners' collision repair management operating system. It puts repair orders, customers, vehicles, claims, communications, scheduling, signatures, customer surveys, and AI-powered estimate review in one place, so your team works from one system instead of spreadsheets, sticky notes, and separate apps.
+import { Pill, Key } from "/snippets/ui.jsx";
 
-This guide explains how to use Kinetic. It is written for everyone in the shop: front-office staff, estimators, technicians, parts staff, managers, and owners.
+Kinetic is where your shop runs. Every repair, every customer, every text and email, every appointment and every decision about a vehicle lives in one place, so nobody has to dig through sticky notes, spreadsheets, or someone's personal phone to find out what is going on.
 
-## What Kinetic does
+This guide is the full manual. It is written so that someone who has never worked in a body shop, and never used software like this, can follow it from the first sign-in. It also goes deep, because most of what makes Kinetic useful is in the small features: the dot on a card that says a scan is missing, the badge that says a target date is shaky, the switch that follows up with an adjuster for you.
+
+<Note>
+**How current is this guide?** It was rewritten in October 2026 and checked against the app itself, screen by screen. Where Kinetic behaves in a way you might not expect, this guide says so plainly.
+</Note>
+
+## Start with what you need
 
 <CardGroup cols={2}>
-  <Card title="Track every repair" icon="wrench" href="/daily-work/repair-orders">
-    Follow each vehicle from first contact to delivery on lifecycle boards, tables, and timelines.
+  <Card title="I'm new to Kinetic" icon="rocket" href="/start/first-day">
+    A first-day checklist, then a first-week plan. About 20 minutes to be useful.
   </Card>
-  <Card title="Keep one customer record" icon="users" href="/daily-work/records">
-    People, companies, and vehicles live in one searchable record system shared by the whole shop.
+  <Card title="I don't know the vocabulary" icon="book-open" href="/start/collision-primer">
+    Collision repair in plain English: estimates, supplements, adjusters, and why a car waits on parts.
   </Card>
-  <Card title="Keep every conversation" icon="messages" href="/daily-work/messages">
-    Text, email, and call history stay attached to the customer and the repair order.
+  <Card title="Show me my job" icon="user-round-check" href="/start/by-job">
+    Front office, estimator, technician, parts, manager, or admin: what to open first and what to ignore.
   </Card>
-  <Card title="Put AI to work" icon="sparkles" href="/ai-review/rivet">
-    Rivet reviews estimates for missed operations, and the Agent answers questions about your shop's data.
+  <Card title="Something isn't working" icon="life-buoy" href="/help/troubleshooting">
+    Find the symptom, see the cause, apply the fix.
   </Card>
 </CardGroup>
 
-## Key concepts
+## What Kinetic does
 
-These terms appear throughout Kinetic and this guide.
+<CardGroup cols={3}>
+  <Card title="Tracks every repair" icon="wrench" href="/pipeline/overview">
+    Four boards follow each vehicle from first call to the day it is archived.
+  </Card>
+  <Card title="Keeps one record per thing" icon="folder-open" href="/records/overview">
+    People, companies, and vehicles, linked to every repair order they touch.
+  </Card>
+  <Card title="Holds every conversation" icon="messages-square" href="/communicate/messages">
+    Texts, emails, and calls stay attached to the customer and the repair order.
+  </Card>
+  <Card title="Plans the day" icon="calendar-days" href="/schedule/calendar">
+    Appointments, tow trucks, routes, and a calendar feed your drivers can subscribe to.
+  </Card>
+  <Card title="Listens to customers" icon="star" href="/csi/overview">
+    Automatic satisfaction surveys, review requests, and a same-day alert when someone is unhappy.
+  </Card>
+  <Card title="Reviews estimates with AI" icon="sparkles" href="/ai/rivet">
+    Rivet looks for billable operations that are missing from an estimate. You decide what to add.
+  </Card>
+</CardGroup>
 
-| Term | Meaning |
-| --- | --- |
-| **Shop** | Your collision center. All of your data — customers, repair orders, messages — belongs to exactly one shop and is never visible to another shop. |
-| **Repair order** | One repair job on one vehicle. A repair order keeps the same ID from first contact through delivery and beyond. |
-| **Status** | The workflow step a repair order is in — for example: Opportunity → Estimate → Authorized → In repair → QC → Ready → Delivered. Your administrator configures the exact statuses for your shop. |
-| **Lifecycle board** | One of the four boards that group repair orders by where they are in their journey: **Opportunity**, **Repair**, **Close**, and **Enrichment**. |
-| **Membership** | Your access. You sign in once. What you can see and do depends on your membership and role in each shop. |
+## The shape of the app
 
-## How access works
+Everything in Kinetic sits in one left-hand menu. The names below are exactly what you will see there.
 
-You sign in with your work email, a password, and a code from an authenticator app. If you belong to one shop, you go straight to its workspace. If you belong to more than one, you pick a shop from the company hub. There is no shop switcher inside the workspace — switching shops is a deliberate step, which keeps each shop's data isolated.
+| Menu group | What is in it | Read |
+| --- | --- | --- |
+| **Today**, **Notifications**, **Tasks** | Your own work: what needs you, what you were told, what you promised. | [Your day](/work/today) |
+| **Communications** | **Messages**, **Calendar**, **CSI**, and **Email review**. | [Communicate](/communicate/messages) |
+| **Pipeline** | **Opportunities**, **Repairs**, **Close & Deliver**, **Enrichment**: the four boards. | [The boards](/pipeline/overview) |
+| **Records** | **People**, **Companies**, **Vehicles**. | [Records](/records/overview) |
+| **Operations** | **Agent** (ask questions in plain language) and **Rivet** (estimate review). | [AI](/ai/overview) |
+| **Recent** | The last five repair orders you opened. | [Tour](/start/tour) |
+| **Settings** | Your own preferences, plus shop administration for admins. | [Administration](/admin/overview) |
 
-## Where things are
+## Three ideas that explain most of Kinetic
 
-| Screen | What it is for |
-| --- | --- |
-| **Today** | Your daily command center: what is due, what is blocked, what needs you. |
-| **Opportunity / Repair / Close / Enrichment** | The four lifecycle boards. |
-| **Repair orders** | Search, filter, and open any job. |
-| **People / Companies / Vehicles** | The records behind every job. |
-| **Messages** | The shared inbox for texts and email, plus call history. |
-| **Calendar** | Appointments, drop-offs, pickups, and route planning. |
-| **CSI** | Customer satisfaction surveys and responses. |
-| **Rivet** | AI estimate review. |
-| **Agent** | Ask questions and get help drafting in plain language. |
-| **Settings** | Shop configuration, members, messaging, and integrations. |
+<Steps>
+  <Step title="Repair orders come from CCC ONE">
+    Your estimating system, CCC ONE, creates and updates repair orders in Kinetic. You do not type a new repair order in. What you do is work it: move it along, talk to the customer, track the money, and keep it honest. [How that works](/start/how-kinetic-thinks).
+  </Step>
+  <Step title="A status tells everyone what is happening">
+    Every repair order has one status, such as <Pill tone="waiting">Parts Hold</Pill> or <Pill tone="ontrack">Paint</Pill>. The color dot says whether the ball is in your court, someone else's, or the car is late. [All statuses explained](/pipeline/statuses).
+  </Step>
+  <Step title="AI drafts, people decide">
+    Kinetic can summarize, suggest, and draft. It never decides coverage, never promises a delivery date, and never sends a message to a customer unless a person approves it. [What AI will and won't do](/ai/overview).
+  </Step>
+</Steps>
 
-## Next step
+## Conventions in this guide
 
-New to Kinetic? Start with the [Quickstart](/quickstart). It walks you through sign-in, security setup, and your first day.
+- **Bold** is a label you can see on screen: click **Settings**.
+- <Key>⌘</Key> <Key>K</Key> means press those keys together. On Windows, use <Key>Ctrl</Key> instead of <Key>⌘</Key>.
+- A <Pill tone="needs">colored pill</Pill> in the text is a status, drawn the way the app draws it.
+- Boxes labeled **Do**, **Don't**, and **Good to know** are the rules of the road. Skim them even if you skip the rest.
+- Examples use made-up names and numbers. They are illustrations, never real customers.
+- "Shop" means your collision center. Kinetic calls it a shop everywhere.
+
+## Need a person?
+
+Open the shop menu at the top of the left sidebar and choose **Support** to email the Kinetic team. Use **Report a problem** or **Suggest a feature** from the same menu to send details straight from the screen you are on.

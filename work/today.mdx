@@ -1,0 +1,121 @@
+---
+title: "Today"
+description: "Your personal list of the repair orders that need a push right now: close to delivery, past the money gate, supplements waiting, and missing documents."
+---
+
+import { Pill, Tag } from "/snippets/ui.jsx";
+
+**Today** answers one question: *which of my jobs need me right now?* It is the screen to open first each morning and to come back to whenever you have a free minute.
+
+## Who sees what
+
+Today is personal. It lists only the repair orders where **you** are the **repair planner**, the **client advocate**, or both. A teammate's Today shows their jobs, not yours.
+
+<Warning>
+Today relies on your user being linked to an **employee profile** in your shop. If you see no sections, or "Nothing here today" everywhere on a day you know is busy, ask an admin to check that your account is linked to your employee profile. Without the link Kinetic cannot tell which jobs are yours.
+</Warning>
+
+Today leaves out archived repair orders and any job whose outcome was marked **Lost**.
+
+## What is on the screen
+
+At the top is a greeting such as **Good to see you, Alex**, today's date, and your name. Below it are four sections. Each has a gray number beside its title showing the **true total**, even though only the first 50 rows are drawn.
+
+If your shop has gone over its production capacity, a red banner appears above the sections, for example **Overbooked — Paint: 41 of 40 daily hours**. See [Production capacity](/admin/production).
+
+### The four sections
+
+<Tabs>
+  <Tab title="Close to delivery">
+    **What lands here:** a vehicle that has not been delivered and either
+
+    - is in **Repairs Complete** or **Ready for Delivery**, or
+    - has a **target date** within the next few days, **or a target date that has already passed**.
+
+    **The row says:** `Ready for delivery`, `Target Oct 23`, or `Target passed Oct 21`.
+
+    **Why it matters:** these are the jobs to push over the line: finish the paperwork, call the customer, and schedule the pickup.
+
+    **Default window:** 3 days. Admins can change it.
+  </Tab>
+  <Tab title="Past the money gate">
+    **What lands here:** a vehicle that has reached a point in the repair where some payment should have arrived, and **no payment has been recorded** on its [ARW](/repair-orders/arw) (the worksheet shows **$0 prepaid**).
+
+    - On the Repairs board, "reached the gate" means it is in the gate status or any status after it.
+    - A job in Close & Deliver that has not been delivered also counts.
+
+    **The row says:** `No payment received · in Parts Hold`.
+
+    **Why it matters:** a job that is far along with no money in is a risk to the shop. Check the deductible and the insurer's payment.
+
+    **Default gate:** **Parts Hold**. Admins can pick a different status.
+  </Tab>
+  <Tab title="Supplements waiting">
+    **What lands here:** a vehicle that has been in **Supplement Hold** for at least a few days. Jobs in the Possible Total Loss lane are part of Supplement Hold too.
+
+    **The row says:** `3 days in supplement hold`.
+
+    **Why it matters:** while the shop waits on an insurer to approve extra work, the car sits and the customer's wait grows. Chase the adjuster. See [Supplements](/playbooks/supplements).
+
+    **Default wait:** 3 days. Admins can change it.
+  </Tab>
+  <Tab title="Missing documents">
+    **What lands here:** a vehicle on the Repairs board that arrived at least a day ago and is still missing a **signed work authorization**, an **initial estimate** file, or both.
+
+    **The row says:** `Missing signed work authorization and initial estimate`.
+
+    **Why it matters:** repairs should not run without the customer's written authorization, and the initial estimate backs up everything that follows.
+
+    **Default wait:** 1 day after arrival. Admins can change it.
+  </Tab>
+</Tabs>
+
+## Reading a row
+
+Each row is one repair order:
+
+- The **repair order number** in an outlined badge, then the customer's name and the vehicle.
+- A second line: the current **status**, a dot, then the reason it surfaced.
+- On the right, a red <Tag>Past target</Tag> badge if the target date has passed, and an outlined badge naming your part: **Advocate**, **Planner**, or **Planner & advocate**.
+
+Click anywhere on a row to open the repair order's [drawer](/repair-orders/drawer). From there choose **Open full screen** to act.
+
+A job can appear in more than one section. A car with no payment that is also close to delivery is in both.
+
+## What to do with each section
+
+| Section | A good first move |
+| --- | --- |
+| Close to delivery | Open the repair order. Check the **ARW** for what is due at pickup, the **Files** tab for the signed paperwork, and **Calendar** for the pickup appointment. |
+| Past the money gate | Check the **ARW** tab. Is the deductible collected? Is an insurer payment in transit? Add what is known. |
+| Supplements waiting | Open the **Emails** tab. Has the supplement gone to the adjuster? Is **Auto follow-up** on? Call if it has been silent. |
+| Missing documents | Open the **Files** tab and the **Signatures** tab. Send a work authorization for signature, or upload the initial estimate and tag it **Initial Estimate**. |
+
+## Make the thresholds fit your shop
+
+The limits behind Today (how soon counts as "close to delivery", where the money gate sits, and how many days supplements or paperwork may wait) belong to the shop. An admin sets them in **Settings → Repair orders → Today page**. See [Repair order settings](/admin/repair-order-settings#today-page).
+
+## Good to know
+
+- Today is read when you open it. If you think it is out of date, reload the page.
+- Today is a list of *exceptions*. A job that is fine does not appear, so an empty Today is good news, not a bug (as long as your profile is linked).
+- Today shows only jobs assigned to you. To see everything, use [the boards](/pipeline/overview).
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Open Today first thing and again after lunch. Clear a row by fixing the cause, not by hiding the job.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't move a job to a different status just to make it leave Today. The list reflects the facts; fix the facts.
+  </Card>
+</Columns>
+
+## If something looks wrong
+
+| Problem | Cause and fix |
+| --- | --- |
+| Today is empty but you have jobs | Your user may not be linked to an employee profile. Ask an admin. |
+| A job you own is missing | Make sure *you* are the planner or advocate on the repair order. Those seats come from CCC ONE and the shop's [advocate rules](/admin/repair-order-settings#client-advocate-rules). |
+| **Your work list could not be loaded** | A temporary problem. Choose the retry button. If it keeps happening, use **Report a problem**. |

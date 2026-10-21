@@ -1,0 +1,77 @@
+---
+title: "Agent"
+description: "Ask questions about your repair orders in plain language, find records, and have texts drafted for you to approve."
+---
+
+import { Key } from "/snippets/ui.jsx";
+
+The **Agent** is a chat assistant that knows your shop's repair orders. Open it from **Operations → Agent** in the sidebar. The page is titled **Ask about your data**.
+
+Think of it as a colleague who can look anything up instantly. It **reads**; it does not change records. It cites the repair orders it used, so you can click through and confirm.
+
+## Ask a question
+
+Type in the box (**What would you like to know about a repair?**) and press <Key>Enter</Key> or **Send question**. Messages can be up to **4,000 characters**.
+
+Good questions are specific:
+
+- *Which repair orders are currently in paint?*
+- *What did the customer on repair order 4821 last text us about?*
+- *Which files are attached to a repair order?*
+- *Find a vehicle by its VIN.*
+
+The first three are the suggestions Kinetic shows on an empty screen. Click one to try it.
+
+### Reading answers
+
+Answers cite the repair orders they used as small badges. Click one to preview the repair order beside the chat without leaving it: **Loading repair order…**, then the claim, insurer, outcome likelihood, days on site, target, the customer and vehicle, and **Recent activity**. The preview is read-only. Choose **Open full screen** in it to go to the full repair order, and **Close preview** to hide it. If a record cannot be found you see **This repair order could not be found.**
+
+While it works you see **Searching records…**.
+
+<Tip>
+**Name the repair order.** "What's the status of the Hendricks Camry?" works, but "repair order 4821" is faster and unambiguous. If more than one match exists, the Agent offers **chips** to pick the right repair order.
+</Tip>
+
+## Have it draft a text
+
+Say what you want to send: *Text the customer on 4821 that the parts arrived and we'll start Monday.*
+
+The Agent writes the message and shows it as a **draft card** with two buttons: **Send** and **Discard**. Nothing is sent until you choose **Send**. You can also reply in plain words: **send it** sends, **cancel** cancels.
+
+<Warning>
+The draft goes out from the shop's number to the real customer. Read the name, the date, and the promise before you choose **Send**.
+</Warning>
+
+## Conversations
+
+- **New conversation** (the button at the top) starts fresh. Use it when you change topic; the Agent otherwise remembers what you said earlier in the conversation.
+- Reopening the page restores your last conversation (**Restoring conversation…**).
+- If an answer fails, a retry option appears so you do not have to retype the question.
+
+## What it can and can't do
+
+| It can | It can't |
+| --- | --- |
+| Find repair orders, people, companies, and vehicles | Create or edit records |
+| Summarize a repair order, its texts, notes, and files | Decide who is at fault or what insurance owes |
+| Compare, count, and list across jobs | Promise a delivery date |
+| Draft a customer text for your approval | Send anything without your **Send** |
+| Answer insurance-rule questions using documents your admin uploaded | Replace reading the rule yourself |
+
+It works with **your** permissions. It cannot show you a shop's data that you cannot already see.
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Ask follow-ups ("and which of those are waiting on the insurer?"). Click through to confirm anything you will act on. Start a **New conversation** for a new topic.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't treat an answer about money or dates as final without opening the repair order. 
+  </Card>
+</Columns>
+
+## Related
+
+- [AI in Kinetic](/ai/overview)
+- [Text Kinetic](/ai/text-kinetic): the same assistant, by text message.

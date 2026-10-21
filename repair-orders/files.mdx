@@ -1,0 +1,167 @@
+---
+title: "Files"
+description: "Photos and documents on a repair order: how to upload, organize into folders, tag the documents that matter, send them to an adjuster or to CCC ONE, and export them as PDFs."
+---
+
+import { Key, Tag } from "/snippets/ui.jsx";
+
+The **Files** tab is the repair order's filing cabinet. Every photo of the damage, every scan report, every signed authorization, and every insurer document goes here, so that anyone can find it, and so that Kinetic can tell whether the paperwork is in order.
+
+## Upload
+
+You can add files three ways:
+
+- Drag them onto the drop zone (**Drag and drop files here, or click to browse.**).
+- Choose **Browse** and pick them.
+- From a phone, choose **Browse** and take a photo or pick one from the camera roll.
+
+### What is allowed
+
+| Rule | Limit |
+| --- | --- |
+| **Types** | PDF, JPEG, PNG, GIF, WebP, and HEIC/HEIF (iPhone photos). |
+| **Size per file** | **10 MB**. |
+| **Files per upload** | Up to **70**, and about **95 MB** in total. Split a bigger batch into two. |
+
+A file that is the wrong kind or too large is skipped with a reason; the others still upload.
+
+### The upload queue
+
+A small **Upload queue** panel appears in the corner while files are going up. Each file shows one of:
+
+| Status | Meaning |
+| --- | --- |
+| **Queued** | Waiting its turn. |
+| **Uploading** | In progress, with a progress bar. |
+| **Waiting to retry** | The connection hiccuped. Kinetic will try again by itself. |
+| **Uploaded** | Done. |
+| **Failed** | It did not go through. Try that file again. |
+
+Use **Collapse upload queue** to tuck it away, or **Dismiss upload queue** when it is finished. You can keep working on other tabs while files upload.
+
+## How files are organized
+
+Files are grouped into folders. Folders open and close, and **⇧O** (<Key>Shift</Key>+<Key>O</Key>) opens or closes **all folders** at once.
+
+| Folder | What goes there |
+| --- | --- |
+| **Pinned** | Files you pinned. Always on top. |
+| **Documents** | PDFs and other paperwork. |
+| **A folder per status** | Photos, grouped by the **status the job was in when the photo was uploaded**, such as Body, Paint, or Reassembly. The folder for the status the job is in now carries a **Current** badge. |
+| **Unsorted** | Anything with no status folder. |
+
+This means photos sort themselves into a time line of the repair: before, during, and after.
+
+### Grid or list
+
+Switch between **Grid** (thumbnails) and **List** (names, sizes, and tags) with the toggle at the top.
+
+## Tags: the documents that unlock the job
+
+A **tag** names a document that matters to the workflow. There are exactly seven:
+
+| Tag | Use it for |
+| --- | --- |
+| **Initial Estimate** | The first estimate (a PDF). **Needed** before the job counts as having its estimate on file. |
+| **Pre-repair Scan** | The first diagnostic scan report. Turns the [first-scan icon](/repair-orders/facts#first-scan) green. |
+| **Supplement** | A supplement to the estimate. |
+| **Work Authorization** | The customer's signed authorization to repair. |
+| **Total Loss Release** | The customer's release when a car is a total loss. |
+| **Appraisal Clause** | A notice invoking the appraisal clause. |
+| **Facts of Loss** | The customer's accident description. |
+
+To tag a file, open the tag picker on its row (it reads **No tag** until you choose one). A file has at most one tag. **Photos carry no tag**; their grouping is the status folder.
+
+<Warning>
+**Tag your documents.** Kinetic checks the tags to see whether a repair order has a **signed work authorization** and an **initial estimate**. If either is missing, a red warning icon appears on the job's card and the job shows up in the **Missing documents** list on [Today](/work/today). The Agent also uses the tags to answer "are we cleared to repair?".
+</Warning>
+
+Documents created from the **Signatures** tab are tagged automatically when they are signed.
+
+## Working with files
+
+### Select
+
+Tick a file's checkbox, or tick **Select all files**. A toolbar of actions appears for the selection.
+
+### Actions on a selection
+
+| Action | What it does |
+| --- | --- |
+| **Move to phase…** | Move the selected photos to a different status folder, or to **Unsorted**. |
+| **Export PDF** and a number | Combines the selected photos and documents into PDF downloads (large selections are split into several parts). The download links expire after a few minutes, so save them straight away. |
+| **Send to adjuster** | Builds a supplement email. See [below](#send-to-the-adjuster). |
+| **Send to CCC ONE** and a number | Pushes the selected files to the CCC ONE workfile. See [below](#send-to-ccc-one). |
+| **Delete** and a number | Removes the files. This is a protected action and asks for a fresh authenticator code. |
+
+### Actions on one file
+
+Each file in the list has four small buttons: a **pushpin** to pin or unpin it, a **pencil** to rename it, an **eye** to preview it, and a **trash can** to delete it.
+
+**Right-click** a file for its full menu:
+
+- **Move to phase**
+- **Export PDF**
+- **Set as drawer preview** (images only), or **Use automatic preview**
+- **Send to CCC ONE**
+- **Delete**
+
+If you select several files first, the menu acts on all of them and shows the count.
+
+### Preview photo
+
+The picture at the top of a repair order's [drawer](/repair-orders/drawer) is its **preview photo**. By default Kinetic picks one. To choose it yourself, right-click a photo and choose **Set as drawer preview**. To go back to Kinetic's choice, choose **Use automatic preview**.
+
+### The viewer
+
+Click a file to open the viewer. It has **Previous file** and **Next file**, **Download**, a **File description** box with **Save description**, and a **Phase folder** picker. If it cannot show a file type you see **Preview not available for this file type**.
+
+## Send to the adjuster
+
+A supplement needs photos and documents sent to the insurer's adjuster. **Send to adjuster** does the packing for you.
+
+<Steps>
+  <Step title="Select">
+    Tick the photos and documents the adjuster needs. Pick the best photos; too many slow the insurer's review.
+  </Step>
+  <Step title="Choose Send to adjuster">
+    Kinetic builds the package. Documents go as they are. Photos are turned into **PDF packets** sized to fit insurer portals (each packet under 9 MB), named like **24-1087 Supplement Photos.pdf**, or **(1 of 2)**, **(2 of 2)** if there are several. The packets are saved on the repair order as files.
+  </Step>
+  <Step title="Review and send">
+    The **Emails** tab opens with a new message already addressed to the adjuster, with a subject, a cover note, and the files attached. Read it, adjust it, and send. It carries the **Auto follow-up** switch. See [Email](/communicate/email#supplement-emails-and-automatic-follow-up).
+  </Step>
+</Steps>
+
+## Send to CCC ONE
+
+If your shop has the CCC ONE connection turned on, **Send to CCC ONE** pushes selected files into the matching CCC ONE workfile, so photos and documents are also where the estimating team expects them.
+
+| Rule | Limit |
+| --- | --- |
+| **Types** | **.jpg** and **.pdf** only. |
+| **Size** | **2 MB** per file (PDFs a little under that). |
+| **Availability** | The button appears only when the repair order is linked to a CCC ONE workfile and your shop's connection is set up. |
+| **Protection** | Sending asks for a fresh authenticator code. |
+
+If CCC ONE rejects a file, the failure message from CCC ONE is shown beside it. Sending the same file again replaces it instead of duplicating it.
+
+## From a conversation
+
+Photos a customer texts you can be saved to the repair order's files. In **Messages** or the **Texts** tab, right-click an incoming picture and choose **Save to repair order files**, or use the link under the attachment. You will see **Saved to repair order files**. See [Texting](/communicate/texting#the-composer).
+
+## Good habits
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Photograph the vehicle from every corner on arrival. Tag the scan, the estimate, and the authorization the moment they are uploaded. Add a **File description** to any photo that is not obvious.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't upload a file with the wrong tag "to clear the warning". Don't send an insurer 80 raw photos; pick the clearest. Don't rely on Export PDF links later; they expire.
+  </Card>
+</Columns>
+
+## Related
+
+- [Signatures](/repair-orders/signatures)
+- [Email](/communicate/email)
+- [Playbook: supplements](/playbooks/supplements)

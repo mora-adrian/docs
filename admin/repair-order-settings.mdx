@@ -1,0 +1,73 @@
+---
+title: "Repair order settings"
+description: "Today thresholds, client advocate rules, CCC ONE employee mapping, cycle-time estimates, and KPI targets."
+---
+
+Open **Settings → Repair orders**. These five sections shape what the team sees on Today, how new jobs are assigned, and how Kinetic estimates dates and revenue.
+
+<Note>
+Kinetic does not let you edit statuses or repair order numbers here. Repair orders and their numbers come from CCC ONE, and the status names are fixed. See [Statuses](/pipeline/statuses).
+</Note>
+
+## Today page
+
+Controls when rows appear on [Today](/work/today).
+
+| Setting | Default | Meaning |
+| --- | --- | --- |
+| **Close to delivery** | 3 days | A job appears when its target date is within this many days. |
+| **Supplements waiting** | 3 days | A job in supplement hold appears after this many days. |
+| **Missing documents** | 1 day | A job appears this many days after arrival if the signed authorization or initial estimate is missing. |
+| **Money gate status** | Parts Hold | The status at or after which a job with no recorded payment appears under **Past the money gate**. |
+
+The maximum for any threshold is 60 days.
+
+## Client advocate rules
+
+When a **new** repair order arrives, Kinetic picks a client advocate for it automatically using these rules.
+
+- Rules are checked **in order**. The first match wins.
+- A rule is either **Repair order last digit** (add the digits it covers) or **Vehicle make** (add the makes).
+- Each rule names the **assigned employee**.
+- Use the arrows to move a rule up or down, or remove it.
+
+<Tip>
+Use digits to spread work evenly (even digits to Dana, odd to Chris) and makes for specialists (all Subaru to Pat). Put the specific rules above the general ones.
+</Tip>
+
+## CCC ONE employee mapping
+
+CCC ONE sends the names of the estimator and technician on each job. Matching them to your team lets Kinetic show the right person.
+
+- **Unmapped provider names** are listed so you can claim them.
+- For each, enter a **display name**, an optional **worker ID**, and choose the **employee** (**Technician** or **Estimator**).
+
+## Estimating and cycle time
+
+These numbers feed [target dates](/repair-orders/facts#target-date), [outcome likelihood](/repair-orders/facts#outcome-likelihood), and revenue figures.
+
+| Setting | Meaning |
+| --- | --- |
+| **Average repairable order** | Your typical pre-tax repair total. Used for new leads before an estimate exists. |
+| **Average total-loss order** | Your typical total-loss job. |
+| **Repairable cycle days** | Days from key-to-key for a repair. Default 12. |
+| **Total-loss cycle days** | Days for a total loss. |
+| **Labor hours per calendar day** | After supplement hold, the target date becomes arrival plus total labor hours divided by this number. |
+| **High confidence within** and **Medium confidence within** | How close the three date estimates (entered, labor-hours, average-cycle) must be for **High** or **Medium** confidence. All three within the High number means High; within the Medium number means Medium; wider means Low. Applies once the job is past Parts Hold. |
+| **Outcome likelihood boundaries** | Three ascending percentages (1 to 99) of vehicle value. Default 25, 50, 75. Level 1 is under the first; level 4 is at or above the last. |
+
+The footer shows the **default new-lead estimate** Kinetic will use.
+
+## Repair KPI targets
+
+These targets show as deltas on the KPI strip of the boards.
+
+- **Cars onsite target**
+- **Cars arrived per day**
+- **Cars delivered per day**
+- **In-process revenue target**
+- **Incoming revenue target**
+
+<Warning>
+Set realistic targets. Targets far above what the shop can do make every number look red and train people to ignore the strip.
+</Warning>

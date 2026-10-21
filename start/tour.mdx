@@ -1,0 +1,124 @@
+---
+title: "A tour of the screen"
+description: "The sidebar, the top bar, the drawer, the search box, and the phone layout: every way to move around Kinetic."
+---
+
+import { Key, Pill } from "/snippets/ui.jsx";
+
+Every screen in Kinetic shares the same frame. Learn it once and you can find your way anywhere.
+
+## The frame
+
+On a computer the screen has three parts:
+
+1. **The left sidebar**, which lists every screen.
+2. **The top bar**, which shows where you are (a breadcrumb) and the controls for that screen.
+3. **The main area**, which scrolls.
+
+On a phone, the sidebar becomes a menu that slides in from the left when you tap the menu button in the app bar at the top.
+
+## The left sidebar
+
+### The shop menu (top)
+
+The first row shows your **shop's logo and name**. Click it to open the shop menu:
+
+| Item | What it does |
+| --- | --- |
+| **Shop** list | Appears only if you belong to more than one shop. Choose a different shop to switch. A check mark shows the current one. |
+| **Support** | Opens an email to the Kinetic team, with your name and the time already in the subject. |
+| **Report a problem** | Opens a form so you can describe something that looks broken. |
+| **Suggest a feature** | Opens a form for ideas. |
+| **Sign out** | Ends your session. |
+
+Beside the shop name is a **Collapse sidebar** button. A collapsed sidebar shrinks to icons only; hover over an icon to see its name. <Key>Ctrl</Key> <Key>B</Key> (<Key>⌘</Key> <Key>B</Key> on a Mac) collapses and expands it from the keyboard.
+
+### Search
+
+Below the shop menu is the **Search** button, which opens the [command palette](#the-command-palette). The shortcut is <Key>⌘</Key> <Key>K</Key> on a Mac or <Key>Ctrl</Key> <Key>K</Key> on Windows.
+
+### The menu groups
+
+| Group | Items | Notes |
+| --- | --- | --- |
+| *(top)* | **Today**, **Notifications**, **Tasks** | **Notifications** shows a red number for unread items. **Tasks** shows a red number for tasks assigned to you that you have not seen yet. |
+| **Communications** | **Messages**, **Calendar**, **CSI**, **Email review** | **Messages** shows a conversation count. **Email review** appears only when you have connected a work mailbox, and shows a red number for items waiting. |
+| **Pipeline** | **Opportunities**, **Repairs**, **Close & Deliver**, **Enrichment** | Each shows how many repair orders it holds. |
+| **Records** | **People**, **Companies**, **Vehicles** | Each shows how many records exist. |
+| **Operations** | **Agent**, **Rivet** | The AI tools. |
+| **Recent** | Up to five repair orders you opened lately | Shows the repair order number and customer name. Click one to go straight back. It reads **No recent orders** until you open some. |
+
+**Settings** sits at the bottom of the sidebar.
+
+<Note>
+A red badge means "this wants your attention". A gray count just tells you how much is there.
+</Note>
+
+## The top bar
+
+Every screen starts with a **breadcrumb**, a short trail that tells you where you are. On the four boards and the other list screens, a small gray number beside it shows how many items are in the view.
+
+On the four boards the top bar also has:
+
+- **Refresh data**, a circular-arrow button that reloads the list. It spins while it works.
+- **Table | Board | Timeline**, a switch for how the list is drawn. See [Views](/pipeline/views).
+
+## The drawer
+
+Click a card or a row once and a panel slides in from the right: the **drawer**. It shows the repair order's identity, status, next dates, and recent activity at a glance. It is read-only, so you cannot change anything by accident.
+
+- The page behind stays usable. Click another row and the drawer swaps to it.
+- Press <Key>Esc</Key> or click **Close drawer** to dismiss it.
+- Click **Open full screen** to work on the repair order.
+
+The drawer opens the same way wherever a repair order appears: boards, Messages, Calendar, Notifications, and the records screens. See [The drawer](/repair-orders/drawer).
+
+## The full repair order screen
+
+Clicking **Open full screen** takes you to a page just for that repair order. Its top bar has:
+
+- **Back to list**, an arrow that returns you to where you came from.
+- The repair order number, its status pill, and a scan icon for vehicles being repaired.
+- **Tabs**: Activity, Emails, Texts, Calls, Tasks, Estimate, Parts, ARW, Files, Signatures, and Calendar. Some tabs show a count.
+- **Previous repair order** and **Next repair order** arrows with "3 of 24", so you can step through the list you came from without going back.
+
+The left side shows the customer and vehicle, the status rail, the facts, the parties, and the customer survey. See [Repair orders](/repair-orders/overview).
+
+## The command palette
+
+Press <Key>⌘</Key> <Key>K</Key> (or <Key>Ctrl</Key> <Key>K</Key>) from anywhere. A search window opens.
+
+- **With nothing typed**, it lists every screen so you can jump with the keyboard.
+- **With text typed**, it searches repair orders, people, companies, and vehicles. You can search by repair order number, customer name, or VIN (the vehicle's 17-character serial number).
+- It also finds **screens and settings pages by keyword**. Typing `staff` finds **Members**; `texting` finds **Messaging**.
+- If there are more related people, companies, or vehicles than fit, choose **Show related records** to see them.
+- Results only ever include what your shop owns and what you are allowed to see.
+
+Use <Key>↑</Key> and <Key>↓</Key> to move, <Key>Enter</Key> to open, and <Key>Esc</Key> to close.
+
+## On a phone
+
+On a phone or tablet, Kinetic adapts without removing features:
+
+- An **app bar** at the top opens the menu.
+- Buttons and rows get larger touch targets.
+- Windows open as **bottom sheets** that slide up from the screen's bottom edge.
+- Tab bars, columns on the board, and the KPI strip scroll sideways.
+- Messages shows either the conversation list or the open conversation, one at a time, with **Back to conversations** to return.
+- You can take photos and attach files straight from the phone.
+
+<Tip>
+**Add Kinetic to your Home Screen.** On iPhone or iPad, open Kinetic in Safari, tap **Share**, then **Add to Home Screen**. It opens like an app, and it is *required* if you want push alerts on Apple devices. See [Notifications](/work/notifications#alerts-on-your-phone).
+</Tip>
+
+## Colors and light or dark
+
+Kinetic's **Theme** can be **System** (follow your device), **Light**, or **Dark**. Change it, along with the typeface (**Inter**, **Geist**, or **IBM Plex Sans**) and the notification sound, in **Settings → Preferences**. See [Your preferences](/admin/personal-preferences).
+
+Status dots follow the same meanings everywhere: <Pill tone="needs">needs us</Pill>, <Pill tone="waiting">waiting</Pill>, <Pill tone="ontrack">on track</Pill>, <Pill tone="late">late</Pill>.
+
+## If a screen looks wrong
+
+- A screen that cannot load shows an **error with a retry button**. It never shows an empty list in place of a failure.
+- An **offline** message appears when your connection drops. Reconnect and choose retry.
+- If something still looks broken, use **Report a problem** in the shop menu. Add a sentence about what happened (optional); the technical details are attached for you, and you get a **Support id** to quote if you follow up.

@@ -1,0 +1,115 @@
+---
+title: "Notifications"
+description: "How Kinetic tells you something happened: the Notifications screen, the red badge, in-app pop-ups, sounds, and push alerts on your phone."
+---
+
+import { Tag, Key } from "/snippets/ui.jsx";
+
+Notifications are Kinetic's way of saying "this just happened and it concerns you." They are separate from [Today](/work/today), which lists jobs that are *slipping*, and from [Tasks](/work/tasks), which lists things you *promised*. Notifications are events: a text arrived, a call came in, a task landed on your list.
+
+## The Notifications screen
+
+Choose **Notifications** in the sidebar. Each row is one event:
+
+- An **icon** for the kind of event.
+- A **title** and, below it, a short preview.
+- A gray badge naming the **channel** (for example Text, Email, Call, or Alert).
+- The **repair order number**, when the event belongs to one.
+- The **time**. Hover over it for the exact date and time.
+- A blue **Unread** badge, and a light blue background, for events you have not looked at.
+
+Click a row to open what it refers to and mark it read. A task opens in the task sheet, a conversation opens in Messages, and anything tied to a repair order opens its [drawer](/repair-orders/drawer).
+
+**Mark all read** clears the whole list at once. When everything is read the screen says **All caught up**. With nothing yet it says **No notifications yet**: *New messages, calls and repair-order updates arrive here.*
+
+### What creates a notification
+
+| Kind | When you get it |
+| --- | --- |
+| **Text received** | A customer or contact texts the shop. |
+| **Text sent by the AI** | The automatic reply answered a text for you (see [AI overview](/ai/overview)). |
+| **Call received** | The phone rang. |
+| **Call answered by the AI** | The AI receptionist took a call. See [Calls](/communicate/calls). |
+| **Email received** | An email came in for the shop. |
+| **Follow-up** | An automatic supplement follow-up went out or needs a look. See [Email](/communicate/email#supplement-emails-and-automatic-follow-up). |
+| **Task** | A task was assigned to you. |
+| **Alert** | The shop went over production capacity. See [Production](/admin/production). |
+| **Negative survey answer** | A customer answered a CSI survey with a low score. The assigned client advocate sees this one. See [CSI](/csi/overview). |
+
+## The red numbers in the sidebar
+
+| Where | The number counts |
+| --- | --- |
+| **Notifications** | Events you have not read. Hidden when zero. |
+| **Tasks** | Tasks assigned to you that you have not opened. Hidden when zero. |
+| **Email review** | Emails waiting for a decision. Only appears if you connected a mailbox. |
+
+On the collapsed sidebar the same red number sits on the icon.
+
+## While Kinetic is open
+
+When a new event arrives while you have Kinetic open:
+
+- A small **pop-up** appears with the title, a preview, and **Open**. Up to three show at once; if more arrive, a fourth reads "N more notifications".
+- A short **chime** plays. Choose the sound, or turn it off, in **Settings → Preferences → Notification sound**: **Chime**, **Ping**, **Pop**, or **Off**.
+- If Kinetic is open in a tab you are **not looking at**, your computer may also show its own system notification, if you have allowed that in your browser.
+
+<Note>
+Kinetic does not play sounds or pop up alerts for the backlog that was already there when you opened it. Only things that arrive *after* you open Kinetic make noise.
+</Note>
+
+Your browser may block sounds until you click or press a key once on the page.
+
+## Alerts on your phone
+
+Push notifications reach your phone or computer even when Kinetic is closed. Each device is set up separately.
+
+<Steps>
+  <Step title="Go to Preferences">
+    Open **Settings → Preferences** and find the **Notifications** section, titled **Push notifications on this device**.
+  </Step>
+  <Step title="Turn them on">
+    Choose **Enable notifications** and allow them when your browser asks.
+  </Step>
+  <Step title="Choose what you want">
+    Five switches control what reaches this device: **Texts**, **Emails**, **Calls**, **Tasks**, and **Production alerts**. All start on. Turn off what you do not need on this device.
+  </Step>
+  <Step title="Test it">
+    Under **Test**, choose **Send a test notification**. You should see it on this device within a few seconds. If it says **No device accepted the test**, check that notifications are enabled for Kinetic in your device settings.
+  </Step>
+</Steps>
+
+### iPhone and iPad
+
+Apple only allows push alerts for apps installed on the Home Screen, and only on **iOS 16.4 or newer**.
+
+1. Open Kinetic in **Safari**.
+2. Tap **Share**, then **Add to Home Screen**.
+3. Open Kinetic **from the new icon**.
+4. Go to **Settings → Preferences** and choose **Enable notifications**.
+
+Kinetic shows these steps in the app when it detects Safari. If notifications are blocked, open the iPhone's own **Settings → Notifications → Kinetic** and switch them on.
+
+### If it says push is not set up
+
+**Push notifications aren't set up for this shop yet** means your shop's administrator or the Kinetic team has not turned push on. Everything else about notifications still works.
+
+### To stop alerts on a device
+
+On that device, go to **Settings → Preferences → Notifications** and choose **Disable**.
+
+## Good to know
+
+- Notifications respect your shop and your role. You never see another shop's activity.
+- If you set days off in **Settings → Preferences → Schedule**, the AI can reply to customers on your behalf on those days. See [Your preferences](/admin/personal-preferences).
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Turn on push for **Texts** and **Calls** on the phone you carry. Open **Notifications** when you return to your desk. Use **Mark all read** after you have genuinely looked.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't treat notifications as a to-do list. If something needs doing, make a [task](/work/tasks) so it has an owner and a due date.
+  </Card>
+</Columns>

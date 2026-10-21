@@ -1,0 +1,51 @@
+---
+title: "Supplements"
+description: "How to request, chase, and record a supplement so the car does not sit in Supplement Hold."
+---
+
+import { Pill } from "/snippets/ui.jsx";
+
+A **supplement** is a request for more money from the insurer after the shop finds damage that was not on the first estimate. The car stays in <Pill tone="waiting">Supplement Hold</Pill> until the insurer replies.
+
+## When to use it
+
+Teardown finds hidden damage, or a part turns out to be unavailable and an alternative costs more.
+
+## Before you start
+
+- The estimate in CCC ONE has been updated with the extra operations. Run [Rivet](/ai/rivet) if you want a second pair of eyes.
+- Photos of the new damage are uploaded to the repair order's [Files](/repair-orders/files).
+
+## Steps
+
+<Steps>
+  <Step title="Gather proof">
+    Upload photos of the hidden damage. Tag the supplement estimate **Supplement**, and the first scan **Pre-repair Scan**. Insurers pay what they can see.
+  </Step>
+  <Step title="Send the package">
+    On the **Files** tab choose **Send to adjuster**. Kinetic turns photos into PDF packets under the insurer portal size limit and opens an email draft. Read it and send. Leave **Auto follow-up every 2 business days until the adjuster replies** switched on.
+  </Step>
+  <Step title="Tell the customer">
+    Text them in plain words: what was found, that the insurer must approve, and that the target date may move. Do not promise a new date.
+  </Step>
+  <Step title="Record it">
+    Add a note: who you sent it to, when, and what was asked for. Add a row for it on the [ARW](/repair-orders/arw) (**Supplement 1**, **2**, and so on) with the amount **Due**.
+  </Step>
+  <Step title="Chase on a schedule">
+    The row appears on **Today → Supplements waiting** after a few days. Call the adjuster. The automatic follow-up email goes every 2 business days, up to 10 times, but a call is faster than any email.
+  </Step>
+  <Step title="When it is approved">
+    Move the amount into the **ARW** as it is promised or paid, update the customer, move the car on, and add a note. Start the next step quickly; every day in hold is a day on the clock.
+  </Step>
+</Steps>
+
+## Done looks like
+
+The insurer has approved, the ARW has the supplement row, the car has left hold, and the customer knows the new situation.
+
+## Common mistakes
+
+- Sending photos in the wrong format or too large. Use **Send to adjuster**.
+- Not telling the customer until the insurer replies.
+- Forgetting the ARW row and being surprised at pickup.
+- Letting a follow-up run on after the adjuster has replied by phone. Switch it off on the draft or the thread.

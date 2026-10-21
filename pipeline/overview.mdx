@@ -1,0 +1,124 @@
+---
+title: "The four boards"
+description: "Opportunities, Repairs, Close & Deliver, and Enrichment: what each board holds, what the numbers across the top mean, and how a vehicle moves from one to the next."
+---
+
+import { Pill, KpiStripExample } from "/snippets/ui.jsx";
+
+Every repair order lives on exactly one of four **boards**, and the board it is on is the plainest answer to "where is this job?" You will find the boards under the **Pipeline** group in the left sidebar. The number beside each name is how many repair orders it holds right now.
+
+## The four boards at a glance
+
+| Board | The question it answers | A vehicle is here when |
+| --- | --- | --- |
+| **Opportunities** | "Who might become a job?" | A customer has called or booked, but the car is not here yet. |
+| **Repairs** | "What is in the building, and how is it going?" | The vehicle has arrived and is being repaired. |
+| **Close & Deliver** | "What is ready to go home?" | Repairs are complete and the car is waiting for pickup and final paperwork. |
+| **Enrichment** | "What follow-up is left?" | The car is delivered. The job awaits an audit, follow-up, and archiving. |
+
+<Note>
+You do not drag a car from one board to another. CCC ONE moves it when its own milestones happen: an appointment is booked, a car arrives, repairs are completed, the customer picks up. Inside a board, you move cars from status to status. See [Moving a repair order](/pipeline/views#moving-a-repair-order).
+</Note>
+
+## How a vehicle travels
+
+<Steps>
+  <Step title="Opportunities">
+    A lead or appointment appears. Its status reflects how complete the information is and whether an appointment exists. See [Opportunities statuses](/pipeline/statuses#opportunities).
+  </Step>
+  <Step title="Repairs">
+    The car arrives. It starts at <Pill tone="needs">Arrival & Triage</Pill> and passes through planning, holds, and the repair departments.
+  </Step>
+  <Step title="Close & Deliver">
+    When CCC ONE records the repairs as complete, the car moves here as <Pill tone="ontrack">Repairs Complete</Pill> to wait for pickup. Your team uses the other statuses here to plan the hand-over.
+  </Step>
+  <Step title="Enrichment">
+    When CCC ONE records the car as delivered, it moves here to <Pill tone="needs">Audit</Pill> for follow-up. When CCC ONE closes the repair order, the job is archived.
+  </Step>
+</Steps>
+
+A lead that never arrives is cancelled: Kinetic moves an opportunity to <Pill tone="late">Cancel (Lost)</Pill> automatically when its appointment date passes and the vehicle never showed up.
+
+## The numbers across the top
+
+Each board shows a **stat strip** of numbers above the list. Most come from the whole shop, not just the page you are looking at, so they stay right even when you filter. (The exceptions are noted below.)
+
+<KpiStripExample />
+
+*An example strip. Yours will show your shop's numbers.*
+
+A number with a **▲ or ▼ chip** is being compared to a **target**. Green means you met or beat it; red means you fell short. Hover the chip to see the target. Admins set the targets in [Repair order settings](/admin/repair-order-settings#repair-kpi-targets).
+
+### Opportunities
+
+| Number | What it counts |
+| --- | --- |
+| **Needs Closed** | Open opportunities that have not yet become scheduled jobs: Incomplete Lead, Unscheduled Lead, Incomplete Appointment, and Cancel (Lost). |
+| **Closing** | Opportunities far enough along to be worth a push: Unscheduled Lead and Incomplete Appointment. |
+| **Closed & Scheduled** | Opportunities that have a complete record and an appointment: **Scheduled (Won)**. |
+| **Scheduled Revenue** | An estimate of the money behind those scheduled jobs: the **Closed & Scheduled** count times an average ticket. It is a forecast, not a total of real estimates. |
+
+### Repairs
+
+| Number | What it counts |
+| --- | --- |
+| **In Yesterday** | Vehicles that arrived on the previous business day. On a Monday, "yesterday" is Friday. |
+| **Out Yesterday** | Vehicles delivered on the previous business day. |
+| **Onsite** | Vehicles currently on the Repairs board. |
+| **Active Repairs** | Vehicles in production: **Body** and every status after **Parts Hold**. Earlier statuses (arrival, planning, holds) are not counted. |
+| **Incoming Revenue** | The value of vehicles that have arrived but are not yet in production (**Parts Hold** and earlier). Each counts at its CCC ONE estimate. A vehicle with no estimate yet counts at your shop's average repairable-order amount, or the average total-loss amount if it looks like a total loss. Set those averages in [Estimating and cycle time](/admin/repair-order-settings#estimating-and-cycle-time). |
+| **In-Process Revenue** | The booked estimate value of vehicles in production. |
+
+**In Yesterday**, **Out Yesterday**, **Onsite**, **Incoming Revenue**, and **In-Process Revenue** are each compared with a target, which your admin sets.
+
+### Close & Deliver
+
+| Number | What it counts |
+| --- | --- |
+| **Unclosed Experiences** | Every vehicle on this board (the whole shop). |
+| **Outreach** | Vehicles marked **Won** among the ones currently loaded in your view. |
+| **Flagged** | Vehicles marked **Lost** among the ones currently loaded in your view. |
+
+### Enrichment
+
+| Number | What it counts |
+| --- | --- |
+| **Unfinished Research** | Every record on this board (the whole shop). |
+| **Won** | Records marked **Won** among the ones currently loaded in your view. |
+| **Lost** | Records marked **Lost** among the ones currently loaded in your view. |
+
+<Info>
+These numbers refresh about every 15 seconds. If one looks stale, choose **Refresh data** at the top right of the board.
+</Info>
+
+## What each board is for in daily work
+
+<Tabs>
+  <Tab title="Opportunities">
+    Work this board to turn leads into scheduled appointments. The status tells you what is missing. A lead stuck in **Incomplete Lead** is missing a customer detail or a vehicle detail in CCC ONE. See [Playbook: lead to scheduled](/playbooks/lead-to-scheduled).
+  </Tab>
+  <Tab title="Repairs">
+    This is the busiest board and the one most people keep open all day. Scan for cards that are red (late), for the missing-documents icon, and for lanes that are overloaded. See [Playbook: the daily sweep](/playbooks/daily-sweep).
+  </Tab>
+  <Tab title="Close & Deliver">
+    Work this board to get finished cars home: confirm payment, schedule pickups or deliveries, collect signatures. See [Playbook: delivery and closeout](/playbooks/delivery).
+  </Tab>
+  <Tab title="Enrichment">
+    Work this board to finish the record: audit the job, make sure the survey went out, and archive it. See [CSI](/csi/overview).
+  </Tab>
+</Tabs>
+
+## Search, filter, and view
+
+All four boards share the same tools: a **Table**, a **Board** (columns), and a **Timeline**, with a search box and filters. They are described in [Views, search, and filters](/pipeline/views).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="All the statuses" icon="list-ordered" href="/pipeline/statuses">
+    Every status, what it means, and what usually moves a car out of it.
+  </Card>
+  <Card title="Views, search, and filters" icon="table-2" href="/pipeline/views">
+    Table, board, and timeline, plus every filter.
+  </Card>
+</CardGroup>

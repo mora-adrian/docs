@@ -1,0 +1,136 @@
+---
+title: "CSI: customer satisfaction"
+description: "How Kinetic measures satisfaction after delivery: the pulse check, the full survey, the review request, how to work the CSI screen, and how to close the loop on a low score."
+---
+
+import { Pill, Tag } from "/snippets/ui.jsx";
+
+**CSI** stands for **customer satisfaction index**. After a customer picks up their car, Kinetic asks how it went. The answers matter in three ways: they show you where the shop is strong and where it is not, insurers and customers read them, and an unhappy customer who is contacted the same day can often be turned around.
+
+Everything is automatic once your admin turns it on. You do not send surveys by hand. Your job is to watch the **CSI** screen and **call back anyone who is unhappy**.
+
+## How it works, step by step
+
+<Steps>
+  <Step title="A job qualifies">
+    A repair order qualifies for a survey when **all** of these are true:
+
+    - the vehicle was **delivered**,
+    - the job is **Won**, in **Closed Won** or in **Enrichment**,
+    - it is **not archived**,
+    - it is **not a total loss**, and
+    - the customer has a **mobile phone number** on file.
+  </Step>
+  <Step title="The pulse check goes out (24 hours later)">
+    A text goes to the customer: *Hi Jordan, thanks for choosing Example Collision! On a scale from 1 to 10, how would you rate your overall experience? Reply with a number.*
+
+    - On an **iPhone**, the question arrives as a **tap-to-answer poll**: **Excellent** (counts as 10), **Okay** (7), or **Poor** (3).
+    - On other phones, the customer **replies with a number from 1 to 10**. A reply such as `9`, `9/10`, or `9 out of 10` counts.
+    - The customer has **7 days** to reply. The first answer is the one recorded.
+  </Step>
+  <Step title="A low score alerts the team immediately">
+    A score of **6 or below** is **negative**. Kinetic writes **CSI response: … (negative)** on the repair order and notifies the **client advocate**. See [Close the loop](#close-the-loop-on-a-low-score).
+  </Step>
+  <Step title="Every answer is asked for a public review">
+    Whatever the score, the customer then gets one text thanking them and linking to your **Google** (and **Yelp**, if configured) review pages. The same ask goes to everyone, by design, because Google prohibits asking only happy customers for reviews.
+  </Step>
+  <Step title="The full survey follows">
+    About two business days after the job qualified, the customer is texted a link to a short **online survey** (see [What customers see](/csi/customer-pages)). It asks five 1 to 5 questions, a 0 to 10 "would you recommend us?", and an optional comment. The link works for **30 days**.
+  </Step>
+</Steps>
+
+<Info>
+The CSI screen says it in one line: **Each customer gets a short pulse check 24 hours after their repair order is closed and delivered, then a full survey link within 72 business hours.**
+</Info>
+
+### When a survey is skipped
+
+Kinetic skips a survey, and says why on the screen, when:
+
+| Reason shown | Why |
+| --- | --- |
+| **No mobile number** | The customer has no valid mobile number. |
+| **No longer eligible** | The job stopped qualifying before it was sent (for example it became a total loss). |
+| **Recipient blocked** | The customer is marked **Do not text**, or the number is blocked. |
+| **Customer opted out** | They replied STOP at some point. |
+| **Chat health critical** | The conversation is in trouble. Texting now could do harm. |
+| **Line reputation critical** | The shop's texting line is at risk of being filtered. |
+
+## The CSI screen
+
+Open **Communications → CSI**. A banner at the top says whether surveys are **Active** (green) or **Paused** (amber). If paused, the banner explains: **CSI surveys are off in Settings → Messaging. Scheduled surveys stay queued but nothing sends.**
+
+Below it are four sections, each with a count. Every row shows the **repair order number** (click to open its drawer), the **customer**, the **vehicle**, then the **client advocate** and the **phone number**.
+
+### Scheduled
+
+Surveys waiting to go out. Each shows a live countdown such as **Sends in 23h 59m 41s**, then **Sending soon** and **Sending…**.
+
+- **Send now** sends the pulse check immediately, without waiting. It is disabled while surveys are paused.
+- **Cancel** stops it. Kinetic asks for a **Reason**: **Closed by mistake**, **Internal ticket**, **Vehicle still here**, or **Other**, with an optional **Note**. A reason is required, so the screen can explain later why a survey did not go.
+
+### Sent & awaiting reply
+
+Delivered but not yet answered. Each row says **Sent** and the date, and **poll** if it went as a tap-to-answer poll. Small badges show the next steps: **Survey scheduled**, **Survey sending**, **Survey sent**, **Survey completed**, **Survey skipped**, or **Survey not sent** for the full survey, and **Review asked — Google**, **Review skipped**, or **Review not sent**. This is your **follow-up list**.
+
+### Responded
+
+Answered surveys. Each row shows a green **Responded** badge, or a red **Negative** badge for a low score, with exactly what the customer wrote, their score out of 10, and the time. The same survey and review badges appear.
+
+### Skipped & cancelled
+
+Surveys that will not complete, each with its reason. A **cancelled** survey has a **Restore** button that puts it back in the queue, if the job is still eligible.
+
+Each section loads more with a button at the bottom, and shows **No surveys scheduled.**, **No surveys waiting for a reply.**, **No responses yet.**, or **Nothing skipped or cancelled.** when empty.
+
+## On the repair order
+
+When a survey exists, the repair order's left panel shows a **Customer survey** checklist:
+
+| Step | Meaning |
+| --- | --- |
+| **Pulse check sent** (with a date), or **Pulse check** with **Sends {date}** | Whether the first text has gone out. |
+| The customer's answer | What they said. |
+| **Comprehensive sent** or **Comprehensive survey** | Whether the full survey link was sent. |
+| **Comprehensive completed** (expandable) | The answers: each question and the score. |
+| **Review requested** with **Google** and/or **Yelp** | Whether the review ask went out. |
+
+A step that will not happen reads **Pulse check skipped**, **Pulse check cancelled**, **Pulse check not sent**, **Comprehensive skipped**, or **Comprehensive not sent**.
+
+The [drawer](/repair-orders/drawer) shows the current step in one line under **Customer survey**.
+
+## Close the loop on a low score
+
+<Steps>
+  <Step title="See it the same day">
+    A negative answer notifies the **client advocate**, and negative answers from the last week are in your weekly **Negative CSI responses** email (see [Reports](/admin/reports)). The **Responded** section shows them with a red **Negative** badge.
+  </Step>
+  <Step title="Read the history first">
+    Open the repair order. Read the Activity, texts, and any notes before you call, so you are not surprised.
+  </Step>
+  <Step title="Contact the customer personally">
+    Call, or text from the repair order's **Texts** tab. Listen first. Apologize for what they experienced. Do not argue about what happened.
+  </Step>
+  <Step title="Record what you did">
+    Add a **note** on Activity with the call and the outcome. If there is more work to do, create a [task](/work/tasks) with a due date.
+  </Step>
+</Steps>
+
+<Tip>
+**Same-day contact matters.** A customer who tells you something went wrong is still deciding how they will describe you. A call within hours can turn the story; a call after a week is a formality.
+</Tip>
+
+## Settings that control it
+
+Admins turn surveys on and off, and set the Google and Yelp review links, in **Settings → Messaging**. See [Messaging settings](/admin/messaging-settings#customer-survey).
+
+## Good habits
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Work the **Responded** list every morning. Cancel with an honest reason when you must. Keep customer **mobile numbers** correct; that is the main reason surveys do not send.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't ask customers to change a score. Don't offer a reward for a good review. Don't cancel a survey because you expect a bad answer.
+  </Card>
+</Columns>

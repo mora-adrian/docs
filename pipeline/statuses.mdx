@@ -1,0 +1,148 @@
+---
+title: "All the statuses"
+description: "Every status on every board: what it means, what moves a car into it, and what usually needs to happen next."
+---
+
+import { Pill, ToneLegend } from "/snippets/ui.jsx";
+
+A **status** is the one-line answer to "where is this job?" Every repair order has exactly one. This page lists them all, board by board, in the order they appear.
+
+<Info>
+**Your shop's labels may differ slightly.** The statuses below are the standard set. Their names can be adjusted for a shop, and your administrator cannot rename them from Settings. If a name on your screen reads a little differently, the meaning is the same. To change names or order, contact Kinetic support.
+</Info>
+
+## Reading a status
+
+Each status shows as a pill with a colored dot. The dot has four meanings.
+
+<ToneLegend />
+
+On a card, a number in parentheses beside the status, such as **Paint (3)**, is the number of **days the job has been in that status**.
+
+<Warning>
+**A vehicle past its target date shows a red dot, whatever its status.** A late car looks late even if it is sitting in a green status.
+</Warning>
+
+## How statuses change
+
+| Who or what | What it can do |
+| --- | --- |
+| **CCC ONE** | Moves a repair order between boards and, on the Repairs board, usually sets the status from CCC ONE's own production stage. It is the authority for everything it sends. |
+| **You** | Move a card to another status **on the same board** by dragging it, or with the card's **Move to** menu. |
+| **Kinetic itself** | Cancels a lead whose appointment passed without the car arriving. |
+
+If CCC ONE sends a status Kinetic has no rule for, Kinetic keeps the job where it was and records an event on the repair order's **Activity** tab, titled **CCC status unmapped** followed by the status. It does not guess.
+
+A car can also move *backward*: if someone unchecks "vehicle arrived" in CCC ONE for a car that is in production, Kinetic moves the card back to **Scheduled (Won)** on Opportunities.
+
+<Note>
+Because CCC ONE is the authority, a status you set by hand on the Repairs board can be changed again the next time CCC ONE reports a different production stage. If you disagree with what CCC ONE says, fix it in CCC ONE.
+</Note>
+
+## Opportunities
+
+These are jobs that have not arrived yet. Kinetic reads the information CCC ONE has, and puts the lead in the status that shows what is missing.
+
+To count as **complete**, the record needs: customer name (or company name), email, phone, and address, **and** the vehicle's VIN, year, make, model, and exterior color.
+
+| Status | Tone | Meaning | How it gets here |
+| --- | --- | --- | --- |
+| **Incomplete Lead** | <Pill tone="needs">needs us</Pill> | Something is missing from the customer or vehicle details, and there is no appointment yet. | CCC ONE data is missing any of the items above and no appointment or future arrival date exists. |
+| **Unscheduled Lead** | <Pill tone="needs">needs us</Pill> | The details are complete, but no appointment is booked. | Complete details, no appointment. |
+| **Evaluation** | <Pill tone="needs">needs us</Pill> | The lead is being evaluated. | Moved here by your team. |
+| **Incomplete Appointment** | <Pill tone="needs">needs us</Pill> | An appointment exists, but details are still missing. | Missing details **and** an appointment or future arrival date. |
+| **Scheduled (Won)** | <Pill tone="needs">needs us</Pill> | The details are complete **and** the customer is booked. The job is marked **Won**. | Complete details and an appointment or future arrival date. |
+| **Cancel (Lost)** | <Pill tone="needs">needs us</Pill> | The customer did not come. The job is marked **Lost**. | Every appointment or arrival date has passed and the car never arrived. Kinetic moves it automatically. |
+
+Every new CCC ONE update re-checks the rules, so adding a missing email in CCC ONE moves a lead forward without you touching Kinetic.
+
+<Tip>
+**A lead stuck in Incomplete Lead or Incomplete Appointment?** Open its drawer, look at the customer and vehicle, and see what is blank. Fix it in CCC ONE and the status updates itself. See [Playbook: lead to scheduled](/playbooks/lead-to-scheduled).
+</Tip>
+
+## Repairs
+
+The default status when a car arrives is **Arrival & Triage**. After that, the list below is the usual order. Vehicles can skip or revisit statuses.
+
+| Status | Tone | Meaning | CCC ONE production stages that put a car here |
+| --- | --- | --- | --- |
+| **Arrival & Triage** | <Pill tone="needs">needs us</Pill> | The car is here and is being checked in, scanned, and authorized. | Check-in, Customer Hold, Insurance Hold, Preorder, Preorder Parts, Prescan, Waiting Authorization |
+| **Dispatch Queue** | <Pill tone="needs">needs us</Pill> | Ready to be assigned to a technician or department. | Ready for Dispatch |
+| **Disassembly & Repair Planning** | <Pill tone="needs">needs us</Pill> | The car is being taken apart and the repair is being planned. The first scan is due here. | Teardown, Blueprint, Warranty Blueprint |
+| **Supplement Hold** | <Pill tone="waiting">waiting</Pill> | Waiting for the insurer or customer to approve extra work, or a possible total loss is being decided. | Waiting Insurance Approval, Waiting Customer Approval, Possible Total Loss, Total Loss: Awaiting Release, Total Loss: Waiting Pickup |
+| **Parts Hold** | <Pill tone="waiting">waiting</Pill> | Waiting for parts to arrive. | Waiting on Parts, Backorder Part Hold, Reassembly Parts Waiting, Backorder: Reassembly Parts, Warranty Waiting on Parts |
+| **Body** | <Pill tone="ontrack">on track</Pill> | Body repair work. | Body, BFM, Waiting Tech, Warranty Body |
+| **Structural** | <Pill tone="ontrack">on track</Pill> | Frame and structural work. | Structural, Frame |
+| **Mechanical** | <Pill tone="ontrack">on track</Pill> | Mechanical work. | Mechanical |
+| **Paint** | <Pill tone="ontrack">on track</Pill> | Painting. | Paint Prep, Paint, Warranty Paint |
+| **Reassembly** | <Pill tone="ontrack">on track</Pill> | Putting the car back together. | Reassembly, Warranty Reassembly |
+| **Wheels, Tires & Alignment** | <Pill tone="ontrack">on track</Pill> | Wheels, tires, and alignment. | *Moved by your team.* |
+| **Calibrations & Diagnostics** | <Pill tone="ontrack">on track</Pill> | Sensor calibration and post-repair scans. | Calibration, Post Scan, Warranty Calibration |
+| **Denib, Polish & Coatings** | <Pill tone="ontrack">on track</Pill> | Final paint finishing. | Polish, Denib-Polish-Coatings |
+| **Sublets** | <Pill tone="waiting">waiting</Pill> | The car is with an outside vendor. | Sublet, Sublet Glass, Sublet Offsite, Sublet Onsite |
+| **Detail** | <Pill tone="ontrack">on track</Pill> | Final cleaning. | Detail, Warranty Detail |
+| **Repairs Complete** | <Pill tone="ontrack">on track</Pill> | Work is finished. The vehicle is flagged **ready for customer pickup**. | Repair Completed |
+
+CCC ONE also has **Quality Control** stages (Quality Control, Waiting Final Insurance Review, Final PPW, Warranty QC). Kinetic has no status of its own for them. When one arrives and nothing else maps, the car **stays in the status it is in**.
+
+### The Possible Total Loss lane
+
+**Supplement Hold** is drawn as two lanes on the Repairs board:
+
+- **Supplement Hold** holds vehicles that are expected to be repaired.
+- **Possible Total Loss** sits right beside it and holds vehicles that are heading toward being declared a total loss.
+
+The second lane is not a status you can drop a card into. A vehicle appears there automatically when any of these is true: you marked it **Total loss** under **Repairability**, CCC ONE classified it as a total loss, or its CCC ONE stage mentions a total loss. Hover over the lane title and it reminds you: **Possible total losses follow the record's Repairability and CCC ONE.** See [Total loss](/playbooks/total-loss).
+
+### Why the order matters
+
+Kinetic treats **Body and everything after it** as *production*. Statuses before that (arrival, planning, supplement, and parts holds) are the *pre-production* part of the repair. This split drives the **Active Repairs**, **Incoming Revenue**, and **In-Process Revenue** numbers, and the production capacity warnings. See [The four boards](/pipeline/overview#repairs).
+
+## Close & Deliver
+
+| Status | Tone | Meaning |
+| --- | --- | --- |
+| **Repairs Complete** | <Pill tone="ontrack">on track</Pill> | The default. CCC ONE has recorded the repairs as complete. The car is flagged **ready for customer pickup**. |
+| **Tow Scheduled** | <Pill tone="waiting">waiting</Pill> | A tow-truck delivery is planned. Use it with a **Concierge out** appointment. |
+| **Experience Scheduled** | <Pill tone="waiting">waiting</Pill> | An in-person pickup is planned. Use it with an **Experience out** appointment. |
+| **Interview** | <Pill tone="waiting">waiting</Pill> | The hand-over conversation or inspection with the customer. |
+| **Corrections** | <Pill tone="late">late</Pill> | Something needs to be fixed before the customer takes the car. |
+| **Closed Won** | <Pill tone="ontrack">on track</Pill> | The job is closed successfully. |
+| **Closed Lost** | <Pill tone="late">late</Pill> | The job is closed without a successful outcome. |
+
+Your team moves cars among these statuses by hand. Your shop may use **Interview** and **Corrections** slightly differently, so confirm the convention with your manager.
+
+## Enrichment
+
+| Status | Tone | Meaning |
+| --- | --- | --- |
+| **Audit** | <Pill tone="needs">needs us</Pill> | The default. The car has been delivered and the job record is waiting for review. |
+| **Enrich** | <Pill tone="needs">needs us</Pill> | The record is being completed with missing details. |
+| **Archive** | <Pill tone="ontrack">on track</Pill> | The job is finished and filed away. |
+
+CCC ONE sends the job here when it records the vehicle as **delivered**. When CCC ONE records the job as **closed**, it is filed as finished (Won). A job CCC ONE records as cancelled, void, or a total loss is filed as Lost.
+
+## Won and Lost
+
+Some cards carry a **Won** or **Lost** tag. It is a separate fact from the status:
+
+- On **Opportunities**, **Scheduled (Won)** jobs show **Won**; **Cancel (Lost)** jobs show **Lost**.
+- On **Close & Deliver** and **Enrichment**, the tag shows the final result.
+- On **Repairs** there is no tag, because the outcome is not decided yet.
+
+A **Lost** job's progress bar turns red entirely.
+
+## When a job has no status
+
+Occasionally a repair order arrives that Kinetic cannot place. It appears in a lane called **No status** at the end of the board. Open it, check what CCC ONE has sent, and ask your admin if it stays there.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Views, search, and filters" icon="table-2" href="/pipeline/views">
+    Move cards, read the card, and filter the board.
+  </Card>
+  <Card title="Repair order facts" icon="clipboard-list" href="/repair-orders/facts">
+    Everything on the left of a repair order, including the first scan and target date.
+  </Card>
+</CardGroup>

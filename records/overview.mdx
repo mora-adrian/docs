@@ -1,0 +1,104 @@
+---
+title: "Records: people, companies, and vehicles"
+description: "How Kinetic keeps one record for every person, company, and vehicle, how they link to repair orders, how to find, edit, and archive them, and how to avoid duplicates."
+---
+
+import { Key } from "/snippets/ui.jsx";
+
+Behind every repair order are three kinds of **record**: the **people** involved, the **companies** they work for or belong to, and the **vehicles**. Kinetic keeps one record for each real person, company, and vehicle, so the same customer who returns two years later is the same record, with the same history.
+
+You will find them under **Records** in the sidebar: **People**, **Companies**, and **Vehicles**, each with a count.
+
+## How records connect
+
+| A… | links to… |
+| --- | --- |
+| **Person** | Their vehicles, their company, and every repair order they appear on (as the customer, driver, referrer, adjuster, and so on). |
+| **Company** | Its contacts (people) and every repair order it is on, such as an insurer, a dealer, or a fleet customer. |
+| **Vehicle** | Its owner and its whole repair history, whichever repair order each repair appeared on. |
+| **Repair order** | A primary customer (a person or a company), a vehicle, and any other parties. |
+
+Change a person's phone number on their record and every repair order that uses that person shows the new number. You never fix the same detail in five places.
+
+## Where records come from
+
+You do not add records by hand on these screens. They arrive from **CCC ONE** with the repair order (customer, vehicle, insurer, adjuster) and Kinetic keeps them linked. There are two other ways a record appears:
+
+- **From a phone call.** When a call comes in from an unknown number, the screen pop offers **Create contact** to start a person record with that number. See [Calls](/communicate/calls#screen-pops).
+- **From enrichment.** Public profile details can fill blank fields on a contact. See [People](/records/people#contact-enrichment).
+
+<Note>
+**CCC ONE can update a record.** When CCC ONE sends new customer or vehicle details, they replace what Kinetic had for the same fields. If a detail keeps changing back after you fix it, fix it in CCC ONE as well.
+</Note>
+
+## Finding a record
+
+There is no search box on the record lists. Use the **command palette** instead, which searches everything at once:
+
+1. Press <Key>⌘</Key> <Key>K</Key> (<Key>Ctrl</Key> <Key>K</Key> on Windows) from anywhere.
+2. Type a name, a phone number, a VIN, or a repair order number.
+3. Choose the person, company, or vehicle from the results. If there are more related records, choose **Show related records**.
+
+The record opens in its side sheet on the matching Records screen.
+
+You can also browse the lists. Click a column heading to sort, and use **Previous** and **Next** at the bottom to page. The sorting and paging are done for the whole shop, not just the page on screen.
+
+## The list screens
+
+| Screen | Columns | Sortable by |
+| --- | --- | --- |
+| **People** | Name, Phone, Email, Address, Referral source, Vehicles, Open repair orders | Last name, first name, email |
+| **Companies** | Company, Type, Address, Contacts, Linked repair orders | Name, type |
+| **Vehicles** | Vehicle, VIN, Owner, Odometer, Condition, Repair orders | Year, make, model, VIN |
+
+An empty list says **No people found.**, **No companies found.**, or **No vehicles found.** On a phone, the rows turn into cards that show the same facts.
+
+## The record sheet
+
+Click a row to open the record's sheet on the right. At the top it shows the name and key facts. Two buttons sit under it:
+
+| Button | What it does |
+| --- | --- |
+| **Edit** | Opens the edit form in a window. Save with **Save**, or press <Key>⌘</Key>+<Key>Enter</Key>. |
+| **Archive** | Takes the record out of use. The first click turns the button into **Confirm archive**; click again to confirm. Archiving is a protected action that requires an admin or owner and a fresh authenticator code. |
+
+<Warning>
+**Archive is for records that should never have existed**, such as a duplicate or a test entry. An archived record disappears from lists and searches. Do not archive a customer because the job is finished.
+</Warning>
+
+Below the buttons, the sheet lists everything the record is linked to, each as a link: the **Vehicles**, **Repair orders**, **Contacts**, or **Repair history** that belong to it. Click a repair order and its [drawer](/repair-orders/drawer) opens.
+
+## Duplicates
+
+There is no "merge" screen. If you find two records for one real person:
+
+1. Decide which record is the better one (more history, correct spelling).
+2. Edit it so it is correct.
+3. Tell your admin which duplicate to archive, or archive it yourself if you are an admin or owner.
+
+The best cure is prevention. **Before you create or edit, search**: a ten-second ⌘K check beats a merge later. Duplicates split history, so two repair orders for the same customer look like two customers.
+
+## Good habits
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Keep a **mobile number** and an **email** on every customer; texting and surveys need them. Fix spelling mistakes the first time you see them. Record how the customer found you in **Referral source**.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't make a second record to "fix" a first. Don't put notes about a repair in a customer's record; put them on the repair order. Don't archive records just to tidy up.
+  </Card>
+</Columns>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="People" icon="user" href="/records/people">
+    Contact details, do not text, enrichment.
+  </Card>
+  <Card title="Companies" icon="building-2" href="/records/companies">
+    Insurers, dealers, fleets.
+  </Card>
+  <Card title="Vehicles" icon="car" href="/records/vehicles">
+    VIN, details, repair history, value.
+  </Card>
+</CardGroup>

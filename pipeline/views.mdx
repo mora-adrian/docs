@@ -1,0 +1,185 @@
+---
+title: "Views, search, and filters"
+description: "The Table, Board, and Timeline views: how to read a card, move a repair order, search, filter, choose columns, and understand the production load line."
+---
+
+import { BoardCardExample, Pill, Key } from "/snippets/ui.jsx";
+
+Each of the four boards can be shown three ways. Switch between them with the **Table | Board | Timeline** control at the top right. All three show the same repair orders; only the drawing changes. Click any card or row once to open its [drawer](/repair-orders/drawer).
+
+| View | Best for |
+| --- | --- |
+| **Table** | Finding one job fast, comparing many jobs on the same facts, sorting, and filtering. |
+| **Board** | Seeing how many jobs are in each status, and moving jobs along. |
+| **Timeline** | Seeing how long each job is planned to take, and which ones are running late. |
+
+## Board view
+
+The Board shows one **lane** (a vertical column) for each status, from left to right, with a **card** for each repair order.
+
+### Reading a lane
+
+- A **colored dot** and the **status name** at the top, then a gray count of cards.
+- At the bottom, **how many repair orders** the lane holds and their **total estimate value**.
+- Cards are sorted with the **oldest job first** (most days in the shop), so the car that has been waiting longest is on top.
+- A lane with a dashed empty box simply has nothing in it.
+- If a lane has more cards than were loaded, choose **Load more** at the bottom of the board.
+
+Scroll sideways with your mouse or trackpad, or press <Key>←</Key> and <Key>→</Key> to step one lane at a time. <Key>↑</Key> and <Key>↓</Key> scroll the page.
+
+### Reading a card
+
+<BoardCardExample />
+
+*An example card from the Repairs board. All names and numbers are made up.*
+
+1. **Repair order number**, in a monospaced font so numbers line up.
+2. **First-scan icon** (Repairs board only). Filled green means the first scan is done. An empty gray icon means it is not. If a car has reached **Disassembly & Repair Planning** without a scan, the empty icon pulses gently as a reminder. Hover it to see how it was recorded (CCC ONE, a Pre-repair Scan file, or a text) and the date. See [First scan](/repair-orders/facts#first-scan).
+3. **Customer name**, with their initials in a circle.
+4. **Vehicle** (year, make, model), with the manufacturer's logo.
+5. **Insurer** paying for the repair. A dash means none is recorded.
+6. **Days in shop, with days in this status in brackets.** `12 (3)` means 12 days since arrival and 3 days in the current status.
+7. **Estimate total, with payments applied in brackets.** `$4,200.00 (–$500.00)` means a $4,200 estimate with $500 received so far.
+8. **Client advocate**: the person responsible for the customer. **Unassigned** if none.
+9. **Warning icon** (Repairs board only). A red octagon means the job is missing paperwork. Hover to see which: **Missing signed work authorization**, **Missing initial estimate**, or both. It disappears when both are in place.
+
+On the other boards the bottom-right corner shows a date instead of the warning: the **appointment date** on Opportunities, the **repairs-complete date** on Close & Deliver, and the **target date** on Enrichment.
+
+A **Won** or **Lost** tag appears at the top right of a card on Opportunities and Close & Deliver when the job's outcome is decided.
+
+### Moving a repair order
+
+You can move a card to another status **on the same board** in two ways:
+
+- **Drag it.** Pick up the card, and drop it on a lane. The lane highlights as you hover. The card fades while you carry it.
+- **Use the card's menu.** Hover over a card and a small **⋮** appears at the top right (it is always visible on a touch screen). Choose it, and under **Move to**, choose a status. This is the keyboard and touch way to do exactly what dragging does.
+
+<Warning>
+Moving a card is a **real change** to the repair order and it is recorded in the activity history with your name. It is not a draft. If you are not sure, open the repair order first.
+</Warning>
+
+What you cannot do:
+
+- Drag a card to a lane on a **different board**. CCC ONE moves cars between boards.
+- Drop a card on the **Possible Total Loss** lane. That lane follows the vehicle's facts. See [the lane](/pipeline/statuses#the-possible-total-loss-lane).
+- Drop a card on the lane it is already in. That does nothing.
+
+If CCC ONE later reports a different production stage, it can move the card again. The latest word from CCC ONE wins.
+
+### The production load line
+
+On the Repairs board, a small group of lanes (from the first production status onward) carries a line of text at the top:
+
+- **Production: 31 of 40 daily hours** in gray means the shop is within its capacity. The period (daily, weekly, or monthly) is the one your admin chose.
+- A **red ring** around the group and one or more red lines such as **Overbooked — Paint: 41 of 40 daily hours** means the shop has more work booked than it can process. Hover the red text to see the **Total**, **Body**, **Structural**, and **Paint** figures. The same warning appears at the top of [Today](/work/today).
+
+These figures are *estimate hours the shop can process*, not hours anyone has worked. See [Production capacity](/admin/production).
+
+### Loading and errors
+
+While the board loads it shows a pale outline of lanes and cards. If loading fails it shows an error with a retry button, and a message about your connection if you are offline. It never shows an empty board in place of an error.
+
+## Table view
+
+The Table is a dense grid with one row per repair order.
+
+### Search
+
+The box at the top left, **Search repair order, customer, VIN, claim…**, matches the repair order number, the customer's name, the VIN, and the claim number. Results update as you type.
+
+### Filters
+
+Choose **Filters** to open the filter panel. A number on the button shows how many filters are active, and the **X** beside it clears them all. Filters narrow what you see and combine (every filter you set must match).
+
+| Filter | What you pick |
+| --- | --- |
+| **Client Advocate** | One teammate. |
+| **Repair Planner** | One teammate. |
+| **Technician** | One technician. |
+| **Status** | One of this board's statuses. |
+| **Outcome likelihood** | One of the four levels. |
+| **Total Loss** | **Any**, **Yes**, or **No**. |
+| **Released** | **Any**, **Yes**, or **No**: whether the vehicle has been released to the customer. |
+| **Customer Approval** | **Any**, **Yes**, or **No**. |
+| **Insurance Approval** | **Any**, **Yes**, or **No**. |
+| **Arrival** | A date range (from and to, inclusive). |
+| **Target Date** | A date range. |
+| **Days in Shop** | A two-handled slider from 0 to 120. The top end means "any" (shown as 120+). The number applies when you let go. |
+
+<Note>
+Filters and search apply to the **Table** view. The Board and Timeline show the whole board.
+</Note>
+
+### Columns
+
+Choose **Columns** to show or hide columns. **Repair order #** and **Customer** always stay. The menu has a switch for each of:
+
+| Column | What it shows |
+| --- | --- |
+| **Repair order #** | The number (pinned on the left). |
+| **Customer** | Name, with an avatar (optional). |
+| **Vehicle** | Year, make, and model, with the maker's logo (optional). |
+| **VIN** | The vehicle identification number. |
+| **Insurer** | The insurer paying. |
+| **Claim #** | The claim number. |
+| **Estimate** | The current estimate amount. |
+| **Received** | Payments received so far, from the ARW. |
+| **Status** | The status pill. |
+| **Team** | Avatars for the whole team on the job. |
+| **Client Advocate**, **Repair Planner**, **Technician** | Each person by name. Hidden until you turn them on. |
+| **Days in Shop** | Days since arrival. |
+| **Arrival** | Arrival date. |
+| **Target Date** | The promised date. |
+| **Appointment** | The appointment date. |
+| **Total Loss** | Whether it is flagged a total loss. |
+| **Released** | Whether the vehicle was released. |
+| **Customer Approval**, **Insurance Approval** | Whether each approval is recorded. |
+| **Outcome likelihood** | The 1 to 4 meter. |
+| **Last communication** | When the customer was last texted. |
+
+Two more switches under **Avatars** hide or show the **Customer avatar** and **Vehicle avatar**.
+
+**Your column choices and widths are saved in this browser, on this device.** Drag a column edge to resize it. If you use a different computer, you will set them again.
+
+### Sorting and paging
+
+Click a column heading to sort ascending, again for descending. Sorting happens across the whole board, not just the visible rows. Use **Previous** and **Next** at the bottom to move between pages. The table shows the total count, which comes from the server so it stays honest when you filter.
+
+If nothing matches, the table says **No matching repair orders** and suggests **Try another search or clear the filters.** If the board is truly empty it says **No repair orders yet**, with the reminder that **Repair orders arrive from CCC ONE.**
+
+## Timeline view
+
+The Timeline lays every repair order out on a calendar.
+
+- Each row is a repair order. The left column (which stays put as you scroll) shows its number, customer, and vehicle.
+- The **gray bar** is the plan, from the **start or arrival date** to the **target date**. Its left edge carries the status color, and the status name is written on the bar.
+- A thin **amber bar** on top is the **actual repair window**, from when repairs began to when they finished (or to today if still in progress).
+- A thin **red tail** runs from the target date to today when a job has **overrun** its target. The row also gets a red **Overdue** badge.
+- A small **blue diamond** marks the **appointment day**.
+- A vertical line marks **Today**.
+- Finished jobs appear faded.
+
+Controls at the top: **Zoom out** and **Zoom in** (three levels), and **Today** to scroll back to the current date. **Drag the timeline sideways** to scroll. Hover over a row to see a summary: repair order, status, plan dates, appointment, and whether it is overdue. Click a row to open its drawer.
+
+A repair order appears on the Timeline only once it has a start or arrival date. Otherwise you will see **No scheduled repair orders**.
+
+## Refresh data
+
+The circular-arrow **Refresh data** button reloads everything on the screen. Use it if a teammate told you they changed something and you do not see it yet.
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Use the Table to find one job and the Board to run the day. Check the Possible Total Loss lane every morning. Filter by your own name when the board is busy.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't drag a card just to see what happens. Don't hide a late job by moving it to a calmer status. Don't expect your column choices to follow you to another computer.
+  </Card>
+</Columns>
+
+## Related
+
+- [All the statuses](/pipeline/statuses): what every lane means.
+- [The four boards](/pipeline/overview): the stat strips and how cars change boards.
+- [The drawer](/repair-orders/drawer): what opens when you click a card.

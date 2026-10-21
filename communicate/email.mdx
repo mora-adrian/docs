@@ -1,0 +1,110 @@
+---
+title: "Email on a repair order"
+description: "Read and send email from the Emails tab, reply to adjusters, send a supplement package, and use automatic follow-up so a supplement never goes quiet."
+---
+
+import { Tag } from "/snippets/ui.jsx";
+
+Email is how a shop talks to insurers, adjusters, and anyone who needs documents. In Kinetic, every email about a job lives on that repair order's **Emails** tab, in one thread, in order, with its attachments. Replies to emails you send come back into Kinetic and are filed on the repair order by themselves.
+
+<Info>
+Email from Kinetic goes out from your shop's address with **your name** and your **email signature** (set in **Settings → Preferences**). Customer texts live on the [Texts](/communicate/texting) tab, and calls on [Calls](/communicate/calls).
+</Info>
+
+## The Emails tab
+
+Each message is a card:
+
+- A badge at the top left: <Tag>Outbound</Tag> for what you sent, **Inbound** for what you received, or **Draft** for something you started and have not sent.
+- The **subject**, who it is **from → to**, and when.
+- The message text. If the email quotes earlier messages, they are folded away; choose **Show quoted history** to read them.
+- Attachments, each with its size and a **Download** link.
+- On an inbound email, a **Reply** button.
+
+An empty tab says **No emails yet**, with **Compose a message to start the thread.**
+
+## Write an email
+
+Choose the compose button at the top of the tab. A form titled **New email** opens (or **Reply to {subject}** when you are replying).
+
+| Field | Notes |
+| --- | --- |
+| **To** | The recipient's address. Filled in for a reply. |
+| **Cc** | Optional. Type an address, or pick one from the suggestions drawn from other parties on the repair order (`name@insurer.com, …`). Separate several with commas. |
+| **Subject** | A reply gets `Re:` added for you, never twice. |
+| **Message** | Write in the big box. The **microphone** dictates for you. |
+| **Attach files** | The paperclip opens the repair order's [files](/repair-orders/files) so you can attach any of them. |
+
+Send with the **Send** button or <kbd>⌘</kbd>+<kbd>Enter</kbd> (<kbd>Ctrl</kbd>+<kbd>Enter</kbd> on Windows). **Discard** throws the draft away.
+
+**Your draft is saved** as you write and waits on the tab. You can switch to another tab, close the page, or sign out. An unsent email is not lost.
+
+If sending fails, you see **The email could not be sent. It's safe to try again.** and your text is still there.
+
+## Supplement emails and automatic follow-up
+
+A **supplement** is a request for more money after hidden damage is found. It is the email most likely to go quiet: the adjuster is busy, nothing happens, and the car sits in [Supplement Hold](/pipeline/statuses#repairs). Kinetic can nudge the adjuster for you.
+
+### How to start it
+
+1. On the **Files** tab, select the photos and documents the adjuster needs.
+2. Choose **Send to adjuster**. See [Files](/repair-orders/files#send-to-the-adjuster).
+3. The **Emails** tab opens with a new draft ready: the adjuster in **To**, the files attached, a subject such as `Supplement: 24-1087 · Claim 12345 · 2021 Subaru Outback`, and a short cover note that begins `Hi Mark, Attached is the supplement for claim 12345…` and ends `Thank you,`. Edit any of it.
+4. Look for the switch **Auto follow-up every 2 business days until the adjuster replies**. It is on by default for a supplement draft. Turn it off if you would rather chase by hand.
+5. Read the email, then **Send**.
+
+The switch appears only on supplement drafts made with **Send to adjuster**. It does not appear on ordinary email.
+
+### What it does
+
+After you send, the supplement email card shows a small switch labeled **Auto follow-up**. While it is on, Kinetic:
+
+- Sends a short **follow-up email to the adjuster every two business days**. It counts only your shop's open days and always sends at the **start of the business day**, so adjusters get a morning nudge, never a weekend or holiday message. Set your hours in [Shop settings](/admin/shop-settings).
+- **Writes each one fresh**. An AI drafts 40 to 120 words that mention the claim number, the repair order number, and the vehicle, ask one clear question, and vary the wording from the one before. It never states anything about coverage, liability, payment, or amounts, never includes links, and never invents facts.
+- Stops after **10 follow-ups**.
+
+Hover the switch to see the plan, for example **Next follow-up Tue, 9:00 AM · 2 sent**. Open **Follow-up log** under the card to see every step: **Scheduled**, **Queued**, **Sent**, **Skipped**, **Stopped**, **Failed**, or **Completed with no response**, each with a time.
+
+### When it stops by itself
+
+| Reason | What you will see on Activity |
+| --- | --- |
+| The adjuster **replies** | **Auto follow-up stopped: adjuster replied** |
+| Someone **uploads a document** | **Auto follow-up stopped: document uploaded** |
+| The email **bounces** | **Auto follow-up stopped: email bounced** |
+| The follow-up **could not be sent** | **Auto follow-up stopped: the email could not be queued** |
+| The repair order **closes** | **Auto follow-up stopped: RO closed** |
+| The recipient changes | **Auto follow-up stopped: the supplement recipient changed** |
+| A **newer supplement** is sent | **Auto follow-up stopped: a newer supplement was sent** (the new one has its own sequence) |
+| The repair order is **renumbered** | **Auto follow-up stopped: repair order renumbered** |
+| You **turn it off** | **Auto follow-up turned off** |
+| It reached the limit | **Auto follow-up exhausted after 10 follow-ups** |
+
+You can **turn it back on** after a reply, an uploaded document, a manual turn-off, or reaching the limit (which gives it another ten attempts). A bounce or a closed repair order will not restart quietly. Fix the cause first.
+
+<Warning>
+**Follow-ups go out without anyone pressing Send each time.** The shop approves the sequence when it sends the supplement. If you are unhappy with it, turn the switch off. If you have called the adjuster and they have promised to reply, turn it off so the follow-ups do not look impatient.
+</Warning>
+
+### Watching all follow-ups at once
+
+Admins can see what follow-ups did across every repair order, and which sequences have stalled, under **Settings → Messaging → Follow-up activity**. See [Messaging settings](/admin/messaging-settings#follow-up-activity).
+
+## Estimate explanations
+
+You can email a customer a plain-language walkthrough of their estimate from the **Estimate** tab. It is sent as an email and appears here. See [Estimate](/repair-orders/estimate#explain-the-estimate-to-the-customer).
+
+## Email that arrives by itself
+
+Mail sent to your shop's claim mailbox is watched and filed to the right repair order when Kinetic is confident. Everything it is unsure about waits for a person in [Email review](/communicate/email-review).
+
+## Do and don't
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Send supplements with **Send to adjuster** so follow-up is armed. Put the claim number and repair order number in your subject. Add a [note](/repair-orders/activity) when you phone the adjuster.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't email from your own account; the thread is lost to the shop. Don't leave auto follow-up on after the adjuster has promised an answer. Don't put card numbers or passwords in an email.
+  </Card>
+</Columns>

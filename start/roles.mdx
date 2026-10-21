@@ -1,0 +1,85 @@
+---
+title: "Roles and permissions"
+description: "What Members, Admins, and Owners can each do in Kinetic, why job titles do not change access, and which actions ask for an extra code."
+---
+
+import { Pill } from "/snippets/ui.jsx";
+
+Your access in Kinetic comes from one thing: your **role** in your shop. There are three roles. The role is set by an admin in **Settings → Members**, and you can see yours next to your name in the member list.
+
+## The three roles
+
+| Role | Who it is for | In one sentence |
+| --- | --- | --- |
+| **Member** | Nearly everyone: client advocates, estimators, technicians, parts staff, front office. | Do the day-to-day work on repair orders, records, messages, and tasks. |
+| **Admin** | Shop managers and office managers. | Everything a Member can do, plus manage people, settings, and archive records. |
+| **Owner** | The shop owner and general manager. | Everything an Admin can do, plus manage other Owners. |
+
+<Info>
+**Admins and Owners have the same day-to-day powers.** The only difference is that an Owner can create, promote, suspend, or remove another Owner, and an Admin cannot. Kinetic will not let a shop end up with no Owner at all.
+</Info>
+
+## Job title is not access
+
+Your **job title** (technician, estimator, advocate) appears on your employee profile and decides things like who shows up in a technician pick list. It does **not** grant or limit permissions. Two people with the same title can have different roles, and a Member who is a manager still cannot change settings.
+
+## What each role can do
+
+Read the table left to right: a check means "yes".
+
+| Area | Member | Admin / Owner |
+| --- | :---: | :---: |
+| **See** repair orders, boards, records, files, the calendar, messages, and reports on screen | Yes | Yes |
+| **Work** repair orders: move status, set target date, edit facts, add notes, upload and tag files, manage parties | Yes | Yes |
+| **Edit** people, companies, and vehicles | Yes | Yes |
+| **Send** texts and emails, record calls, save files from messages | Yes | Yes |
+| **Schedule** appointments and plan tow routes | Yes | Yes |
+| **Send** signature requests and facts-of-loss links | Yes | Yes |
+| **Review** estimates with Rivet and record verdicts | Yes | Yes |
+| **Ask** the Agent questions and approve its drafts | Yes | Yes |
+| **Create and work** tasks assigned to you or sent by you | Yes | Yes |
+| **See every** task on the shop (the **All** view on the Tasks screen) | No | Yes |
+| **Archive** a person, company, or vehicle | No | Yes |
+| **Add members**, change roles, suspend or restore people, set days off | No | Yes |
+| **Change shop settings**: hours, targets, messaging, automation switches, reports | No | Yes |
+| **Production capacity** and overload alerts | View only | Edit |
+| **AI usage** | No | Yes |
+| **Connect** the phone system or reference documents | No | Yes |
+| **Manage Owners** | No | Owner only |
+
+<Note>
+Your **personal** settings are always yours, whatever your role: your password, authenticator app, notification choices, email signature, mailbox, days off, and appearance.
+</Note>
+
+## What you cannot see
+
+Whatever your role, you can never see another shop's data. A record that belongs to a different shop is indistinguishable from one that does not exist. There are no share links and no temporary access.
+
+## Protected actions ask for a fresh code
+
+Some actions are protected even for admins and owners. Kinetic asks for a new authenticator app code the first time you do one, then trusts you for 240 minutes. The list is on the [Signing in](/start/sign-in#extra-checks-for-sensitive-actions) page.
+
+## Choosing the right role for someone
+
+| Person | Recommended role |
+| --- | --- |
+| Client advocates, estimators, technicians, parts staff, front office | **Member** |
+| Shop manager, office manager | **Admin** |
+| Shop owner, general manager | **Owner**. Keep this to one or two people. |
+
+Give someone the lowest role that lets them do their job. It is easy to promote later, and hard to undo an archived record.
+
+## Changing or removing access
+
+Admins manage this in **Settings → Members**. See [Members](/admin/members) for the exact steps, including what happens to a person's work when they leave.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Members" icon="users" href="/admin/members">
+    Add, change, suspend, and restore people.
+  </Card>
+  <Card title="Security and privacy" icon="shield-check" href="/admin/security">
+    How your shop's data is protected.
+  </Card>
+</CardGroup>

@@ -1,0 +1,112 @@
+---
+title: "The repair order"
+description: "What a repair order is, where it comes from, how the full-screen page is laid out, and how the tabs and the left-hand panel fit together."
+---
+
+import { StatusRail } from "/snippets/ui.jsx";
+
+A **repair order** is the record of one job on one vehicle: the customer, the vehicle, the claim, the estimate, the parts, every message, every file, the schedule, and the money, in one place. It is the center of Kinetic. Almost every other screen is a window onto repair orders.
+
+## Where repair orders come from
+
+Repair orders are created and kept current by **CCC ONE**. You will never find a "New repair order" button, and you do not need one.
+
+- A repair order appears on its own when CCC ONE creates the estimate or workfile.
+- CCC ONE keeps updating it: dates, people, amounts, estimate changes, status.
+- A repair order keeps **one permanent link** from the first call to the day it is archived, even if its number or status changes. A link you copy and give to a teammate in the same shop will always open it.
+- Each repair order also has a human **repair order number**, which is what people say out loud.
+
+<Info>
+**Missing a repair order?** Check CCC ONE first. If it is not there, it will not be here. If it is in CCC ONE but still missing from Kinetic, use **Report a problem** and include the repair order number.
+</Info>
+
+## Two ways to look at one
+
+| | The drawer | The full screen |
+| --- | --- | --- |
+| **How to open** | Click a card or row once. | Choose **Open full screen** in the drawer. |
+| **What it is for** | A fast, read-only look: status, dates, who is on it, what happened last. | Doing the work: notes, messages, files, signatures, edits. |
+| **Page behind it** | Stays usable. | Replaced. |
+
+See [The drawer](/repair-orders/drawer) for the quick peek, and the rest of this page for the full screen.
+
+## The full-screen layout
+
+The full-screen page has a **top bar**, a **left panel**, and a **tab area**.
+
+### The top bar
+
+From left to right:
+
+- **Back to list** returns you to where you came from. If you opened the repair order from a board, you return to that board.
+- The **board name** and then the **repair order number**, the **status pill**, and (for vehicles being repaired) the **first-scan icon**.
+- A **Won** or **Lost** tag on Opportunities and Close & Deliver jobs.
+- The **tabs** (see below).
+- **Previous repair order** and **Next repair order** arrows, with a counter such as **3 of 24**. These step through the list you came from, so you can review a whole board without going back and forth.
+
+### The left panel
+
+Reading top to bottom:
+
+<Steps>
+  <Step title="The customer and vehicle card">
+    The customer's name (and nickname in quotes), phone and email, and the vehicle's year, make, model, trim, and VIN, each with a pencil button: **Edit customer** and **Edit vehicle**. These open the same edit forms as the [Records](/records/overview) screens.
+  </Step>
+  <Step title="Status">
+    The current status, with the number of days in it in brackets, and a **status rail**: a row of segments, one per status on this board. Segments fill left to right up to the current one, and a percentage shows how far along the job is.
+
+    <StatusRail current={4} total={8} />
+
+    The rail is for reading, not clicking. A job that is **past its target date** turns its current segment red. A job marked **Lost** turns the whole rail red.
+  </Step>
+  <Step title="Repair order facts">
+    Repair order number, claim number, **Repairability**, **Outcome likelihood**, estimate, expected insurance payout, start, **Target**, key dates, and the **Client Advocate**, **Repair Planner**, and **Technician**. Some rows have a pencil so you can change them; the rest come from CCC ONE. See [Facts](/repair-orders/facts).
+  </Step>
+  <Step title="Parties">
+    The **Customer**, **Vehicle**, **Company**, **Adjuster**, **Referral**, and an **Other parties** list where you can add a **Referrer**, **Driver**, **Attorney**, **Insurer**, **Adjuster**, **Appraiser**, or **Other**.
+  </Step>
+  <Step title="Customer survey">
+    A short checklist of where the customer's satisfaction survey stands. Appears only once the job has qualified for a survey. See [CSI](/csi/overview).
+  </Step>
+</Steps>
+
+On a phone, the left panel sits above the tabs.
+
+### The tabs
+
+| Tab | What it holds | Page |
+| --- | --- | --- |
+| **Activity** | A note box, the repair progress, and the full history of everything that happened. | [Activity and notes](/repair-orders/activity) |
+| **Emails** | Every email, with a composer and automatic follow-up. | [Email](/communicate/email) |
+| **Texts** | The text conversation with the customer. | [Texting](/communicate/texting) |
+| **Calls** | Call history, recordings, summaries, and transcripts. | [Calls](/communicate/calls) |
+| **Tasks** | This job's tasks. The tab's number is the open tasks. | [Tasks](/work/tasks) |
+| **Estimate** | The estimate lines, totals, a plain-language explanation for the customer, and Rivet. | [Estimate](/repair-orders/estimate) |
+| **Parts** | Every part on the estimate and whether it has arrived. | [Parts](/repair-orders/parts) |
+| **ARW** | Who owes what, what has been paid, what is on its way. | [ARW](/repair-orders/arw) |
+| **Files** | Photos and documents. | [Files](/repair-orders/files) |
+| **Signatures** | Contracts for e-signature and the facts-of-loss form. | [Signatures](/repair-orders/signatures) |
+| **Calendar** | This job's plan, appointments, and milestones. | [Calendar tab](/repair-orders/calendar) |
+
+Tabs with a number show how many items they hold (emails, files, and so on).
+
+## Opening a specific tab from elsewhere
+
+Many places link straight to a tab. **See all activity** in the drawer opens the Activity tab. A notification about a text opens the conversation. You can also bookmark a repair order's page and come back to it later.
+
+## What you cannot change here
+
+A value marked **CCC ONE** cannot be changed in Kinetic, because CCC ONE would overwrite it. The pencil icon marks what *is* yours to change. See [How Kinetic thinks](/start/how-kinetic-thinks#3-every-fact-has-an-owner).
+
+There is no control to archive or delete a repair order in the app. Repair orders end their life in CCC ONE and in the Enrichment board.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Facts and parties" icon="clipboard-list" href="/repair-orders/facts">
+    Every fact on the left panel and what it means.
+  </Card>
+  <Card title="Activity and notes" icon="history" href="/repair-orders/activity">
+    How the history works and what to write.
+  </Card>
+</CardGroup>

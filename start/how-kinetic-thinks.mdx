@@ -1,0 +1,116 @@
+---
+title: "How Kinetic thinks"
+description: "The handful of rules behind the whole app: where repair orders come from, who owns each fact, how statuses work, and why Kinetic is cautious with AI."
+---
+
+import { Pill, ToneLegend, Tag } from "/snippets/ui.jsx";
+
+Learn these eight ideas and almost everything else in Kinetic will make sense before you read it.
+
+## 1. Your shop is the whole world
+
+You sign in once, and you work inside **your shop**. Customers, vehicles, repair orders, messages, and files all belong to exactly one shop. Another shop's data is invisible to you, and it is not just hidden: it cannot be reached by any link, search, or trick.
+
+If you work for more than one shop, the shop menu at the top of the left sidebar lets you switch between them. Switching is deliberate and reloads the app, so you never wonder whose data you are looking at. See [Signing in](/start/sign-in#more-than-one-shop).
+
+## 2. Repair orders come from CCC ONE
+
+A **repair order** is one job on one vehicle. Kinetic does not create repair orders by hand. **CCC ONE**, your estimating system, sends them over, along with the estimate, the dates, and the people involved, and keeps sending updates.
+
+What that means in practice:
+
+- A new repair order appears on its own. You do not add it.
+- If a repair order is missing, check CCC ONE first.
+- A repair order keeps the **same link for its whole life**, even when its number or status changes. A link you share with a teammate in the same shop keeps working.
+- Each repair order also has a human **repair order number**, shown in a monospaced font so it lines up in lists.
+
+## 3. Every fact has an owner
+
+Some facts come from CCC ONE. Others are yours. Kinetic marks which is which, because the owner decides where you change it.
+
+| Mark | Meaning | Where to change it |
+| --- | --- | --- |
+| **CCC ONE** badge, or a "From CCC ONE" tooltip | CCC ONE supplies this value. | In CCC ONE. If you could change it here, the next update from CCC ONE would overwrite your change, so Kinetic does not let you. |
+| Pencil icon | The shop owns this value. | Right here: click the pencil. |
+| **Calculated** label | Kinetic worked this out from other facts. | You can override it by hand, and release the override later. |
+
+Empty values tell you who should fill them:
+
+- **Please enter in CCC ONE** means CCC ONE owns it and has not supplied it yet.
+- **Please fill** means the shop owns it and it is blank.
+- **Unassigned** means a person should be chosen for that role.
+- A dash (**—**) in a dense list or table just means "nothing recorded".
+
+<Note>
+CCC ONE is the authority for every field it sends. If someone edits a CCC ONE field in Kinetic through some other route and CCC ONE later sends its own value, **CCC ONE wins**. This is by design and it keeps the two systems from drifting apart.
+</Note>
+
+## 4. A status says where the job is
+
+Every repair order has exactly one **status**, for example <Pill tone="needs">Arrival & Triage</Pill>, <Pill tone="waiting">Supplement Hold</Pill>, or <Pill tone="ontrack">Paint</Pill>. The status is the most important fact on a repair order. It decides which of the four boards the vehicle appears on.
+
+| Board | Plain meaning |
+| --- | --- |
+| **Opportunities** | The customer has not brought the vehicle in yet. This is a lead or an appointment. |
+| **Repairs** | The vehicle is at the shop being repaired. |
+| **Close & Deliver** | Repairs are done. The car is waiting to go home, or paperwork is being wrapped up. |
+| **Enrichment** | The job is delivered. This is the follow-up phase: review the work and archive. |
+
+CCC ONE moves a job from board to board automatically as its own milestones happen (an appointment is booked, a car arrives, repairs complete, a car is picked up). You move a job *within* a board by dragging its card or using its **Move to** menu. See [All the statuses](/pipeline/statuses).
+
+## 5. Colors carry four meanings
+
+The small dot beside a status uses one of four colors. The words, not the color, are always the real message. The dot just helps you scan a board quickly.
+
+<ToneLegend />
+
+| Tone | What it means for you |
+| --- | --- |
+| **Needs us** (blue) | The next step is yours. |
+| **Waiting** (amber) | The job is waiting on someone or something else: a part, an insurer, a customer. |
+| **On track** (green) | Work is progressing normally. |
+| **Late** (red) | The job is behind or lost. **Any vehicle past its target date shows as late, whatever its status.** |
+
+A status color is only ever a dot, a segment of a progress bar, or the edge of a bar on a timeline. Status names are always written out in words.
+
+## 6. Peek first, open second
+
+Click a card or row once and a **drawer** slides in from the right. It is a read-only summary: who, what, where, and what is next. It does not take over the page, so the board stays usable behind it, and clicking another row swaps the drawer to that job.
+
+When you need to do something, click **Open full screen**. That page has tabs for activity, emails, texts, calls, tasks, the estimate, parts, payments, files, signatures, and the calendar. See [Repair orders](/repair-orders/overview).
+
+## 7. Your work is safe
+
+- **Drafts save themselves.** Notes, texts, and emails you are writing are saved as you type. If you open the same draft on another device, Kinetic shows both versions and lets you choose **Keep my version** or **Use the other version**.
+- **Two people editing at once is handled.** If a teammate saved a worksheet while you were editing, Kinetic asks you to reload instead of silently overwriting their work.
+- **Errors never pretend to be empty.** If a list fails to load, you see an error and a retry button, never a blank list that looks like "nothing here".
+- **Files upload with retries.** A flaky connection pauses an upload and retries it rather than losing it.
+
+## 8. AI helps, people decide
+
+Kinetic uses AI to read, summarize, classify, and draft. It does not decide.
+
+- It sends nothing to a customer on its own, apart from the automatic replies your shop switches on in Settings (see [AI overview](/ai/overview) for exactly what those are).
+- It **never** decides coverage, liability, or what an insurer will pay.
+- It **never** promises a delivery date.
+- Everything it drafts is labeled and waits for a person to press **Send**.
+- Estimate suggestions from Rivet are recommendations. You mark each one as added, already there, duplicate, or not applicable.
+
+## How the rest of the guide is organized
+
+<CardGroup cols={2}>
+  <Card title="Daily work" icon="sun" href="/work/today">
+    Today, tasks, the boards, repair orders, messages, records, calendar.
+  </Card>
+  <Card title="AI" icon="sparkles" href="/ai/overview">
+    Rivet, the Agent, and the writing tools.
+  </Card>
+  <Card title="Playbooks" icon="route" href="/playbooks/overview">
+    Step-by-step routines for the situations every shop faces.
+  </Card>
+  <Card title="Administration" icon="settings" href="/admin/overview">
+    People, hours, targets, messaging, and reports.
+  </Card>
+</CardGroup>
+
+<Tag>Tip</Tag> When you are unsure what a word means, the [glossary](/start/glossary) defines every term used in Kinetic, collision repair, and software.

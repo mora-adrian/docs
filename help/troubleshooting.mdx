@@ -1,0 +1,63 @@
+---
+title: "Troubleshooting"
+description: "Fixes for the problems people hit most: sign-in, missing repair orders, texts that won't send, surveys that don't go, and more."
+---
+
+Find your symptom, try the fix, and contact support if it does not work. Include the **repair order number** and what you saw on screen.
+
+## Signing in
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| "Access pending" | Your account needs approval | Ask an admin to approve it in [Members](/admin/members) |
+| Code rejected | Phone clock is wrong, or old code | Wait for the next six-digit code; set your phone clock to automatic |
+| Lost your phone | No second factor | Use a backup code at the **Confirm it's you** step; otherwise contact support |
+| Signed out unexpectedly | Session ended (4 hours idle or 12 total) | Sign in again |
+| Can't see a shop | Not a member of it | Ask an admin to add you |
+
+## Repair orders and data
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| A repair order is missing | It has not come over from CCC ONE yet | Check it in CCC ONE. Kinetic cannot create one |
+| A field keeps changing back | CCC ONE owns it and re-sends it | Correct it in CCC ONE |
+| Lead stuck in **Incomplete Lead** | Missing customer or vehicle details | See [Lead to scheduled](/playbooks/lead-to-scheduled) |
+| Status looks wrong | CCC ONE changed it | See [Statuses](/pipeline/statuses#how-statuses-change) |
+| **CCC status unmapped** on Activity | A CCC ONE stage with no rule | Nothing to do; the car stays where it is. Tell support if it is common |
+| Target date looks off | Missing labor hours or settings | See [Target date](/repair-orders/facts#target-date) |
+
+## Texts and calls
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| Text won't send | Customer is blocked or opted out, or the number is not mobile | Check the record; see [Texting](/communicate/texting) |
+| **Chat health** or line warning | The conversation or line is at risk | Slow down and read the warning before sending |
+| Incoming calls don't appear | Phone system needs reconnecting | Admin: [Phone system](/admin/shop-settings#phone-system) |
+| Dictation unavailable | Microphone blocked or temporary error | Allow the microphone in your browser; type instead |
+
+## Surveys
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| No survey sent | See the skip reason on the [CSI](/csi/overview#when-a-survey-is-skipped) screen | Usually a missing mobile number |
+| Banner says **Paused** | Pulse check is off | Admin: [Messaging settings](/admin/messaging-settings#customer-survey) |
+| Customer says the link is dead | Expired after 30 days or already used | Take feedback by phone and add a note |
+
+## Email
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| No Email review item | No mailbox connected | [Connect your mailbox](/admin/personal-preferences#mailbox) |
+| Email filed to the wrong repair order | Wrong suggestion approved | Review carefully before **File**; correct in the repair order |
+
+## Calendar and tows
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| **Could not build the tow plan** | Shop has no address on file | Admin: [Shop settings](/admin/shop-settings) |
+| Map blank | Map not configured, or browser limit | Try another browser |
+| Can't book on a weekend | Appointments are weekdays only | Choose a weekday |
+
+## Still stuck?
+
+Choose the shop name at the top of the sidebar and then **Support** or **Report a problem**. Include screenshots and the repair order number.

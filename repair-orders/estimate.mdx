@@ -1,0 +1,123 @@
+---
+title: "Estimate"
+description: "The Estimate tab: read the line items, filter them, understand the totals, send the customer a plain-language explanation, and start an AI review."
+---
+
+import { Key } from "/snippets/ui.jsx";
+
+The **Estimate** tab shows the current estimate for the repair order: every repair, part, and charge, and what they add up to. The estimate is written in **CCC ONE** and arrives here automatically. Kinetic displays it, explains it, and can review it. It does not edit it.
+
+<Info>
+**No estimate yet?** The tab says *Estimates sync from CCC ONE on repair-order update.* If you just wrote one, give it a moment. Estimates for jobs still on the Opportunities board are visible here but cannot be reviewed with Rivet until the car becomes a repair order in progress.
+</Info>
+
+## The top bar
+
+At the top of the tab:
+
+- A small badge with the **estimate version** from CCC ONE in a monospaced font, and a tag showing where the estimate came from. When CCC ONE sends a revised estimate, the version changes.
+- **Explain estimate**: a plain-language walkthrough for the customer. See [below](#explain-the-estimate-to-the-customer).
+- **Audit with Rivet**, or **See audit results** once a review exists. See [below](#audit-with-rivet).
+
+## The line table
+
+| Column | What it shows |
+| --- | --- |
+| **#** | The line number from the estimate. |
+| **Op** | The operation: such as **Repl** (replace), **Rpr** (repair), or **R&I** (remove and install), as CCC ONE wrote it. |
+| **Description** | What the line is. |
+| **Part #** | The part number, if the line is a part. |
+| **Qty** | How many. |
+| **Price** | The price of one part. |
+| **Extended** | Price times quantity. |
+| **Other** | Extra charges on the line. This column appears only if the estimate has any. |
+| **Labor** | The labor hours. |
+| **Category** | The kind of labor: Mechanical, Body, Structural, Paint, and so on. |
+| **Paint** | The refinish (paint) hours. |
+
+### Filter the lines
+
+Above the table, a row of switches narrows the view. It is a **filter**, not an edit: rows disappear from the table but the estimate itself never changes.
+
+| Group | Options | Notes |
+| --- | --- | --- |
+| **Labor** | Mechanical, Body, Structural, Paint | **Structural** covers both frame and structural labor. **Paint** matches lines with paint hours or paint labor. |
+| **Parts** | A single switch | Keeps only lines that have a part number. |
+| **Operation** | R&I, Repair, Replace | |
+| **Simple view / Complete view** | A switch | **Simple view** hides lines that were typed into CCC ONE by hand (manual entries). **Complete view** shows everything. |
+
+Within one group you can choose several options (any of them matches). Across groups, a line must satisfy **all** of them. So "Body" plus "Replace" shows body-labor lines that replace something.
+
+When any filter is on, the bar says **Showing 12 of 48 lines**, and **Clear filters** resets everything. If nothing matches you see **No lines match these filters**.
+
+## The totals bar
+
+The bar pinned at the bottom of the tab shows three figures:
+
+| Figure | What it adds up |
+| --- | --- |
+| **Labor** | Everything in the CCC ONE subtotal that is not priced line by line: labor, plus paint and body materials. Hover for the explanation. |
+| **Parts, Materials, & Other** | Every part and charge that is priced on a line, plus tax. Everything in the total that is not labor. |
+| **Total** | The estimate total. |
+
+If a line-priced total is larger than the CCC ONE subtotal, the labor figure is not shown, with an explanation: *Line prices exceed the CCC ONE subtotal, so labor is not shown.*
+
+## Explain the estimate to the customer
+
+An estimate is full of abbreviations. **Explain estimate** writes a version a customer can follow.
+
+<Steps>
+  <Step title="Open it">
+    Choose **Explain estimate**. If an explanation already exists it opens right away. If not, you see **No explanation yet.** and a **Generate explanation** button. Generating usually takes a few seconds, and never more than about a minute.
+  </Step>
+  <Step title="Read it">
+    The sheet, titled **Estimate explanation**, is *a plain-language walkthrough of this estimate, written for the customer*. It has a short overview, a section for the labor and a section for the parts and charges, **The bigger items** (the three to six lines that carry the most cost or labor, each with a short reason), **Repair or replace?** (why a part is replaced instead of repaired), and **A note on paint blending** when the estimate includes it. The **Grand total** is shown from the estimate itself.
+  </Step>
+  <Step title="Regenerate if you need to">
+    **Regenerate** writes a fresh version.
+  </Step>
+  <Step title="Email it">
+    Choose **Email to customer**. A confirmation window shows the recipient, the **To** address and the subject (**Your repair estimate, explained: 2021 Subaru Outback**). Choose **Send email**. The email appears on the repair order's **Emails** tab.
+  </Step>
+</Steps>
+
+### What the explanation will and will not say
+
+The AI that writes it is held to firm rules:
+
+- It uses **only** the lines, totals, and facts already on the repair order. It never invents damage or a reason it cannot support.
+- It writes **no dollar amounts**. The figures on the sheet come from the estimate, not from the AI.
+- It says **nothing about insurance coverage, deductibles, fault, approval, timelines, or safety guarantees**, and does not name the insurer.
+- It is under about 700 words, in plain short sentences, with at most three analogies.
+
+### A warning you may see
+
+If the estimate changed after the explanation was written, the sheet says **The estimate changed since this was written.** Choose **Regenerate** before you send, or the customer may get an explanation of an older version. If the customer has no email address, the send button is disabled with **The primary customer has no email address.**
+
+<Warning>
+Always read the explanation before you send it. It is a draft that you are responsible for.
+</Warning>
+
+## Audit with Rivet
+
+Choose **Audit with Rivet** to ask [Rivet](/ai/rivet) to look for billable operations that the estimate may be missing. The button changes to **Audit in progress…** while it runs (it usually takes several minutes, and you can keep working). When it finishes the button becomes **See audit results**, filled in and marked with a dot if you have not looked yet. The repair planner gets an email when a review completes.
+
+Rivet reviews only certain estimates: the repair order must be past the opportunity stage, not archived, not a total loss, and the estimate total must be more than $300.
+
+## Good to know
+
+- The tab shows the estimate CCC ONE most recently sent.
+- Lines come in the order CCC ONE wrote them.
+- Your filter settings reset when you leave the tab.
+- Parts quantities and receipt appear on the [Parts](/repair-orders/parts) tab.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Parts" icon="package" href="/repair-orders/parts">
+    What has arrived and what is late.
+  </Card>
+  <Card title="Rivet" icon="sparkles" href="/ai/rivet">
+    How reviews work and how to answer them.
+  </Card>
+</CardGroup>

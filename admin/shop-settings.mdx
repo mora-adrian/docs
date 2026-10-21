@@ -1,0 +1,76 @@
+---
+title: "Shop settings"
+description: "The shop's identity, business hours, contact enrichment, phone system, and reference documents."
+---
+
+Open **Settings** and choose your shop's name under **Shop**. Only admins can change these.
+
+## Identity
+
+| Field | Meaning |
+| --- | --- |
+| **Logo** | Shown beside the shop's name in the app. |
+| **Name** | The shop's name, used in customer messages such as the survey text. |
+| **Slug** | A short, unique identifier for the shop. Don't change it unless support asks. |
+| **Shop ID** | Kinetic's internal identifier for the shop. Quote it when you contact support. |
+
+## Business hours
+
+**Business hours** matter because Kinetic uses them to decide **how to route calls** and **when surveys go out**.
+
+| Control | Meaning |
+| --- | --- |
+| **Open days** | The days the shop is open. |
+| **Opens at** and **Closes at** | Daily opening and closing times. |
+| **Time zone** | The shop's time zone. Choose carefully: every scheduled message uses it. |
+| **Closed on major holidays** | When on, the shop is treated as closed on New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving, Christmas, and New Year's Eve. |
+
+<Warning>
+Wrong hours cause the receptionist to tell callers you're closed when you're open, or the other way round. Update them before and after any holiday closure.
+</Warning>
+
+## Contact enrichment
+
+Enrichment looks up public details to fill blanks on new people and companies. See [People](/records/people) and [Companies](/records/companies).
+
+| Control | Meaning |
+| --- | --- |
+| **Enrich new contacts** | When on, Kinetic automatically tries to enrich each new contact. |
+| **Minimum match confidence** | How sure Kinetic must be that the result is the right person or company. Higher means fewer but safer fills. |
+
+It only fills **blank** fields and never overwrites what you typed.
+
+## Phone system
+
+Connect the shop's phone system so incoming calls appear on the right repair order and the AI receptionist can work.
+
+| Control | Meaning |
+| --- | --- |
+| **Connect** | Link the phone system. |
+| **Extensions** | For each member, the phone extension to match calls to people. |
+| **Disconnect** | Stops incoming-call screen pops. |
+| **Needs reconnect** | Shown when the connection has lapsed. Incoming calls aren't popping until you reconnect. |
+
+See [Calls](/communicate/calls) for what the team sees.
+
+## Reference documents
+
+**Reference documents** are PDFs the AI cites when someone asks an insurance-rule question, such as a state's claims regulation.
+
+<Steps>
+  <Step title="Choose to add a document">
+    Upload the PDF.
+  </Step>
+  <Step title="Describe it">
+    Fill in **Source name**, **Source** (for example the regulation's citation), **Title**, **Version**, and **Effective date**.
+  </Step>
+  <Step title="Wait for processing">
+    The status goes **Processing**, then **Uploaded**. If it shows **Ingestion failed**, upload it again.
+  </Step>
+</Steps>
+
+Uploading a new version of the same document marks the old one **Replaced**.
+
+<Tip>
+Upload only documents you are comfortable with the AI quoting. Keep **Effective date** correct, since people will rely on it.
+</Tip>

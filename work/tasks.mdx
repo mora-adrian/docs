@@ -1,0 +1,128 @@
+---
+title: "Tasks"
+description: "Create, assign, track, and finish to-dos, on their own or tied to a repair order, with due dates, priorities, a stuck state, and a full history."
+---
+
+import { Pill, Tag } from "/snippets/ui.jsx";
+
+A **task** is a small, trackable commitment: "Call Ms. Rivera when the bumper arrives", "Get the adjuster's approval on supplement 2", "Order a paint code check". Tasks keep promises out of people's heads and on the page where a teammate can see them.
+
+Tasks can stand alone or be tied to a repair order. Tying them to the repair order is almost always the better choice, because anyone covering for you can then see the promise in context.
+
+## Where tasks live
+
+| Place | What you see |
+| --- | --- |
+| **Tasks** in the sidebar | Every task that involves you, with filters. A red number beside **Tasks** counts tasks assigned to you that you have not opened yet. |
+| A repair order's **Tasks** tab | Only that job's tasks, with a quick **Add a task…** box. The tab's count is the number of open tasks. |
+| **Notifications** | A line each time someone assigns you a task. |
+
+## The Tasks screen
+
+### Choose whose tasks to see
+
+A toggle at the top picks the **scope**:
+
+| Scope | Shows | Who can use it |
+| --- | --- | --- |
+| **Assigned to me** | Tasks assigned to you. A blue number on this tab counts the ones you have not opened yet. | Everyone |
+| **Sent by me** | Tasks you assigned to a teammate. | Everyone |
+| **All** | Every task in the shop. | Admins and Owners only. Others see "Only shop managers can view every task." |
+
+### Narrow the list
+
+Three filters sit beside the scope toggle.
+
+| Filter | Options |
+| --- | --- |
+| **Status filter** | **Any status**, **To-do**, **In progress**, **Stuck**, **Done**, **Cancelled**, **Overdue** |
+| **Due filter** | **Any due date**, **Overdue**, **Due today**, **Due this week**, **No due date** |
+| **Link filter** | **Linked to anything**, **General tasks** (not tied to a repair order), **Repair-order tasks** |
+
+The list is sorted by due date. If there are more than 50 matches, choose **Load more tasks**.
+
+### What a row shows
+
+- A **checkbox** to finish the task in one click.
+- The **title** (struck through when done).
+- Its **due date**, marked **Overdue**, **Due today**, or **Due tomorrow**.
+- Who it is **From** (when assigned to you) or **To** (when you sent it).
+- The linked repair order, if any.
+- An **Unseen** badge on tasks assigned to you that you have not opened.
+- A **Status** button, described below.
+
+## Create a task
+
+<Steps>
+  <Step title="Open the task sheet">
+    Choose **New task** on the Tasks screen, or type in the **Add a task…** box on a repair order's **Tasks** tab, which links it to that job for you.
+  </Step>
+  <Step title="Name it">
+    **Title** is required. Write what has to happen, as a verb: "Call Ms. Rivera about the supplement".
+  </Step>
+  <Step title="Set who and when">
+    - **Assigned to**: a teammate, or **Unassigned**.
+    - **Priority**: **None**, **Low**, **Medium**, **High**, or **Urgent**.
+    - **Due**: a date and a time. If you pick a date without a time, the due time is **5:00 PM**. Use **Clear due date** to remove it.
+  </Step>
+  <Step title="Link it">
+    **Repair order** lets you search by repair order number, customer, or vehicle. Choose **Open the repair order** to jump to it, or **Remove link** to detach it.
+  </Step>
+  <Step title="Add detail">
+    **Details** is free text for context and what "done" looks like. You can dictate it with the microphone.
+  </Step>
+  <Step title="Save">
+    Choose **Create task**. Editing later uses **Save changes**.
+  </Step>
+</Steps>
+
+## Task statuses
+
+A task has its own status, separate from a repair order's status.
+
+| Status | Meaning |
+| --- | --- |
+| **To-do** | Not started. Every new task starts here. |
+| **In progress** | Someone is working on it. The dot beside it pulses gently. |
+| **Stuck** | It cannot move forward. You must give a reason. |
+| **Done** | Finished. |
+| **Cancelled** | No longer needed. |
+
+Open the **Status** button on a row, in the task sheet, or on a repair order's tab. The menu offers only the moves that make sense:
+
+| From | You can move to |
+| --- | --- |
+| To-do | In progress, Stuck, Done, Cancelled |
+| In progress | To-do, Stuck, Done, Cancelled |
+| Stuck | To-do, In progress, Done, Cancelled |
+| Done | To-do (to reopen it) |
+| Cancelled | To-do (to reopen it) |
+
+### Marking a task Stuck
+
+Choose **Stuck** and Kinetic asks for a **Reason**: "What is blocking this task?" The reason is shown in an amber box on the task and in the repair order's Tasks tab, so a task that is waiting on a part or an approval stays visible instead of quietly aging. Moving it back out of Stuck records **No longer stuck**.
+
+## Task history
+
+Open any task and look for **Task history**. It records, with the person and time: created, assigned, reassigned, unassigned, seen, started, marked stuck, no longer stuck, completed, reopened, cancelled, due date changed (or cleared), linked to or unlinked from a repair order, and **Became overdue**.
+
+## Reassign and edit
+
+You can change **Assigned to** from the task sheet, from the dropdown on a repair order's task row, and the new assignee gets a notification. If someone else changed the task while you had it open, Kinetic says **This task changed on another device. The list refreshed — try again.** and shows you the latest version rather than overwriting it.
+
+## Good habits
+
+<Columns cols={2}>
+  <Card title="Do" icon="check">
+    Put promises on the repair order: "Call customer when the fender arrives". Assign them to a person, with a due date. Mark blocked work **Stuck** with a reason.
+  </Card>
+  <Card title="Don't" icon="x">
+    Don't leave a task assigned to nobody. Don't mark something Done that you only handed off. Don't use notes as a to-do list; notes cannot be overdue.
+  </Card>
+</Columns>
+
+## Related
+
+- [Notifications](/work/notifications): how you hear about assigned tasks.
+- [Today](/work/today): the jobs that need you, which often become tasks.
+- [Repair order Activity tab](/repair-orders/activity): where notes live.
