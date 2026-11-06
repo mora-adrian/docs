@@ -11,11 +11,14 @@ This page powers the capacity warnings on the [Repairs board](/pipeline/overview
 
 The capacity table says how many **billable estimate hours** each department can process in a period.
 
-| | Daily | Weekly | Monthly |
+| Department | Daily | Weekly | Monthly |
 | --- | --- | --- | --- |
-| **Body** | hours | hours | hours |
+| **Body + Glass** | hours | hours | hours |
+| **Mechanical** | hours | hours | hours |
+| **Refinish** | hours | hours | hours |
 | **Structural** | hours | hours | hours |
-| **Paint** | hours | hours | hours |
+
+Each period has its own **Save daily**, **Save weekly**, and **Save monthly** button under its column, so you can change one period without touching the others. Hours can have up to two decimals.
 
 <Warning>
 This is **estimate hours the shop can process, not hours worked**. If your body team finishes 40 estimate hours of work a day, enter 40, even if the people clock more or fewer hours.
@@ -23,14 +26,19 @@ This is **estimate hours the shop can process, not hours worked**. If your body 
 
 ## Production Columns
 
-**Production columns** decide which statuses use up capacity and how much.
+**Production columns** decide which statuses use up capacity, how long a job may sit in each, and who hears about an overload. Save them with **Save production columns**.
 
 | Setting | Meaning |
 | --- | --- |
-| **Production starts at** | The first column that counts against capacity. Everything before it is pre-production. By default this is **Body**. |
-| **Share of estimate hours** | For each column, what portion of a job's estimate hours it consumes. The shares must add up to the whole job. |
-| **Alert when over** | The period (daily, weekly, or monthly) used to decide a column is over capacity. |
-| **Email alerts to** | The members who are emailed when a column goes over capacity. |
+| **Production starts at** | The first column whose orders count against capacity. Everything before it is pre-production. New shops start at **Parts Hold**. The list shows your repair columns in board order. |
+| **Business days per phase** | One box per repair column: how long a vehicle may sit there before it flags overdue, counted on your business calendar. Whole numbers or up to two decimals, 365 at most. |
+| **Total shop budget** | The sum of the boxes above, shown as **business days**. It must be more than zero. It also sets how much capacity weight each column carries. |
+| **Alert when over** | The period (**Daily**, **Weekly**, or **Monthly** capacity) the overload alerts compare against. All three still show on the board. |
+| **Email alerts to** | The members who are emailed when a production column goes over capacity. |
+
+<Note>
+If any day box holds something that isn't a number, **Save production columns** stays unavailable until you fix it.
+</Note>
 
 ## Good Practice
 

@@ -1,6 +1,6 @@
 ---
 title: "Estimate"
-description: "The Estimate tab: read the line items, filter them, understand the totals, send the customer a plain-language explanation, and start an AI review."
+description: "The Estimate tab: read the line items, filter them, understand the totals, send the client a plain-language explanation, and start an AI review."
 ---
 
 import { Key } from "/snippets/ui.jsx";
@@ -16,7 +16,7 @@ The **Estimate** tab shows the current estimate for the repair order: every repa
 At the top of the tab:
 
 - A small badge with the **estimate version** from CCC ONE in a monospaced font, and a tag showing where the estimate came from. When CCC ONE sends a revised estimate, the version changes.
-- **Explain estimate**: a plain-language walkthrough for the customer. See [below](#explain-the-estimate-to-the-customer).
+- **Explain estimate**: a plain-language walkthrough for the client. See [below](#explain-the-estimate-to-the-client).
 - **Audit with Rivet**, or **See audit results** once a review exists. See [below](#audit-with-rivet).
 
 ## The Line Table
@@ -62,22 +62,22 @@ The bar pinned at the bottom of the tab shows three figures:
 
 If a line-priced total is larger than the CCC ONE subtotal, the labor figure is not shown, with an explanation: *Line prices exceed the CCC ONE subtotal, so labor is not shown.*
 
-## Explain the Estimate to the Customer
+## Explain the Estimate to the Client
 
-An estimate is full of abbreviations. **Explain estimate** writes a version a customer can follow.
+An estimate is full of abbreviations. **Explain estimate** writes a version a client can follow.
 
 <Steps>
   <Step title="Open it">
     Choose **Explain estimate**. If an explanation already exists it opens right away. If not, you see **No explanation yet.** and a **Generate explanation** button. Generating usually takes a few seconds, and never more than about a minute.
   </Step>
   <Step title="Read it">
-    The sheet, titled **Estimate explanation**, is *a plain-language walkthrough of this estimate, written for the customer*. It has a short overview, a section for the labor and a section for the parts and charges, **The bigger items** (the three to six lines that carry the most cost or labor, each with a short reason), **Repair or replace?** (why a part is replaced instead of repaired), and **A note on paint blending** when the estimate includes it. The **Grand total** is shown from the estimate itself.
+    The sheet, titled **Estimate explanation**, is *a plain-language walkthrough of this estimate, written for the client*. It has a short overview, a section for the labor and a section for the parts and charges, **The bigger items** (the three to six lines that carry the most cost or labor, each with a short reason), **Repair or replace?** (why a part is replaced instead of repaired), and **A note on paint blending** when the estimate includes it. The **Grand total** is shown from the estimate itself.
   </Step>
   <Step title="Regenerate if you need to">
     **Regenerate** writes a fresh version.
   </Step>
   <Step title="Email it">
-    Choose **Email to customer**. A confirmation window shows the recipient, the **To** address and the subject (**Your repair estimate, explained: 2021 Subaru Outback**). Choose **Send email**. The email appears on the repair order's **Emails** tab.
+    Choose **Email to client**. A confirmation window shows the recipient, the **To** address and the subject (**Your repair estimate, explained: 2021 Subaru Outback**). Choose **Send email**. The email appears on the repair order's **Emails** tab.
   </Step>
 </Steps>
 
@@ -92,7 +92,7 @@ The AI that writes it is held to firm rules:
 
 ### A Warning You May See
 
-If the estimate changed after the explanation was written, the sheet says **The estimate changed since this was written.** Choose **Regenerate** before you send, or the customer may get an explanation of an older version. If the customer has no email address, the send button is disabled with **The primary customer has no email address.**
+If the estimate changed after the explanation was written, the sheet says **The estimate changed since this was written.** Choose **Regenerate** before you send, or the client may get an explanation of an older version. If the client has no email address, the send button is disabled with **The primary client has no email address.**
 
 <Warning>
 Always read the explanation before you send it. It is a draft that you are responsible for.

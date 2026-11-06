@@ -1,0 +1,56 @@
+---
+title: "Photo Intelligence"
+description: "Review how Kinetic described your uploaded photos, correct it, and choose which corrections become evaluation examples. Owners only."
+---
+
+Open **Settings → Photo intelligence**. Only **Owners** can use this page. An admin who opens it sees *Photo intelligence review is limited to Owners. Ask an Owner to review extractions or manage evaluation examples.*
+
+When someone uploads a photo to a repair order's [Files tab](/repair-orders/files), Kinetic reads it and writes down what it sees: a description, labels, the vehicle view, any readable text, and where the damage is. Those notes travel with the photo. This page is where an Owner checks that work and fixes what is wrong.
+
+<Info>
+The page header says it plainly: *Review original-photo observations and save corrections. Captions, labels and damage regions share one analyzer; evaluation training is separate.*
+</Info>
+
+## Review Extractions
+
+Each analyzed photo is listed with its picture on one side and its editable notes on the other. If nothing has been analyzed yet, the list says **No analyzed photos yet. Analyzed uploads appear here.**
+
+Small badges show what Kinetic filled in by itself: **AI tag**, **AI labels**, and **AI detections**. A photo already saved as a training example carries an **approved example** badge.
+
+| Field | What to do |
+| --- | --- |
+| **Description** | A short collision-repair description: viewpoint, subject, and visible or flagged condition. |
+| **Labels** | The phrases that describe the photo. Pick from the list or type your own. |
+| **Document tag** | Set this when the picture is really a document, such as a scan report or a signed authorization. Leave it at **None** for an ordinary photo. |
+| **Vehicle view** | Which side or angle of the car the photo shows, or **No view**. |
+| **View confidence** | How sure the view is. |
+| **Visible text** | Any readable writing in the picture. **Required** when you set a document tag. |
+| **Approval evidence** | For documents that carry an approval, the signature, initials, or written phrase you can see. |
+| **Damage areas** | The boxes and points that mark where the damage is. **Add box** draws a new one and **Add point** adds a point to a box. Each box has a label and can be removed. |
+
+Choose **Save correction**. The photo updates **immediately**, everywhere it appears.
+
+### Include in the Evaluation Training Dataset
+
+Tick **Include in the evaluation training dataset** before you save to turn the corrected photo into an **evaluation example**. After saving, the page says **Correction saved and training examples refreshed.**
+
+## Train the Evaluation Model
+
+The **Photo analysis** panel at the top trains a *separate review model* from your approved examples. It shows how many examples you have and the state of the latest training run.
+
+1. Set **Training steps**.
+2. Choose **Train evaluation model**. While it runs, the button reads **Training evaluation…** and the panel refreshes itself every few seconds.
+
+<Warning>
+Evaluation training **does not change** how photos are described. It never replaces the analyzer that writes captions, labels, and damage areas, and your corrections never train Claude. Only **Save correction** changes a photo's notes.
+</Warning>
+
+Two setup warnings can appear on this page:
+
+- *The photo-analysis credential is not configured. New photo analysis waits until the photo-analysis key is configured on the worker.* New photos are not analyzed until Kinetic support finishes setup.
+- *The evaluation-training key is not configured. Evaluation training is unavailable; this does not affect the photo analyzer.* You can still review and correct photos.
+
+## Good Practice
+
+- Tick the training box only for photos you are sure are right.
+- Check **Document tag** and **Visible text** together. A document needs both.

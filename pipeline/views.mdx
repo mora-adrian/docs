@@ -35,12 +35,12 @@ Scroll sideways with your mouse or trackpad, or press <Key>←</Key> and <Key>�
 
 1. **Repair order number**, in a monospaced font so numbers line up.
 2. **First-scan icon** (Repairs board only). Filled green means the first scan is done. An empty gray icon means it is not. If a car has reached **Disassembly & Repair Planning** without a scan, the empty icon pulses gently as a reminder. Hover it to see how it was recorded (CCC ONE, a Pre-repair Scan file, or a text) and the date. See [First scan](/repair-orders/facts#first-scan).
-3. **Customer name**, with their initials in a circle.
+3. **Client name**, with their initials in a circle.
 4. **Vehicle** (year, make, model), with the manufacturer's logo.
 5. **Insurer** paying for the repair. A dash means none is recorded.
 6. **Days in shop, with days in this status in brackets.** `12 (3)` means 12 days since arrival and 3 days in the current status.
 7. **Estimate total, with payments applied in brackets.** `$4,200.00 (–$500.00)` means a $4,200 estimate with $500 received so far.
-8. **Client advocate**: the person responsible for the customer. **Unassigned** if none.
+8. **Client advocate**: the person responsible for the client. **Unassigned** if none.
 9. **Warning icon** (Repairs board only). A red octagon means the job is missing paperwork. Hover to see which: **Missing signed work authorization**, **Missing initial estimate**, or both. It disappears when both are in place.
 
 On the other boards the bottom-right corner shows a date instead of the warning: the **appointment date** on Opportunities, the **repairs-complete date** on Close & Deliver, and the **target date** on Enrichment.
@@ -68,10 +68,10 @@ If CCC ONE later reports a different production stage, it can move the card agai
 
 ### The Production Load Line
 
-On the Repairs board, a small group of lanes (from the first production status onward) carries a line of text at the top:
+On the Repairs board, a small group of lanes (from the first production status onward) shows a warning at the top when the shop is overbooked:
 
-- **Production: 31 of 40 daily hours** in gray means the shop is within its capacity. The period (daily, weekly, or monthly) is the one your admin chose.
-- A **red ring** around the group and one or more red lines such as **Overbooked — Paint: 41 of 40 daily hours** means the shop has more work booked than it can process. Hover the red text to see the **Total**, **Body**, **Structural**, and **Paint** figures. The same warning appears at the top of [Today](/work/today).
+- **A quiet board stays quiet.** While the shop is within its capacity, nothing extra shows.
+- A **red ring** around the group and one or more red lines such as **Overbooked · Refinish: 41 of 40 daily hours** means the shop has more work booked than it can process. The period (daily, weekly, or monthly) is the one your admin chose. Hover the red text to see the **Total**, **Body + Glass**, **Structural**, and **Refinish** figures. The same warning appears at the top of [Today](/work/today).
 
 These figures are *estimate hours the shop can process*, not hours anyone has worked. See [Production capacity](/admin/production).
 
@@ -83,13 +83,19 @@ While the board loads it shows a pale outline of lanes and cards. If loading fai
 
 The Table is a dense grid with one row per repair order.
 
+### On a Phone
+
+On a phone the Table shows one tappable row per repair order: the number, client, vehicle and insurer, status, and target date, with the same pager underneath.
+
 ### Search
 
-The box at the top left, **Search repair order, customer, VIN, claim…**, matches the repair order number, the customer's name, the VIN, and the claim number. Results update as you type.
+The box at the top left, **Search repair order, client, VIN, claim…**, matches the repair order number, the client's name, the VIN, and the claim number. Results update as you type.
 
 ### Filters
 
-Choose **Filters** to open the filter panel. A number on the button shows how many filters are active, and the **X** beside it clears them all. Filters narrow what you see and combine (every filter you set must match).
+Choose **Filters** to open the filter panel. A number on the button shows how many filters are active, and **Clear filters** beside it removes them all. Every filter you set also appears as a removable chip under the button, so you can see and drop one at a time. Filters narrow what you see and combine (every filter you set must match).
+
+On a phone, **Filters** opens a bottom sheet instead. Set what you need, then choose **Show results**. **Clear filters** in the sheet's footer resets everything.
 
 | Filter | What you pick |
 | --- | --- |
@@ -97,27 +103,28 @@ Choose **Filters** to open the filter panel. A number on the button shows how ma
 | **Repair Planner** | One teammate. |
 | **Technician** | One technician. |
 | **Status** | One of this board's statuses. |
-| **Outcome likelihood** | One of the four levels. |
+| **Severity** | One of the five levels. |
 | **Total Loss** | **Any**, **Yes**, or **No**. |
-| **Released** | **Any**, **Yes**, or **No**: whether the vehicle has been released to the customer. |
-| **Customer Approval** | **Any**, **Yes**, or **No**. |
+| **Pre-repair Scan** | **Any**, **Yes**, or **No**. Repairs board only. |
+| **Released** | **Any**, **Yes**, or **No**: whether the vehicle has been released to the client. |
+| **Client Approval** | **Any**, **Yes**, or **No**. |
 | **Insurance Approval** | **Any**, **Yes**, or **No**. |
 | **Arrival** | A date range (from and to, inclusive). |
-| **Target Date** | A date range. |
-| **Days in Shop** | A two-handled slider from 0 to 120. The top end means "any" (shown as 120+). The number applies when you let go. |
+| **Target** | A date range. |
+| **Days Here** | A two-handled slider from 0 to 120. The top end means "any" (shown as 120+). The number applies when you let go. |
 
 <Note>
-Filters and search apply to the **Table** view. The Board and Timeline show the whole board.
+Filters apply to the **Table** and **Board** views. Search applies to the Table. The Timeline shows the whole board.
 </Note>
 
 ### Columns
 
-Choose **Columns** to show or hide columns. **Repair order #** and **Customer** always stay. The menu has a switch for each of:
+Choose **Columns** to show or hide columns. **Repair order #** and **Client** always stay. The menu has a switch for each of:
 
 | Column | What it shows |
 | --- | --- |
 | **Repair order #** | The number (pinned on the left). |
-| **Customer** | Name, with an avatar (optional). |
+| **Client** | Name, with an avatar (optional). |
 | **Vehicle** | Year, make, and model, with the maker's logo (optional). |
 | **VIN** | The vehicle identification number. |
 | **Insurer** | The insurer paying. |
@@ -127,17 +134,17 @@ Choose **Columns** to show or hide columns. **Repair order #** and **Customer** 
 | **Status** | The status pill. |
 | **Team** | Avatars for the whole team on the job. |
 | **Client Advocate**, **Repair Planner**, **Technician** | Each person by name. Hidden until you turn them on. |
-| **Days in Shop** | Days since arrival. |
+| **Days Here** | Days since arrival. |
 | **Arrival** | Arrival date. |
 | **Target Date** | The promised date. |
 | **Appointment** | The appointment date. |
 | **Total Loss** | Whether it is flagged a total loss. |
 | **Released** | Whether the vehicle was released. |
-| **Customer Approval**, **Insurance Approval** | Whether each approval is recorded. |
-| **Outcome likelihood** | The 1 to 4 meter. |
-| **Last communication** | When the customer was last texted. |
+| **Client Approval**, **Insurance Approval** | Whether each approval is recorded. |
+| **Severity** | The 1 to 5 meter. |
+| **Last communication** | When the client was last texted. |
 
-Two more switches under **Avatars** hide or show the **Customer avatar** and **Vehicle avatar**.
+Two more switches under **Avatars** hide or show the **Client avatar** and **Vehicle avatar**.
 
 **Your column choices and widths are saved in this browser, on this device.** Drag a column edge to resize it. If you use a different computer, you will set them again.
 
@@ -151,7 +158,7 @@ If nothing matches, the table says **No matching repair orders** and suggests **
 
 The Timeline lays every repair order out on a calendar.
 
-- Each row is a repair order. The left column (which stays put as you scroll) shows its number, customer, and vehicle.
+- Each row is a repair order. The left column (which stays put as you scroll) shows its number, client, and vehicle.
 - The **gray bar** is the plan, from the **start or arrival date** to the **target date**. Its left edge carries the status color, and the status name is written on the bar.
 - A thin **amber bar** on top is the **actual repair window**, from when repairs began to when they finished (or to today if still in progress).
 - A thin **red tail** runs from the target date to today when a job has **overrun** its target. The row also gets a red **Overdue** badge.

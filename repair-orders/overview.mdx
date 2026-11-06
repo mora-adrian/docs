@@ -5,7 +5,7 @@ description: "What a repair order is, where it comes from, how the full-screen p
 
 import { StatusRail } from "/snippets/ui.jsx";
 
-A **repair order** is the record of one job on one vehicle: the customer, the vehicle, the claim, the estimate, the parts, every message, every file, the schedule, and the money, in one place. It is the center of Kinetic. Almost every other screen is a window onto repair orders.
+A **repair order** is the record of one job on one vehicle: the client, the vehicle, the claim, the estimate, the parts, every message, every file, the schedule, and the money, in one place. It is the center of Kinetic. Almost every other screen is a window onto repair orders.
 
 ## Where Repair Orders Come From
 
@@ -49,8 +49,8 @@ From left to right:
 Reading top to bottom:
 
 <Steps>
-  <Step title="The customer and vehicle card">
-    The customer's name (and nickname in quotes), phone and email, and the vehicle's year, make, model, trim, and VIN, each with a pencil button: **Edit customer** and **Edit vehicle**. These open the same edit forms as the [Records](/records/overview) screens.
+  <Step title="The client and vehicle card">
+    The client's name (and nickname in quotes), phone and email, and the vehicle's year, make, model, trim, and VIN, each with a pencil button: **Edit client** and **Edit vehicle**. These open the same edit forms as the [Records](/records/overview) screens.
   </Step>
   <Step title="Status">
     The current status, with the number of days in it in brackets, and a **status rail**: a row of segments, one per status on this board. Segments fill left to right up to the current one, and a percentage shows how far along the job is.
@@ -60,13 +60,13 @@ Reading top to bottom:
     The rail is for reading, not clicking. A job that is **past its target date** turns its current segment red. A job marked **Lost** turns the whole rail red.
   </Step>
   <Step title="Repair order facts">
-    Repair order number, claim number, **Repairability**, **Outcome likelihood**, estimate, expected insurance payout, start, **Target**, key dates, and the **Client Advocate**, **Repair Planner**, and **Technician**. Some rows have a pencil so you can change them; the rest come from CCC ONE. See [Facts](/repair-orders/facts).
+    Repair order number, claim number, **Repairability**, **Severity**, estimate, expected insurance payout, start, **Target**, key dates, and the **Client Advocate**, **Repair Planner**, and **Technician**. Some rows have a pencil so you can change them; the rest come from CCC ONE. See [Facts](/repair-orders/facts).
   </Step>
   <Step title="Parties">
-    The **Customer**, **Vehicle**, **Company**, **Adjuster**, **Referral**, and an **Other parties** list where you can add a **Referrer**, **Driver**, **Attorney**, **Insurer**, **Adjuster**, **Appraiser**, or **Other**.
+    The **Client**, **Vehicle**, **Company**, **Adjuster**, **Referral**, and an **Other parties** list where you can add a **Referrer**, **Driver**, **Attorney**, **Insurer**, **Adjuster**, **Appraiser**, or **Other**.
   </Step>
-  <Step title="Customer survey">
-    A short checklist of where the customer's satisfaction survey stands. Appears only once the job has qualified for a survey. See [CSI](/csi/overview).
+  <Step title="Client survey">
+    A short checklist of where the client's satisfaction survey stands. Appears only once the job has qualified for a survey. See [CSI](/csi/overview).
   </Step>
 </Steps>
 
@@ -78,10 +78,10 @@ On a phone, the left panel sits above the tabs.
 | --- | --- | --- |
 | **Activity** | A note box, the repair progress, and the full history of everything that happened. | [Activity and notes](/repair-orders/activity) |
 | **Emails** | Every email, with a composer and automatic follow-up. | [Email](/communicate/email) |
-| **Texts** | The text conversation with the customer. | [Texting](/communicate/texting) |
+| **Texts** | The text conversation with the client. | [Texting](/communicate/texting) |
 | **Calls** | Call history, recordings, summaries, and transcripts. | [Calls](/communicate/calls) |
 | **Tasks** | This job's tasks. The tab's number is the open tasks. | [Tasks](/work/tasks) |
-| **Estimate** | The estimate lines, totals, a plain-language explanation for the customer, and Rivet. | [Estimate](/repair-orders/estimate) |
+| **Estimate** | The estimate lines, totals, a plain-language explanation for the client, and Rivet. | [Estimate](/repair-orders/estimate) |
 | **Parts** | Every part on the estimate and whether it has arrived. | [Parts](/repair-orders/parts) |
 | **ARW** | Who owes what, what has been paid, what is on its way. | [ARW](/repair-orders/arw) |
 | **Files** | Photos and documents. | [Files](/repair-orders/files) |
