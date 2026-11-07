@@ -1,6 +1,6 @@
 ---
 title: "Collision Repair in Plain English"
-description: "A walk through a collision repair from the customer's first call to the day they drive away, so every screen in Kinetic makes sense even if you have never worked in a body shop."
+description: "A walk through a collision repair from the client's first call to the day they drive away, so every screen in Kinetic makes sense even if you have never worked in a body shop."
 ---
 
 import { Pill } from "/snippets/ui.jsx";
@@ -9,13 +9,13 @@ You do not need to know anything about cars to use Kinetic. You do need to know 
 
 ## The Short Version
 
-A customer's car is damaged. Someone has to decide **what is wrong**, **who pays**, **what parts are needed**, and **how long it will take**. Often the answer changes halfway through, because damage hides behind panels. The shop repairs the car, checks it, and hands it back. Kinetic tracks each of those steps.
+A client's car is damaged. Someone has to decide **what is wrong**, **who pays**, **what parts are needed**, and **how long it will take**. Often the answer changes halfway through, because damage hides behind panels. The shop repairs the car, checks it, and hands it back. Kinetic tracks each of those steps.
 
 ## The Story, Step by Step
 
 <Steps>
-  <Step title="The customer calls, or the shop is called">
-    The driver's car was hit, or hit something. They may be the **insured** (they hold the insurance policy), or a **claimant** (they are making a claim against someone else's policy). Either way, a **claim** is opened with an insurance company, the **insurer**. The shop's first job is to learn who the customer is, what car it is, and how to reach them.
+  <Step title="The client calls, or the shop is called">
+    The driver's car was hit, or hit something. They may be the **insured** (they hold the insurance policy), or a **claimant** (they are making a claim against someone else's policy). Either way, a **claim** is opened with an insurance company, the **insurer**. The shop's first job is to learn who the client is, what car it is, and how to reach them.
 
     *In Kinetic:* the job begins as a lead on the **Opportunities** board. See [Statuses](/pipeline/statuses#opportunities).
   </Step>
@@ -24,8 +24,8 @@ A customer's car is damaged. Someone has to decide **what is wrong**, **who pays
 
     *In Kinetic:* the estimate arrives from CCC ONE and appears on the **Estimate** tab of the repair order.
   </Step>
-  <Step title="The customer drops off the car">
-    The customer drives in, or the shop sends a **tow truck** to bring the car. Kinetic calls these **Experience in** (the customer brings it) and **Concierge in** (the shop's truck picks it up). The car is now "in the shop" and the clock starts.
+  <Step title="The client drops off the car">
+    The client drives in, or the shop sends a **tow truck** to bring the car. Kinetic calls these **Experience in** (the client brings it) and **Concierge in** (the shop's truck picks it up). The car is now "in the shop" and the clock starts.
 
     *In Kinetic:* the job moves to the **Repairs** board and shows <Pill tone="needs">Arrival & Triage</Pill>.
   </Step>
@@ -55,7 +55,7 @@ A customer's car is damaged. Someone has to decide **what is wrong**, **who pays
     *In Kinetic:* <Pill tone="ontrack">Reassembly</Pill>, <Pill tone="ontrack">Calibrations & Diagnostics</Pill>, and <Pill tone="ontrack">Detail</Pill>.
   </Step>
   <Step title="Pickup, payment, and follow-up">
-    The customer picks up the car and pays whatever the insurer did not: the **deductible** (the customer's share under their policy) and anything else owed. A few days later, the shop asks how it went. Satisfaction scores, usually called **CSI**, matter a great deal, because insurers and customers both read them.
+    The client picks up the car and pays whatever the insurer did not: the **deductible** (the client's share under their policy) and anything else owed. A few days later, the shop asks how it went. Satisfaction scores, usually called **CSI**, matter a great deal, because insurers and clients both read them.
 
     *In Kinetic:* **Close & Deliver**, then **Enrichment**. See [CSI](/csi/overview).
   </Step>
@@ -65,43 +65,43 @@ A customer's car is damaged. Someone has to decide **what is wrong**, **who pays
 
 ### The Car Is a Total Loss
 
-If repairing the car would cost close to, or more than, what the car is worth, the insurer may declare it a **total loss**. They pay the customer the car's value instead of paying for repairs. The shop's work stops and the customer signs a release.
+If repairing the car would cost close to, or more than, what the car is worth, the insurer may declare it a **total loss**. They pay the client the car's value instead of paying for repairs. The shop's work stops and the client signs a release.
 
 Kinetic tracks this with a **Repairability** setting, and shows possible total losses in their own lane on the Repairs board. See [Total loss](/playbooks/total-loss).
 
-### The Customer Disputes the Insurer's Number
+### The Client Disputes the Insurer's Number
 
-A customer can invoke the **appraisal clause** in their policy, which lets them hire an independent **appraiser** to challenge the insurer's amount. Kinetic includes a ready-made document for this. See [Signatures](/repair-orders/signatures).
+A client can invoke the **appraisal clause** in their policy, which lets them hire an independent **appraiser** to challenge the insurer's amount. Kinetic includes a ready-made document for this. See [Signatures](/repair-orders/signatures).
 
 ## Who Is Who
 
 | Person | What they do |
 | --- | --- |
-| **Customer** (insured or claimant) | Owns the car, or is responsible for it. |
+| **Client** (insured or claimant) | Owns the car, or is responsible for it. |
 | **Insurer** | The insurance company that pays all or part of the repair. |
 | **Adjuster** | The insurer's employee who reviews the damage and approves the money. |
 | **Appraiser** | An independent person who inspects damage and estimates its cost. |
 | **Estimator** | Writes the shop's estimate. In Kinetic's language: part of the **repair planner** role. |
-| **Client advocate** | The shop employee who looks after the customer from first call to delivery. Kinetic's term for what many shops call a service advisor or customer service representative. |
+| **Client advocate** | The shop employee who looks after the client from first call to delivery. Kinetic's term for what many shops call a service advisor or client service representative. |
 | **Repair planner** | The shop employee who plans the work and keeps it moving. Often an estimator or production manager. |
 | **Technician** | The person who repairs the car. |
-| **Referrer** | The person or business who sent the customer to the shop. |
-| **Tow driver** | Moves cars between the customer, the shop, and vendors. |
+| **Referrer** | The person or business who sent the client to the shop. |
+| **Tow driver** | Moves cars between the client, the shop, and vendors. |
 
 ## Money in One Minute
 
 - The **estimate** is the total price of the repair.
-- The **insurer** pays most of it, minus the customer's **deductible**.
+- The **insurer** pays most of it, minus the client's **deductible**.
 - Some items are subtracted or disputed. **Betterment** is a deduction an insurer takes when a new part leaves the car better off than before (new tires on a car with worn ones). An **appearance allowance** or a **bottom-line discount** reduces what the insurer pays.
 - A **supplement** adds to the total after the first estimate.
-- The shop collects the rest from the customer at pickup.
+- The shop collects the rest from the client at pickup.
 
 The **ARW** (accounts receivable worksheet) tab is where Kinetic tracks all of this. See [ARW](/repair-orders/arw).
 
 ## Time in One Minute
 
 - **Target date** (also called the **out date**) is when the shop expects to hand the car back. Kinetic shows how much it trusts that date. See [Facts](/repair-orders/facts#target-date).
-- **Cycle time**, sometimes called **key-to-key**, is the number of days between the customer handing over the key and getting it back.
+- **Cycle time**, sometimes called **key-to-key**, is the number of days between the client handing over the key and getting it back.
 - A car **past its target date** shows as late, whatever its status.
 
 Next, learn the words Kinetic uses in the [glossary](/start/glossary), or go straight to [signing in](/start/sign-in).

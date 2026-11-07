@@ -163,13 +163,13 @@ export const KpiStripExample = () => (
   </div>
 );
 
-/** The four-step outcome likelihood meter, drawn at a given level (1 to 4). */
+/** The five-step severity meter, drawn at a given level (1 to 5). */
 export const LikelihoodMeter = ({ level = 2 }) => (
   <span className="kx-meter" data-level={level}>
-    {[1, 2, 3, 4].map((n) => (
+    {[1, 2, 3, 4, 5].map((n) => (
       <span className="kx-seg" data-on={n <= level ? "yes" : "no"} key={n} />
     ))}
-    <span className="kx-meter-label">{level} of 4</span>
+    <span className="kx-meter-label">{level} of 5</span>
   </span>
 );
 

@@ -1,26 +1,26 @@
 ---
-title: "Texting Customers"
+title: "Texting Clients"
 description: "How to send and read texts from a repair order: the composer's buttons, templates, AI rewrite, dictation, voice memos, attachments, reactions, and the readings that warn you before a text can cause harm."
 ---
 
 import { Key, Tag } from "/snippets/ui.jsx";
 
-Most customers prefer to be texted. In Kinetic, every text to and from a customer is part of the repair order, so the next person to pick up the job sees the whole conversation. You text from the **Texts** tab of a repair order, or from [Messages](/communicate/messages) once a conversation belongs to a job. Both show the same composer.
+Most clients prefer to be texted. In Kinetic, every text to and from a client is part of the repair order, so the next person to pick up the job sees the whole conversation. You text from the **Texts** tab of a repair order, or from [Messages](/communicate/messages) once a conversation belongs to a job. Both show the same composer.
 
 <Info>
-Texts go out on the **shop's own texting line**, as **iMessage** where the customer's phone supports it and as regular **text (SMS)** otherwise. Customers see one consistent shop number, never your personal one. Admins can see the number in **Settings → Messaging**.
+Texts go out on the **shop's own texting line**, as **iMessage** where the client's phone supports it and as regular **text (SMS)** otherwise. Clients see one consistent shop number, never your personal one. Admins can see the number in **Settings → Messaging**.
 </Info>
 
 <Warning>
-**A customer must text your shop first, or already have an open thread, before you can reply.** If you try to start a conversation and Kinetic says **Message could not be sent. The contact may need to text your shop number first.**, that is why. Ask the customer to text the shop, or call or email them.
+**A client must text your shop first, or already have an open thread, before you can reply.** If you try to start a conversation and Kinetic says **Message could not be sent. The contact may need to text your shop number first.**, that is why. Ask the client to text the shop, or call or email them.
 </Warning>
 
 ## Reading the Thread
 
-- Messages are drawn like iMessage: **yours on the right in blue**, **the customer's on the left in gray**. AI-assistant output appears as plain text.
+- Messages are drawn like iMessage: **yours on the right in blue**, **the client's on the left in gray**. AI-assistant output appears as plain text.
 - Date markers (**Today**, **Yesterday**, a weekday, then a date) divide the days.
 - Choose **Load older** at the top to go further back.
-- A **typing** bubble appears while the customer is typing.
+- A **typing** bubble appears while the client is typing.
 - Pictures, videos, audio, and files show inline. Click one to open it. Audio plays in place.
 - **No messages yet** appears on a new thread, with **Send the first text to start this conversation.**
 
@@ -32,8 +32,8 @@ Right-click a message and choose **Info** to see **Message info**: when it was *
 | --- | --- |
 | **Sending** | On its way out. A new message reads **Awaiting confirmation** until the carrier answers. |
 | **Sent** | Left Kinetic. |
-| **Delivered** | Reached the customer's phone. |
-| **Read** | The customer opened it (iMessage only). |
+| **Delivered** | Reached the client's phone. |
+| **Read** | The client opened it (iMessage only). |
 | **Received** | An incoming message. |
 | **Failed** or **Bounced** | It did not arrive. Try again, or call. |
 
@@ -65,11 +65,11 @@ You cannot mix a voice memo with other attachments. Kinetic tells you: **Remove 
 
 Type `@` in the box and a menu of your shop's **message templates** opens, each with its name and a two-line preview. Use <Key>↑</Key> and <Key>↓</Key> to move, <Key>Enter</Key> or <Key>Tab</Key> to choose, <Key>Esc</Key> to close.
 
-When you pick one, **variables fill in with this customer's details**:
+When you pick one, **variables fill in with this client's details**:
 
 | Variable | Becomes |
 | --- | --- |
-| `$CUSTOMER_NAME` | The customer's name. |
+| `$CUSTOMER_NAME` | The client's name. |
 | `$VEHICLE_DESCRIPTION` | Year, make, and model. |
 | `$RO_NUMBER` | The repair order number. |
 | `$TARGET_DATE` | The target date. |
@@ -108,7 +108,7 @@ Your browser asks for microphone permission the first time. If you refuse, you w
 
 What you type is saved automatically (**Draft saved** appears below the box), and it stays on the repair order's thread. If someone else edits the same draft, Kinetic shows both versions and lets you choose **Keep my version** or **Use the other version**.
 
-### Saving a Customer's Photos
+### Saving a Client's Photos
 
 Right-click an incoming picture or video and choose **Save to repair order files**, or use the link under the attachment. It files onto the repair order's **Files** tab, and you see **Saved to repair order files**.
 
@@ -118,7 +118,7 @@ Texting a person who does not want to hear from you is a bad idea for them and f
 
 ### Conversation Sentiment
 
-An AI reading of how the customer feels: **Concerned**, **Negative**, **Neutral**, **Positive**, or **Delighted**. It shows a **score from 0 to 100**, a **trend** (improving, steady, declining), a one-line summary, and the **signals** behind it, such as *Customer waiting 3 h for a reply* or *4 texts in a row without a reply*.
+An AI reading of how the client feels: **Concerned**, **Negative**, **Neutral**, **Positive**, or **Delighted**. It shows a **score from 0 to 100**, a **trend** (improving, steady, declining), a one-line summary, and the **signals** behind it, such as *Client waiting 3 h for a reply* or *4 texts in a row without a reply*.
 
 It appears after the next analysis run. Until then you see **No sentiment reading yet — it appears after the next analysis run.**
 
@@ -128,10 +128,10 @@ How this conversation is doing, according to the texting network:
 
 | Reading | What it means | What to do |
 | --- | --- | --- |
-| **Healthy** | The customer is engaging normally. | Carry on. |
-| **At risk** | The customer may be cooling off. | Slow down. Send messages that invite a reply. |
+| **Healthy** | The client is engaging normally. | Carry on. |
+| **At risk** | The client may be cooling off. | Slow down. Send messages that invite a reply. |
 | **Critical** | The conversation is in trouble. | Pause routine texts. Have a **person** reach out directly. |
-| **Opted out** | The customer texted **STOP**. | **Sending is blocked** until they text back. |
+| **Opted out** | The client texted **STOP**. | **Sending is blocked** until they text back. |
 | **Unknown** | No reading yet. | Nothing special. |
 
 ### Line Reputation
@@ -149,16 +149,16 @@ A small badge near the top shows the line's connection and reputation together.
 
 ### Warnings in the Composer
 
-When readings get worse, the composer warns you with specifics, for example *You've sent 4 texts without a reply* or *Line reputation is slipping. Send less and wait for replies.* An **opted-out** customer is a hard stop: sending is blocked, not just discouraged.
+When readings get worse, the composer warns you with specifics, for example *You've sent 4 texts without a reply* or *Line reputation is slipping. Send less and wait for replies.* An **opted-out** client is a hard stop: sending is blocked, not just discouraged.
 
 ## When You Cannot Send
 
 | You see | Why |
 | --- | --- |
 | **{Name} is flagged do not text** (with the reason) | Someone marked this person **Do not text** on their record. Texts are blocked. Email and calls still work. See [People](/records/people#contact-preferences). |
-| **The customer opted out of texts (STOP). Sending is blocked until they text back.** | They replied STOP. Respect it. |
+| **The client opted out of texts (STOP). Sending is blocked until they text back.** | They replied STOP. Respect it. |
 | **Messaging is no longer configured for this shop** | The shop's text line is down. Tell your admin. |
-| The **Send** button is disabled | The box is empty, an attachment is still uploading, or the customer has no mobile number. |
+| The **Send** button is disabled | The box is empty, an attachment is still uploading, or the client has no mobile number. |
 
 ## Good Habits
 
@@ -167,7 +167,7 @@ When readings get worse, the composer warns you with specifics, for example *You
     Text from here, not your phone. Use a template for routine updates and edit the details. Keep texts short and specific: what happened, what happens next, and when. Check the health strip before a long message.
   </Card>
   <Card title="Don't" icon="x">
-    Don't promise a date you have not confirmed. Don't text a customer who said stop. Don't send five texts in a row to a customer who has not replied. Don't discuss money or coverage in a text if a call would be clearer.
+    Don't promise a date you have not confirmed. Don't text a client who said stop. Don't send five texts in a row to a client who has not replied. Don't discuss money or coverage in a text if a call would be clearer.
   </Card>
 </Columns>
 

@@ -15,7 +15,9 @@
 ## Terminology
 
 - The tenant is a **shop** — never "workspace," "organization," "store," or "location."
-- A repair order is a **repair order** — never "RO."
+- A repair order is a **repair order** in prose — never "RO." The bare label "RO" is fine only where the app uses it as a field label.
+- The person a repair is for is the **client** — never "customer." Surveys are **Client Satisfaction**; the screen is the Client Satisfaction Index (CSI).
+- The 1–5 meter of repair cost against vehicle value is **Severity** — never "outcome likelihood."
 - The workflow column is a **status** — never "stage" or "pipeline."
 - The second factor is an **authenticator app code** — never "TOTP."
 - The product is **Kinetic**, Collision Partners' collision repair management OS.

@@ -5,7 +5,7 @@ description: "The accounts receivable worksheet: record deductibles, insurer pay
 
 import { Tag } from "/snippets/ui.jsx";
 
-The **ARW** (accounts receivable worksheet) is where a repair order's money is tracked. When a customer hands over a check for the deductible, or an insurer says a payment is on its way, the ARW is where that fact goes. It answers: *who owes what at pickup, what has already been paid, and what is still in the mail?*
+The **ARW** (accounts receivable worksheet) is where a repair order's money is tracked. When a client hands over a check for the deductible, or an insurer says a payment is on its way, the ARW is where that fact goes. It answers: *who owes what at pickup, what has already been paid, and what is still in the mail?*
 
 <Info>
 The ARW is a **tracking worksheet**. It does not charge cards, send invoices, or post to your accounting system. It records what your team knows.
@@ -23,7 +23,7 @@ Each row of the worksheet has three money columns.
 
 | Column | Meaning | Example |
 | --- | --- | --- |
-| **Prepaid** | Money already received. | The customer paid the $500 deductible. |
+| **Prepaid** | Money already received. | The client paid the $500 deductible. |
 | **In transit** | Money sent or promised but not yet landed. | The insurer says the check was mailed Tuesday. |
 | **Due** | What is still owed. | $4,200 still expected from the insurer. |
 
@@ -35,7 +35,7 @@ A row is one receivable: *who* owes *what for*.
 
 | Column | What to enter |
 | --- | --- |
-| **Payer** | **Customer** or **Insurer**. The name beside it is shown for context only, so renaming a customer later never rewrites a saved row. |
+| **Payer** | **Client** or **Insurer**. The name beside it is shown for context only, so renaming a client later never rewrites a saved row. |
 | **Payment for** | The purpose. Pick from the list below. |
 | **Prepaid** | Amount received. |
 | **In transit** | Amount on its way, with an optional **proof** (see below). |
@@ -46,7 +46,7 @@ A row is one receivable: *who* owes *what for*.
 
 | Purpose | When to use it |
 | --- | --- |
-| **Deductible** <Tag>CCC ONE</Tag> | The customer's share under their policy. |
+| **Deductible** <Tag>CCC ONE</Tag> | The client's share under their policy. |
 | **Appearance allowance** <Tag>CCC ONE</Tag> | A payment made instead of repairing minor cosmetic damage. |
 | **Betterment** <Tag>CCC ONE</Tag> | An amount deducted because a new part improves the car. |
 | **Bottom line discount** <Tag>CCC ONE</Tag> | A flat reduction taken from the total. |
@@ -61,13 +61,13 @@ The four purposes marked **CCC ONE** are special. Their amounts come from CCC ON
 - **Due is locked and calculated:** it equals the CCC ONE amount, **minus what you enter as Prepaid, minus what you enter as In transit** (never below zero). You cannot type over it.
 - A purpose can be used on **only one row**. In the purpose list it reads **Deductible (CCC ONE)**, and once taken, **Deductible (CCC ONE, already used)**.
 
-So paying the deductible is simple: add a **Deductible** row with the customer as payer, type the amount in **Prepaid**, and the **Due** drops to zero by itself.
+So paying the deductible is simple: add a **Deductible** row with the client as payer, type the amount in **Prepaid**, and the **Due** drops to zero by itself.
 
 ## Add, Edit, Save
 
 <Steps>
   <Step title="Add a row">
-    Choose **Add row**. If the worksheet is empty it says **No receivables yet** and explains: *Add a row for each party that owes money at pickup or delivery: the customer, an insurer, or a third party.*
+    Choose **Add row**. If the worksheet is empty it says **No receivables yet** and explains: *Add a row for each party that owes money at pickup or delivery: the client, an insurer, or a third party.*
   </Step>
   <Step title="Fill it in">
     Choose the **Payer** and **Payment for**, then type the amounts. Amounts can be written as `1234.56`, `-100`, or `(100.00)`. A red message, **Enter a valid amount to save**, appears if one cannot be read.
@@ -100,7 +100,7 @@ At the bottom of the worksheet, several lines let you check it against CCC ONE:
 | Line | What it shows |
 | --- | --- |
 | **Totals** | The sum of every row's **Prepaid**, **In transit**, and **Due**. |
-| **CCC ONE** | What CCC ONE reports: the **customer receipts (deposit)** under **Prepaid** and the **estimate grand total** under **Due**. Shows **Not reported** when CCC ONE has not sent a figure. |
+| **CCC ONE** | What CCC ONE reports: the **client receipts (deposit)** under **Prepaid** and the **estimate grand total** under **Due**. Shows **Not reported** when CCC ONE has not sent a figure. |
 | **Due at pickup** | The estimate grand total from CCC ONE, minus everything your sheet shows as prepaid or in transit. It is what still has to be collected for the total to be covered. |
 | **Difference** | Two comparisons, as signed amounts. Under **Prepaid**: your prepaid total minus CCC ONE's deposit total. Under **Due**: your sheet's total due minus **Due at pickup**. |
 
@@ -117,7 +117,7 @@ At the bottom of the worksheet, several lines let you check it against CCC ONE:
     Record a payment the day it is promised, in **In transit**, then move it to **Prepaid** the day it lands. Attach proof. Review the **Difference** line before every delivery.
   </Card>
   <Card title="Don't" icon="x">
-    Don't enter an insurer payment under **Customer**. Don't leave a supplement without its own row. Don't type over a **CCC ONE** purpose's Due; change it by recording the payment.
+    Don't enter an insurer payment under **Client**. Don't leave a supplement without its own row. Don't type over a **CCC ONE** purpose's Due; change it by recording the payment.
   </Card>
 </Columns>
 

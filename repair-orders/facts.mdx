@@ -1,6 +1,6 @@
 ---
 title: "Facts, Dates, and Parties"
-description: "Every row in the left-hand panel of a repair order: what it means, who owns it, how the target date and outcome likelihood are worked out, and how to manage the people on a job."
+description: "Every row in the left-hand panel of a repair order: what it means, who owns it, how the target date and severity are worked out, and how to manage the people on a job."
 ---
 
 import { LikelihoodMeter, Pill, Tag } from "/snippets/ui.jsx";
@@ -27,13 +27,13 @@ Each row is marked so you know where to change it.
 | **Repair order #** | CCC ONE | The number everyone says out loud. |
 | **Claim #** | CCC ONE | The insurer's claim number. A blank value or the text **NEEDCLAIMINFO** from CCC ONE counts as "missing". |
 | **Repairability** | You | **Repairable** or **Total loss**. Blank until somebody decides. See [below](#repairability). |
-| **Outcome likelihood** | You or calculated | A 1 to 4 meter. See [below](#outcome-likelihood). |
+| **Severity** | You or calculated | A 1 to 5 meter. See [below](#severity). |
 | **Estimate** | CCC ONE | The estimate total. |
 | **Expected insurance payout** | Calculated | A market-value range for the vehicle. See [below](#expected-insurance-payout). |
 | **Start** | Kinetic | The date the repair order started. |
 | **Target** | You or automatic | When the car is expected out. See [below](#target-date). |
 | **Appointment**, **Arrival**, **Completed**, **Delivered** | CCC ONE | Key dates. |
-| **Client Advocate** | CCC ONE and shop rules | The person who owns the customer relationship. Hover for *Client advocate · CSR / Service advisor*. |
+| **Client Advocate** | CCC ONE and shop rules | The person who owns the client relationship. Hover for *Client advocate · CSR / Service advisor*. |
 | **Repair Planner** | CCC ONE | The person who plans the work. Hover for *Repair planner · Estimator / Production manager*. |
 | **Technician** | CCC ONE | Taken from CCC ONE's labor assignments. |
 
@@ -115,20 +115,21 @@ The badge appears only when it can be trusted: the vehicle is **past Parts Hold*
 A **Low confidence** badge is a prompt, not a verdict. It means the date and the estimate disagree. Check whether the labor hours changed, or whether the date was set before a supplement.
 </Note>
 
-## Outcome Likelihood
+## Severity
 
-**Outcome likelihood** answers: *how close is the cost of this repair to what the car is worth?* A repair that costs a small fraction of the car's value is safe to repair. One that costs most of its value may end as a total loss.
+**Severity** answers: *how close is the cost of this repair to what the car is worth?* A repair that costs a small fraction of the car's value is safe to repair. One that costs most of its value may end as a total loss.
 
-It is a 1 to 4 scale, drawn as four segments.
+It is a 1 to 5 scale, drawn as one continuous gauge. Levels 1 and 2 are green, level 3 is amber, and levels 4 and 5 are red.
 
 | Level | Meter | Meaning (with standard boundaries) |
 | --- | --- | --- |
-| 1 | <LikelihoodMeter level={1} /> | Repair costs **under 25%** of the vehicle's value. |
-| 2 | <LikelihoodMeter level={2} /> | **25–50%** of value. |
-| 3 | <LikelihoodMeter level={3} /> | **50–75%** of value. |
-| 4 | <LikelihoodMeter level={4} /> | **75% or more** of value. The most likely to become a total loss. |
+| 1 | <LikelihoodMeter level={1} /> | Repair costs **under 20%** of the vehicle's value. |
+| 2 | <LikelihoodMeter level={2} /> | **20–40%** of value. |
+| 3 | <LikelihoodMeter level={3} /> | **40–60%** of value. |
+| 4 | <LikelihoodMeter level={4} /> | **60–80%** of value. |
+| 5 | <LikelihoodMeter level={5} /> | **80% or more** of value. The most likely to become a total loss. |
 
-Your admin can change the 25/50/75 boundaries in [Estimating and cycle time](/admin/repair-order-settings#estimating-and-cycle-time). Hover a meter to see the exact range for your shop.
+Your admin can change the 20/40/60/80 boundaries in [Estimating and cycle time](/admin/repair-order-settings#estimating-and-cycle-time). Hover a meter to see the exact range for your shop.
 
 ### Calculated or Set by Hand
 
@@ -137,7 +138,7 @@ Your admin can change the 25/50/75 boundaries in [Estimating and cycle time](/ad
 - Choose **Use calculated value** in the same window to hand control back to Kinetic.
 
 <Info>
-Outcome likelihood describes the **money**. It never decides whether a car is repairable. That is **Repairability**, below, and it is only ever set by a person or by CCC ONE.
+Severity describes the **money**. It never decides whether a car is repairable. That is **Repairability**, below, and it is only ever set by a person or by CCC ONE.
 </Info>
 
 ## Repairability
@@ -146,7 +147,7 @@ Outcome likelihood describes the **money**. It never decides whether a car is re
 
 Click the pencil to open **Change repairability** and flip the **Total loss** toggle. The window warns: *A total loss uses the total-loss estimate and cycle days for its defaults.* The target date and the default estimate follow.
 
-Marking a vehicle as a total loss also puts it in the **Possible Total Loss** lane on the Repairs board, and it is no longer eligible for Rivet or the customer survey. See [Total loss](/playbooks/total-loss).
+Marking a vehicle as a total loss also puts it in the **Possible Total Loss** lane on the Repairs board, and it is no longer eligible for Rivet or the client survey. See [Total loss](/playbooks/total-loss).
 
 ## Expected Insurance Payout
 
@@ -164,11 +165,11 @@ The **Parties** section lists every person and company involved in the job.
 
 | Row | Notes |
 | --- | --- |
-| **Customer** | The primary person or company. Pencil: **Edit**, which opens their record form. |
+| **Client** | The primary person or company. Pencil: **Edit**, which opens their record form. |
 | **Vehicle** | Year, make, model, trim. Pencil: **Edit**. |
-| **Company** | Shown when the customer is a company. |
+| **Company** | Shown when the client is a company. |
 | **Adjuster** | Shown when set. Its pencil edits the adjuster's contact record. |
-| **Referral** | Where the customer heard about the shop. Comes from the customer's record. |
+| **Referral** | Where the client heard about the shop. Comes from the client's record. |
 
 Under **Other parties** you can add a person or company in each of these roles: **Referrer**, **Driver**, **Attorney**, **Insurer**, **Adjuster**, **Appraiser**, and **Other**.
 

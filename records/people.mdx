@@ -5,7 +5,7 @@ description: "Every field on a person record, the Do not text switch, how contac
 
 import { Key, Tag } from "/snippets/ui.jsx";
 
-A **person** record is anyone you deal with: customers, drivers, adjusters, appraisers, referrers, attorneys. A person can play several roles over time. The same person can be a customer on one job and the referrer on another, and it stays one record.
+A **person** record is anyone you deal with: clients, drivers, adjusters, appraisers, referrers, attorneys. A person can play several roles over time. The same person can be a client on one job and the referrer on another, and it stays one record.
 
 Open **People** in the sidebar to browse, or press <Key>⌘</Key> <Key>K</Key> and type a name. See [Records overview](/records/overview) for how to find, edit, and archive.
 
@@ -33,7 +33,7 @@ Choose **Edit** to open **Edit person**. The form is split into sections.
 | Field | Notes |
 | --- | --- |
 | **Do not text** | A switch. When on, **outgoing texts to this person are blocked.** Email and calls still work. See [below](#contact-preferences). |
-| **Reason** | Appears when the switch is on. *e.g. Customer requested no outreach.* |
+| **Reason** | Appears when the switch is on. *e.g. Client requested no outreach.* |
 
 ### Name
 
@@ -74,11 +74,11 @@ Save the form with **Save** or <Key>⌘</Key>+<Key>Enter</Key>.
 
 ### Do Not Text
 
-Turn this on when a customer asks you to stop texting them, or when your team agrees texting would not be appropriate.
+Turn this on when a client asks you to stop texting them, or when your team agrees texting would not be appropriate.
 
 - Outgoing texts to that person are **blocked**. The thread on their repair order shows **{Name} is flagged do not text**, with your reason if you wrote one, and the composer is disabled.
 - **Email and calls are not affected.**
-- It also stops **survey texts** from going to them. A survey scheduled for a Do-not-text customer is skipped, and the CSI screen shows **Recipient blocked**.
+- It also stops **survey texts** from going to them. A survey scheduled for a Do-not-text client is skipped, and the CSI screen shows **Recipient blocked**.
 - It does **not** stop *them* texting you. For a number that should never reach you, use **Block on all lines** in [Messages](/communicate/messages#blocking-a-number).
 
 <Tip>
@@ -109,9 +109,9 @@ If nothing is found, you see **No public profile data on file.**
 
 <Columns cols={2}>
   <Card title="Do" icon="check">
-    Capture a mobile number and an email. Use **Preferred name** for how the customer likes to be addressed. Write a reason whenever you switch on **Do not text**.
+    Capture a mobile number and an email. Use **Preferred name** for how the client likes to be addressed. Write a reason whenever you switch on **Do not text**.
   </Card>
   <Card title="Don't" icon="x">
-    Don't trust an **Uncertain match** without checking. Don't make a second record for a customer who got a new phone number; edit the first one.
+    Don't trust an **Uncertain match** without checking. Don't make a second record for a client who got a new phone number; edit the first one.
   </Card>
 </Columns>

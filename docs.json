@@ -130,7 +130,7 @@
             ]
           },
           {
-            "group": "Customer satisfaction",
+            "group": "Client satisfaction",
             "pages": [
               "csi/overview",
               "csi/customer-pages"
@@ -187,7 +187,8 @@
               "admin/messaging-settings",
               "admin/members",
               "admin/reports",
-              "admin/ai-usage"
+              "admin/ai-usage",
+              "admin/photo-intelligence"
             ]
           },
           {
