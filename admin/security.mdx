@@ -9,15 +9,14 @@ description: "How sign-in, sessions, roles, and extra checks protect your shop's
 | --- | --- |
 | **Password plus authenticator app code** | Everyone signs in with a password. Two-factor sign-in is set up under [Security](/admin/personal-security). |
 | **Sessions end** | After **4 hours** without activity, or **12 hours** in total. |
-| **Extra checks for sensitive actions** | Actions such as sending a signature request or changing security ask for a fresh code. After you confirm, you aren't asked again for **240 minutes**. |
+| **Extra checks for sensitive actions** | Actions such as changing members, security, or shop settings ask for a fresh code. After you confirm, you aren't asked again for **240 minutes**. |
 | **Roles** | **Member**, **Admin**, and **Owner** limit what each person can change. See [Roles and access](/start/roles). |
 | **Per-shop separation** | People only see the shops they belong to. |
 
 ## When Someone Joins
 
-1. [Add them](/admin/members) with the lowest role that works.
-2. Share the password securely, never in a text to a group.
-3. Ask them to set up two-factor sign-in on day one.
+1. [Invite them](/admin/members) with the lowest role that works.
+2. They get an email, set their own password, and set up two-factor sign-in the first time they sign in. Nobody shares a password.
 
 ## When Someone Leaves
 
@@ -27,9 +26,9 @@ description: "How sign-in, sessions, roles, and extra checks protect your shop's
 
 ## When Someone Loses Their Device or Phone
 
-- They can sign in with a **backup code** at the extra-check step.
-- Backup codes work **only** in the **Confirm it's you** step, not at the normal sign-in screen.
-- If they have no backup codes and no authenticator, contact Kinetic support. **No admin button resets two-factor sign-in.**
+- If they can still sign in somewhere, they choose **Reconfigure** under **Settings → Security** to link a new phone.
+- If they are locked out, ask your Kinetic administrator to reset their two-factor sign-in. They set it up again the next time they sign in. The reset also signs them out everywhere and removes their passkeys, so a lost device can't keep signing in.
+- There is no reset button in **Settings → Members**.
 
 ## Habits That Protect You
 

@@ -1,6 +1,6 @@
 ---
 title: "Today"
-description: "Your personal list of the repair orders that need a push right now: close to delivery, past the money gate, supplements waiting, and missing documents."
+description: "Your personal list of the repair orders that need a push right now: cars waiting for pickup, jobs near their target date, amounts owed, stale supplements, and missing documents."
 ---
 
 import { Pill, Tag } from "/snippets/ui.jsx";
@@ -11,38 +11,41 @@ import { Pill, Tag } from "/snippets/ui.jsx";
 
 Today is personal. It lists only the repair orders where **you** are the **repair planner**, the **client advocate**, or both. A teammate's Today shows their jobs, not yours.
 
+Technicians see a different Today: a **MET** technician gets **Your work order**, their own assigned jobs in priority order; a **Paint** or **Structural** technician gets their department's queue. The header counts what needs attention (past target, over budget, on supplement or parts hold). If your technician specialty isn't set, Today says **Your technician view needs setup**.
+
 <Warning>
-Today relies on your user being linked to an **employee profile** in your shop. If you see no sections, or "Nothing here today" everywhere on a day you know is busy, ask an admin to check that your account is linked to your employee profile. Without the link Kinetic cannot tell which jobs are yours.
+Today relies on your user being linked to an **employee profile** in your shop. Without the link, Today says **Today isn't set up for you yet** and asks you to contact your shop administrator. Kinetic cannot tell which jobs are yours until the link exists.
 </Warning>
 
 Today leaves out archived repair orders and any job whose outcome was marked **Lost**.
 
 ## What Is on the Screen
 
-At the top is a greeting such as **Good to see you, Alex**, today's date, and your name. Below it are four sections. Each has a gray number beside its title showing the **true total**, even though only the first 50 rows are drawn.
+The header shows today's date and your name. When you have tasks due today, a meter beside it, **Your tasks due today**, shows how many you have finished. Below are five sections. Each has a gray number beside its title showing the **true total**, even though only the first rows are drawn. When none of them has anything, Today says **All caught up**: *Nothing on your repair orders needs you right now.*
 
-If your shop has gone over its production capacity, a red banner appears above the sections, for example **Overbooked — Paint: 41 of 40 daily hours**. See [Production capacity](/admin/production).
+If your shop has gone over its production capacity, a red banner appears above the sections. See [Production capacity](/admin/production).
 
-### The Four Sections
+### The Five Sections
 
 <Tabs>
-  <Tab title="Close to delivery">
-    **What lands here:** a vehicle that has not been delivered and either
+  <Tab title="Complete but not delivered">
+    **What lands here:** a vehicle whose repairs are complete (or that is in a pickup-ready status) and has not been delivered. Longest waiting first.
 
-    - is in **Repairs Complete** or **Ready for Delivery**, or
-    - has a **target date** within the next few days, **or a target date that has already passed**.
+    **The row says:** `Complete · 4 days awaiting pickup`.
 
-    **The row says:** `Ready for delivery`, `Target Oct 23`, or `Target passed Oct 21`.
+    **Why it matters:** the car is done and the client is waiting. Finish the paperwork and schedule the pickup.
+  </Tab>
+  <Tab title="Near estimated completion date">
+    **What lands here:** a vehicle that has not been delivered and has a **target date** within the next few days, **or a target date that has already passed**. Soonest first.
 
-    **Why it matters:** these are the jobs to push over the line: finish the paperwork, call the client, and schedule the pickup.
+    **The row says:** `Target Oct 23` or `Target passed Oct 21`.
+
+    **Why it matters:** these are the jobs to push over the line before the promised date.
 
     **Default window:** 3 days. Admins can change it.
   </Tab>
-  <Tab title="Past the money gate">
-    **What lands here:** a vehicle that has reached a point in the repair where some payment should have arrived, and **no payment has been recorded** on its [ARW](/repair-orders/arw) (the worksheet shows **$0 prepaid**).
-
-    - On the Repairs board, "reached the gate" means it is in the gate status or any status after it.
-    - A job in Close & Deliver that has not been delivered also counts.
+  <Tab title="Review amounts owed">
+    **What lands here:** a vehicle that has reached the money gate status (or any status after it, or Close & Deliver without delivery) and **no payment has been recorded** on its [ARW](/repair-orders/arw).
 
     **The row says:** `No payment received · in Parts Hold`.
 
@@ -50,8 +53,8 @@ If your shop has gone over its production capacity, a red banner appears above t
 
     **Default gate:** **Parts Hold**. Admins can pick a different status.
   </Tab>
-  <Tab title="Supplements waiting">
-    **What lands here:** a vehicle that has been in **Supplement Hold** for at least a few days. Jobs in the Possible Total Loss lane are part of Supplement Hold too.
+  <Tab title="Follow up on stale supplements">
+    **What lands here:** a vehicle that has been in **Supplement Hold** for at least a few days.
 
     **The row says:** `3 days in supplement hold`.
 
@@ -59,8 +62,8 @@ If your shop has gone over its production capacity, a red banner appears above t
 
     **Default wait:** 3 days. Admins can change it.
   </Tab>
-  <Tab title="Missing documents">
-    **What lands here:** a vehicle on the Repairs board that arrived at least a day ago and is still missing a **signed work authorization**, an **initial estimate** file, or both.
+  <Tab title="Follow up on critical documents">
+    **What lands here:** a vehicle being repaired that arrived at least a day ago and is still missing a **signed work authorization**, an **initial estimate** file, or both.
 
     **The row says:** `Missing signed work authorization and initial estimate`.
 
@@ -76,24 +79,25 @@ Each row is one repair order:
 
 - The **repair order number** in an outlined badge, then the client's name and the vehicle.
 - A second line: the current **status**, a dot, then the reason it surfaced.
-- On the right, a red <Tag>Past target</Tag> badge if the target date has passed, and an outlined badge naming your part: **Advocate**, **Planner**, or **Planner & advocate**.
+- On the right, a red <Tag>Past target</Tag> badge if the target date has passed.
 
 Click anywhere on a row to open the repair order's [drawer](/repair-orders/drawer). From there choose **Open full screen** to act.
 
-A job can appear in more than one section. A car with no payment that is also close to delivery is in both.
+A job can appear in more than one section. A car with no payment that is also near its target date is in both.
 
 ## What to Do with Each Section
 
 | Section | A good first move |
 | --- | --- |
-| Close to delivery | Open the repair order. Check the **ARW** for what is due at pickup, the **Files** tab for the signed paperwork, and **Calendar** for the pickup appointment. |
-| Past the money gate | Check the **ARW** tab. Is the deductible collected? Is an insurer payment in transit? Add what is known. |
-| Supplements waiting | Open the **Emails** tab. Has the supplement gone to the adjuster? Is **Auto follow-up** on? Call if it has been silent. |
-| Missing documents | Open the **Files** tab and the **Signatures** tab. Send a work authorization for signature, or upload the initial estimate and tag it **Initial Estimate**. |
+| Complete but not delivered | Check the **ARW** for what is due at pickup, the **Files** tab for the signed paperwork, and **Calendar** for the pickup appointment. |
+| Near estimated completion date | Open the repair order. Is the target date still believable? If not, tell the client now. |
+| Review amounts owed | Check the **ARW** tab. Is the deductible collected? Is an insurer payment in transit? Add what is known. |
+| Follow up on stale supplements | Open the **Emails** tab. Has the supplement gone to the adjuster? Is **Auto follow-up** on? Call if it has been silent. |
+| Follow up on critical documents | Open the **Files** tab and the **Signatures** tab. Send a work authorization for signature, or upload the initial estimate and tag it **Initial Estimate**. |
 
 ## Make the Thresholds Fit Your Shop
 
-The limits behind Today (how soon counts as "close to delivery", where the money gate sits, and how many days supplements or paperwork may wait) belong to the shop. An admin sets them in **Settings → Repair orders → Today page**. See [Repair order settings](/admin/repair-order-settings#today-page).
+The limits behind Today (how soon counts as "near" a target date, where the money gate sits, and how many days supplements or paperwork may wait) belong to the shop. An admin sets them in **Settings → Repair orders → Today page**. See [Repair order settings](/admin/repair-order-settings#today-page).
 
 ## Good to Know
 

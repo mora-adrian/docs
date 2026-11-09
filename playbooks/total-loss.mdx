@@ -1,6 +1,6 @@
 ---
 title: "Total Loss"
-description: "What a total loss is, how Kinetic flags one, the Possible Total Loss lane, and how to guide a client through it."
+description: "What a total loss is, where Kinetic shows one, and how to guide a client through it."
 ---
 
 import { Pill } from "/snippets/ui.jsx";
@@ -9,13 +9,12 @@ A **total loss** means the car would cost more to repair than it is worth, so th
 
 ## How Kinetic Flags One
 
-A car appears in the **Possible Total Loss** lane beside <Pill tone="waiting">Supplement Hold</Pill> when any of these is true:
+CCC ONE moves the card:
 
-- You set **Repairability** to **Total loss** in the repair order's facts.
-- CCC ONE classified it as a total loss.
-- Its CCC ONE stage mentions a total loss.
+- A total-loss stage in CCC ONE puts it in <Pill tone="waiting">Pending Total Loss</Pill> on the Repairs board.
+- When CCC ONE marks the estimate a total loss, it moves to **Total Loss** on the Close & Deliver board.
 
-The lane is automatic. You cannot drop a card into it.
+Setting **Repairability** to **Total loss** in Kinetic records the decision on the repair order but does not move the card. See [Statuses](/pipeline/statuses#pending-total-loss-and-total-loss).
 
 ## Steps
 
@@ -24,7 +23,7 @@ The lane is automatic. You cannot drop a card into it.
     Only the insurer decides. Do not tell the client it is a total loss until the adjuster confirms in writing.
   </Step>
   <Step title="Set Repairability">
-    Set **Repairability** to **Total loss** on the repair order so the board reflects it. It stays blank until someone rules on it, and Kinetic never assumes a car is repairable.
+    Set **Repairability** to **Total loss** on the repair order so the record reflects it. It stays blank until someone rules on it, and Kinetic never assumes a car is repairable.
   </Step>
   <Step title="Tell the client with care">
     Call personally. Explain what a total loss means, what happens to the car, and what they should expect from the insurer. Follow up in writing.

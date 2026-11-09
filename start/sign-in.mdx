@@ -11,19 +11,18 @@ Kinetic protects client and insurance information, so every account uses a passw
 
 You need:
 
-1. **An account.** A shop admin or owner creates it for you under **Settings → Members**. They will give you your email address and a starting password. Accounts are never self-service.
+1. **An invitation.** A shop admin or owner invites you from **Settings → Members**. You get an email with a link to join your shop. Accounts are never self-service.
 2. **A phone with an authenticator app.** Any standard one works: 1Password, Authy, Google Authenticator, or Microsoft Authenticator. The app is free and takes a minute to install.
-3. **Your shop's web address.** It looks like `your-shop.collisionpartners.app`. Bookmark it. If you do not know it, go to `center.collisionpartners.app`, sign in, and choose your shop from the list.
-
-<Tip>
-Ask your admin to have you change the starting password right away. After you sign in, go to **Settings → Security → Password** (see [Your security settings](/admin/personal-security)).
-</Tip>
+3. **Kinetic's web address: `collisionpartners.app`.** Bookmark it. Every shop uses the same address; Kinetic opens the shop your account belongs to. Old links to `kandmcollision.collisionpartners.app` still work and forward to it.
 
 ## Your First Sign-in
 
 <Steps>
-  <Step title="Open the sign-in page">
-    The page is titled **Sign in** and says **Use your work email and password.** Enter your email address and password, then choose **Sign in with password**.
+  <Step title="Accept your invitation">
+    Open the invitation email and choose its link. The page says **Join** and your shop's name. Enter your **Full name** and a **Password** (8 or more characters), then choose **Create account**. If you already have a Kinetic account, the page says **You already have an account** instead: sign in with your existing email and password.
+  </Step>
+  <Step title="Sign in">
+    Choose **Continue to sign in**. The page is titled **Sign in** and says **Use your work email and password.** Enter your email address and password, then choose **Sign in with password**.
   </Step>
   <Step title="Set up two-factor authentication">
     The first time, Kinetic sends you to **Set up two-factor authentication**. Enter your password again and choose **Set up**.
@@ -31,21 +30,19 @@ Ask your admin to have you change the starting password right away. After you si
   <Step title="Scan the QR code">
     Open your authenticator app, add a new account, and scan the QR code on the screen. If you cannot scan it, copy the **pairing key** shown beside it and paste it into the app instead. Then type the six-digit code the app shows.
   </Step>
-  <Step title="Save your backup codes">
-    Kinetic shows a list of **backup codes** one time only. Copy them or download them as a text file, and keep them somewhere private and safe, such as your password manager. Tick **I have saved these backup codes** and choose **Continue**.
+  <Step title="Finish setup">
+    Kinetic shows a list of one-time **backup codes**. You can copy or download them if you like; they are optional. Tick **I have saved these backup codes** and choose **Continue**.
   </Step>
   <Step title="You are in">
     If you belong to one shop you land in it. If you have a linked employee profile you land on **Today**; if not, you land on the **Repairs** board.
   </Step>
 </Steps>
 
-<Warning>
-Backup codes are your only way back in if you lose your phone. Each works once. If you do not save them now, you cannot see them again; you would have to generate a new set from **Settings → Security**.
-</Warning>
+If you ever lose your phone, your Kinetic administrator can reset your two-factor sign-in, so you are never locked out for good. See [Lost or replaced phone](#lost-or-replaced-phone).
 
 ## Every Day After That
 
-1. Go to your shop's address.
+1. Go to `collisionpartners.app`.
 2. Enter your email and password and choose **Sign in with password**.
 3. On the **Authenticate** screen, enter the six-digit code from your authenticator app and choose **Authenticate**.
 
@@ -82,19 +79,18 @@ You will see this when you:
 - change shop settings, production capacity, or reports,
 - connect or disconnect a mailbox or the phone system,
 - archive a person, company, vehicle, or repair order,
-- delete files or remove a party from a repair order,
 - block a phone number,
-- send files to CCC ONE,
-- send a signature request,
-- switch to a different shop.
+- delete files or remove a party from a repair order.
 
 After you verify once, you are trusted for **240 minutes** (four hours), so batch your admin work into one sitting.
 
+Sending a signature request, sending files to CCC ONE, and switching shops need a verified sign-in but not a fresh code. If you signed in with your authenticator app code, they go straight through. You are asked for a code only if you signed in with a passkey that did not check your fingerprint, face, or PIN.
+
 ## More Than One Shop
 
-If your account has access to more than one shop, you can switch between them from the shop menu at the top of the left sidebar. The menu lists your shops under **Shop**; choose another and the app reloads in that shop. Switching is a protected action, so you will be asked for a fresh code.
+If your account has access to more than one shop, you can switch between them from the shop menu at the top of the left sidebar. The menu lists your shops under **Shop**; choose another and the app reloads in that shop. The web address stays the same.
 
-If you sign in at `center.collisionpartners.app`, you see the same list on a page titled **Select a workspace** (the app's own wording for your list of shops), with your name and email at the top. Choose a shop to enter it.
+If you belong to several shops and none is chosen yet, Kinetic shows the same list right after you sign in, on a page titled **Select a workspace** (the app's own wording for your list of shops), with your name and email at the top. Choose a shop to enter it.
 
 ## "Access Pending"
 
@@ -114,11 +110,11 @@ Kinetic always says **If an account exists for that email, a reset link is on it
 
 | Your situation | What to do |
 | --- | --- |
-| You can still sign in on another device, or you are already signed in | Go to **Settings → Security**. Choose **Reconfigure** to link your new phone, and generate a fresh set of backup codes. Backup codes are accepted in the **Confirm it's you** window for protected actions. |
-| You are locked out at the **Authenticate** screen | The sign-in screen accepts only the six-digit code from your authenticator app. You cannot get past it with a backup code, and shop admins have no button to reset it for you. Choose **Support** from the shop menu on another device, or ask your admin to contact the Kinetic team. They can help you recover access. |
+| You can still sign in on another device, or you are already signed in | Go to **Settings → Security** and choose **Reconfigure** to link your new phone. |
+| You are locked out at the **Authenticate** screen | Ask your Kinetic administrator to reset your two-factor sign-in. The next time you sign in, Kinetic walks you through setting up your authenticator app again. The **Authenticate** screen does not accept backup codes. |
 
 <Tip>
-Avoid a lockout before it happens. When you scan the QR code during setup, also copy the **pairing key** into your password manager. With the key you can add Kinetic to a second phone or a new phone at any time.
+When you scan the QR code during setup, you can also copy the **pairing key** into your password manager. With it you can add Kinetic to a new phone yourself, without waiting for a reset.
 </Tip>
 
 ## If Sign-in Says "Too Many Attempts"
@@ -133,7 +129,7 @@ Signing in means you agree to the **Acceptable Use Policy**, linked at the botto
 
 <CardGroup cols={2}>
   <Card title="Your security settings" icon="lock-keyhole" href="/admin/personal-security">
-    Change your password, regenerate backup codes, reconfigure two-factor.
+    Change your password, add passkeys, reconfigure two-factor.
   </Card>
   <Card title="Security and privacy" icon="shield-check" href="/admin/security">
     How your shop's data is kept separate and protected.

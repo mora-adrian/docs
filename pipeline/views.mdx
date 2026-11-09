@@ -34,7 +34,7 @@ Scroll sideways with your mouse or trackpad, or press <Key>←</Key> and <Key>�
 *An example card from the Repairs board. All names and numbers are made up.*
 
 1. **Repair order number**, in a monospaced font so numbers line up.
-2. **First-scan icon** (Repairs board only). Filled green means the first scan is done. An empty gray icon means it is not. If a car has reached **Disassembly & Repair Planning** without a scan, the empty icon pulses gently as a reminder. Hover it to see how it was recorded (CCC ONE, a Pre-repair Scan file, or a text) and the date. See [First scan](/repair-orders/facts#first-scan).
+2. **Pre-repair scan icon** (Repairs board only). Filled green means the pre-repair scan is done. An empty gray icon means it is not. If a car has reached **Disassembly & Repair Planning** without a scan, the empty icon pulses gently as a reminder. Hover it to see how it was recorded (CCC ONE, a Pre-repair Scan file, or a text) and the date. See [Pre-repair scan](/repair-orders/facts#pre-repair-scan).
 3. **Client name**, with their initials in a circle.
 4. **Vehicle** (year, make, model), with the manufacturer's logo.
 5. **Insurer** paying for the repair. A dash means none is recorded.
@@ -61,7 +61,6 @@ Moving a card is a **real change** to the repair order and it is recorded in the
 What you cannot do:
 
 - Drag a card to a lane on a **different board**. CCC ONE moves cars between boards.
-- Drop a card on the **Possible Total Loss** lane. That lane follows the vehicle's facts. See [the lane](/pipeline/statuses#the-possible-total-loss-lane).
 - Drop a card on the lane it is already in. That does nothing.
 
 If CCC ONE later reports a different production stage, it can move the card again. The latest word from CCC ONE wins.
@@ -119,28 +118,28 @@ Filters apply to the **Table** and **Board** views. Search applies to the Table.
 
 ### Columns
 
-Choose **Columns** to show or hide columns. **Repair order #** and **Client** always stay. The menu has a switch for each of:
+Choose **Columns** to show or hide columns. **RO** and **Client** always stay. The menu has a switch for each of:
 
 | Column | What it shows |
 | --- | --- |
-| **Repair order #** | The number (pinned on the left). |
+| **RO** | The repair order number (pinned on the left). |
 | **Client** | Name, with an avatar (optional). |
 | **Vehicle** | Year, make, and model, with the maker's logo (optional). |
 | **VIN** | The vehicle identification number. |
 | **Insurer** | The insurer paying. |
-| **Claim #** | The claim number. |
+| **Claim number** | The claim number. |
 | **Estimate** | The current estimate amount. |
 | **Received** | Payments received so far, from the ARW. |
 | **Status** | The status pill. |
 | **Team** | Avatars for the whole team on the job. |
-| **Client Advocate**, **Repair Planner**, **Technician** | Each person by name. Hidden until you turn them on. |
-| **Days Here** | Days since arrival. |
+| **Client advocate**, **Repair planner**, **Technician** | Each person by name. Hidden until you turn them on. |
+| **Days here** | Days since arrival. |
 | **Arrival** | Arrival date. |
-| **Target Date** | The promised date. |
+| **Target** | The promised date. |
 | **Appointment** | The appointment date. |
-| **Total Loss** | Whether it is flagged a total loss. |
+| **Total loss** | Whether it is flagged a total loss. |
 | **Released** | Whether the vehicle was released. |
-| **Client Approval**, **Insurance Approval** | Whether each approval is recorded. |
+| **Client approval**, **Insurance approval** | Whether each approval is recorded. |
 | **Severity** | The 1 to 5 meter. |
 | **Last communication** | When the client was last texted. |
 
@@ -156,19 +155,18 @@ If nothing matches, the table says **No matching repair orders** and suggests **
 
 ## Timeline View
 
-The Timeline lays every repair order out on a calendar.
+The Timeline is the production planning board: every open repair order laid out on a calendar, grouped into lanes.
 
-- Each row is a repair order. The left column (which stays put as you scroll) shows its number, client, and vehicle.
-- The **gray bar** is the plan, from the **start or arrival date** to the **target date**. Its left edge carries the status color, and the status name is written on the bar.
-- A thin **amber bar** on top is the **actual repair window**, from when repairs began to when they finished (or to today if still in progress).
-- A thin **red tail** runs from the target date to today when a job has **overrun** its target. The row also gets a red **Overdue** badge.
-- A small **blue diamond** marks the **appointment day**.
-- A vertical line marks **Today**.
-- Finished jobs appear faded.
+- **Phases** or **Technicians**, at the top left, chooses the lanes: one per status, or one per technician (with **Unassigned** for jobs with nobody). Each lane keeps its own priority order. Click a lane header, or press <Key>Shift</Key> <Key>O</Key>, to fold or open lanes.
+- Each row pins its **vehicle logo** and **repair order number**, its **indicators**, its age (for example `30 (5)`: days here, then days in this status), and its **target date**, beside one bar for the car's stay.
+- The bar reads like a progress bar. The legend at the top names its three parts: **In shop** (solid, from arrival to today), **To target** (dashed, the days left until the target date), and **Late** (red, the days past it). The bar ends on the days left to the target, and the words after it say how late it is, or that it has no target date. A row with no arrival or start date says **No arrival or start date**.
+- Week lines and a soft column for today run behind every row.
 
-Controls at the top: **Zoom out** and **Zoom in** (three levels), and **Today** to scroll back to the current date. **Drag the timeline sideways** to scroll. Hover over a row to see a summary: repair order, status, plan dates, appointment, and whether it is overdue. Click a row to open its drawer.
+Controls at the top: **Week**, **Month**, or **Quarter** to set the scale; the **Earlier** and **Later** arrows; and **Today** to scroll back to the current date. Scroll sideways with a trackpad, <Key>Shift</Key> and the mouse wheel, or the <Key>←</Key> and <Key>→</Key> keys; the view settles on whole days (whole weeks on **Quarter**).
 
-A repair order appears on the Timeline only once it has a start or arrival date. Otherwise you will see **No scheduled repair orders**.
+Click a row to open its drawer. Right-click a row for **New task**, **Add note**, **Send message**, and (for owners and admins) **Technician**, to dispatch it to someone. Owners and admins can also drag a row by its grip to reorder it within its lane or move it to another technician. Priorities are queue positions only; they never change the job's status or dates.
+
+If nothing is in production, the Timeline says **No repair orders in production**: *Open repairs appear here as they move through the shop.*
 
 ## Refresh Data
 
@@ -178,7 +176,7 @@ The circular-arrow **Refresh data** button reloads everything on the screen. Use
 
 <Columns cols={2}>
   <Card title="Do" icon="check">
-    Use the Table to find one job and the Board to run the day. Check the Possible Total Loss lane every morning. Filter by your own name when the board is busy.
+    Use the Table to find one job and the Board to run the day. Check Pending Total Loss every morning. Filter by your own name when the board is busy.
   </Card>
   <Card title="Don't" icon="x">
     Don't drag a card just to see what happens. Don't hide a late job by moving it to a calmer status. Don't expect your column choices to follow you to another computer.

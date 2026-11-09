@@ -24,36 +24,37 @@ Each row is marked so you know where to change it.
 
 | Row | Source | What it is |
 | --- | --- | --- |
-| **Repair order #** | CCC ONE | The number everyone says out loud. |
-| **Claim #** | CCC ONE | The insurer's claim number. A blank value or the text **NEEDCLAIMINFO** from CCC ONE counts as "missing". |
+| **RO** | CCC ONE | The repair order number everyone says out loud. |
+| **Claim** | CCC ONE | The insurer's claim number. A blank value or the text **NEEDCLAIMINFO** from CCC ONE counts as "missing". |
 | **Repairability** | You | **Repairable** or **Total loss**. Blank until somebody decides. See [below](#repairability). |
 | **Severity** | You or calculated | A 1 to 5 meter. See [below](#severity). |
 | **Estimate** | CCC ONE | The estimate total. |
-| **Expected insurance payout** | Calculated | A market-value range for the vehicle. See [below](#expected-insurance-payout). |
+| **Market value** | Calculated | A market-value range for the vehicle. See [below](#market-value). |
 | **Start** | Kinetic | The date the repair order started. |
 | **Target** | You or automatic | When the car is expected out. See [below](#target-date). |
 | **Appointment**, **Arrival**, **Completed**, **Delivered** | CCC ONE | Key dates. |
-| **Client Advocate** | CCC ONE and shop rules | The person who owns the client relationship. Hover for *Client advocate · CSR / Service advisor*. |
-| **Repair Planner** | CCC ONE | The person who plans the work. Hover for *Repair planner · Estimator / Production manager*. |
+| **Days here** | Kinetic | Days since the car arrived. |
+| **Client advocate** | CCC ONE and shop rules | The person who owns the client relationship. Hover for *Client advocate · CSR / Service advisor*. |
+| **Repair planner** | CCC ONE | The person who plans the work. Hover for *Repair planner · Estimator / Production manager*. |
 | **Technician** | CCC ONE | Taken from CCC ONE's labor assignments. |
 
 ### Where a Person Shows Up and Why
 
 The **Client Advocate** and **Repair Planner** rows decide whose **Today** list a job appears on. The advocate is also the person who hears about an unhappy survey answer, and the planner is the person who gets the email when a Rivet review finishes. If a seat is empty, nobody's Today picks the job up for that role. See [Today](/work/today).
 
-## First Scan
+## Pre-repair Scan
 
-The **first scan** (also called the **pre-repair scan**) is the diagnostic read of the vehicle's computers before any repair begins. Insurers and manufacturers expect it, and a missing one is a risk. Kinetic watches for it on vehicles being repaired.
+The **pre-repair scan** is the diagnostic read of the vehicle's computers before any repair begins. Insurers and manufacturers expect it, and a missing one is a risk. Kinetic watches for it on vehicles being repaired.
 
 You will see its icon on board cards, in the drawer header, and in the full-screen header:
 
 | Icon | Meaning |
 | --- | --- |
-| **Filled green** | The first scan is **done**. Hover to see how it was recorded and the date. |
-| **Empty gray** | The first scan is **not done** yet. |
+| **Filled green** | The pre-repair scan is **done**. Hover to see how it was recorded and the date. |
+| **Empty gray** | The pre-repair scan is **not done** yet. |
 | **Empty and gently pulsing** | The car has reached **Disassembly & Repair Planning** with no scan. The missing scan is now the blocker. |
 
-The drawer's **First scan** row says **Not done**, or **Done** with the source and date.
+The drawer's **Pre-repair scan** row says **Not done**, or **Done** with the source and date.
 
 ### How a Scan Gets Recorded
 
@@ -61,7 +62,7 @@ The **first** of these to arrive wins the stamp. Later ones are still logged as 
 
 1. **A file tagged "Pre-repair Scan"** on the [Files](/repair-orders/files) tab.
 2. **CCC ONE**, when its data shows the scan happened.
-3. **A text from a technician** to the shop's assistant, in a [team chat](/ai/text-kinetic), saying the first scan is done.
+3. **A text from a technician** to the shop's assistant, in a [team chat](/ai/text-kinetic), saying the pre-repair scan is done.
 
 <Tip>
 The fastest way to turn the icon green is to upload the scan report and tag it **Pre-repair Scan**. It also gives you the document for the supplement.
@@ -147,11 +148,11 @@ Severity describes the **money**. It never decides whether a car is repairable. 
 
 Click the pencil to open **Change repairability** and flip the **Total loss** toggle. The window warns: *A total loss uses the total-loss estimate and cycle days for its defaults.* The target date and the default estimate follow.
 
-Marking a vehicle as a total loss also puts it in the **Possible Total Loss** lane on the Repairs board, and it is no longer eligible for Rivet or the client survey. See [Total loss](/playbooks/total-loss).
+Marking a vehicle as a total loss does not move its card; CCC ONE decides where a total loss sits (see [Statuses](/pipeline/statuses#pending-total-loss-and-total-loss)). It is no longer eligible for Rivet or the client survey. See [Total loss](/playbooks/total-loss).
 
-## Expected Insurance Payout
+## Market Value
 
-The **Expected insurance payout** is a range of what the vehicle is worth on the market, based on recent sales, which is what an insurer is likely to value the car at if it is declared a total loss.
+The **Market value** is a range of what the vehicle is worth on the market, based on recent sales, which is what an insurer is likely to value the car at if it is declared a total loss.
 
 - It shows a range such as **$14,200 – $16,100**. Hover to see trade-in and wholesale ranges, the date, and the mileage used.
 - If the value is more than 30 days old it turns gray and says **as of** with the date. It is shown, never hidden.

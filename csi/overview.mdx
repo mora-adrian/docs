@@ -58,9 +58,11 @@ Kinetic skips a survey, and says why on the screen, when:
 
 ## The CSI Screen
 
-Open **Communications → CSI**. A banner at the top says whether surveys are **Active** (green) or **Paused** (amber). If paused, the banner explains: **CSI surveys are off in Settings → Messaging. Scheduled surveys stay queued but nothing sends.**
+Open **Communications → CSI**. If surveys are turned off, an amber banner says **Surveys are paused**: *Client Satisfaction surveys are off in Settings → Messaging. Scheduled surveys stay queued, but nothing sends.* **Open settings** takes you there.
 
-Below it are four sections, each with a count. Every row shows the **repair order number** (click to open its drawer), the **client**, the **vehicle**, then the **client advocate** and the **phone number**.
+At the top is a summary for the last **7**, **30**, or **90** days: **Score out of 10**, **Response rate**, **Replies**, **Negative replies**, and **Reviews requested**, with a chart of replies per day.
+
+Below it are five tabs, each with a count. Every row shows the **repair order number** (click to open its drawer), the **client**, the **vehicle**, then the **client advocate** and the **phone number**.
 
 ### Scheduled
 
@@ -69,7 +71,7 @@ Surveys waiting to go out. Each shows a live countdown such as **Sends in 23h 59
 - **Send now** sends the pulse check immediately, without waiting. It is disabled while surveys are paused.
 - **Cancel** stops it. Kinetic asks for a **Reason**: **Closed by mistake**, **Internal ticket**, **Vehicle still here**, or **Other**, with an optional **Note**. A reason is required, so the screen can explain later why a survey did not go.
 
-### Sent & Awaiting Reply
+### Awaiting Reply
 
 Delivered but not yet answered. Each row says **Sent** and the date, and **poll** if it went as a tap-to-answer poll. Small badges show the next steps: **Survey scheduled**, **Survey sending**, **Survey sent**, **Survey completed**, **Survey skipped**, or **Survey not sent** for the full survey, and **Review asked — Google**, **Review skipped**, or **Review not sent**. This is your **follow-up list**.
 
@@ -77,33 +79,36 @@ Delivered but not yet answered. Each row says **Sent** and the date, and **poll*
 
 Answered surveys. Each row shows a green **Responded** badge, or a red **Negative** badge for a low score, with exactly what the client wrote, their score out of 10, and the time. The same survey and review badges appear.
 
+### Negative
+
+Only the low-score answers, so the unhappy clients are in one place. Call them the same day.
+
 ### Skipped & Cancelled
 
 Surveys that will not complete, each with its reason. A **cancelled** survey has a **Restore** button that puts it back in the queue, if the job is still eligible.
 
-Each section loads more with a button at the bottom, and shows **No surveys scheduled.**, **No surveys waiting for a reply.**, **No responses yet.**, or **Nothing skipped or cancelled.** when empty.
+Each section loads more with a button at the bottom, and shows **No surveys scheduled.**, **No surveys waiting for a reply.**, **No replies yet.**, **No negative replies.**, or **Nothing skipped or cancelled.** when empty.
 
 ## On the Repair Order
 
-When a survey exists, the repair order's left panel shows a **Client survey** checklist:
+When a survey exists, the repair order's left panel shows a **Client Satisfaction** checklist:
 
 | Step | Meaning |
 | --- | --- |
 | **Pulse check sent** (with a date), or **Pulse check** with **Sends {date}** | Whether the first text has gone out. |
 | The client's answer | What they said. |
 | **Comprehensive sent** or **Comprehensive survey** | Whether the full survey link was sent. |
-| **Comprehensive completed** (expandable) | The answers: each question and the score. |
 | **Review requested** with **Google** and/or **Yelp** | Whether the review ask went out. |
 
 A step that will not happen reads **Pulse check skipped**, **Pulse check cancelled**, **Pulse check not sent**, **Comprehensive skipped**, or **Comprehensive not sent**.
 
-The [drawer](/repair-orders/drawer) shows the current step in one line under **Client survey**.
+The [drawer](/repair-orders/drawer) shows the current step in one line under **Client Satisfaction**.
 
 ## Close the Loop on a Low Score
 
 <Steps>
   <Step title="See it the same day">
-    A negative answer notifies the **client advocate**, and negative answers from the last week are in your weekly **Negative CSI responses** email (see [Reports](/admin/reports)). The **Responded** section shows them with a red **Negative** badge.
+    A negative answer notifies the **client advocate**, and negative answers from the last week are in your weekly **Negative Client Satisfaction responses** email (see [Reports](/admin/reports)). The **Responded** section shows them with a red **Negative** badge.
   </Step>
   <Step title="Read the history first">
     Open the repair order. Read the Activity, texts, and any notes before you call, so you are not surprised.
