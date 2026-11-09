@@ -15,10 +15,10 @@ Controls when rows appear on [Today](/work/today).
 
 | Setting | Default | Meaning |
 | --- | --- | --- |
-| **Close to delivery** | 3 days | A job appears when its target date is within this many days. |
-| **Supplements waiting** | 3 days | A job in supplement hold appears after this many days. |
-| **Missing documents** | 1 day | A job appears this many days after arrival if the signed authorization or initial estimate is missing. |
-| **Money gate status** | Parts Hold | The status at or after which a job with no recorded payment appears under **Past the money gate**. |
+| **Near estimated completion date within** | 3 days | A job appears under **Near estimated completion date** when its target date is within this many days. |
+| **Supplements stale after** | 3 days | A job in Supplement Hold appears under **Follow up on stale supplements** after this many days. |
+| **Critical documents missing after** | 1 day | A job appears under **Follow up on critical documents** this many days after arrival if the signed authorization or initial estimate is missing. |
+| **Money gate phase** | Parts Hold | The status at or after which a job with no recorded payment appears under **Review amounts owed**. |
 
 The maximum for any threshold is 60 days.
 
@@ -48,13 +48,13 @@ These numbers feed [target dates](/repair-orders/facts#target-date), [severity](
 
 | Setting | Meaning |
 | --- | --- |
-| **Average repairable order** | Your typical pre-tax repair total. Used for new leads before an estimate exists. |
-| **Average total-loss order** | Your typical total-loss job. |
-| **Repairable cycle days** | Days from key-to-key for a repair. Default 12. |
-| **Total-loss cycle days** | Days for a total loss. |
-| **Labor hours per calendar day** | After supplement hold, the target date becomes arrival plus total labor hours divided by this number. |
-| **High confidence within** and **Medium confidence within** | How close the three date estimates (entered, labor-hours, average-cycle) must be for **High** or **Medium** confidence. All three within the High number means High; within the Medium number means Medium; wider means Low. Applies once the job is past Parts Hold. |
-| **Severity boundaries** | Four ascending percentages (1 to 99) of vehicle value. Default 20, 40, 60, 80. Severity 1 is under the first; severity 5 is at or above the last. |
+| **Avg repairable order (pre-tax)** | Your typical pre-tax repair total. Used for new leads before an estimate exists. |
+| **Avg total-loss order (pre-tax)** | Your typical total-loss job. |
+| **Repairable cycle (days)** | Days from key-to-key for a repair. Default 12. |
+| **Total-loss cycle (days)** | Days for a total loss. |
+| **Labor hours per calendar day** | When the estimate has labor hours, the target date is arrival plus total labor hours divided by this number (rounded), but never later than the repairable cycle. |
+| **Out-date confidence: High within (days)** and **Out-date confidence: Medium within (days)** | How close the three date estimates (entered, labor-hours, average-cycle) must be for **High** or **Medium** confidence. All three within the High number means High; within the Medium number means Medium; wider means Low. Applies once the job is past Parts Hold. |
+| **Severity boundaries (% of market value)** | Four ascending percentages (1 to 99) of vehicle value. Default 20, 40, 60, 80. Severity 1 is under the first; severity 5 is at or above the last. |
 
 The footer shows the **default new-lead estimate** Kinetic will use.
 

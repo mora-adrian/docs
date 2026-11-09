@@ -7,17 +7,19 @@ Open **Settings → Reports**. Only admins can change reports (everyone else see
 
 Reports are emails sent to members of the shop once a week. They exist so that problems come to you, instead of you having to hunt for them.
 
-## The Five Reports
+## The Seven Reports
 
 | Report | Lists | Default threshold |
 | --- | --- | --- |
-| **Supplement hold** | Jobs that have been waiting in supplement hold at least this long | 7 days |
-| **Parts hold** | Jobs that have been waiting in parts hold at least this long | 7 days |
-| **Intake aging** | Jobs that have been in intake at least this long | 14 days |
+| **Supplement hold** | Vehicles in Supplement Hold at least this long, excluding possible total losses | 7 days |
+| **Parts hold** | Vehicles in Parts Hold at least this long | 7 days |
+| **Intake aging** | Vehicles still in an intake status that have been at the shop at least this long | 14 days |
 | **Completed or closed, not delivered** | Vehicles that are completed or closed but have not been delivered | none |
-| **Negative CSI responses** | Clients who answered the CSI survey with a poor rating in the last 7 days | none |
+| **Negative Client Satisfaction responses** | Clients who answered the Client Satisfaction survey with a poor rating in the last 7 days | none |
+| **Customers not texted** | Clients on open, arrived repair orders who have not been texted in at least this many business days, including clients never texted. Grouped by client advocate. | 2 business days |
+| **Low client sentiment** | Open, arrived repair orders whose client-sentiment gauge reads 40 or below (out of 100). Unscored repair orders are not listed. | fixed at 40 |
 
-The threshold for the first three can be set from 1 to 365 days.
+The day thresholds (supplement hold, parts hold, intake aging, and customers not texted) can be set from 1 to 365.
 
 ## Set One Up
 

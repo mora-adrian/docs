@@ -22,7 +22,7 @@ All of these must be true:
 - It is **not a total loss**.
 - The estimate total is **over $300**.
 
-If a repair order does not qualify, the **Audit with Rivet** button is unavailable.
+If a repair order does not qualify, the **Review with Rivet** button is unavailable.
 
 ## Run a Review
 
@@ -30,11 +30,11 @@ If a repair order does not qualify, the **Audit with Rivet** button is unavailab
   <Step title="Open the Estimate tab">
     On the repair order, open **Estimate**.
   </Step>
-  <Step title="Choose Audit with Rivet">
+  <Step title="Choose Review with Rivet">
     The review is queued, then runs. The status reads **Review queued**, then **Review running**. It takes **several minutes**. You can leave the page; the results wait for you.
   </Step>
   <Step title="Open the results">
-    When it finishes the button changes to **See audit results**. Rivet analyzes up to **24 photos** from the repair order's files, so upload the damage photos first.
+    When it finishes the button changes to **See review results**. Rivet analyzes up to **24 photos** from the repair order's files, so upload the damage photos first.
   </Step>
 </Steps>
 
@@ -81,14 +81,16 @@ Reviewed findings move into a **Reviewed** group so the open ones stay on top.
 
 Open **Rivet** from the sidebar (**Operations → Rivet**) to see every estimate and its review state. Filter by status:
 
-| Filter | Meaning |
+| Tab | Meaning |
 | --- | --- |
+| **All** | Every estimate. |
 | **Action needed** | Reviewed, with findings still waiting for a verdict. |
-| **Not audited** | No review yet. |
-| **Review queued** | Waiting to start. |
-| **Review running** | In progress. |
-| **Audited** | Reviewed and handled. |
-| **Review failed** | The review could not finish. Run it again. |
+| **Not reviewed** | No review yet. |
+| **In progress** | Queued or running. |
+| **Reviewed** | Reviewed and handled. |
+| **Failed** | The review could not finish. Run it again. |
+
+Each row's badge can also say **Needs re-review** (the estimate changed in CCC ONE after the last review) or **New results** (a finished review you have not opened yet).
 
 ## Do and Don't
 
